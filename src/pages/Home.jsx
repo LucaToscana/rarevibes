@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import ArtistCard from '../components/ArtistCard'
 
 export default function Home() {
   const parallaxRef = useRef(null)
@@ -30,16 +31,17 @@ export default function Home() {
           className="absolute inset-0 w-full h-full z-0 will-change-transform"
         >
           <img
-            src="/hero.jpg"
+            src="/herobis.png"
             alt="RareVibes Hero"
             className="w-full h-full object-cover "
           />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-          <h1 className="font-monoton text-5xl whitespace-nowrap">
+          <h1 className="font-monoton text-8xl whitespace-nowrap">
             RARE VIBES
-          </h1>          <p className="font-arvo text-xl md:text-2xl text-zinc-200 mb-6 max-w-xl">
-            La fanzine per scoprire i nuovi suoni dell'underground.
+          </h1>         
+           <p className="font-arvo text-xl md:text-2xl mb-6 max-w-xl">
+            A fanzine for raw sounds, weird thoughts, and glorious nonsense.
           </p>
           <Link
             to="/artists"
@@ -57,26 +59,7 @@ export default function Home() {
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
           {featuredArtists.map((artist) => (
-            <Link
-              key={artist.name}
-              to={`/artists/${artist.name.toLowerCase().replace(/\s/g, '-')}`}
-              className="group relative overflow-hidden rounded-xl shadow-lg"
-            >
-              <img
-                src={artist.image}
-                alt={artist.name}
-                className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-
-              {/* Gradiente sfumato molto opaco in basso */}
-              <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/95 via-black/70 to-transparent z-20 rounded-b-xl" />
-
-              {/* Titolo sopra il gradiente */}
-              <h3 className="absolute bottom-4 left-4 right-4 z-30 font-roboto text-xl font-bold  drop-shadow-lg">
-                {artist.name}
-              </h3>
-            </Link>
-
+            <ArtistCard artist={artist} />
           ))}
         </div>
 

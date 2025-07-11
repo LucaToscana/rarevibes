@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
+import ArtistCard from '../components/ArtistCard'
 
 export default function Artists() {
   const [artists, setArtists] = useState([])
@@ -27,19 +28,19 @@ export default function Artists() {
       <div className="flex justify-center gap-4 mb-12">
         <button
           onClick={() => setFilter('all')}
-          className={`font-arvo  px-4 py-2 rounded ${filter === 'all' ? 'bg-white text-black' : 'bg-zinc-700'}`}
+          className={`font-arvo  px-4 py-2 rounded ${filter === 'all' ? 'bg-monza text-black' : 'bg-monzadark text-iron'}`}
         >
           Tutti
         </button>
         <button
           onClick={() => setFilter('artist')}
-          className={`font-arvo  px-4 py-2 rounded ${filter === 'artist' ? 'bg-white text-black' : 'bg-zinc-700'}`}
+          className={`font-arvo  px-4 py-2 rounded ${filter === 'artist' ? 'bg-monza text-black' : 'bg-monzadark text-iron'}`}
         >
           Arti Visive
         </button>
         <button
           onClick={() => setFilter('musician')}
-          className={`font-arvo  px-4 py-2 rounded ${filter === 'musician' ? 'bg-white text-black' : 'bg-zinc-700'}`}
+          className={`font-arvo  px-4 py-2 rounded ${filter === 'musician' ? 'bg-monza text-black' : 'bg-monzadark text-iron'}`}
         >
           Musica
         </button>
@@ -47,23 +48,10 @@ export default function Artists() {
 
       <div className="grid gap-8 md:grid-cols-3">
         {filteredArtists.map((artist) => (
-          <Link
-            key={artist.name}
-            to={`/artists/${artist.name.toLowerCase().replace(/\s/g, '-')}`}
-            className="group overflow-hidden rounded-xl shadow-lg bg-zinc-900 hover:bg-zinc-800 transition"
-          >
-            <img
-              src={artist.image}
-              alt={artist.name}
-              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="p-4">
-              <h2 className="font-arvo  text-2xl font-bold">{artist.name}</h2>
-              <p className="font-roboto  mt-2 text-zinc-300">{artist.bio}</p>
-            </div>
-          </Link>
+          <ArtistCard artist={artist} showBio={true} />
         ))}
       </div>
+
     </main>
   )
 }

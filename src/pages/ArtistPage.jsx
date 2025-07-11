@@ -63,7 +63,10 @@ export default function ArtistPage() {
 
   return (
     <main className="min-h-screen   max-w-6xl mx-auto px-6 py-12">
-      <Link to="/artists" className="font-arvo underline hover:text-zinc-300 inline-block mb-6">
+      <Link
+        to="/artists"
+        className="font-arvo inline-block mb-6 transition-all duration-200  hover:line-through"
+      >
         ← Torna agli artisti
       </Link>
 

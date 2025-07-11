@@ -38,3 +38,6 @@ body {
 .btn-monza {
   @apply font-arvo text-xl bg-monza text-iron px-6 py-1 rounded-full hover:bg-monzadark transition;
 }
+.heading-monoton {
+  @apply font-monoton text-lg sm:text-2xl md:text-3xl tracking-tight whitespace-nowrap;
+}
