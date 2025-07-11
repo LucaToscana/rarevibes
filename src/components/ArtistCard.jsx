@@ -17,9 +17,8 @@ export default function ArtistCard({ artist, showBio = false }) {
     >
       {/* Effetto di caricamento blur */}
       <div
-        className={`absolute inset-0 bg-gray-300 z-10 transition-opacity duration-500 ${
-          imgLoaded ? "opacity-0" : "opacity-100"
-        }`}
+        className={`absolute inset-0 bg-gray-300 z-10 transition-opacity duration-500 ${imgLoaded ? "opacity-0" : "opacity-100"
+          }`}
       />
 
       <img
@@ -27,17 +26,16 @@ export default function ArtistCard({ artist, showBio = false }) {
         alt={artist.name}
         onLoad={() => setImgLoaded(true)}
         onError={handleImageError}
-        className={`w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105 ${
-          imgLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0 ${imgLoaded ? "opacity-100" : "opacity-0"
+          }`}
       />
 
       {/* Gradiente opaco in basso */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/95 via-black/70 to-transparent z-20 rounded-b-xl" />
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-monza/95 via-monza/70 to-monza/50 z-20 rounded-b-xl" />
 
       {/* Contenuto testuale sopra il gradiente */}
       <div className="absolute bottom-4 left-4 right-4 z-30 text-white">
-        <h3 className="font-monoton text-xl drop-shadow-lg">{artist.name}</h3>
+        <h3 className="font-monoton text-xl text-white drop-shadow-lg">{artist.name}</h3>
         {showBio && (
           <p className="font-roboto text-sm mt-1 line-clamp-3 drop-shadow">
             {artist.bio}

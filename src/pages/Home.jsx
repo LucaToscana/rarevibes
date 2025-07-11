@@ -1,9 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ArtistCard from '../components/ArtistCard'
 
 export default function Home() {
   const parallaxRef = useRef(null)
+  const [featuredArtists, setArtists] = useState([])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +17,15 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const featuredArtists = [
-    { name: 'Luna Nera', image: '/artists/luna.jpg' },
-    { name: 'Echo Dream', image: '/artists/echo.jpg' },
-    { name: 'Velvet Boy', image: '/artists/velvet.jpg' },
-  ]
+  useEffect(() => {
+    fetch('/data/artists.json')
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+        return res.json()
+      })
+      .then(data => setArtists(data))
+      .catch(err => console.error('Errore nel caricamento artisti:', err))
+  }, [])
 
   return (
     <main className="min-h-screen ">
@@ -37,29 +42,29 @@ export default function Home() {
           />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-          <h1 className="font-monoton text-8xl whitespace-nowrap">
+          <h1 className="font-monoton text-6xl lg:text-8xl  whitespace-nowrap">
             RARE VIBES
-          </h1>         
-           <p className="font-arvo text-xl md:text-2xl mb-6 max-w-xl">
+          </h1>
+          <p className="font-arvo text-xl md:text-2xl mb-6 max-w-xl">
             A fanzine for raw sounds, weird thoughts, and glorious nonsense.
           </p>
           <Link
             to="/artists"
             className="btn-monza"
           >
-            Scopri gli artisti →
+            artists →
           </Link>
         </div>
       </section>
 
       {/* Artisti */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
-        <h2 className="font-arvo  text-3xl md:text-4xl font-bold mb-10 text-center">
-          Artisti In Evidenza
+      <section className="py-16 px-6 ">
+        <h2 className="heading-monoton  mb-10 text-center">
+          Latest Artists
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
           {featuredArtists.map((artist) => (
-            <ArtistCard artist={artist} />
+            <ArtistCard artist={artist} showBio={true} />
           ))}
         </div>
 

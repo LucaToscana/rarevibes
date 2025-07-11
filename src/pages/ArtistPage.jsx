@@ -1,17 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
-import SpotifyPlayer from '../components/SpotifyPlayer';
-import SocialLinks from '../components/SocialLinks';
 import RelatedArtists from '../components/RelatedArtists';
-import YouTubePlayer from '../components/YouTubePlayer';
+import ArtistPlayers from "../components/ArtistPlayers";
+import SocialLinks from "../components/SocialLinks";
 
 export default function ArtistPage() {
   const { slug } = useParams();
   const [artistsData, setArtistsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const [imgError, setImgError] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch('/data/artists.json')
@@ -28,11 +27,14 @@ export default function ArtistPage() {
         setLoading(false);
       });
   }, []);
+  const handleImageError = () => {
+    setImgError(true);
+  };
 
   if (loading) {
     return (
       <main className="min-h-screen   flex items-center justify-center">
-        <p>Caricamento...</p>
+        <p>Loading...</p>
       </main>
     );
   }
@@ -40,7 +42,7 @@ export default function ArtistPage() {
   if (error) {
     return (
       <main className="min-h-screen   flex items-center justify-center">
-        <p>Errore nel caricamento artisti: {error.message}</p>
+        <p>Error: {error.message}</p>
       </main>
     );
   }
@@ -52,7 +54,7 @@ export default function ArtistPage() {
     return (
       <main className="min-h-screen   flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-3xl mb-4">Artista non trovato.</h1>
+          <h1 className="text-3xl mb-4">Not Found.</h1>
           <Link to="/artists" className="underline hover:text-zinc-300">
             Torna agli artisti
           </Link>
@@ -62,55 +64,35 @@ export default function ArtistPage() {
   }
 
   return (
-    <main className="min-h-screen   max-w-6xl mx-auto px-6 py-12">
+    <main className="min-h-screen   max-w-6xl mx-auto px-6 py-12 mt-12">
       <Link
         to="/artists"
-        className="font-arvo inline-block mb-6 transition-all duration-200  hover:line-through"
+        className="title-small "
       >
-        ← Torna agli artisti
+        ← artists
       </Link>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 mt-2 md:grid-cols-3 gap-10">
         {/* Colonna sinistra */}
         <div className="md:col-span-2 space-y-6">
           <img
-            src={artist.image}
+            src={imgError ? "/herobis.png" : artist.image}
             alt={artist.name}
+            onLoad={() => setImgLoaded(true)}
+            onError={handleImageError}
             className="w-full h-96 object-cover rounded-lg"
           />
-          <h1 className="font-arvo text-4xl font-bold">{artist.name}</h1>
-          <p className="font-roboto text-lg text-zinc-300">{artist.bio}</p>
+          <h1 className="heading-monoton">{artist.name}</h1>
+          <p className="title-small">{artist.bio}</p>
         </div>
 
         {/* Colonna destra */}
         <div className="space-y-6">
-          <SpotifyPlayer url={artist.spotify} />
-
-          {artist.soundcloud && (
-            <div>
-              <h2 className="text-xl font-semibold mb-2">SoundCloud</h2>
-              <iframe
-                width="100%"
-                height="120"
-                scrolling="no"
-                frameBorder="no"
-                allow="autoplay"
-                src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(
-                  artist.soundcloud
-                )}&color=%23000000&inverse=false&auto_play=false&show_user=true`}
-                className="rounded-md"
-              />
-            </div>
-          )}
-
-          {artist.youtube && (
-            <div>
-              <YouTubePlayer videoId={artist.youtube.replace('watch?v=', '')} />
-            </div>
-          )}
-
-          <SocialLinks socials={artist.socials} />
+          <ArtistPlayers artist={artist} />
         </div>
+        {artist.socials && (
+          <SocialLinks socials={artist.socials} />
+        )}
       </div>
 
       {/* Artisti correlati */}

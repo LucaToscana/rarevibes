@@ -1,19 +1,28 @@
 export default function SpotifyPlayer({ url }) {
-  if (!url) return null
-  const id = url.split('/').pop()
+  if (!url) return null;
+
+  // Estrarre l'ID dall'URL
+  const parts = url.split('/');
+  const id = parts.pop().split('?')[0]; // rimuove eventuali query params
+
+  // Identificare il tipo di contenuto: track, album, playlist, ecc.
+  const type = parts.pop(); // es: "track" o "album"
+
+  // Costruire l'URL embed
+  const embedUrl = `https://open.spotify.com/embed/${type}/${id}`;
 
   return (
-    <div className="mt-8">
-      <h2 className="text-2xl font-semibold mb-2">Ascolta su Spotify</h2>
+    <div>
       <iframe
-        src={`https://open.spotify.com/embed/track/5EgPbaGO0rWPFOjbiHQOir?utm_source=generator`}
+        src={embedUrl}
         width="100%"
         height="80"
-        frameBorder="0"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
         className="rounded-md"
+        frameBorder="0"
+        allowFullScreen={true}
       />
     </div>
-  )
+  );
 }

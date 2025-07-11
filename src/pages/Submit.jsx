@@ -64,7 +64,7 @@ export default function Submit() {
 
   return (
     <main className="min-h-screen   px-6 py-12 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8 text-center">Invia la tua Traccia</h1>
+      <h1 className="heading-monoton mb-8 text-center mt-12">Invia la tua Traccia</h1>
 
       {status === 'sending' && <p className="text-yellow-400 mb-4">Invio in corso...</p>}
       {status === 'success' && <p className="text-green-500 mb-4">Inviato con successo!</p>}
@@ -83,7 +83,7 @@ export default function Submit() {
           { id: 'socials', label: 'Social principali (Instagram, X, ecc...)', type: 'text' }
         ].map(({ id, label, type, isTextArea, required }) => (
           <div key={id}>
-            <label htmlFor={id} className="block mb-1">{label}</label>
+            <label htmlFor={id} className="block mb-1 title-small">{label}</label>
             {isTextArea ? (
               <textarea
                 id={id}
@@ -92,7 +92,7 @@ export default function Submit() {
                 onChange={handleChange}
                 required={required}
                 rows={4}
-                className="w-full p-3 rounded bg-zinc-800 "
+                className="w-full p-3 rounded title-small "
                 placeholder="Come è stata creata la traccia, ispirazioni, strumenti..."
               />
             ) : (
@@ -103,7 +103,7 @@ export default function Submit() {
                 value={form[id]}
                 onChange={handleChange}
                 required={required}
-                className="w-full p-3 rounded bg-zinc-800 "
+                className="w-full p-3 rounded title-small "
               />
             )}
           </div>
@@ -111,7 +111,7 @@ export default function Submit() {
 
         <button
           type="submit"
-          className="bg-white text-black px-6 py-3 rounded font-semibold hover:bg-zinc-200 disabled:opacity-50"
+          className="btn-monza"
           disabled={status === 'sending'}
         >
           Invia

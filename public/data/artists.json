@@ -1,13 +1,13 @@
 [
   {
-    "name": "Luna Nera",
-    "slug": "luna-nera",
+    "name": "Odelia",
+    "slug": "odelia",
     "type": "musician",
-    "image": "/artists/luna.jpg",
-    "bio": "Emerging darkwave artist from Italy, known for moody synth textures.",
-    "spotify": "https://open.spotify.com/artist/1LunaNeraID",
-    "soundcloud": "https://soundcloud.com/lunanera",
-    "youtube": "https://www.youtube.com/watch?v=luna123",
+    "image": "/artists/Odelia-Monkey-With-a-Hammer.jpg",
+    "bio": "ELorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..",
+    "spotify": "https://open.spotify.com/intl-fr/track/7lCEg0huq6nTZihGD8YVTo?si=d2aa9edb3f74425a",
+    "soundcloud": "https://soundcloud.com/user-10007485/80e43d13-4e0d-48af-9b96-637df45d8600?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    "youtube": "HoaD5vxdgq0",
     "socials": {
       "instagram": "https://instagram.com/lunanera",
       "twitter": "https://twitter.com/lunanera"
@@ -18,11 +18,13 @@
     "slug": "echo-dream",
     "type": "musician",
     "image": "/artists/echo.jpg",
-    "bio": "Synthpop producer blending ambient layers with retro beats.",
-    "spotify": "https://open.spotify.com/artist/2EchoDreamID",
-    "youtube": "https://www.youtube.com/watch?v=echodream",
+    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "spotify": "https://open.spotify.com/artist/1LunaNeraID",
+    "soundcloud": "https://soundcloud.com/ruralmidibrigade/gli-omertosi-abitanti-di-12?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    "youtube": "HjXuELX-7Bg",
     "socials": {
-      "instagram": "https://instagram.com/echodream"
+      "instagram": "https://instagram.com/lunanera",
+      "twitter": "https://twitter.com/lunanera"
     }
   },
   {
@@ -30,10 +32,13 @@
     "slug": "velvet-boy",
     "type": "musician",
     "image": "/artists/velvet.jpg",
-    "bio": "Lo-fi artist combining soul samples with dusty vinyl sounds.",
-    "soundcloud": "https://soundcloud.com/velvetboy",
+    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "spotify": "https://open.spotify.com/artist/1LunaNeraID",
+    "soundcloud": "https://soundcloud.com/ruralmidibrigade/gli-omertosi-abitanti-di-12?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    "youtube": "HjXuELX-7Bg",
     "socials": {
-      "instagram": "https://instagram.com/velvetboy"
+      "instagram": "https://instagram.com/lunanera",
+      "twitter": "https://twitter.com/lunanera"
     }
   },
   {
@@ -42,10 +47,12 @@
     "type": "musician",
     "image": "/artists/kora.jpg",
     "bio": "Electroacoustic songwriter inspired by world rhythms.",
-    "spotify": "https://open.spotify.com/artist/4KoraSunID",
-    "youtube": "https://www.youtube.com/watch?v=korasun",
+    "spotify": "https://open.spotify.com/artist/1LunaNeraID",
+    "soundcloud": "https://soundcloud.com/ruralmidibrigade/gli-omertosi-abitanti-di-12?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    "youtube": "HjXuELX-7Bg",
     "socials": {
-      "instagram": "https://instagram.com/korasun"
+      "instagram": "https://instagram.com/lunanera",
+      "twitter": "https://twitter.com/lunanera"
     }
   },
   {
@@ -53,7 +60,7 @@
     "slug": "giulia-ferretti",
     "type": "artist",
     "image": "/artists/giulia.jpg",
-    "bio": "Illustrator focusing on natural elements and ink line work.",
+    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "portfolio": "https://giuliaferretti.art",
     "socials": {
       "instagram": "https://instagram.com/giulia.draws"
@@ -64,7 +71,7 @@
     "slug": "noah-tress",
     "type": "artist",
     "image": "/artists/noah.jpg",
-    "bio": "Abstract painter working with large-scale color compositions.",
+    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "portfolio": "https://noahtress.com",
     "socials": {
       "instagram": "https://instagram.com/noahtress",
@@ -76,7 +83,7 @@
     "slug": "mira-koen",
     "type": "artist",
     "image": "/artists/mira.jpg",
-    "bio": "Digital artist exploring light, code, and interactive media.",
+    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "portfolio": "https://mirakoen.io",
     "socials": {
       "instagram": "https://instagram.com/mirakoen"
@@ -87,11 +94,13 @@
     "slug": "arvo-bliss",
     "type": "musician",
     "image": "/artists/arvo.jpg",
-    "bio": "Minimal techno artist with hypnotic modular synth live sets.",
-    "spotify": "https://open.spotify.com/intl-it/track/0dYc6IuOsM6fB7a3KSZM8n?si=279527a555b648d4",
-    "soundcloud": "https://soundcloud.com/arvobliss",
+    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "spotify": "https://open.spotify.com/artist/1LunaNeraID",
+    "soundcloud": "https://soundcloud.com/ruralmidibrigade/gli-omertosi-abitanti-di-12?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    "youtube": "v6zJ6u0MVdQ",
     "socials": {
-      "instagram": "https://instagram.com/arvobliss"
+      "instagram": "https://instagram.com/lunanera",
+      "twitter": "https://twitter.com/lunanera"
     }
   },
   {
@@ -99,7 +108,7 @@
     "slug": "yasmin-elray",
     "type": "artist",
     "image": "/artists/yasmin.jpg",
-    "bio": "Contemporary sculptor merging urban textures with organic forms.",
+    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..",
     "portfolio": "https://yasminelray.art",
     "socials": {
       "instagram": "https://instagram.com/yasminelray"
@@ -110,7 +119,7 @@
     "slug": "milo-zeta",
     "type": "musician",
     "image": "/artists/milo.jpg",
-    "bio": "Indie folk songwriter with warm acoustic melodies and field recordings.",
+    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..",
     "spotify": "https://open.spotify.com/artist/milozeta",
     "youtube": "https://www.youtube.com/watch?v=EPJeSIYUzHs",
     "socials": {
