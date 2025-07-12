@@ -11,6 +11,7 @@
     ],
     "bio": "Artist 1 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 1 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
     "single": "Single 1",
+    "defaultPlatform": "youtube",
     "platforms": {
       "spotify": "https://open.spotify.com/intl-fr/track/7lCEg0huq6nTZihGD8YVTo?si=b22a9490a27a4f13",
       "soundcloud": "https://soundcloud.com/ruralmidibrigade/sitar-killer-6?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
@@ -33,6 +34,7 @@
     ],
     "bio": "Artist 2 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 2 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
     "single": "Single 2",
+    "defaultPlatform": "youtube",
     "platforms": {
       "spotify": "https://open.spotify.com/artist/1LunaNeraID",
       "soundcloud": "https://soundcloud.com/example2",
@@ -55,6 +57,7 @@
     ],
     "bio": "Artist 3 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 3 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
     "single": "Single 3",
+    "defaultPlatform": "youtube",
     "platforms": {
       "spotify": "https://open.spotify.com/intl-fr/track/7lCEg0huq6nTZihGD8YVTo?si=b22a9490a27a4f13",
       "soundcloud": "https://soundcloud.com/example1",
@@ -78,6 +81,7 @@
     ],
     "bio": "Artist 4 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 4 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
     "single": "Single 4",
+    "defaultPlatform": "youtube",
     "platforms": {
       "spotify": "https://open.spotify.com/track/example1",
       "soundcloud": "https://soundcloud.com/example1",
@@ -101,6 +105,7 @@
     ],
     "bio": "Artist 5 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 5 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
     "single": "Single 5",
+    "defaultPlatform": "youtube",
     "platforms": {
       "spotify": "https://open.spotify.com/track/example1",
       "soundcloud": "https://soundcloud.com/example1",

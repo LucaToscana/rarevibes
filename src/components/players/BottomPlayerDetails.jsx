@@ -1,36 +1,46 @@
-import { Link } from 'react-router-dom'
-import PlayerPlatformButtons from './PlayerPlatformButtons'
-import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import PlayerPlatformButtons from "./PlayerPlatformButtons";
 
 export default function BottomPlayerDetails({ activeArtist, selectedPlatform, setSelectedPlatform }) {
-  const artistSlug = activeArtist?.slug
-    || activeArtist.id
-    || "unknown-artist";
+  const artistSlug = activeArtist?.slug || activeArtist.id || "unknown-artist";
+  const bgImage = activeArtist.images?.[0] || 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
 
   return (
-    <div className="w-[420px] h-[190px] bg-black bg-opacity-60 p-4 rounded-md flex flex-col items-end justify-between">
-      {/* Info artista */}
-      <div className="space-y-2 w-full">
-        <Link
-          to={`/artists/artist-${artistSlug}`}
-          className="font-arvo text-3xl text-left truncate text-white hover:underline block"
-        >
-          {activeArtist.name}
+    <div className="relative w-full sm:w-[390px] h-[190px] rounded-md overflow-hidden">
+      {/* Sfondo immagine */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgImage})` }}
+        aria-hidden="true"
+      />
 
-        </Link>
+      {/* Overlay scuro per contrasto */}
+      <div className="absolute inset-0 bg-black bg-opacity-60" aria-hidden="true" />
 
-        <p className="font-arvo text-xs text-left line-clamp-3">
-          {activeArtist.bio}
-        </p>
-      </div>
+      {/* Contenuto */}
+      <div className="relative z-10 p-4 flex flex-col items-end justify-between h-full text-white">
+        {/* Info artista */}
+        <div className="space-y-2 w-full">
+          <Link
+            to={`/artists/artist-${artistSlug}`}
+            className="font-arvo text-3xl text-left truncate hover:underline block"
+          >
+            {activeArtist.name}
+          </Link>
 
-      {/* Pulsanti piattaforma in fondo */}
-      <div className="w-full flex justify-end mt-4">
-        <PlayerPlatformButtons
-          activeArtist={activeArtist}
-          selectedPlatform={selectedPlatform}
-          setSelectedPlatform={setSelectedPlatform}
-        />
+          <p className="font-arvo text-xs text-left line-clamp-3">
+            {activeArtist.bio}
+          </p>
+        </div>
+
+        {/* Pulsanti piattaforma */}
+        <div className="w-full flex justify-end mt-4">
+          <PlayerPlatformButtons
+            activeArtist={activeArtist}
+            selectedPlatform={selectedPlatform}
+            setSelectedPlatform={setSelectedPlatform}
+          />
+        </div>
       </div>
     </div>
   )

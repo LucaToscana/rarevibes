@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   artist: null,
-  platform: null,
+  platform: "youtube",
   zoomOpen: false,
   zoomImg: null,
   playerOpen: false, // flag per aprire/chiudere il player

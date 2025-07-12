@@ -54,6 +54,8 @@ export default function BottomPlayer() {
       id: item.id,
       name: item.artist,
       single: item.title,
+      images :item.images,
+      defaultPlatform :item.defaultPlatform,
       platforms: {
         spotify: item.spotifyUrl,
         soundcloud: item.soundcloudUrl,
@@ -69,7 +71,14 @@ export default function BottomPlayer() {
     id: 1,
     name: 'Artista sconosciuto',
     single: 'Brano di anteprima',
-    platforms: { spotify: null, soundcloud: null, youtube: 'HjXuELX-7Bg' },
+    defaultPlatform:'youtube',
+    youtube: "HoaD5vxdgq0",
+    platforms: { spotify: null, soundcloud: null, youtube: 'HoaD5vxdgq0' },
+    images: [
+      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "/artists/Odelia-Monkey-With-a-Hammer.jpg"
+    ]
   }
 
   const activeArtist = artist || defaultArtist
@@ -194,20 +203,20 @@ export default function BottomPlayer() {
             </div>
           </div>
 
- {playerOpen ? (
-  <div className="hidden 2xl:block">
-    <ArtistTrackListCard
-      title="recents"
-      items={trackList}
-      onSelect={handleSelect}
-    />
-  </div>
-) : null}
+          {playerOpen ? (
+            <div className="hidden 2xl:block">
+              <ArtistTrackListCard
+                title="recents"
+                items={trackList}
+                onSelect={handleSelect}
+              />
+            </div>
+          ) : null}
         </div>
 
         {playerOpen ?
           <div className="hidden 2xl:block right-16 p-2">
-            <h1 className="font-monoton text-5xl md:text-6xl lg:text-7xl mb-4 tracking-tight">RARE VIBES</h1>
+            <h1 className="font-monoton text-4xl md:text-4xl lg:text-4xl mb-4 tracking-tight">RARE VIBES</h1>
           </div>
           : <></>}
         <div className="fixed bottom-0 right-16 p-2 hidden xl:block">
