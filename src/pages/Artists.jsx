@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import ArtistCard from '../components/artists/ArtistCard'
 import FilterButton from '../components/layout/FilterButton'
+import { useParams } from 'react-router-dom'
 
 export default function Artists() {
   const [artists, setArtists] = useState([])
   const [filter, setFilter] = useState('all')
+  const { slug } = useParams()
 
   useEffect(() => {
     fetch('/data/artists.json')
@@ -32,7 +34,7 @@ export default function Artists() {
 
       <div className="grid gap-8 md:grid-cols-3">
         {filteredArtists.map((artist) => (
-          <ArtistCard  key={artist.name} artist={artist} showBio={true} />
+          <ArtistCard  key={artist.name} artist={artist} showBio={true} slug={artist.id}/>
         ))}
       </div>
 

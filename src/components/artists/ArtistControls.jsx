@@ -1,0 +1,10 @@
+// ArtistControls.jsx
+import ArtistPlayerButtons from '../players/ArtistPlayerButtons'
+
+export default function ArtistControls({ artist }) {
+  return (
+    <div className="space-y-6">
+      <ArtistPlayerButtons artist={artist} />
+    </div>
+  )
+}

@@ -19,7 +19,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/artists" element={<Artists />} />
-        <Route path="/artists/:slug" element={<ArtistPage />} />
+        <Route path="/artists/:slug"  element={<ArtistPage  /> } />
         <Route path="/submit" element={<Submit />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
