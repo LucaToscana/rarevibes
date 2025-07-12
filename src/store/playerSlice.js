@@ -14,6 +14,7 @@ const playerSlice = createSlice({
   reducers: {
     setArtist: (state, action) => {
       state.artist = action.payload
+
       state.platform = null
     },
     setPlatform: (state, action) => {

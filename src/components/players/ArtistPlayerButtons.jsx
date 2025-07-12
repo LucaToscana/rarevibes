@@ -26,14 +26,14 @@ export default function ArtistPlayerButtons({ artist }) {
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
       {/* Contenuto sopra overlay */}
-      <div className="font-arvo relative p-6 flex flex-col justify-center h-full">
+      <div className="font-rubik relative p-6 flex flex-col justify-center h-full">
         <h2 className="text-2xl mb-4 drop-shadow-lg">
           Listen to {artist.name} on your favorite platform
         </h2>        <div className="flex flex-col gap-3">
           {artist.platforms?.spotify && (
             <button
               onClick={() => handlePlay('spotify')}
-              className="btn-monza w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md  hover:bg-monza-dark transition"
+              className="btn-monza  w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md  hover:bg-monza-dark transition"
               aria-label={`Play ${artist.name} on Spotify`}
             >
               <FaSpotify size={20} />

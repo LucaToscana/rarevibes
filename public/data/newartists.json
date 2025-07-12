@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Luce nera",
+        "artist": "Mara",
+        "spotifyUrl": null,
+        "soundcloudUrl": null,
+        "youtubeId": "HjXuELX-7Bg",
+        "defaultPlatform": "youtube"
+    },
+    {
+        "id": 2,
+        "title": "Sogni di vetro",
+        "artist": "Lapo",
+        "spotifyUrl": null,
+        "soundcloudUrl": null,
+        "youtubeId": "HjXuELX-7Bg",
+        "defaultPlatform": "youtube"
+    },
+    {
+        "id": 3,
+        "title": "Tutto è musica",
+        "artist": "Arianna",
+        "spotifyUrl": null,
+        "soundcloudUrl": "https://soundcloud.com/example",
+        "youtubeId": "HjXuELX-7Bg",
+        "defaultPlatform": "soundcloud"
+    }
+]

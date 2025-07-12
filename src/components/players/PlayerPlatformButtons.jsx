@@ -17,8 +17,8 @@ export default function PlayerPlatformButtons({ activeArtist, selectedPlatform, 
       {['spotify', 'soundcloud', 'youtube'].map(platform => {
         if (!activeArtist.platforms[platform]) return null  // <--- CORRETTO QUI
         const Icon = iconsMap[platform]
-        const isSelected = selectedPlatform === platform
-
+        const isSelected =
+          selectedPlatform?.toLowerCase?.() === platform.toLowerCase()
         // Colori per piattaforme
         const colors = {
           spotify: ['bg-green-600', 'hover:bg-green-500'],
@@ -30,11 +30,10 @@ export default function PlayerPlatformButtons({ activeArtist, selectedPlatform, 
           <button
             key={platform}
             onClick={() => setSelectedPlatform(platform)}
-            className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors flex items-center justify-center ${
-              isSelected
+            className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors flex items-center justify-center ${isSelected
                 ? `${colors[platform][0]} text-white shadow-lg`
                 : `bg-gray-700 text-gray-300 ${colors[platform][1]} hover:text-white`
-            }`}
+              }`}
             aria-label={platform}
             title={platform.charAt(0).toUpperCase() + platform.slice(1)}
           >
