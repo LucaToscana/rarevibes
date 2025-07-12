@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { setArtist, setPlatform } from '../store/playerSlice'
+import { setArtist, setPlatform } from '../../store/playerSlice'
 
 export default function ArtistPlayerButtons({ artist }) {
   const dispatch = useDispatch()

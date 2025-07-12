@@ -1,5 +1,5 @@
 import React from 'react';
-import { getClasses } from '../utils'; // se hai creato un file utils.js
+import { getClasses } from '../../utils'; // se hai creato un file utils.js
 
 function FilterButton({ label, value, currentFilter, onClick }) {
   const isActive = currentFilter === value;

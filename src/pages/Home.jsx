@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import ArtistCard from '../components/ArtistCard'
-import HeroSection from '../components/HeroSection'
+import ArtistCard from '../components/artists/ArtistCard'
+import HeroSection from '../components/layout/HeroSection'
 
 export default function Home() {
   const parallaxRef = useRef(null)

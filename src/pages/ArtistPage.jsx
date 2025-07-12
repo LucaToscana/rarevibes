@@ -1,12 +1,15 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import RelatedArtists from '../components/RelatedArtists';
-import ArtistPlayers from "../components/ArtistPlayers";
-import SocialLinks from "../components/SocialLinks";
+
 import { useDispatch } from 'react-redux';
 import { setArtist } from '../store/playerSlice';
-import ArtistPlayerButtons from '../components/ArtistPlayerButtons';
+
+import ArtistPlayerButtons from '../components/players/ArtistPlayerButtons';
+import RelatedArtists from '../components/artists/RelatedArtists';
+import SocialLinks from "../components/artists/SocialLinks";
+
 export default function ArtistPage() {
+
   const { slug } = useParams();
   const [artistsData, setArtistsData] = useState([]);
   const [loading, setLoading] = useState(true);

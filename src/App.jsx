@@ -1,12 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+
+import Footer from './components/layout/Footer'
+import BottomPlayer from './components/players/BottomPlayer'
+import Navbar from './components/layout/Navbar'
+
 import Home from './pages/Home'
 import Artists from './pages/Artists'
 import ArtistPage from './pages/ArtistPage'
 import Submit from './pages/Submit'
 import PrivacyPolicy from './pages/PrivacyPolicy'
-import Footer from './components/Footer'
-import BottomPlayer from './components/BottomPlayer'
+
+
 
 export default function App() {
   return (
@@ -19,7 +23,7 @@ export default function App() {
         <Route path="/submit" element={<Submit />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
-      <BottomPlayer/>
+      <BottomPlayer />
       <Footer></Footer>
     </Router>
   )

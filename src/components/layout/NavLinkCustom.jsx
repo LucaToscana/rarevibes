@@ -1,7 +1,7 @@
 // CustomNavLink.jsx
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { getClasses } from '../utils'; // se hai creato un file utils.js
+import { getClasses } from '../../utils'; // se hai creato un file utils.js
 
 function CustomNavLink({ to, children, extraClass = '', onClick }) {
   const location = useLocation();

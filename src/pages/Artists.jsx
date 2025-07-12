@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import ArtistCard from '../components/ArtistCard'
-import FilterButton from '../components/FilterButton'
+import ArtistCard from '../components/artists/ArtistCard'
+import FilterButton from '../components/layout/FilterButton'
 
 export default function Artists() {
   const [artists, setArtists] = useState([])
