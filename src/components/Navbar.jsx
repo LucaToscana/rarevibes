@@ -7,7 +7,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <nav className="bg-iron fixed top-0 left-0 right-0 z-50 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
+      <div className="px-4 sm:px-8 py-4 flex justify-between items-center">
         <Link to="/">
           <h1 className="heading-monoton">
             RARE VIBES

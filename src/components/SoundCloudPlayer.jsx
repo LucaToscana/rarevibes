@@ -1,4 +1,4 @@
-export default function SoundCloudPlayer({ url, height = 120 }) {
+export default function SoundCloudPlayer({ url, height = 320 }) {
   if (!url) return null;
 
   const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(

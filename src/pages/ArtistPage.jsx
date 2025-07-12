@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 import RelatedArtists from '../components/RelatedArtists';
 import ArtistPlayers from "../components/ArtistPlayers";
 import SocialLinks from "../components/SocialLinks";
-
+import { useDispatch } from 'react-redux';
+import { setArtist } from '../store/playerSlice';
+import ArtistPlayerButtons from '../components/ArtistPlayerButtons';
 export default function ArtistPage() {
   const { slug } = useParams();
   const [artistsData, setArtistsData] = useState([]);
@@ -11,6 +13,9 @@ export default function ArtistPage() {
   const [error, setError] = useState(null);
   const [imgLoaded, setImgLoaded] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const dispatch = useDispatch();
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch('/data/artists.json')
@@ -51,6 +56,11 @@ export default function ArtistPage() {
   const relatedArtists = artistsData.filter((a) => a.slug !== slug).slice(0, 3);
 
   if (!artist) {
+    useEffect(() => {
+      // carica i dati artista, poi:
+      dispatch(setArtist(artist));
+    }, []);
+
     return (
       <main className="min-h-screen   flex items-center justify-center">
         <div className="text-center">
@@ -64,7 +74,7 @@ export default function ArtistPage() {
   }
 
   return (
-    <main className="min-h-screen   max-w-6xl mx-auto px-6 py-12 mt-12">
+    <main className="min-h-screen  px-6 py-12 mt-12">
       <Link
         to="/artists"
         className="title-small "
@@ -82,17 +92,17 @@ export default function ArtistPage() {
             onError={handleImageError}
             className="w-full h-96 object-cover rounded-lg"
           />
-          <h1 className="heading-monoton">{artist.name}</h1>
+          <div className="flex flex-row justify-between items-start lg:items-center">
+            <h1 className="heading-monoton">{artist.name}</h1>
+            {artist.socials && <SocialLinks socials={artist.socials} />}
+          </div>
           <p className="title-small">{artist.bio}</p>
         </div>
 
         {/* Colonna destra */}
         <div className="space-y-6">
-          <ArtistPlayers artist={artist} />
+          <ArtistPlayerButtons artist={artist} />
         </div>
-        {artist.socials && (
-          <SocialLinks socials={artist.socials} />
-        )}
       </div>
 
       {/* Artisti correlati */}

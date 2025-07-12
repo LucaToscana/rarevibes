@@ -60,7 +60,7 @@ body {
 }
 
 .heading-monoton {
-  @apply font-monoton text-lg sm:text-2xl md:text-3xl tracking-tight whitespace-nowrap;
+  @apply font-monoton text-3xl  tracking-tight whitespace-nowrap;
 }
 .title-small {
   @apply font-arvo text-base text-monza;

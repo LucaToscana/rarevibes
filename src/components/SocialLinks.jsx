@@ -14,8 +14,7 @@ export default function SocialLinks({ socials = {} }) {
   if (entries.length === 0) return null
 
   return (
-    <div className="mt-8">
-      <h2 className="title-small mb-2 underline">contact</h2>
+    <div >
       <ul className="flex gap-4 text-zinc-300">
         {entries.map(([platform, url]) => {
           const IconComponent = iconsMap[platform.toLowerCase()]
