@@ -53,9 +53,10 @@ export default function BottomPlayer() {
     dispatch(setArtist({
       id: item.id,
       name: item.artist,
+      slug: item.slug,
       single: item.title,
-      images :item.images,
-      defaultPlatform :item.defaultPlatform,
+      images: item.images,
+      defaultPlatform: item.defaultPlatform,
       platforms: {
         spotify: item.spotifyUrl,
         soundcloud: item.soundcloudUrl,
@@ -69,9 +70,11 @@ export default function BottomPlayer() {
   const defaultArtist = {
 
     id: 1,
-    name: 'Artista sconosciuto',
-    single: 'Brano di anteprima',
-    defaultPlatform:'youtube',
+    name: 'Odelia',
+    slug: 'odelia',
+
+    single: 'Monkey WIth Hammer',
+    defaultPlatform: 'youtube',
     youtube: "HoaD5vxdgq0",
     platforms: { spotify: null, soundcloud: null, youtube: 'HoaD5vxdgq0' },
     images: [
