@@ -75,9 +75,9 @@ export default function BottomPlayer() {
     youtube: "HoaD5vxdgq0",
     platforms: { spotify: null, soundcloud: null, youtube: 'HoaD5vxdgq0' },
     images: [
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg"
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg"
     ]
   }
 
