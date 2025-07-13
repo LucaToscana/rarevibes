@@ -9,8 +9,8 @@
         "defaultPlatform": "youtube",
                   "images": [
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg",
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg"
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg"
     ]
     },
     {
@@ -22,9 +22,9 @@
         "youtubeId": "HoaD5vxdgq0",
         "defaultPlatform": "youtube",
                   "images": [
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg"
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg"
     ]
     },
       {
@@ -36,9 +36,9 @@
         "youtubeId": "HoaD5vxdgq0",
         "defaultPlatform": "youtube",
                   "images": [
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg"
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg"
     ]
     }
 ]
