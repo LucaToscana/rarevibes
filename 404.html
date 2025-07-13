@@ -2,15 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Redirecting...</title>
+    <title>Redirecting…</title>
     <script>
-      // Rimuove il prefisso del repo e reindirizza con il path originale come parametro
-      const repoBase = '/rarevibes';
-      const redirectTo = location.pathname.replace(repoBase, '') + location.search + location.hash;
-      window.location.replace(`${repoBase}/index.html?redirect=${encodeURIComponent(redirectTo)}`);
+      const repo = "/rarevibes";
+      const redirectTo = location.pathname.replace(repo, '') + location.search + location.hash;
+      window.location.replace(repo + "/index.html?redirect=" + encodeURIComponent(redirectTo));
     </script>
   </head>
   <body>
-    <p>Redirecting...</p>
+    <p>Redirecting…</p>
   </body>
 </html>
