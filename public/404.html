@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Redirecting...</title>
-    <script>
-      // Rimuove il prefisso del repo e reindirizza con il path originale come parametro
-      const repoBase = '/rarevibes';
-      const redirectTo = location.pathname.replace(repoBase, '') + location.search + location.hash;
-      window.location.replace(`${repoBase}/index.html?redirect=${encodeURIComponent(redirectTo)}`);
-    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+
   </head>
   <body>
-    <p>Redirecting...</p>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

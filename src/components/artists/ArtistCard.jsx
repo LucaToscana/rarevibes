@@ -17,7 +17,7 @@ export default function ArtistCard({ artist, showBio = false, slug }) {
 
   return (
     <Link
-      to={`/rarevibes/artists/${artistSlug}`}
+      to={`/artists/${artistSlug}`}
       className="group relative overflow-hidden rounded-xl shadow-lg"
     >
       {/* Blur di caricamento */}

@@ -28,7 +28,7 @@ export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
             A fanzine for raw sounds, weird thoughts, and glorious nonsense.
           </p>
           <Link
-            to="/rarevibes/artists"
+            to="/artists"
             className="inline-block text-sm md:text-base font-semibold bg-monza text-iron hover:bg-monzadark transition px-6 py-3 rounded-full shadow-md"
           >
             artists →

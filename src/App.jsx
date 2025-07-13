@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Footer from './components/layout/Footer'
 import BottomPlayer from './components/players/BottomPlayer'
@@ -14,7 +14,8 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 
 export default function App() {
   return (
-<Router basename="/rarevibes">
+
+<BrowserRouter basename="/rarevibes">
   <Navbar />
   <Routes>
     <Route path="/" element={<Home />} />
@@ -25,7 +26,8 @@ export default function App() {
   </Routes>
   <BottomPlayer />
   <Footer />
-</Router>
+</BrowserRouter>
+
 
   )
 }

@@ -22,7 +22,7 @@ export default function BottomPlayerDetails({ activeArtist, selectedPlatform, se
         {/* Info artista */}
         <div className="space-y-2 w-full">
           <Link
-            to={`/rarevibes/artists/artist-${artistSlug}`}
+            to={`/artists/artist-${artistSlug}`}
             className="font-arvo text-3xl text-left truncate hover:underline block"
           >
             {activeArtist.name}
