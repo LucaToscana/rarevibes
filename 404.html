@@ -5,8 +5,13 @@
     <title>Redirecting…</title>
     <script>
       const repo = "/rarevibes";
-      const redirectTo = location.pathname.replace(repo, '') + location.search + location.hash;
-      window.location.replace(repo + "/index.html?redirect=" + encodeURIComponent(redirectTo));
+      // Prendi la parte del path dopo /rarevibes, o tutta se non c'è
+      let path = location.pathname.startsWith(repo) 
+        ? location.pathname.substring(repo.length) 
+        : location.pathname;
+
+      const redirectTo = repo + path + location.search + location.hash;
+      window.location.replace(redirectTo);
     </script>
   </head>
   <body>
