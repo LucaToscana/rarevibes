@@ -104,6 +104,7 @@ export default function BottomPlayer() {
   const toggleOpen = () => {
     dispatch(setPlayerOpen(!playerOpen))
   }
+  const bgImage = activeArtist.images?.[0] || 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
 
   // Rendering del player in base alla piattaforma selezionata
   const renderPlayer = () => {
@@ -168,7 +169,7 @@ export default function BottomPlayer() {
       <div className="flex flex-row items-center gap-6 w-full">
 
         {/* Info artista + player + lista tracce */}
-        <div className="flex flex-col md:flex-row gap-6 flex-grow">
+        <div className="flex flex-col md:flex-row gap-1 md:gap-6 flex-grow">
 
 
           {/* Informazioni artista */}
@@ -180,22 +181,59 @@ export default function BottomPlayer() {
 
           ) : (
             // Vista compatta quando il player è chiuso
-            <div className="flex items-center space-x-3 truncate min-w-0">
-              <span className="font-arvo text-sm truncate text-iron">{activeArtist.name}</span>
-              <span className="font-arvo text-sm truncate text-iron">— {activeArtist.single}</span>
-              <span className="text-xs text-zinc-400 uppercase tracking-wide truncate">
-                {activePlatform
-                  ? activePlatform.charAt(0).toUpperCase() + activePlatform.slice(1)
-                  : ''}
-              </span>
+            <div
+              className="relative rounded-lg overflow-hidden max-w-sm w-full "
+              onClick={toggleOpen}
+              style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
+              {/* Overlay scuro trasparente */}
+              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+              {/* Contenuto testo */}
+              <div
+                className="relative z-10 p-4 h-full text-white flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4"
+              >
+                <div className="flex items-center space-x-2 truncate">
+                  <span
+                    className="font-arvo text-sm uppercase truncate"
+                    title={activeArtist.name}
+                  >
+                    {activeArtist.name}
+                  </span>
+
+                  {/* Separatore - */}
+                  <span className="text-sm opacity-50 select-none">-</span>
+
+                  <span
+                    className="font-arvo text-sm italic truncate opacity-90"
+                    title={activeArtist.single}
+                  >
+                    {activeArtist.single}
+                  </span>
+                </div>
+
+                <span
+                  className="text-sm tracking-wide truncate opacity-70 hidden md:block"
+                  title={activePlatform}
+                >
+                  {activePlatform ? activePlatform.charAt(0).toUpperCase() + activePlatform.slice(1) : ''}
+                </span>
+              </div>
+
             </div>
+
           )}
 
 
           {/* Contenitore del player musicale */}
           <div
             className={`relative rounded-md overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
-           ${playerOpen ? 'w-full sm:w-[400px] h-48' : 'w-[350px] h-[50px] scale-[0.85]'}`}
+           ${playerOpen ? 'w-full sm:w-[400px] h-48' : 'hidden w-[350px] h-[50px] scale-[0.85]'}`}
           >
             {renderPlayer()}
 
