@@ -10,8 +10,8 @@ export default function ArtistCard({ artist, showBio = false, slug }) {
 
   // Gestione fallback immagini: usa artist.image1, se no artist.images[0], se no immagine di riserva
   const imageSrc = imgError
-    ? "/rarevibes/herobis.png"
-    : artist?.image1 || artist?.images?.[0] || "/rarevibes/herobis.png";
+    ? "/herobis.png"
+    : artist?.image1 || artist?.images?.[0] || "/herobis.png";
 
   const handleImageError = () => setImgError(true);
 

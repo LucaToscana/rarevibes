@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://lucatoscana.github.io/rarevibes",
+  "homepage": "www.rarevibes.org",
   "scripts": {
     "dev": "vite",
     "build": "vite build && shx cp dist/index.html dist/404.html",
