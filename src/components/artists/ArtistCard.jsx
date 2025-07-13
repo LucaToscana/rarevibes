@@ -10,14 +10,14 @@ export default function ArtistCard({ artist, showBio = false, slug }) {
 
   // Gestione fallback immagini: usa artist.image1, se no artist.images[0], se no immagine di riserva
   const imageSrc = imgError
-    ? "/herobis.png"
-    : artist?.image1 || artist?.images?.[0] || "/herobis.png";
+    ? "/rarevibes/herobis.png"
+    : artist?.image1 || artist?.images?.[0] || "/rarevibes/herobis.png";
 
   const handleImageError = () => setImgError(true);
 
   return (
     <Link
-      to={`/artists/${artistSlug}`}
+      to={`/rarevibes/artists/${artistSlug}`}
       className="group relative overflow-hidden rounded-xl shadow-lg"
     >
       {/* Blur di caricamento */}
