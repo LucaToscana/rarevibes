@@ -15,7 +15,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 export default function App() {
   return (
 
-<BrowserRouter basename="/rarevibes">
+<BrowserRouter >
   <Navbar />
   <Routes>
     <Route path="/" element={<Home />} />
