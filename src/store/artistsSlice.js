@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const fetchArtists = createAsyncThunk(
   'artists/fetchArtists',
   async () => {
-    const res = await fetch('/data/artists.json')
+    const res = await fetch(import.meta.env.BASE_URL + 'data/artists.json')
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
     const data = await res.json()
     return data

@@ -30,7 +30,7 @@ export default function BottomPlayer() {
   const [trackList, setTrackList] = useState([])
 
   useEffect(() => {
-    fetch('/data/newartists.json')
+    fetch(import.meta.env.BASE_URL + 'data/newartists.json')
       .then(res => {
         console.log('Response status:', res.status);
 

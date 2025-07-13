@@ -17,11 +17,11 @@ export default function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/artists" element={<Artists />} />
-        <Route path="/artists/:slug"  element={<ArtistPage  /> } />
-        <Route path="/submit" element={<Submit />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/rarevibes/" element={<Home />} />
+        <Route path="/rarevibes/artists" element={<Artists />} />
+        <Route path="/rarevibes/artists/:slug"  element={<ArtistPage  /> } />
+        <Route path="/rarevibes/submit" element={<Submit />} />
+        <Route path="/rarevibes/privacy" element={<PrivacyPolicy />} />
       </Routes>
       <BottomPlayer />
       <Footer></Footer>

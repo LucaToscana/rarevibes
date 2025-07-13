@@ -9,7 +9,7 @@ export default function Artists() {
   const { slug } = useParams()
 
   useEffect(() => {
-    fetch('/data/artists.json')
+    fetch(import.meta.env.BASE_URL + 'data/artists.json')
       .then(res => {
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
         return res.json()

@@ -44,7 +44,7 @@ export default function Home() {
 
   // Caricamento artisti
   useEffect(() => {
-    fetch('/data/artists.json')
+    fetch(import.meta.env.BASE_URL + 'data/artists.json')
       .then(res => {
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
         return res.json()
