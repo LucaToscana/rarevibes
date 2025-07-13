@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>Redirecting...</title>
-    <script type="text/javascript">
-      // Prende la URL attuale e reindirizza a index.html passando il percorso come hash
-      var path = window.location.pathname + window.location.search;
-      window.location.replace('/#' + path);
+    <script>
+      // Rimuove il prefisso del repo e reindirizza con il path originale come parametro
+      const repoBase = '/rarevibes';
+      const redirectTo = location.pathname.replace(repoBase, '') + location.search + location.hash;
+      window.location.replace(`${repoBase}/index.html?redirect=${encodeURIComponent(redirectTo)}`);
     </script>
   </head>
   <body>
