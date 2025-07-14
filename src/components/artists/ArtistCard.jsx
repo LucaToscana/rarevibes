@@ -43,12 +43,67 @@ export default function ArtistCard({ artist, showBio = false, slug }) {
         <h3 className="font-monoton text-xl text-white drop-shadow-lg">
           {artist?.name || "Artist"}
         </h3>
-        {showBio && artist?.bio && (
+        {showBio && artist?.bio?.short && (
           <p className="font-roboto text-sm mt-1 line-clamp-3 drop-shadow">
-            {artist.bio}
+            {artist.bio.short}
           </p>
         )}
       </div>
     </Link>
   );
 }
+/**{
+  "id": null,
+  "name": "",
+  "slug": "",
+  "type": "musician",
+  "images": [],
+  "bio": {
+    "short": "",
+    "review": "",
+    "extended": ""
+  },
+  "genre": [],
+  "years_active": "",
+  "origin": "",
+  "label": "",
+  "singles": [],
+  "albums": [],
+  "collaborations": [],
+  "defaultPlatform": "spotify",
+  "platforms": {
+    "spotify": "",
+    "soundcloud": "",
+    "youtube": "",
+    "bandcamp": "",
+    "appleMusic": "",
+    "deezer": "",
+    "tidal": "",
+    "amazonMusic": "",
+    "audiomack": "",
+    "napster": "",
+    "beatport": "",
+    "boomplay": "",
+    "shazam": "",
+    "pandora": ""
+  },
+  "socials": {
+    "instagram": "",
+    "twitter": "",
+    "tiktok": "",
+    "facebook": "",
+    "youtube": "",
+    "threads": "",
+    "linkedin": "",
+    "snapchat": "",
+    "telegram": "",
+    "discord": "",
+    "website": ""
+  },
+  "press_kit": {
+    "pdf": "",
+    "contact_email": ""
+  },
+  "merch": []
+}
+ */

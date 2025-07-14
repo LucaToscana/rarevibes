@@ -29,7 +29,7 @@ export default function BottomPlayerDetails({ activeArtist, selectedPlatform, se
           </Link>
 
           <p className="font-arvo text-xs text-left line-clamp-3">
-            {activeArtist.bio}
+            {activeArtist.bio.short}
           </p>
         </div>
 

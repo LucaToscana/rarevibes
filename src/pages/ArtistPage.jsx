@@ -70,13 +70,13 @@ export default function ArtistPage() {
         <section className="lg:w-1/3 flex flex-col gap-8 h-full min-h-[500px]">
           <ArtistHeader artist={selectedArtist} />
           <ArtistControls artist={selectedArtist} />
-          <ArtistBio bio={selectedArtist.bio} className="mt-auto" />
+          <ArtistBio bio={selectedArtist.bio.extended} className="mt-auto" />
         </section>
         {/* Immagini artista */}
         <div className="lg:w-2/3">
           <ArtistImages images={selectedArtist.images} key={slug} slug={slug} />
           <div className='mt-8'>
-            <ArtistBio bio={selectedArtist.bio} />
+            <ArtistBio bio={selectedArtist.bio.review} />
           </div>
 
         </div>

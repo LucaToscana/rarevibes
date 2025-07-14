@@ -4,7 +4,7 @@ export default function TogglePlayerButton({ playerOpen, onClick }) {
     <button
       onClick={onClick}
       aria-label={playerOpen ? 'Nascondi player' : 'Espandi player'}
-      className="p-2 rounded hover:bg-zinc-700 transition-colors"
+      className="p-2 rounded hover:bg-zinc-700 transition-colors z-60"
     >
       {playerOpen ? (
         // Icona chiusura (X)

@@ -4,116 +4,232 @@
     "name": "Odelia",
     "slug": "odelia",
     "type": "musician",
-    "images": [
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/864dbe22634873.563161cc37e95.jpg"
+    "images": 
+    ["https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg",
+    "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
+    "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg"],
+    "bio": {
+      "short": "Odelia is an emerging artist blending Alternative and Indie sounds.",
+      "review": "Odelia is gaining recognition for her unique mix of Alternative and Indie styles. Originating from Paris, she has built a growing fanbase.",
+      "extended": "Odelia began her musical journey in Paris under the Independent label. Her sonic identity fuses Alternative and Indie music, with a passion for storytelling and sound exploration that captivates audiences worldwide."
+    },
+    "genre": ["Alternative", "Indie"],
+    "years_active": "2019–present",
+    "origin": "Paris, France",
+    "label": "Independent",
+    "singles": [
+      {
+        "title": "Sunset Drive",
+        "year": 2023,
+        "cover": "/singles/sunset-drive.jpg",
+        "featuring": [],
+        "platforms": {
+          "spotify": "https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp",
+          "youtube": "HamLxGxeDqI",
+          "soundcloud": "https://soundcloud.com/artist/sunset-drive",
+          "appleMusic": "https://music.apple.com/us/album/sunset-drive/1440831170?i=1440831172",
+          "deezer": "https://www.deezer.com/track/87654321",
+          "tidal": "https://tidal.com/browse/track/12345678"
+        }
+      }
     ],
-    "bio": "Artist 1 is an emerging talent known for creating captivating music and engaging performances.Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 1 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 1 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
-    "single": "Single 1",
     "defaultPlatform": "youtube",
     "platforms": {
-      "spotify": "https://open.spotify.com/intl-fr/track/7lCEg0huq6nTZihGD8YVTo?si=b22a9490a27a4f13",
-      "soundcloud": "https://soundcloud.com/ruralmidibrigade/sitar-killer-6?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-      "youtube": "HoaD5vxdgq0"
+      "spotify": "https://open.spotify.com/artist/5ht7ItJgpBH7W6vJ5BqpPr",
+      "soundcloud": "https://soundcloud.com/odeliaofficial",
+      "youtube": "https://www.youtube.com/channel/UCr7U5BQejf4Nk0LYtqGU0Tg",
+      "bandcamp": "https://odelia.bandcamp.com/",
+      "appleMusic": "https://music.apple.com/us/artist/odelia/123456789",
+      "deezer": "https://www.deezer.com/artist/1234567",
+      "tidal": "https://tidal.com/browse/artist/1234567",
+      "amazonMusic": "https://music.amazon.com/artists/B001234567",
+      "audiomack": "https://audiomack.com/odelia",
+      "napster": "https://us.napster.com/artist/odelia",
+      "beatport": "https://www.beatport.com/artist/odelia/123456",
+      "boomplay": "https://www.boomplay.com/artist/1234567",
+      "shazam": "https://www.shazam.com/artist/odelia/1234567",
+      "pandora": "https://www.pandora.com/artist/odelia/AR1234567"
     },
     "socials": {
-      "instagram": "https://instagram.com/smallenginetechnician",
-      "twitter": "https://twitter.com/smallenginetechnician"
-    }
+      "instagram": "https://instagram.com/odeliaofficial",
+      "twitter": "https://twitter.com/odeliaofficial",
+      "tiktok": "https://www.tiktok.com/@odeliaofficial",
+      "facebook": "",
+      "youtube": "https://www.youtube.com/odeliaofficial",
+      "threads": "",
+      "linkedin": "https://www.linkedin.com/in/odeliaofficial",
+      "snapchat": "https://www.snapchat.com/add/odeliaofficial",
+      "telegram": "",
+      "discord": "https://discord.gg/odelia",
+      "website": ""
+    },
+    "press_kit": {
+      "pdf": "/presskits/odelia-epk.pdf",
+      "contact_email": "contact@odeliamusic.com"
+    },
+    "merch": [
+      {
+        "name": "Odelia Logo T-Shirt",
+        "price": "€25",
+        "image": "/merch/odelia-tshirt.jpg",
+        "link": "https://shop.odeliamusic.com/tshirt"
+      }
+    ]
   },
   {
     "id": 2,
-    "name": "Morsura",
-    "slug": "morsura",
+    "name": "Echo Shade",
+    "slug": "echo-shade",
     "type": "musician",
-    "images": [
-      "https://f4.bcbits.com/img/a3463226684_10.jpg",
-      "https://f4.bcbits.com/img/a3463226684_10.jpg",
-      "https://f4.bcbits.com/img/a3463226684_10.jpg"
+    "images": [   
+    "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
+    "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg",
+    "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/864dbe22634873.563161cc37e95.jpg"
+     ],
+    "bio": {
+      "short": "Echo Shade is a rising star in Electronic and Synthwave genres.",
+      "review": "Echo Shade creates immersive Electronic and Synthwave music. Originating from Berlin, Echo Shade has been making waves in the underground scene.",
+      "extended": "Emerging from Berlin’s vibrant music scene, Echo Shade produces deep and atmospheric Electronic tracks fused with Synthwave influences. Their music explores nostalgic synth textures combined with modern beats, captivating listeners worldwide."
+    },
+    "genre": ["Electronic", "Synthwave"],
+    "years_active": "2017–present",
+    "origin": "Berlin, Germany",
+    "label": "Neon Tapes",
+    "singles": [
+      {
+        "title": "Midnight Drive",
+        "year": 2024,
+        "cover": "/singles/midnight-drive.jpg",
+        "featuring": ["Luna Rae"],
+        "platforms": {
+          "spotify": "https://open.spotify.com/track/6rqhFgbbKwnb9MLmUQDhG6",
+          "youtube": "bvttDWdl0OQ",
+          "soundcloud": "https://soundcloud.com/echoshade/midnight-drive",
+          "appleMusic": "https://music.apple.com/us/album/midnight-drive-feat-luna-rae/1440831170?i=1440831172",
+          "deezer": "https://www.deezer.com/track/12345678",
+          "tidal": "https://tidal.com/browse/track/87654321"
+        }
+      }
     ],
-    "bio": "Artist 2 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres,Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 1 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey. making them stand out in the music industry. With a growing fan base and consistent releases, Artist 2 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
-    "single": "Single 2",
     "defaultPlatform": "youtube",
     "platforms": {
-      "spotify": "https://open.spotify.com/artist/1LunaNeraID",
-      "soundcloud": "https://soundcloud.com/example2",
-      "youtube": "ZAwj0LbdPGI"
+      "spotify": "https://open.spotify.com/artist/2h93pZq0e7k5yf4dywlkpM",
+      "soundcloud": "https://soundcloud.com/echoshade",
+      "youtube": "https://www.youtube.com/channel/UCMidnightDrive",
+      "bandcamp": "https://echoshade.bandcamp.com/",
+      "appleMusic": "https://music.apple.com/us/artist/echo-shade/123456789",
+      "deezer": "https://www.deezer.com/artist/7654321",
+      "tidal": "https://tidal.com/browse/artist/7654321",
+      "amazonMusic": "https://music.amazon.com/artists/B007654321",
+      "audiomack": "https://audiomack.com/echoshade",
+      "napster": "https://us.napster.com/artist/echoshade",
+      "beatport": "https://www.beatport.com/artist/echoshade/765432",
+      "boomplay": "https://www.boomplay.com/artist/7654321",
+      "shazam": "https://www.shazam.com/artist/echoshade/7654321",
+      "pandora": "https://www.pandora.com/artist/echoshade/AR7654321"
     },
     "socials": {
-      "instagram": "https://instagram.com/morsura_",
-      "twitter": "https://twitter.com/morsura_"
-    }
+      "instagram": "https://instagram.com/echoshade",
+      "twitter": "https://twitter.com/echoshade",
+      "tiktok": "https://www.tiktok.com/@echoshade",
+      "facebook": "https://www.facebook.com/echoshade",
+      "youtube": "https://www.youtube.com/echoshade",
+      "threads": "https://www.threads.net/@echoshade",
+      "linkedin": "https://www.linkedin.com/in/echoshade",
+      "snapchat": "https://www.snapchat.com/add/echoshade",
+      "telegram": "https://t.me/echoshade",
+      "discord": "https://discord.gg/echoshade",
+      "website": "https://www.echoshademusic.com"
+    },
+    "press_kit": {
+      "pdf": "/presskits/echoshade-epk.pdf",
+      "contact_email": "contact@echoshademusic.com"
+    },
+    "merch": [
+      {
+        "name": "Echo Shade Hoodie",
+        "price": "€40",
+        "image": "/merch/echo-shade-hoodie.jpg",
+        "link": "https://shop.echoshademusic.com/hoodie"
+      }
+    ]
   },
   {
     "id": 3,
-    "name": "ruralmidibrigade",
-    "slug": "ruralmidibrigade",
+    "name": "Luna Rae",
+    "slug": "luna-rae",
     "type": "musician",
-    "images": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/864dbe22634873.563161cc37e95.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg"
+    "images": ["https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
+   
+    "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
+   
+    "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg"],
+    "bio": {
+      "short": "Luna Rae blends Jazz and Soul with a modern twist.",
+      "review": "Luna Rae’s soulful voice and jazz influences create a warm and emotional sound. Hailing from New Orleans, her music touches hearts worldwide.",
+      "extended": "Born and raised in New Orleans, Luna Rae combines classic Jazz and Soul elements with contemporary production. With a rich, expressive voice, she delivers heartfelt performances and has released multiple acclaimed albums."
+    },
+    "genre": ["Jazz", "Soul"],
+    "years_active": "2015–present",
+    "origin": "New Orleans, USA",
+    "label": "Moonlight Records",
+    "singles": [
+      {
+        "title": "Midnight Whisper",
+        "year": 2022,
+        "cover": "/singles/midnight-whisper.jpg",
+        "featuring": [],
+        "platforms": {
+          "spotify": "https://open.spotify.com/track/1a2b3c4d5e6f7g8h9i0j",
+          "youtube": "PRHCP-Czj0Y",
+          "soundcloud": "https://soundcloud.com/lunarae/midnight-whisper",
+          "appleMusic": "https://music.apple.com/us/album/midnight-whisper/1234567890?i=1234567890",
+          "deezer": "https://www.deezer.com/track/23456789",
+          "tidal": "https://tidal.com/browse/track/98765432"
+        }
+      }
     ],
-    "bio": "Artist 3 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 3 is definitely one to watch in the coming years.Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 1 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey. Their passion for music drives every aspect of their creative journey.",
-    "single": "Single 3",
     "defaultPlatform": "youtube",
     "platforms": {
-      "spotify": "https://open.spotify.com/intl-fr/track/7lCEg0huq6nTZihGD8YVTo?si=b22a9490a27a4f13",
-      "soundcloud": "https://soundcloud.com/example1",
-      "bandcamp": "https://bandcamp.com/EmbeddedPlayer/album=1204887745/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/",
-      "youtube": "HoaD5vxdgq0"
+      "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ",
+      "soundcloud": "https://soundcloud.com/lunarae",
+      "youtube": "https://www.youtube.com/lunarae",
+      "bandcamp": "https://lunarae.bandcamp.com/",
+      "appleMusic": "https://music.apple.com/us/artist/luna-rae/123456789",
+      "deezer": "https://www.deezer.com/artist/4567890",
+      "tidal": "https://tidal.com/browse/artist/4567890",
+      "amazonMusic": "https://music.amazon.com/artists/B009876543",
+      "audiomack": "https://audiomack.com/lunarae",
+      "napster": "https://us.napster.com/artist/lunarae",
+      "beatport": "https://www.beatport.com/artist/lunarae/456789",
+      "boomplay": "https://www.boomplay.com/artist/4567890",
+      "shazam": "https://www.shazam.com/artist/lunarae/4567890",
+      "pandora": "https://www.pandora.com/artist/lunarae/AR4567890"
     },
     "socials": {
-      "instagram": "https://instagram.com/smallenginetechnician",
-      "twitter": "https://twitter.com/smallenginetechnician"
-    }
-  },
-  {
-    "id": 4,
-    "name": "Zio Povero",
-    "slug": "ziopovero",
-    "type": "musician",
-    "images": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg"
-    ],
-    "bio": "Artist 4 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 4 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
-    "single": "Single 4",
-    "defaultPlatform": "youtube",
-    "platforms": {
-      "spotify": "https://open.spotify.com/track/example1",
-      "soundcloud": "https://soundcloud.com/example1",
-      "bandcamp": "https://bandcamp.com/EmbeddedPlayer/album=1204887745/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/",
-      "youtube": "HoaD5vxdgq0"
+      "instagram": "https://instagram.com/luna.rae",
+      "twitter": "https://twitter.com/lunarae",
+      "tiktok": "https://www.tiktok.com/@lunarae",
+      "facebook": "https://www.facebook.com/lunarae",
+      "youtube": "https://www.youtube.com/lunarae",
+      "threads": "https://www.threads.net/@lunarae",
+      "linkedin": "https://www.linkedin.com/in/lunarae",
+      "snapchat": "https://www.snapchat.com/add/lunarae",
+      "telegram": "https://t.me/lunarae",
+      "discord": "https://discord.gg/lunarae",
+      "website": "https://www.lunaraemusic.com"
     },
-    "socials": {
-      "instagram": "https://instagram.com/smallenginetechnician",
-      "twitter": "https://twitter.com/smallenginetechnician"
-    }
-  },
-  {
-    "id": 5,
-    "name": "Artist 5",
-    "slug": "artist-5",
-    "type": "musician",
-    "images": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg"
-    ],
-    "bio": "Artist 5 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 5 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
-    "single": "Single 5",
-    "defaultPlatform": "youtube",
-    "platforms": {
-      "spotify": "https://open.spotify.com/track/example1",
-      "soundcloud": "https://soundcloud.com/example1",
-      "youtube": "HoaD5vxdgq0"
+    "press_kit": {
+      "pdf": "/presskits/lunarae-epk.pdf",
+      "contact_email": "contact@lunaraemusic.com"
     },
-    "socials": {
-      "instagram": "https://instagram.com/smallenginetechnician",
-      "twitter": "https://twitter.com/smallenginetechnician"
-    }
+    "merch": [
+      {
+        "name": "Luna Rae Vinyl",
+        "price": "€30",
+        "image": "/merch/lunarae-vinyl.jpg",
+        "link": "https://shop.lunaraemusic.com/vinyl"
+      }
+    ]
   }
 ]

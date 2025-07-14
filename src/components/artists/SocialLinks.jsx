@@ -1,4 +1,15 @@
-import { FaInstagram, FaSpotify, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa'
+import {
+  FaInstagram,
+  FaSpotify,
+  FaTwitter,
+  FaFacebook,
+  FaLinkedin,
+  FaYoutube,
+  FaTiktok,
+  FaDiscord,
+  FaTelegram,
+  FaSnapchat
+} from 'react-icons/fa'
 
 const iconsMap = {
   instagram: FaInstagram,
@@ -6,33 +17,43 @@ const iconsMap = {
   twitter: FaTwitter,
   facebook: FaFacebook,
   linkedin: FaLinkedin,
-  // aggiungi altre piattaforme che ti servono
+  youtube: FaYoutube,
+  tiktok: FaTiktok,
+  discord: FaDiscord,
+  telegram: FaTelegram,
+  snapchat: FaSnapchat
 }
 
 export default function SocialLinks({ socials = {} }) {
-  const entries = Object.entries(socials)
+  const entries = Object.entries(socials).filter(([_, url]) => !!url)
   if (entries.length === 0) return null
 
   return (
-    <div >
-      <ul className="flex gap-4 text-zinc-300">
-        {entries.map(([platform, url]) => {
-          const IconComponent = iconsMap[platform.toLowerCase()]
-          return (
-            <li key={platform}>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="title-small flex items-center gap-1"
-                aria-label={platform}
-              >
-                {IconComponent ? <IconComponent size={40} /> : platform}
-              </a>
-            </li>
-          )
-        })}
+  <div
+    className="rounded p-4  z-20 cursor-pointer p-1"
+    onClick={() =>alert("Div esterno cliccato!")}
+  ><ul className="w-full flex flex-wrap justify-center  gap-4 text-zinc-300 z-100">
+
+        {Object.entries(socials)
+          .filter(([_, url]) => typeof url === 'string' && url.trim() !== '')
+          .map(([platform, url]) => {
+            const IconComponent = iconsMap[platform.toLowerCase()];
+            return (
+              <li key={platform}>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="title-small flex items-center gap-1"
+                  aria-label={platform}
+                >
+                  {IconComponent ? <IconComponent size={24} /> : platform}
+                </a>
+              </li>
+            );
+          })}
       </ul>
     </div>
+
   )
 }

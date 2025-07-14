@@ -3,14 +3,14 @@ import { setPlayerOpen, setAutoPlay } from '../../store/playerSlice' // Controll
 import SpotifyPlayer from './SpotifyPlayer'
 import SoundCloudPlayer from './SoundCloudPlayer'
 import YouTubePlayer from './YouTubePlayer'
-import PlayerPlatformButtons from './PlayerPlatformButtons'
 import { useState, useEffect } from 'react'
 import TogglePlayerButton from './TogglePlayerButton'
 import BottomPlayerDetails from './BottomPlayerDetails'
 import ArtistTrackListCard from './ArtistTrackListCard'
 import { setArtist, setPlatform } from '../../store/playerSlice'
 import SocialLinks from '../artists/SocialLinks'
-import YouTubePlayerButton from './YouTubePlayerButton'
+import defaultArtistRV from '../../../public/data/defaultArtist' // adatta il path alla posizione reale
+
 
 export default function BottomPlayer() {
   const dispatch = useDispatch()
@@ -50,29 +50,7 @@ export default function BottomPlayer() {
 
   }
   // Artist fallback se nessun artista è attivo
-  const defaultArtist = {
-    "id": 1,
-    "name": "Odelia",
-    "slug": "odelia",
-    "type": "musician",
-    "images": [
-      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/864dbe22634873.563161cc37e95.jpg"
-    ],
-    "bio": "Artist 1 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 1 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
-    "single": "Single 1",
-    "defaultPlatform": "youtube",
-    "platforms": {
-      "spotify": "https://open.spotify.com/intl-fr/track/7lCEg0huq6nTZihGD8YVTo?si=b22a9490a27a4f13",
-      "soundcloud": "https://soundcloud.com/ruralmidibrigade/sitar-killer-6?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-      "youtube": "HoaD5vxdgq0"
-    },
-    "socials": {
-      "instagram": "https://instagram.com/smallenginetechnician",
-      "twitter": "https://twitter.com/smallenginetechnician"
-    }
-  }
+  const defaultArtist = defaultArtistRV
 
   const activeArtist = artist || defaultArtist
   const activePlatform = platform || 'youtube'
@@ -98,8 +76,7 @@ export default function BottomPlayer() {
 
   // Rendering del player in base alla piattaforma selezionata
   const renderPlayer = () => {
-    const url = activeArtist.platforms[selectedPlatform]
-
+    const url = activeArtist.singles?.[0]?.platforms?.[selectedPlatform];
     switch (selectedPlatform) {
       case 'spotify':
         if (!url) return <div className="p-4 text-center">Nessun link Spotify disponibile</div>
@@ -148,8 +125,9 @@ export default function BottomPlayer() {
 
   return (
     <div
+
       className={`
-        fixed bottom-0 left-0 right-0 bg-monzadark text-white shadow-lg z-50
+        fixed bottom-0 left-0 right-0 bg-monzadark text-white shadow-lg z-40
         transition-all duration-300
         ${playerOpen ? 'md-h-[560px] lg-h-[460px] py-6 px-8' : 'h-[60px] py-2 px-4'}
         flex items-center justify-between px-6
@@ -159,7 +137,8 @@ export default function BottomPlayer() {
       <div className="flex flex-row items-center gap-6 w-full">
 
         {/* Info artista + player + lista tracce */}
-        <div className="flex flex-col md:flex-row gap-1 md:gap-6 flex-grow">
+        <div
+          className="flex flex-col md:flex-row gap-1 md:gap-6 flex-grow transition-all ">
 
 
           {/* Informazioni artista */}
@@ -171,8 +150,7 @@ export default function BottomPlayer() {
 
           ) : (
             // Vista compatta quando il player è chiuso
-            <div
-              className="relative rounded-lg overflow-hidden max-w-sm w-full "
+            <div className="absolute inset-0 bg-black bg-opacity-50 transition  cursor-pointer duration-300 group-hover:bg-opacity-60"
               onClick={toggleOpen}
               style={{
                 backgroundImage: `url(${bgImage})`,
@@ -186,7 +164,7 @@ export default function BottomPlayer() {
 
               {/* Contenuto testo */}
               <div
-                className="relative z-10 p-4 h-full text-white flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4"
+                className="relative z-40  p-4 h-full text-white flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4"
               >
                 <div className="flex items-center space-x-2 truncate">
                   <span
@@ -198,12 +176,11 @@ export default function BottomPlayer() {
 
                   {/* Separatore - */}
                   <span className="text-sm opacity-50 select-none">-</span>
-
                   <span
                     className="font-arvo text-sm italic truncate opacity-90"
-                    title={activeArtist.single}
+                    title={activeArtist.singles?.[0]?.title}
                   >
-                    {activeArtist.single}
+                    {activeArtist.singles?.[0]?.title}
                   </span>
                 </div>
 
@@ -222,14 +199,15 @@ export default function BottomPlayer() {
 
           {/* Contenitore del player musicale */}
           <div
+
             className={`relative rounded-md overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
            ${playerOpen ? 'w-full sm:w-[400px] h-48' : 'hidden w-[350px] h-[50px] scale-[0.85]'}`}
           >
             {renderPlayer()}
 
             {/* Etichetta sempre in basso */}
-            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white text-sm px-2 py-1 z-10">
-              {activeArtist.name} - {activeArtist.single}
+            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white text-sm px-2 py-1 z-40">
+              {activeArtist.name} -  {activeArtist.singles?.[0]?.title}
 
             </div>
           </div>
@@ -255,18 +233,19 @@ export default function BottomPlayer() {
             <h1 className="font-monoton text-4xl md:text-4xl lg:text-4xl mb-4 tracking-tight">RARE VIBES</h1>
           </div>
           : <></>}
-        <div className="fixed bottom-0 right-16 p-2 hidden xl:block">
-          <SocialLinks socials={{
-            instagram: "https://instagram.com/smallenginetechnician",
-            twitter: "https://twitter.com/smallenginetechnician"
-          }} />
-        </div>
 
       </div>
 
+      <div className="fixed right-16 mt-1 bottom-4 hidden xl:block z-50"
+      >
+        <SocialLinks socials={{
+          instagram: "https://instagram.com/smallenginetechnician",
+          twitter: "https://twitter.com/smallenginetechnician"
+        }} />
+      </div>
 
       {/* Bottone per aprire/chiudere il player */}
-      <div className="absolute top-2 right-2">
+      <div className="absolute top-2 right-2 ">
         <TogglePlayerButton playerOpen={playerOpen} onClick={toggleOpen} />
       </div>
 
