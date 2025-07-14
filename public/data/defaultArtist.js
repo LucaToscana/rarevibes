@@ -31,6 +31,7 @@ const defaultArtist = {
         soundcloud: "https://soundcloud.com/artist/sunset-drive",
         appleMusic: "https://music.apple.com/us/album/sunset-drive/1440831170?i=1440831172",
         deezer: "https://www.deezer.com/track/87654321",
+        bandcamp: "2380770719",
         tidal: "https://tidal.com/browse/track/12345678"
       }
     }
@@ -40,7 +41,7 @@ const defaultArtist = {
     spotify: "https://open.spotify.com/artist/5ht7ItJgpBH7W6vJ5BqpPr",
     soundcloud: "https://soundcloud.com/odeliaofficial",
     youtube: "https://www.youtube.com/channel/UCr7U5BQejf4Nk0LYtqGU0Tg",
-    bandcamp: "https://odelia.bandcamp.com/",
+    bandcamp: "2380770719",
     appleMusic: "https://music.apple.com/us/artist/odelia/123456789",
     deezer: "https://www.deezer.com/artist/1234567",
     tidal: "https://tidal.com/browse/artist/1234567",

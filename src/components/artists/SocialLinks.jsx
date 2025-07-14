@@ -29,10 +29,9 @@ export default function SocialLinks({ socials = {} }) {
   if (entries.length === 0) return null
 
   return (
-  <div
-    className="rounded p-4  z-20 cursor-pointer p-1"
-    onClick={() =>alert("Div esterno cliccato!")}
-  ><ul className="w-full flex flex-wrap justify-center  gap-4 text-zinc-300 z-100">
+    <div
+      className="rounded p-4  z-20 cursor-pointer p-1"
+    ><ul className="w-full flex flex-wrap justify-center  gap-4 text-zinc-300 z-100">
 
         {Object.entries(socials)
           .filter(([_, url]) => typeof url === 'string' && url.trim() !== '')

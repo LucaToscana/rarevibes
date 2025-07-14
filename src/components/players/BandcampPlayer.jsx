@@ -1,7 +1,7 @@
 export default function BandcampPlayer({ albumId }) {
   if (!albumId) return null;
 
-  const embedSrc = `https://bandcamp.com/EmbeddedPlayer/album=${albumId}/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/`;
+  const embedSrc = `https://bandcamp.com/EmbeddedPlayer/album=118333285/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/`;
 
   return (
     <div className="w-full h-[120px]">

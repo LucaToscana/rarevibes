@@ -10,7 +10,7 @@ import ArtistTrackListCard from './ArtistTrackListCard'
 import { setArtist, setPlatform } from '../../store/playerSlice'
 import SocialLinks from '../artists/SocialLinks'
 import defaultArtistRV from '../../../public/data/defaultArtist' // adatta il path alla posizione reale
-import GlobalPlayPauseButton from './GlobalPlayPauseButton'
+import PlayerRenderer from './PlayerRenderer'
 
 
 export default function BottomPlayer() {
@@ -28,8 +28,6 @@ export default function BottomPlayer() {
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/artists.json')
       .then(res => {
-        console.log('Response status:', res.status);
-
         if (!res.ok) {
           console.log("HTTP error!");
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -37,7 +35,6 @@ export default function BottomPlayer() {
         return res.json();
       })
       .then(data => {
-        console.log('Data ricevuti:', data);
         setTrackList(data.slice(0, 5));
       })
       .catch(err => console.error('Errore nel caricamento artisti:', err));
@@ -70,73 +67,17 @@ export default function BottomPlayer() {
   }
   const bgImage = activeArtist.images?.[0] || 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
 
+  // Handler per selezione di un artista
   const handleSelect = (item) => {
     dispatch(setArtist(item))
     dispatch(setPlatform(item.defaultPlatform))
     dispatch(setAutoPlay(true))
-
-  }
-  const handleSelectPlay = (item) => {
-    console.log(item, item.defaultPlatform)
-    dispatch(setArtist(item))
-    dispatch(setPlatform(item.defaultPlatform))
-    toggleOpen
-    dispatch(setAutoPlay(!autoPlay))
-    setPlayerKey(prev => prev + 1)
-    setIsPlaying(!isPlaying)
   }
 
-
-
-
-  // Rendering del player in base alla piattaforma selezionata
-  const renderPlayer = () => {
-    const url = activeArtist.singles?.[0]?.platforms?.[selectedPlatform];
-    switch (selectedPlatform) {
-      case 'spotify':
-        if (!url) return <div className="p-4 text-center">Nessun link Spotify disponibile</div>
-        return (
-          <SpotifyPlayer
-            url={url}
-            isPlaying={isPlaying}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-          />
-        )
-      case 'soundcloud':
-        if (!url) return <div className="p-4 text-center">Nessun link SoundCloud disponibile</div>
-        return (
-          <SoundCloudPlayer
-            url={url}
-            isPlaying={isPlaying}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-          />
-        )
-      case 'youtube':
-        if (!url) return <div className="p-4 text-center">Nessun link YouTube disponibile</div>
-        // Estrai l'ID del video se è un URL completo
-        const videoId = url.includes('watch?v=') ? url.split('watch?v=')[1] : url
-        return (
-          <YouTubePlayer
-            videoId={videoId}
-            isPlaying={isPlaying}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-          />
-        )
-      case 'bandcamp':
-        if (!url) return <div className="p-4 text-center">Nessun link Bandcamp disponibile</div>
-
-        // Assumiamo che l'url sia del tipo: https://bandcamp.com/EmbeddedPlayer/album=1234567890
-        const match = url.match(/album=(\d+)/)
-        const albumId = match ? match[1] : null
-
-        if (!albumId) return <div className="p-4 text-center">ID Bandcamp non valido</div>
-
-        return <BandcampPlayer albumId={albumId} />
-    }
-  }
+  // Ottieni URL del singolo per la piattaforma selezionata
+  const singles = activeArtist?.singles || []
+  const firstSingle = singles.length > 0 ? singles[0] : null
+  const url = firstSingle?.platforms?.[selectedPlatform] || ''
 
   return (
     <div
@@ -218,7 +159,12 @@ export default function BottomPlayer() {
             className={`relative rounded-md overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
            ${playerOpen ? 'w-full sm:w-[400px] h-48' : 'hidden w-[350px] h-[50px] scale-[0.85]'}`}
           >
-            {renderPlayer()}
+            <PlayerRenderer
+              platform={selectedPlatform}
+              url={url}
+              isPlaying={isPlaying}
+              setIsPlaying={setIsPlaying}
+            />
 
             {/* Etichetta sempre in basso */}
             <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white text-sm px-2 py-1 z-40">
@@ -239,14 +185,6 @@ export default function BottomPlayer() {
           ) : null}
         </div>
 
-        {!playerOpen && activeArtist.defaultPlatform === 'youtube' && (
-
-          <GlobalPlayPauseButton
-            isPlaying={isPlaying}
-            onToggle={() => handleSelectPlay(activeArtist)}
-            position="bottom-3 left-80"
-          />
-        )}
 
         {/** SocialLinks */}
         {playerOpen ?

@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux'
-import { setArtist, setPlatform,setAutoPlay} from '../../store/playerSlice'
+import { setArtist, setPlatform, setAutoPlay, setPlayerOpen } from '../../store/playerSlice'
 import { FaSpotify, FaSoundcloud, FaYoutube } from 'react-icons/fa'
+import { SiSoundcloud, SiYoutube,SiBandcamp  } from 'react-icons/si'
 
 export default function ArtistPlayerButtons({ artist }) {
   const dispatch = useDispatch()
@@ -9,9 +10,18 @@ export default function ArtistPlayerButtons({ artist }) {
     dispatch(setArtist(artist))
     dispatch(setPlatform(platform))
     dispatch(setAutoPlay(true))
+    dispatch(setPlayerOpen(true))
   }
 
   const bgImage = artist.images?.[0] || 'https://placehold.co/400x300?text=No+Image'
+
+  const platforms = [
+    { key: 'spotify', icon: FaSpotify, label: 'Spotify' },
+    { key: 'soundcloud', icon: FaSoundcloud, label: 'SoundCloud' },
+    { key: 'youtube', icon: FaYoutube, label: 'YouTube' },
+    { key: 'bandcamp', icon: SiBandcamp, label: 'BandCamp' },
+
+  ]
 
   return (
     <div
@@ -23,46 +33,26 @@ export default function ArtistPlayerButtons({ artist }) {
         minHeight: '280px',
       }}
     >
-      {/* Overlay scuro */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-
-      {/* Contenuto sopra overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-60" />
       <div className="font-rubik relative p-6 flex flex-col justify-center h-full">
         <h2 className="text-2xl mb-4 drop-shadow-lg">
-          Listen to {artist.name} on your favorite platform
-        </h2>        <div className="flex flex-col gap-3">
-          {artist.platforms?.spotify && (
-            <button
-              onClick={() => handlePlay('spotify')}
-              className="btn-monza  w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md  hover:bg-monza-dark transition"
-              aria-label={`Play ${artist.name} on Spotify`}
-            >
-              <FaSpotify size={20} />
-              Spotify
-            </button>
-          )}
-          {artist.platforms?.soundcloud && (
-            <button
-              onClick={() => handlePlay('soundcloud')}
-              className="btn-monza w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md  hover:bg-monza-dark transition"
-              aria-label={`Play ${artist.name} on SoundCloud`}
-            >
-              <FaSoundcloud size={20} />
-              SoundCloud
-            </button>
-          )}
-          {artist.platforms?.youtube && (
-            <button
-              onClick={() => handlePlay('youtube')}
-              className="btn-monza w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md  hover:bg-monza-dark transition"
-              aria-label={`Play ${artist.name} on YouTube`}
-            >
-              <FaYoutube size={20} />
-              YouTube
-            </button>
+          Listen to <span className="italic text-monza font-bold">{artist.name}</span> on your favorite platform
+        </h2>
+        <div className="flex flex-col gap-3">
+          {platforms.map(({ key, icon: Icon, label }) =>
+            artist.platforms?.[key] ? (
+              <button
+                key={key}
+                onClick={() => handlePlay(key)}
+                className="btn-monza w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md hover:bg-monza-dark transition"
+                aria-label={`Play ${artist.name} on ${label}`}
+              >
+                <Icon size={20} />
+                {label}
+              </button>
+            ) : null
           )}
         </div>
-
       </div>
     </div>
   )
