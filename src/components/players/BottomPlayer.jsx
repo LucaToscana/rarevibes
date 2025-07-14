@@ -9,17 +9,10 @@ import TogglePlayerButton from './TogglePlayerButton'
 import BottomPlayerDetails from './BottomPlayerDetails'
 import ArtistTrackListCard from './ArtistTrackListCard'
 import { setArtist, setPlatform } from '../../store/playerSlice'
-import { useNavigate } from 'react-router-dom'
 import SocialLinks from '../artists/SocialLinks'
 
 export default function BottomPlayer() {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-  const handleGoToArtist = () => {
-    const artistSlug = activeArtist?.slug || activeArtist?.name?.toLowerCase().replace(/\s/g, "-") || "unknown-artist"
-    navigate(`/artists/${artistSlug}`)
-  }
   // Prende lo stato globale del player da Redux
   const { artist, platform, playerOpen } = useSelector((state) => state.player)
 
@@ -30,7 +23,7 @@ export default function BottomPlayer() {
   const [trackList, setTrackList] = useState([])
 
   useEffect(() => {
-    fetch(import.meta.env.BASE_URL + 'data/newartists.json')
+    fetch(import.meta.env.BASE_URL + 'data/artists.json')
       .then(res => {
         console.log('Response status:', res.status);
 
@@ -50,38 +43,32 @@ export default function BottomPlayer() {
 
 
   const handleSelect = (item) => {
-    dispatch(setArtist({
-      id: item.id,
-      name: item.artist,
-      slug: item.slug,
-      single: item.title,
-      images: item.images,
-      defaultPlatform: item.defaultPlatform,
-      platforms: {
-        spotify: item.spotifyUrl,
-        soundcloud: item.soundcloudUrl,
-        youtube: item.youtubeId,
-      },
-    }))
-
+    dispatch(setArtist(item))
     dispatch(setPlatform(item.defaultPlatform))
   }
   // Artist fallback se nessun artista è attivo
   const defaultArtist = {
-
-    id: 1,
-    name: 'Odelia',
-    slug: 'odelia',
-
-    single: 'Monkey WIth Hammer',
-    defaultPlatform: 'youtube',
-    youtube: "HoaD5vxdgq0",
-    platforms: { spotify: null, soundcloud: null, youtube: 'HoaD5vxdgq0' },
-    images: [
-      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg",
-      "ravibes/artists/Odelia-Monkey-With-a-Hammer.jpg"
-    ]
+    "id": 1,
+    "name": "Odelia",
+    "slug": "odelia",
+    "type": "musician",
+    "images": [
+      "/artists/Odelia-Monkey-With-a-Hammer.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/864dbe22634873.563161cc37e95.jpg"
+    ],
+    "bio": "Artist 1 is an emerging talent known for creating captivating music and engaging performances. Their unique style blends multiple genres, making them stand out in the music industry. With a growing fan base and consistent releases, Artist 1 is definitely one to watch in the coming years. Their passion for music drives every aspect of their creative journey.",
+    "single": "Single 1",
+    "defaultPlatform": "youtube",
+    "platforms": {
+      "spotify": "https://open.spotify.com/intl-fr/track/7lCEg0huq6nTZihGD8YVTo?si=b22a9490a27a4f13",
+      "soundcloud": "https://soundcloud.com/ruralmidibrigade/sitar-killer-6?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      "youtube": "HoaD5vxdgq0"
+    },
+    "socials": {
+      "instagram": "https://instagram.com/smallenginetechnician",
+      "twitter": "https://twitter.com/smallenginetechnician"
+    }
   }
 
   const activeArtist = artist || defaultArtist
@@ -245,7 +232,8 @@ export default function BottomPlayer() {
           </div>
 
           {playerOpen ? (
-            <div className="hidden 2xl:block">
+            <div //className="hidden 2xl:block"
+            >
               <ArtistTrackListCard
                 title="recents"
                 items={trackList}
@@ -255,6 +243,10 @@ export default function BottomPlayer() {
           ) : null}
         </div>
 
+
+
+
+        {/** SocialLinks */}
         {playerOpen ?
           <div className="hidden 2xl:block right-16 p-2">
             <h1 className="font-monoton text-4xl md:text-4xl lg:text-4xl mb-4 tracking-tight">RARE VIBES</h1>
@@ -268,7 +260,6 @@ export default function BottomPlayer() {
         </div>
 
       </div>
-
 
 
       {/* Bottone per aprire/chiudere il player */}

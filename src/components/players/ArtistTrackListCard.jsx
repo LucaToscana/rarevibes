@@ -1,4 +1,4 @@
-export default function ArtistTrackListCard({ title = 'recents', items = [], onSelect }) {
+export default function ArtistTrackListCard({ title = 'new artists', items = [], onSelect }) {
   const bgImage =  'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
 
 
@@ -27,8 +27,8 @@ export default function ArtistTrackListCard({ title = 'recents', items = [], onS
               onClick={() => onSelect(item)}
               className="cursor-pointer text-sm text-white bg-zinc-800 bg-opacity-50 hover:bg-zinc-700 hover:bg-opacity-80 px-3 py-2 rounded-md transition-all"
             >
-              <p className="text-xs font-semibold truncate">{item.title}</p>
-              <p className="text-xs text-zinc-400 truncate">{item.artist}</p>
+              <p className="text-xs font-semibold truncate">{item.single}</p>
+              <p className="text-xs text-zinc-400 truncate">{item.name}</p>
             </li>
           ))}
         </ul>

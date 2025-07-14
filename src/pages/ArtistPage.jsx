@@ -17,11 +17,11 @@ import RelatedArtistsSection from '../components/artists/RelatedArtistsSection'
 export default function ArtistPage() {
   const { slug } = useParams()
   const dispatch = useDispatch()
- 
- 
-useEffect(() => {
-  window.scrollTo(0, 0)
-}, [slug])
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [slug])
 
 
   const { artistsData, loading, error, selectedArtist } = useSelector(
@@ -66,21 +66,21 @@ useEffect(() => {
       {/* Contenuto principale: immagini e info */}
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
 
+        {/* Info artista */}
+        <section className="lg:w-1/3 flex flex-col gap-8 h-full min-h-[500px]">
+          <ArtistHeader artist={selectedArtist} />
+          <ArtistControls artist={selectedArtist} />
+          <ArtistBio bio={selectedArtist.bio} className="mt-auto" />
+        </section>
         {/* Immagini artista */}
         <div className="lg:w-2/3">
-          <ArtistImages images={selectedArtist.images} key={slug}  slug={slug} />
+          <ArtistImages images={selectedArtist.images} key={slug} slug={slug} />
           <div className='mt-8'>
             <ArtistBio bio={selectedArtist.bio} />
           </div>
 
         </div>
 
-        {/* Info artista */}
-        <section className="lg:w-1/3 flex flex-col gap-8">
-          <ArtistHeader artist={selectedArtist} />
-          <ArtistBio bio={selectedArtist.bio} />
-          <ArtistControls artist={selectedArtist} />
-        </section>
       </div>
 
       {/* Artisti correlati */}
