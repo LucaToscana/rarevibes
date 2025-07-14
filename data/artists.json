@@ -26,6 +26,9 @@
         "platforms": {
           "spotify": "https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp",
           "youtube": "HamLxGxeDqI",
+                   "bandcamp": "2380770719",
+
+
           "soundcloud": "https://soundcloud.com/artist/sunset-drive",
           "appleMusic": "https://music.apple.com/us/album/sunset-drive/1440831170?i=1440831172",
           "deezer": "https://www.deezer.com/track/87654321",
@@ -36,6 +39,7 @@
     "defaultPlatform": "youtube",
     "platforms": {
       "spotify": "https://open.spotify.com/artist/5ht7ItJgpBH7W6vJ5BqpPr",
+      
       "soundcloud": "https://soundcloud.com/odeliaofficial",
       "youtube": "https://www.youtube.com/channel/UCr7U5BQejf4Nk0LYtqGU0Tg",
       "bandcamp": "https://odelia.bandcamp.com/",
@@ -104,6 +108,8 @@
         "platforms": {
           "spotify": "https://open.spotify.com/track/6rqhFgbbKwnb9MLmUQDhG6",
           "youtube": "bvttDWdl0OQ",
+
+
           "soundcloud": "https://soundcloud.com/echoshade/midnight-drive",
           "appleMusic": "https://music.apple.com/us/album/midnight-drive-feat-luna-rae/1440831170?i=1440831172",
           "deezer": "https://www.deezer.com/track/12345678",
@@ -116,7 +122,6 @@
       "spotify": "https://open.spotify.com/artist/2h93pZq0e7k5yf4dywlkpM",
       "soundcloud": "https://soundcloud.com/echoshade",
       "youtube": "https://www.youtube.com/channel/UCMidnightDrive",
-      "bandcamp": "https://echoshade.bandcamp.com/",
       "appleMusic": "https://music.apple.com/us/artist/echo-shade/123456789",
       "deezer": "https://www.deezer.com/artist/7654321",
       "tidal": "https://tidal.com/browse/artist/7654321",
@@ -182,6 +187,8 @@
         "platforms": {
           "spotify": "https://open.spotify.com/track/1a2b3c4d5e6f7g8h9i0j",
           "youtube": "PRHCP-Czj0Y",
+                   "bandcamp": "2380770719",
+
           "soundcloud": "https://soundcloud.com/lunarae/midnight-whisper",
           "appleMusic": "https://music.apple.com/us/album/midnight-whisper/1234567890?i=1234567890",
           "deezer": "https://www.deezer.com/track/23456789",
