@@ -10,12 +10,14 @@ import ArtistTrackListCard from './ArtistTrackListCard'
 import { setArtist, setPlatform } from '../../store/playerSlice'
 import SocialLinks from '../artists/SocialLinks'
 import defaultArtistRV from '../../../public/data/defaultArtist' // adatta il path alla posizione reale
+import GlobalPlayPauseButton from './GlobalPlayPauseButton'
 
 
 export default function BottomPlayer() {
   const dispatch = useDispatch()
   // Prende lo stato globale del player da Redux
-  const { artist, platform, playerOpen } = useSelector((state) => state.player)
+  const { artist, platform, playerOpen, autoPlay } = useSelector((state) => state.player)
+  const [playerKey, setPlayerKey] = useState(0)
 
   // Stati locali per controllare riproduzione e piattaforma selezionata
   const [isPlaying, setIsPlaying] = useState(false)
@@ -43,12 +45,6 @@ export default function BottomPlayer() {
 
 
 
-  const handleSelect = (item) => {
-    dispatch(setArtist(item))
-    dispatch(setPlatform(item.defaultPlatform))
-    dispatch(setAutoPlay(true))
-
-  }
   // Artist fallback se nessun artista è attivo
   const defaultArtist = defaultArtistRV
 
@@ -73,6 +69,25 @@ export default function BottomPlayer() {
     dispatch(setPlayerOpen(!playerOpen))
   }
   const bgImage = activeArtist.images?.[0] || 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
+
+  const handleSelect = (item) => {
+    dispatch(setArtist(item))
+    dispatch(setPlatform(item.defaultPlatform))
+    dispatch(setAutoPlay(true))
+
+  }
+  const handleSelectPlay = (item) => {
+    console.log(item, item.defaultPlatform)
+    dispatch(setArtist(item))
+    dispatch(setPlatform(item.defaultPlatform))
+    toggleOpen
+    dispatch(setAutoPlay(!autoPlay))
+    setPlayerKey(prev => prev + 1)
+    setIsPlaying(!isPlaying)
+  }
+
+
+
 
   // Rendering del player in base alla piattaforma selezionata
   const renderPlayer = () => {
@@ -199,7 +214,7 @@ export default function BottomPlayer() {
 
           {/* Contenitore del player musicale */}
           <div
-
+            key={playerKey}
             className={`relative rounded-md overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
            ${playerOpen ? 'w-full sm:w-[400px] h-48' : 'hidden w-[350px] h-[50px] scale-[0.85]'}`}
           >
@@ -224,19 +239,25 @@ export default function BottomPlayer() {
           ) : null}
         </div>
 
+        {!playerOpen && activeArtist.defaultPlatform === 'youtube' && (
 
-
+          <GlobalPlayPauseButton
+            isPlaying={isPlaying}
+            onToggle={() => handleSelectPlay(activeArtist)}
+            position="bottom-3 left-80"
+          />
+        )}
 
         {/** SocialLinks */}
         {playerOpen ?
-          <div className="hidden 2xl:block right-16 p-2">
+          <div className="hidden 2xl:block bottom-1 right-16 p-2">
             <h1 className="font-monoton text-4xl md:text-4xl lg:text-4xl mb-4 tracking-tight">RARE VIBES</h1>
           </div>
-          : <></>}
+          : <> </>}
 
       </div>
 
-      <div className="fixed right-16 mt-1 bottom-4 hidden xl:block z-50"
+      <div className="fixed right-16 mt-1 bottom-1 hidden xl:block z-50"
       >
         <SocialLinks socials={{
           instagram: "https://instagram.com/smallenginetechnician",
@@ -248,7 +269,6 @@ export default function BottomPlayer() {
       <div className="absolute top-2 right-2 ">
         <TogglePlayerButton playerOpen={playerOpen} onClick={toggleOpen} />
       </div>
-
 
     </div>
   )

@@ -20,7 +20,6 @@ const playerSlice = createSlice({
     },
     setPlatform: (state, action) => {
       state.platform = action.payload
-      state.playerOpen = !!action.payload && !!state.artist
     },
     setPlayerOpen: (state, action) => {
       state.playerOpen = action.payload

@@ -35,7 +35,7 @@ const defaultArtist = {
       }
     }
   ],
-  defaultPlatform: "spotify",
+  defaultPlatform: "youtube",
   platforms: {
     spotify: "https://open.spotify.com/artist/5ht7ItJgpBH7W6vJ5BqpPr",
     soundcloud: "https://soundcloud.com/odeliaofficial",
