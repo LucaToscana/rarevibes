@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { setArtist, setPlatform } from '../../store/playerSlice'
+import { setArtist, setPlatform,setAutoPlay} from '../../store/playerSlice'
 import { FaSpotify, FaSoundcloud, FaYoutube } from 'react-icons/fa'
 
 export default function ArtistPlayerButtons({ artist }) {
@@ -8,6 +8,7 @@ export default function ArtistPlayerButtons({ artist }) {
   const handlePlay = (platform) => {
     dispatch(setArtist(artist))
     dispatch(setPlatform(platform))
+    dispatch(setAutoPlay(true))
   }
 
   const bgImage = artist.images?.[0] || 'https://placehold.co/400x300?text=No+Image'

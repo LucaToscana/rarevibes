@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { setPlayerOpen } from '../../store/playerSlice' // Controlla che il path sia corretto
+import { setPlayerOpen, setAutoPlay } from '../../store/playerSlice' // Controlla che il path sia corretto
 import SpotifyPlayer from './SpotifyPlayer'
 import SoundCloudPlayer from './SoundCloudPlayer'
 import YouTubePlayer from './YouTubePlayer'
@@ -10,6 +10,7 @@ import BottomPlayerDetails from './BottomPlayerDetails'
 import ArtistTrackListCard from './ArtistTrackListCard'
 import { setArtist, setPlatform } from '../../store/playerSlice'
 import SocialLinks from '../artists/SocialLinks'
+import YouTubePlayerButton from './YouTubePlayerButton'
 
 export default function BottomPlayer() {
   const dispatch = useDispatch()
@@ -45,6 +46,8 @@ export default function BottomPlayer() {
   const handleSelect = (item) => {
     dispatch(setArtist(item))
     dispatch(setPlatform(item.defaultPlatform))
+    dispatch(setAutoPlay(true))
+
   }
   // Artist fallback se nessun artista è attivo
   const defaultArtist = {

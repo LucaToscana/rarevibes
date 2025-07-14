@@ -6,6 +6,7 @@ const initialState = {
   zoomOpen: false,
   zoomImg: null,
   playerOpen: false, // flag per aprire/chiudere il player
+  autoPlay: false
 }
 
 const playerSlice = createSlice({
@@ -14,7 +15,7 @@ const playerSlice = createSlice({
   reducers: {
     setArtist: (state, action) => {
       state.artist = action.payload
-
+      state.autoPlay = false
       state.platform = null
     },
     setPlatform: (state, action) => {
@@ -32,8 +33,11 @@ const playerSlice = createSlice({
       state.zoomOpen = false
       state.zoomImg = null
     },
+    setAutoPlay: (state, action) => {
+      state.autoPlay = action.payload
+    }
   },
 })
 
-export const { setArtist, setPlatform, setPlayerOpen, setZoomOpen, closeZoom } = playerSlice.actions
+export const { setArtist, setPlatform, setPlayerOpen, setZoomOpen, closeZoom, setAutoPlay } = playerSlice.actions
 export default playerSlice.reducer
