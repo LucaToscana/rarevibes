@@ -3,5 +3,13 @@
   "about": "About",
   "privacy": "Privacy Policy",
   "artists": "Artists",
-  "submit": "Submit"
+  "biography": "Biography",
+  "recentArtists": "Recent Artists",
+  "submit": "Submit",
+  "contact": "Contact",
+  "search": "Search",
+  "language": "Language",
+  "tagline": "A fanzine for raw sounds, weird thoughts, and glorious nonsense.",
+  "backToArtists": "Back to artists",
+  "youMightBeInterestedIn": "You might be interested in"
 }

@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { ChevronDown } from 'lucide-react';
 
 const languages = [
-  { code: 'en', label: '🇬🇧 English' },
-  { code: 'it', label: '🇮🇹 Italiano' },
-  { code: 'fr', label: '🇫🇷 Français' },
-  { code: 'es', label: '🇪🇸 Español' },
+  { code: 'en', label: '🇬🇧' },
+  { code: 'it', label: '🇮🇹' },
+  { code: 'fr', label: '🇫🇷' },
+  { code: 'es', label: '🇪🇸' },
 ];
 
 const LanguageSwitcher = () => {
@@ -27,7 +27,7 @@ const LanguageSwitcher = () => {
       </button>
 
       {open && (
-        <div className="absolute z-50 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+        <div className="absolute z-50 mt-2 w-20 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1">
             {languages.map(({ code, label }) => (
               <button

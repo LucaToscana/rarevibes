@@ -29,7 +29,8 @@ export default function Navbar() {
           <NavLinkCustom to="/artists"> {t('artists')}</NavLinkCustom>
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>
           <NavLinkCustom to="/submit" extraClass="btn-monza">
-            Submit
+                        {t("submit")}
+
           </NavLinkCustom>
           <LanguageSwitcher />
 
@@ -49,7 +50,7 @@ export default function Navbar() {
             Privacy
           </NavLinkCustom>
           <NavLinkCustom to="/submit" extraClass="btn-monza" onClick={() => setMenuOpen(false)}>
-            Submit
+            {t("submit")}
           </NavLinkCustom>
           
         </div>

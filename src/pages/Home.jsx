@@ -1,36 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import ArtistCard from '../components/artists/ArtistCard'
 import HeroSection from '../components/layout/HeroSection'
+import { useTranslation } from 'react-i18next';
+import data from '../data/defaultData'
 
 export default function Home() {
-  const parallaxRef = useRef(null)
+  const parallaxRef = useRef(null);
+  const { t } = useTranslation('common');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [featuredArtists, setArtists] = useState([]);
 
-  const heroImages = [
-    //hell city
-    'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg',
-    //face
-    'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg',
-    //zecchino 
-    'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg',
-    //leon 
-    'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg',
-    //money 
-    'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/864dbe22634873.563161cc37e95.jpg',
-    //monkey
-    'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
-  ]
+  const heroImages = data.heroImagesDefault;
 
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [featuredArtists, setArtists] = useState([])
-
-  // Loop immagini ogni 5 secondi
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % heroImages.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
+      setCurrentIndex(prev => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   // Parallax scroll
   useEffect(() => {
@@ -66,7 +53,7 @@ export default function Home() {
 
       {/* Artists */}
       <section className="py-16 px-6">
-        <h2 className="heading-monoton mb-10 text-center">Latest Artists</h2>
+        <h2 className="heading-monoton mb-10 text-center">{t('recentArtists')}</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {featuredArtists.map((artist) => (
             <ArtistCard key={artist.name} artist={artist} showBio={true} />

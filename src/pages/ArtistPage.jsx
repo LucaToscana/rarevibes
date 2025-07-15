@@ -13,10 +13,12 @@ import ArtistBio from '../components/artists/ArtistBio'
 import ArtistImages from '../components/artists/ArtistImages'
 import ArtistControls from '../components/artists/ArtistControls'
 import RelatedArtistsSection from '../components/artists/RelatedArtistsSection'
+import { useTranslation } from 'react-i18next'
 
 export default function ArtistPage() {
   const { slug } = useParams()
   const dispatch = useDispatch()
+  const { t } = useTranslation('common'); // 👈 specifica il namespace */
 
 
   useEffect(() => {
@@ -59,9 +61,11 @@ export default function ArtistPage() {
       {/* Link di ritorno */}
       <div className="mt-16 mb-8">
         <Link to="/artists" className="title-small">
-          ← Back to artists
+          ← {t('backToArtists')}
         </Link>
       </div>
+
+      <div className="h-1 bg-monza mb-16" />
 
       {/* Contenuto principale: immagini e info */}
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
@@ -70,13 +74,18 @@ export default function ArtistPage() {
         <section className="lg:w-1/3 flex flex-col gap-8 h-full min-h-[500px]">
           <ArtistHeader artist={selectedArtist} />
           <ArtistControls artist={selectedArtist} />
-          <ArtistBio bio={selectedArtist.bio.extended} className="mt-auto" />
+
+
+          <ArtistBio slug={selectedArtist.slug} field="short" />
+          <ArtistBio slug={selectedArtist.slug} field="review" />
+
         </section>
         {/* Immagini artista */}
+
         <div className="lg:w-2/3">
           <ArtistImages images={selectedArtist.images} key={slug} slug={slug} />
           <div className='mt-8'>
-            <ArtistBio bio={selectedArtist.bio.review} />
+            <ArtistBio slug={selectedArtist.slug} field="extended" />
           </div>
 
         </div>
@@ -85,6 +94,9 @@ export default function ArtistPage() {
 
       {/* Artisti correlati */}
       <section className="mt-16">
+        <div className="h-1 bg-monza m-3" />
+
+        <h2 className="title-small text-right mb-2 italic">{t('youMightBeInterestedIn')}</h2>
         <RelatedArtistsSection artists={relatedArtists} slug={slug} />
       </section>
     </main>

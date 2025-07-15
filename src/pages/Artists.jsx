@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 import ArtistCard from '../components/artists/ArtistCard'
 import FilterButton from '../components/layout/FilterButton'
 import { useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function Artists() {
   const [artists, setArtists] = useState([])
   const [filter, setFilter] = useState('all')
-  const { slug } = useParams()
+  const { t } = useTranslation('common'); // 👈 specifica il namespace */
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/artists.json')
@@ -25,7 +26,7 @@ export default function Artists() {
 
   return (
     <main className="min-h-screen   px-6 py-12  ">
-      <h1 className="heading-monoton mb-6 text-center mt-8">Artists</h1>
+      <h1 className="heading-monoton mb-6 text-center mt-8">{t('artists')}</h1>
       <div className="flex justify-center gap-4 mb-12">
         <FilterButton label="all" value="all" currentFilter={filter} onClick={setFilter} />
         <FilterButton label="visual arts" value="artist" currentFilter={filter} onClick={setFilter} />

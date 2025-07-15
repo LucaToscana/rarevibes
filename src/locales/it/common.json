@@ -1,7 +1,15 @@
 {
   "home": "Home",
-  "about": "Chi siamo",
+  "about": "Chi Siamo",
   "privacy": "Privacy",
   "artists": "Artisti",
-  "submit": "Invia"
+  "biography": "Biografia",
+  "recentArtists": "Artisti Recenti",
+  "submit": "Invia",
+  "contact": "Contatti",
+  "search": "Cerca",
+  "language": "Lingua",
+  "tagline": "Una fanzine per suoni grezzi, pensieri strani e splendide assurdità.",
+  "backToArtists": "Torna agli artisti",
+  "youMightBeInterestedIn": "Potresti essere interessato a"
 }

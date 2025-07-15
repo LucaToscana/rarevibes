@@ -1,7 +1,15 @@
 {
   "home": "Inicio",
   "about": "Acerca de",
-  "privacy": "Política de privacidad",
+  "privacy": "Política de Privacidad",
   "artists": "Artistas",
-  "submit": "Enviar"
+  "biography": "Biografía",
+  "recentArtists": "Artistas Recientes",
+  "submit": "Enviar",
+  "contact": "Contacto",
+  "search": "Buscar",
+  "language": "Idioma",
+  "tagline": "Una fanzine para sonidos crudos, pensamientos raros y glorioso sinsentido.",
+  "backToArtists": "Volver a los artistas",
+  "youMightBeInterestedIn": "Podrías estar interesado en"
 }

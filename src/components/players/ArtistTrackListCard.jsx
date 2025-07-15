@@ -1,9 +1,15 @@
+import { useTranslation } from "react-i18next";
+
 export default function ArtistTrackListCard({ title = 'new artists', items = [], onSelect }) {
+   const { t } = useTranslation('common'); // 👈 specifica il namespace */
+ 
+ 
+ 
   return (
     <div className="w-[420px] h-full p-4 rounded-md flex flex-col justify-between hidden sm:block bg-black bg-opacity-60 relative  ">
       {/* Titolo */}
       <div className="mb-4 relative">
-        <p className="font-arvo text-xs text-white">{title}</p>
+        <p className="font-arvo text-xs text-white">{t('recentArtists')}</p>
       </div>
 
       {/* Lista con sfondo per ogni artista */}

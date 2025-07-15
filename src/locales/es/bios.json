@@ -1,6 +1,27 @@
 {
-"home": "Home",
-"about": "About",
-"privacy": "Privacy Policy",
-"artists": "Artistas"
+  "odelia": {
+    "short": "Odelia es una artista emergente que fusiona sonidos alternativos e indie con una narrativa emocional.",
+    "review": "Odelia se destaca por su voz etérea y sus composiciones atrevidas que mezclan géneros alternativos e indie. Desde París, su música transmite introspección y sensibilidad urbana.",
+    "extended": "Odelia comenzó su viaje musical en París, donde cultivó una sensibilidad alternativa influenciada por artistas como Bon Iver y Daughter. Sus canciones combinan guitarras delicadas, paisajes sonoros ambientales y letras profundamente emocionales. Su primer EP independiente explora temas como la soledad, la transformación personal y el anhelo. Su estilo ha sido elogiado por su atmósfera cinematográfica y su capacidad de generar conexiones auténticas con una audiencia joven y reflexiva."
+  },
+  "kael": {
+    "short": "Kael es un productor de Berlín que fusiona electrónica experimental con ambient y minimalismo sonoro.",
+    "review": "Kael crea música electrónica con texturas envolventes y estructuras complejas. Su sonido es un viaje introspectivo para los amantes del ambient techno.",
+    "extended": "Desde el corazón de Berlín, Kael construye paisajes sonoros meticulosos con sintetizadores analógicos, bajos profundos y ambientes introspectivos. Inspirado por Aphex Twin y Nils Frahm, combina tecnología y emoción en presentaciones en vivo con visuales hipnóticos. Sus obras trascienden el formato tradicional de la música electrónica, acercándose a lo sensorial y lo artístico. Kael es un innovador dentro de la escena IDM y se destaca por su compromiso con la exploración sonora radical."
+  },
+  "leona": {
+    "short": "Leona combina soul clásico, R&B contemporáneo y una sensibilidad visual cinematográfica.",
+    "review": "Desde Montreal, Leona evoca las raíces del soul con una producción moderna. Su voz rica y emocional ha conquistado audiencias globales.",
+    "extended": "Leona rinde homenaje a íconos del soul como Aretha Franklin, mientras construye una identidad musical moderna y elegante. Sus canciones abordan temas como el amor, la fragilidad emocional y la autoafirmación. Sus actuaciones son tan visuales como auditivas, a menudo acompañadas de narrativas audiovisuales. Tras años en clubes de jazz, alcanzó reconocimiento internacional con 'Velvet Walls'. Su estilo se caracteriza por una fusión de lo clásico y lo vanguardista, capturando tanto el oído como la imaginación del espectador."
+  },
+  "santo": {
+    "short": "Santo mezcla ritmos latinos tradicionales con música urbana contemporánea para crear himnos vibrantes y con mensaje.",
+    "review": "Desde Ciudad de México, Santo integra reggaetón, cumbia y pop alternativo con letras que celebran la identidad y la resistencia.",
+    "extended": "Santo es una figura emergente en la música latina alternativa. Creció rodeado de sonidos populares y callejeros que ahora transforma en propuestas audaces con conciencia social. Su disco debut 'Fronteras' aborda temas como migración, justicia social y amor por la cultura. Santo canta tanto en español como en inglés, explorando la dualidad cultural de los jóvenes latinos. Sus presentaciones en vivo son una celebración de la diversidad, la energía y la comunidad, convirtiéndose en símbolo de una nueva generación artística."
+  },
+  "amira": {
+    "short": "Amira es una cantante neo-jazz de Londres que fusiona tradición vocal con poesía moderna y experimentación sonora.",
+    "review": "Amira actualiza el jazz con tintes soul y una sensibilidad contemporánea. Su voz ha sido descrita como 'mágica e intemporal'.",
+    "extended": "Desde la escena jazz londinense, Amira crea música que entrelaza jazz clásico, soul y spoken word. Su enfoque artístico es íntimo y profundo, con letras que abordan temas de identidad, herencia y crecimiento interior. Influenciada por figuras como Billie Holiday y Erykah Badu, su EP 'Midnight Verses' ha sido aclamado por su honestidad emocional y belleza melódica. Amira también colabora en proyectos culturales que promueven el arte afrodescendiente y la justicia social a través del sonido."
+  }
 }

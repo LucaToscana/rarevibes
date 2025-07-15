@@ -1,6 +1,27 @@
 {
-"home": "Home",
-"about": "About",
-"privacy": "Privacy Policy",
-"artists": "Artistas"
+  "odelia": {
+    "short": "Odelia è un'artista emergente che fonde sonorità alternative e indie con narrazione emotiva.",
+    "review": "Odelia si sta facendo notare per la sua voce eterea e le sue composizioni audaci che uniscono i generi alternative e indie. Nata e cresciuta a Parigi, la sua musica riflette introspezione profonda e malinconia urbana.",
+    "extended": "Odelia ha iniziato il suo percorso artistico tra le strade vibranti di Parigi, dove ha coltivato la passione per la musica alternativa e la scrittura introspettiva. Ispirata da artisti come Daughter e Bon Iver, il suo stile mescola chitarre delicate, texture ambientali e testi emotivamente intensi. Il suo EP di debutto, registrato in modo indipendente, esplora temi come isolamento, rinascita e desiderio. Il suo lavoro è apprezzato per la qualità cinematografica e la connessione emotiva che crea con il pubblico, in particolare tra i giovani in cerca di autenticità e profondità."
+  },
+  "kael": {
+    "short": "Kael è un producer di Berlino che unisce ritmi elettronici con profondità ambient e paesaggi sonori emotivi.",
+    "review": "Kael crea musica elettronica futuristica caratterizzata da minimalismo, texture e spazialità. Il suo suono affascina gli appassionati di ambient techno e IDM sperimentale.",
+    "extended": "L’universo musicale di Kael è profondamente radicato nella scena underground berlinese. Le sue composizioni si basano su arrangiamenti sintetici complessi, linee di basso pulsanti e strati atmosferici che evocano isolamento e trascendenza. Influenzato da artisti come Aphex Twin, Nils Frahm e Boards of Canada, i suoi live sono noti per la qualità immersiva e l'uso ipnotico dei visual. Spesso collabora con artisti visivi per creare performance multisensoriali che sfidano i confini tra suono e percezione."
+  },
+  "leona": {
+    "short": "Leona fonde soul retrò, R&B e elementi cinematografici per creare un suono senza tempo e carico di emozione.",
+    "review": "Nata a Montréal, Leona richiama l’anima old-school con un tocco moderno. La sua voce espressiva e gli arrangiamenti ricchi hanno conquistato il pubblico a livello globale.",
+    "extended": "Lo stile musicale di Leona è un omaggio ai grandi del soul come Aretha Franklin e Nina Simone, arricchito da una produzione R&B moderna e una vena cinematografica. I suoi brani esplorano temi come amore, forza interiore e vulnerabilità, trasmessi con una voce vellutata e orchestrazioni raffinate. Dopo anni di esibizioni nei jazz club del Canada, ha raggiunto il successo virale con il brano 'Velvet Walls'. L’arte di Leona si distingue per la profondità emotiva e l’eleganza visiva, spesso accompagnata da storytelling video e cortometraggi."
+  },
+  "santo": {
+    "short": "Santo fonde radici latine e pop globale per creare musica potente e ritmata con impatto sociale.",
+    "review": "Da Città del Messico, Santo mescola reggaeton, cumbia e suoni urbani, coniugando tradizione e innovazione.",
+    "extended": "Santo è una voce innovativa della musica latina contemporanea. Nato nel cuore di Città del Messico, nei suoi brani porta il ritmo delle sue radici: percussioni intense, melodie tradizionali e testi che parlano di identità, migrazione e resistenza. Alternando spagnolo e inglese, i suoi testi sono ispirati a Calle 13 e Bad Bunny. Con l’album d’esordio 'Fronteras', si è imposto come voce della nuova generazione latina: consapevole, sperimentale e profondamente legata alla comunità."
+  },
+  "amira": {
+    "short": "Amira è una vocalist neo-jazz di Londra che unisce tradizione e sperimentazione con grazia poetica.",
+    "review": "Amira rinnova il jazz classico con un tocco soul e sensibilità moderna. La sua voce è definita 'ipnotica e senza tempo'.",
+    "extended": "Proveniente dalla scena jazz londinese, Amira fonde jazz, soul e spoken word in uno stile tanto audace quanto intimo. Formata nel canto classico ma attratta dall'improvvisazione, le sue esibizioni sono dialoghi personali con il pubblico. I testi affrontano identità, diaspora e ricerca interiore, ispirandosi a Billie Holiday e Erykah Badu. L’EP d’esordio 'Midnight Verses' è stato acclamato per la sua vulnerabilità emotiva e sonorità raffinata. Amira è attiva anche in collettivi artistici, unendo musica, attivismo e patrimonio culturale."
+  }
 }

@@ -1,7 +1,15 @@
 {
   "home": "Accueil",
-  "about": "À propos",
-  "privacy": "Politique de confidentialité",
+  "about": "À Propos",
+  "privacy": "Politique de Confidentialité",
   "artists": "Artistes",
-  "submit": "Soumettre"
+  "biography": "Biographie",
+  "recentArtists": "Artistes Récents",
+  "submit": "Soumettre",
+  "contact": "Contact",
+  "search": "Recherche",
+  "language": "Langue",
+  "tagline": "Un fanzine pour des sons bruts, des pensées étranges et un merveilleux non-sens.",
+  "backToArtists": "Retour aux artistes",
+  "youMightBeInterestedIn": "Vous pourriez être intéressé par"
 }
