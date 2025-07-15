@@ -1,36 +1,41 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react' // icone hamburger & close (usa lucide-react o heroicons)
-import NavLinkCustom from './NavLinkCustom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import NavLinkCustom from './NavLinkCustom';
+import { Menu, X } from 'lucide-react'; // o le tue icone
+import { useTranslation } from 'react-i18next'; // 👈 QUESTA È LA RIGA MANCANTE
+import LanguageSwitcher from '../../locales/LanguageSwitcher';
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useTranslation('common'); // 👈 specifica il namespace
+
   return (
     <nav className="bg-iron fixed top-0 left-0 right-0 z-50 shadow-lg">
       <div className="px-4 sm:px-8 py-4 flex justify-between items-center">
+        
         <Link to="/">
-          <h1 className="heading-monoton">
-            RARE VIBES
-          </h1>
+          <h1 className="heading-monoton">RARE VIBES</h1>
         </Link>
-        {/* Mobile menu button */}
+
         <button
           className="sm:hidden focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-        {/* Desktop links */}
+
         <div className="hidden sm:flex space-x-6 items-center">
           <NavLinkCustom to="/">Home</NavLinkCustom>
-          <NavLinkCustom to="/artists">Artists</NavLinkCustom>
+          <NavLinkCustom to="/artists"> {t('artists')}</NavLinkCustom>
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>
-
           <NavLinkCustom to="/submit" extraClass="btn-monza">
             Submit
           </NavLinkCustom>
+          <LanguageSwitcher />
+
         </div>
       </div>
+      
       {/* Mobile links dropdown */}
       {menuOpen && (
         <div className="sm:hidden absolute left-0 right-0 px-4 py-4 flex flex-col space-y-3 z-40 shadow-md bg-iron">
@@ -38,7 +43,7 @@ export default function Navbar() {
             Home
           </NavLinkCustom>
           <NavLinkCustom to="/artists" onClick={() => setMenuOpen(false)}>
-            Artisti
+            {t('artists')}
           </NavLinkCustom>
           <NavLinkCustom to="/privacy" onClick={() => setMenuOpen(false)}>
             Privacy
@@ -46,6 +51,7 @@ export default function Navbar() {
           <NavLinkCustom to="/submit" extraClass="btn-monza" onClick={() => setMenuOpen(false)}>
             Submit
           </NavLinkCustom>
+          
         </div>
       )}
     </nav>

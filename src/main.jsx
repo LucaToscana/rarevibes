@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import './i18n';
 // Se siamo stati reindirizzati da 404.html, ripristina il path originale
 const redirect = new URLSearchParams(window.location.search).get('redirect')
 if (redirect) {

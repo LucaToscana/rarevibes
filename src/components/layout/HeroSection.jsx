@@ -1,7 +1,10 @@
 // components/HeroSection.jsx
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
+const { t } = useTranslation('common'); // 👈 specifica il namespace */
+
   return (
     <section className="relative h-[140vh] overflow-hidden group">
       {/* Background fading images */}
@@ -31,7 +34,7 @@ export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
             to="/artists"
             className="inline-block text-sm md:text-base font-semibold bg-monza text-iron hover:bg-monzadark transition px-6 py-3 rounded-full shadow-md"
           >
-            artists →
+           {t('artists')} →
           </Link>
         </div>
       </div>
