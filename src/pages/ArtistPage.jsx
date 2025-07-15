@@ -57,7 +57,7 @@ export default function ArtistPage() {
     <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto">
 
       {/* Link di ritorno */}
-      <div className="mb-8">
+      <div className="mt-16 mb-8">
         <Link to="/artists" className="title-small">
           ← Back to artists
         </Link>
