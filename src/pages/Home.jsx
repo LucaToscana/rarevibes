@@ -53,7 +53,8 @@ export default function Home() {
 
       {/* Artists */}
       <section className="py-16 px-6">
-        <h2 className="heading-monoton mb-10 text-center">{t('recentArtists')}</h2>
+        <div className="artist-monoton mb-8 mt-10">{t('recentArtists')}</div>
+        <div className="h-1 bg-monza mb-16" />
         <div className="grid gap-6 md:grid-cols-3">
           {featuredArtists.map((artist) => (
             <ArtistCard key={artist.name} artist={artist} showBio={true} />

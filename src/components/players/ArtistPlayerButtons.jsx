@@ -1,10 +1,12 @@
 import { useDispatch } from 'react-redux'
 import { setArtist, setPlatform, setAutoPlay, setPlayerOpen } from '../../store/playerSlice'
 import { FaSpotify, FaSoundcloud, FaYoutube } from 'react-icons/fa'
-import { SiSoundcloud, SiYoutube,SiBandcamp  } from 'react-icons/si'
+import { SiSoundcloud, SiYoutube, SiBandcamp } from 'react-icons/si'
+import { useTranslation } from 'react-i18next';
 
 export default function ArtistPlayerButtons({ artist }) {
   const dispatch = useDispatch()
+  const { t } = useTranslation('common');
 
   const handlePlay = (platform) => {
     dispatch(setArtist(artist))
@@ -34,9 +36,10 @@ export default function ArtistPlayerButtons({ artist }) {
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-60" />
-      <div className="font-rubik relative p-6 flex flex-col justify-center h-full">
+      <div className=" relative p-6 flex flex-col justify-center h-full">
         <h2 className="text-2xl mb-4 drop-shadow-lg">
-          Listen to <span className="italic text-monza font-bold">{artist.name}</span> on your favorite platform
+          {t('listenTo')} <span className="bio-highlight">{artist.name}</span> {t('onYourFavoritePlatform')}
+
         </h2>
         <div className="flex flex-col gap-3">
           {platforms.map(({ key, icon: Icon, label }) =>

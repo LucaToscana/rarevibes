@@ -1,6 +1,21 @@
 {
-"home": "Home",
-"about": "About",
-"privacy": "Privacy Policy",
-"artists": "Artistas"
+  "title": "Privacy Policy",
+  "intro": "Our privacy is important to us. This policy explains how we collect, use, and protect the data you provide when submitting your artistic works to our fanzine.",
+
+  "dataCollectionTitle": "Data Collection",
+  "dataCollection": "We collect only the personal data you voluntarily provide when submitting your artwork, including your name, email address, and the submitted materials such as photos, music tracks, paintings, sculptures, or other artistic works.",
+
+  "useOfDataTitle": "Use of Data",
+  "useOfData": "The data collected is used solely to review your submissions and contact you regarding your artworks.",
+
+  "dataSharingTitle": "Data Sharing",
+  "dataSharing": "We do not sell or share your personal data with third parties except as necessary to manage and host the submitted content.",
+
+  "cookiesTitle": "Cookies and Tracking Technologies",
+  "cookies": "Our site does not use cookies or tracking technologies for data collection. If we start using such technologies in the future, we will update this policy accordingly.",
+
+  "userRightsTitle": "User Rights",
+  "userRights": "You can request access to, correction, or deletion of your data at any time by contacting us at your.email@example.com.",
+
+  "lastUpdated": "Last updated: July 11, 2025"
 }

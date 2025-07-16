@@ -59,8 +59,8 @@ export default function ArtistPage() {
     <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto">
 
       {/* Link di ritorno */}
-      <div className="mt-16 mb-8">
-        <Link to="/artists" className="title-small">
+      <div className="mt-8 mb-8">
+        <Link to="/artists" className="bio-highlight-white">
           ← {t('backToArtists')}
         </Link>
       </div>
@@ -75,17 +75,25 @@ export default function ArtistPage() {
           <ArtistHeader artist={selectedArtist} />
           <ArtistControls artist={selectedArtist} />
 
-
-          <ArtistBio slug={selectedArtist.slug} field="short" />
-          <ArtistBio slug={selectedArtist.slug} field="review" />
-
+          <ArtistBio slug={selectedArtist.slug}
+            field="short"
+            className='arvo-black text-xl  drop-shadow'
+            highlightClass='bio-highlight-white' />
+          <ArtistBio slug={selectedArtist.slug}
+            field="review"
+            className='arvo-black text-xl  drop-shadow'
+            highlightClass='bio-highlight-white' />
         </section>
         {/* Immagini artista */}
 
         <div className="lg:w-2/3">
           <ArtistImages images={selectedArtist.images} key={slug} slug={slug} />
           <div className='mt-8'>
-            <ArtistBio slug={selectedArtist.slug} field="extended" />
+
+            <ArtistBio slug={selectedArtist.slug}
+              field="extended"
+              className='arvo-black text-xl  drop-shadow'
+              highlightClass='bio-highlight-white' />
           </div>
 
         </div>
@@ -95,8 +103,9 @@ export default function ArtistPage() {
       {/* Artisti correlati */}
       <section className="mt-16">
         <div className="h-1 bg-monza m-3" />
-
-        <h2 className="title-small text-right mb-2 italic">{t('youMightBeInterestedIn')}</h2>
+        <div className="flex justify-end">
+          <h2 className="bio-highlight-white select-none">{t('youMightBeInterestedIn')}</h2>
+        </div>            
         <RelatedArtistsSection artists={relatedArtists} slug={slug} />
       </section>
     </main>

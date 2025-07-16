@@ -1,6 +1,21 @@
 {
-"home": "Home",
-"about": "About",
-"privacy": "Privacy Policy",
-"artists": "Artistas"
+  "title": "Politique de Confidentialité",
+  "intro": "Votre vie privée est importante pour nous. Cette politique explique comment nous collectons, utilisons et protégeons les données que vous fournissez lors de la soumission de vos œuvres artistiques à notre fanzine.",
+
+  "dataCollectionTitle": "Collecte de Données",
+  "dataCollection": "Nous ne collectons que les données personnelles que vous fournissez volontairement lors de la soumission de votre œuvre, y compris votre nom, adresse e-mail et les matériaux envoyés tels que des photos, morceaux de musique, peintures, sculptures ou autres œuvres artistiques.",
+
+  "useOfDataTitle": "Utilisation des Données",
+  "useOfData": "Les données collectées sont utilisées uniquement pour examiner vos propositions et vous contacter au sujet de vos œuvres.",
+
+  "dataSharingTitle": "Partage des Données",
+  "dataSharing": "Nous ne vendons ni ne partageons vos données personnelles avec des tiers, sauf si cela est nécessaire pour gérer et héberger le contenu soumis.",
+
+  "cookiesTitle": "Cookies et Technologies de Suivi",
+  "cookies": "Notre site n’utilise pas de cookies ou de technologies de suivi pour collecter des données. Si nous devions en utiliser à l’avenir, nous mettrons cette politique à jour en conséquence.",
+
+  "userRightsTitle": "Droits de l’Utilisateur",
+  "userRights": "Vous pouvez demander l'accès, la correction ou la suppression de vos données à tout moment en nous contactant à your.email@example.com.",
+
+  "lastUpdated": "Dernière mise à jour : 11 juillet 2025"
 }

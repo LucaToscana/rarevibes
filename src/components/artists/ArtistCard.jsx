@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ArtistBio from "./ArtistBio";
 
-export default function ArtistCard({ artist, showBio = false, slug }) {
+export default function ArtistCard({ artist, showBio = false }) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const [imgError, setImgError] = useState(false);
 
@@ -44,9 +45,10 @@ export default function ArtistCard({ artist, showBio = false, slug }) {
           {artist?.name || "Artist"}
         </h3>
         {showBio && artist?.bio?.short && (
-          <p className="font-roboto text-sm mt-1 line-clamp-3 drop-shadow">
-            {artist.bio.short}
-          </p>
+          <ArtistBio slug={artist.slug}
+            field="short"
+            className="arvo-white text-sm line-clamp-2 drop-shadow"
+            highlightClass='bio-highlight-white' />
         )}
       </div>
     </Link>

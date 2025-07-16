@@ -2,52 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Imposta altezza piena per body e root */
+/* ================================
+   Reset base e setup globale
+   ================================ */
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Font, smoothing, colori personalizzati */
 body {
   @apply antialiased font-sans bg-[#D0D8D7] text-[#dd1a1c];
 }
 
-/* Scrollbar moderna */
+/* ================================
+   Scrollbar personalizzata
+   ================================ */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
+  @apply rounded-lg;
   background: #555;
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #777;
 }
+
+/* ================================
+   Animazioni
+   ================================ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  @apply w-12 h-12 border-8 border-solid border-gray-200 border-t-blue-700 rounded-full mb-4;
+  animation: spin 1s linear infinite;
+}
+
+/* ================================
+   YouTube embed responsive
+   ================================ */
 .youtube-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
   overflow: hidden;
 }
 
 .youtube-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+  @apply absolute top-0 left-0 w-full h-full border-0;
 }
 
+/* ================================
+   Loader wrapper
+   ================================ */
+.loader-wrapper {
+  @apply flex flex-col items-center justify-center py-10 text-gray-600 font-sans;
+}
+
+/* ================================
+   Link nav e bottoni
+   ================================ */
 .navlink {
   @apply font-arvo text-xl transition-all duration-200 hover:font-bold;
 }
-/* Aggiunta opzionale: animazione transizioni */
+
+.btn-monza {
+  @apply font-arvo text-xl bg-monza text-iron px-6 py-1 rounded-full hover:bg-monzadark transition;
+}
+
+/* ================================
+   Fade-in animation utility
+   ================================ */
 .fade-in {
   @apply opacity-0 transition-opacity duration-1000;
 }
@@ -55,40 +88,72 @@ body {
   @apply opacity-100;
 }
 
-.btn-monza {
-  @apply font-arvo text-xl bg-monza text-iron px-6 py-1 rounded-full hover:bg-monzadark transition;
-}
-
+/* ================================
+   Tipografia personalizzata
+   ================================ */
 .heading-monoton {
-  @apply font-monoton text-3xl  tracking-tight whitespace-nowrap;
-}
-.title-small {
-  @apply font-arvo text-base text-monza;
+  @apply font-monoton text-3xl tracking-tight whitespace-nowrap select-none;
 }
 
-
-.loader-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 0;
-  color: #555;
-  font-family: sans-serif;
+.artist-monoton {
+  @apply font-monoton text-4xl tracking-tight whitespace-nowrap select-none;
+  @apply sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl select-none;
 }
 
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 6px solid #eee;
-  border-top: 6px solid #4b6cb7;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 16px;
+
+/* ================================
+   arvo
+   ================================ */
+.arvo-monza {
+  @apply font-arvo  text-monza;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.arvo-white {
+  @apply font-arvo  text-white;
+}
+.arvo-black {
+  @apply font-arvo  text-black;
+}
+/* ================================
+   roboto
+   ================================ */
+.roboto-monza {
+  @apply font-roboto  text-monza;
+}
+
+.roboto-white {
+  @apply font-roboto  text-white;
+}
+.roboto-black {
+  @apply font-roboto  text-black;
+}
+/* ================================
+   rubik
+   ================================ */
+
+.rubik-monza {
+  @apply font-rubik  text-monza;
+}
+
+.rubik-white {
+  @apply font-roboto  text-white;
+}
+.rubik-black {
+  @apply font-rubik  text-black;
+}
+.bio-highlight {
+  @apply bg-monza arvo-white  font-bold mt-5 inline-block;
+  transform: skew(-10deg);
+  padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
+}
+.bio-highlight-white {
+  @apply bg-white arvo-monza  font-bold mt-5 inline-block;
+  transform: skew(-10deg);
+  padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
+}
+.custom-mark {
+  background-color: #ff007a;
+  color: white;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
 }

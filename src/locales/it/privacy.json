@@ -1,6 +1,21 @@
 {
-"home": "Home",
-"about": "About",
-"privacy": "Privacy Policy",
-"artists": "Artistas"
+  "title": "Informativa sulla Privacy",
+  "intro": "La tua privacy è importante per noi. Questa informativa spiega come raccogliamo, utilizziamo e proteggiamo i dati che fornisci quando invii le tue opere artistiche alla nostra fanzine.",
+
+  "dataCollectionTitle": "Raccolta dei Dati",
+  "dataCollection": "Raccogliamo solo i dati personali che fornisci volontariamente al momento dell’invio della tua opera, inclusi nome, indirizzo email e materiali inviati come foto, brani musicali, dipinti, sculture o altre opere artistiche.",
+
+  "useOfDataTitle": "Utilizzo dei Dati",
+  "useOfData": "I dati raccolti vengono utilizzati esclusivamente per esaminare le tue proposte e contattarti in merito alle tue opere.",
+
+  "dataSharingTitle": "Condivisione dei Dati",
+  "dataSharing": "Non vendiamo né condividiamo i tuoi dati personali con terze parti, salvo nei casi necessari per gestire e ospitare i contenuti inviati.",
+
+  "cookiesTitle": "Cookie e Tecnologie di Tracciamento",
+  "cookies": "Il nostro sito non utilizza cookie o tecnologie di tracciamento per raccogliere dati. Se in futuro dovessimo introdurre tali tecnologie, aggiorneremo questa informativa di conseguenza.",
+
+  "userRightsTitle": "Diritti dell'Utente",
+  "userRights": "Puoi richiedere in qualsiasi momento l’accesso, la correzione o la cancellazione dei tuoi dati contattandoci a your.email@example.com.",
+
+  "lastUpdated": "Ultimo aggiornamento: 11 luglio 2025"
 }

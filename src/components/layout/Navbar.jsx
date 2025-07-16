@@ -12,11 +12,15 @@ export default function Navbar() {
   return (
     <nav className="bg-iron fixed top-0 left-0 right-0 z-50 shadow-lg">
       <div className="px-4 sm:px-8 py-4 flex justify-between items-center">
-        
+
         <Link to="/">
           <h1 className="heading-monoton">RARE VIBES</h1>
         </Link>
-
+<div>
+        <div className='sm:hidden'>
+          <LanguageSwitcher />
+        </div>
+</div>
         <button
           className="sm:hidden focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -29,16 +33,17 @@ export default function Navbar() {
           <NavLinkCustom to="/artists"> {t('artists')}</NavLinkCustom>
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>
           <NavLinkCustom to="/submit" extraClass="btn-monza">
-                        {t("submit")}
+            {t("submit")}
 
           </NavLinkCustom>
           <LanguageSwitcher />
 
         </div>
       </div>
-      
+
       {/* Mobile links dropdown */}
-      {menuOpen && (
+      {menuOpen && (<>
+
         <div className="sm:hidden absolute left-0 right-0 px-4 py-4 flex flex-col space-y-3 z-40 shadow-md bg-iron">
           <NavLinkCustom to="/" onClick={() => setMenuOpen(false)}>
             Home
@@ -52,8 +57,8 @@ export default function Navbar() {
           <NavLinkCustom to="/submit" extraClass="btn-monza" onClick={() => setMenuOpen(false)}>
             {t("submit")}
           </NavLinkCustom>
-          
-        </div>
+
+        </div></>
       )}
     </nav>
   )

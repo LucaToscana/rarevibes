@@ -91,7 +91,7 @@ export default function Submit() {
           { id: 'socials', label: 'Main Socials (Instagram, X, etc...)', type: 'text' }
         ].map(({ id, label, type, isTextArea, required }) => (
           <div key={id}>
-            <label htmlFor={id} className="block mb-1 title-small text-monza tracking-wide uppercase">
+            <label htmlFor={id} className="block mb-1 arvo-monza text-monza tracking-wide uppercase">
               {label}
             </label>
             {isTextArea ? (
@@ -102,7 +102,7 @@ export default function Submit() {
                 onChange={handleChange}
                 required={required}
                 rows={4}
-                className="w-full p-4 rounded-md bg-neutral-100 order border-neutral-700 placeholder:text-neutral-500 title-small resize-none h-32 focus:ring-2 focus:ring-monza focus:outline-none"
+                className="w-full p-4 rounded-md bg-neutral-100 order border-neutral-700 placeholder:text-neutral-500 arvo-monza resize-none h-32 focus:ring-2 focus:ring-monza focus:outline-none"
                 placeholder="Track and project: idea, inspirations, instruments, collaborations, visuals..."
               />
             ) : (
@@ -113,7 +113,7 @@ export default function Submit() {
                 value={form[id]}
                 onChange={handleChange}
                 required={required}
-                className="w-full p-4 rounded-md bg-neutral-100 border border-neutral-700 placeholder:text-neutral-500 title-small focus:ring-2 focus:ring-monza focus:outline-none"
+                className="w-full p-4 rounded-md bg-neutral-100 border border-neutral-700 placeholder:text-neutral-500 arvo-monza focus:ring-2 focus:ring-monza focus:outline-none"
               />
             )}
           </div>

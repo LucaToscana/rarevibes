@@ -25,9 +25,13 @@ export default function Artists() {
   })
 
   return (
-    <main className="min-h-screen   px-6 py-12  ">
-      <h1 className="heading-monoton mb-6 text-center mt-8">{t('artists')}</h1>
+    <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto ">
+
+      <div className="artist-monoton mb-8 mt-10">{t('artists')}</div>
+      <div className="h-1 bg-monza mb-16" />
+
       <div className="flex justify-center gap-4 mb-12">
+
         <FilterButton label="all" value="all" currentFilter={filter} onClick={setFilter} />
         <FilterButton label="visual arts" value="artist" currentFilter={filter} onClick={setFilter} />
         <FilterButton label="music" value="musician" currentFilter={filter} onClick={setFilter} />
@@ -35,7 +39,7 @@ export default function Artists() {
 
       <div className="grid gap-8 md:grid-cols-3">
         {filteredArtists.map((artist) => (
-          <ArtistCard  key={artist.name} artist={artist} showBio={true} slug={artist.id}/>
+          <ArtistCard key={artist.name} artist={artist} showBio={true} slug={artist.id} />
         ))}
       </div>
 

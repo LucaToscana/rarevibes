@@ -1,62 +1,34 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-export default function PrivacyPolicy() {
-    return (
-        <main className="min-h-screen px-6 py-12 max-w-6xl mx-auto title-small">
-            <h1 className="heading-monoton mb-6 text-center mt-24">Privacy Policy</h1>
+const PrivacyPolicy = () => {
+  const { t } = useTranslation('privacy');
 
-            <section className="mb-8">
-                <p>
-                    Your privacy is important to us. This policy explains how we collect, use, and protect the data you provide when submitting your artistic works to our fanzine.
-                </p>
-            </section>
+  return (
+    <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto font-rubik">
 
-            <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-2">Data Collection</h2>
-                <p>
-                    We collect only the personal data you voluntarily provide when submitting your artwork, including your name, email address, and the submitted materials such as photos, music tracks, paintings, sculptures, or other artistic works.
-                </p>
-            </section>
+      <div className="artist-monoton mb-8 mt-10">{t('title')}</div>
+      <div className="h-1 bg-monza mb-16 " />
 
-            <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-2">Use of Data</h2>
-                <p>
-                    The data collected is used solely to review your submissions and contact you regarding your artworks.
-                </p>
-            </section>
+      <p className="mb-6 arvo-black text-xl  drop-shadow">{t('intro')}</p>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-2">Data Sharing</h2>
-                <p>
-                    We do not sell or share your personal data with third parties except as necessary to manage and host the submitted content.
-                </p>
-            </section>
+      <h2 className="text-xl font-semibold mt-8">{t('dataCollectionTitle')}</h2>
+      <p className='arvo-black text-xl  drop-shadow'>{t('dataCollection')}</p>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-2">Cookies and Tracking Technologies</h2>
-                <p>
-                    Our site does not use cookies or tracking technologies for data collection. If we start using such technologies in the future, we will update this policy accordingly.
-                </p>
-            </section>
+      <h2 className="text-xl font-semibold mt-8">{t('useOfDataTitle')}</h2>
+      <p  className='arvo-black text-xl  drop-shadow'>{t('useOfData')}</p>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-2">User Rights</h2>
-                <p>
-                    You can request access to, correction, or deletion of your data at any time by contacting us at{' '}
-                    <a
-                        href="mailto:your.email@example.com"
-                        className="underline font-bold"
-                    >
-                        your.email@example.com
-                    </a>.
-                </p>
-            </section>
+      <h2 className="text-xl font-semibold mt-8">{t('dataSharingTitle')}</h2>
+      <p  className='arvo-black text-xl  drop-shadow'>{t('dataSharing')}</p>
 
-            <section>
-                <p className="text-sm ">
-                    Last updated: July 11, 2025
-                </p>
-            </section>
-        </main>
-    );
-}
+      <h2 className="text-xl font-semibold mt-8">{t('cookiesTitle')}</h2>
+      <p  className='arvo-black text-xl  drop-shadow'>{t('cookies')}</p>
+
+      <h2 className="text-xl font-semibold mt-8">{t('userRightsTitle')}</h2>
+      <p  className='arvo-black text-xl  drop-shadow'>{t('userRights')}</p>
+
+      <p className="mt-10 text-sm text-gray-500">{t('lastUpdated')}</p>
+    </main>
+  );
+};
+
+export default PrivacyPolicy;
