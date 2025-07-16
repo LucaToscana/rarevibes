@@ -23,6 +23,11 @@ import privacyES from './locales/es/privacy.json';
 import biosES from './locales/es/bios.json';
 import articlesES from './locales/es/articles.json';
 
+import musicFiltersEN from './locales/en/musicFilters.json';
+import musicFiltersES from './locales/es/musicFilters.json';
+import musicFiltersIT from './locales/it/musicFilters.json';
+import musicFiltersFR from './locales/fr/musicFilters.json';
+
 i18n
     .use(LanguageDetector)
     .use(initReactI18next)
@@ -37,24 +42,31 @@ i18n
                 privacy: privacyEN,
                 bios: biosEN,
                 articles: articlesEN,
+                musicFilters: musicFiltersEN
             },
             it: {
                 common: commonIT,
                 privacy: privacyIT,
                 bios: biosIT,
                 articles: articlesIT,
+                musicFilters: musicFiltersIT
+
             },
             fr: {
                 common: commonFR,
                 privacy: privacyFR,
                 bios: biosFR,
                 articles: articlesFR,
+                musicFilters: musicFiltersFR
+
             },
             es: {
                 common: commonES,
                 privacy: privacyES,
                 bios: biosES,
                 articles: articlesES,
+                musicFilters: musicFiltersES
+
             }
         },
         interpolation: {

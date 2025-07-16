@@ -5,7 +5,7 @@ export default function ArtistHeader({ artist }) {
   const artistName = artist?.name?.trim() || "Artista sconosciuto"
 
   return (
-    <div className="flex flex-col gap-2 mb-6">
+    <div className="flex flex-col gap-2">
       <h1 className="artist-monoton text-center break-words w-full">
         {artistName}
       </h1>

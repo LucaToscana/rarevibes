@@ -73,12 +73,14 @@ export default function ArtistPage() {
         {/* Info artista */}
         <section className="lg:w-1/3 flex flex-col gap-8 h-full min-h-[500px]">
           <ArtistHeader artist={selectedArtist} />
-          <ArtistControls artist={selectedArtist} />
 
           <ArtistBio slug={selectedArtist.slug}
             field="short"
             className='arvo-black text-xl  drop-shadow'
             highlightClass='bio-highlight-white' />
+
+          <ArtistControls artist={selectedArtist} />
+
           <ArtistBio slug={selectedArtist.slug}
             field="review"
             className='arvo-black text-xl  drop-shadow'
@@ -105,7 +107,7 @@ export default function ArtistPage() {
         <div className="h-1 bg-monza m-3" />
         <div className="flex justify-end">
           <h2 className="bio-highlight-white select-none">{t('youMightBeInterestedIn')}</h2>
-        </div>            
+        </div>
         <RelatedArtistsSection artists={relatedArtists} slug={slug} />
       </section>
     </main>

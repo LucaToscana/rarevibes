@@ -141,6 +141,22 @@ body {
 .rubik-black {
   @apply font-rubik  text-black;
 }
+
+
+/* ================================
+monoton
+   ================================ */
+.monoton-monza {
+  @apply font-monoton  text-monza;
+}
+
+.monoton-white {
+  @apply font-monoton  text-white;
+}
+.monoton-black {
+  @apply font-monoton  text-black;
+}
+
 .bio-highlight {
   @apply bg-monza arvo-white  font-bold mt-5 inline-block;
   transform: skew(-10deg);

@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import ArtistCard from '../components/artists/ArtistCard'
-import FilterButton from '../components/layout/FilterButton'
-import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import musicFilters from '../locales/en/musicFilters.json';
+import { useSelector, useDispatch } from 'react-redux'
+import FiltersConsole from '../components/artists/FiltersConsole';
 
 export default function Artists() {
   const [artists, setArtists] = useState([])
-  const [filter, setFilter] = useState('all')
-  const { t } = useTranslation('common'); // 👈 specifica il namespace */
+
+  const mainFilter = useSelector(state => state.filters.mainFilter)
+  const subFilter = useSelector(state => state.filters.subFilter)
+  const dispatch = useDispatch()
+
+  const { t } = useTranslation('common') // namespace
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/artists.json')
@@ -18,10 +23,20 @@ export default function Artists() {
       .then(data => setArtists(data))
       .catch(err => console.error('Errore nel caricamento artisti:', err))
   }, [])
-
+  // Estraggo i generi dal JSON (escludendo 'title')
+  const genres = Object.entries(musicFilters)
+    .filter(([key]) => key !== 'title')
+    .map(([key, label]) => ({ key, label }))
+    .sort((a, b) => a.label.localeCompare(b.label));
+  // Filtro artisti principale e secondario
   const filteredArtists = artists.filter(artist => {
-    if (filter === 'all') return true
-    return artist.type === filter
+    if (mainFilter === 'all') return true
+    if (mainFilter === 'artist') return artist.type === 'artist'
+    if (mainFilter === 'musician') {
+      if (subFilter === 'all') return artist.type === 'musician'
+      return artist.genre === subFilter
+    }
+    return false
   })
 
   return (
@@ -29,17 +44,14 @@ export default function Artists() {
 
       <div className="artist-monoton mb-8 mt-10">{t('artists')}</div>
       <div className="h-1 bg-monza mb-16" />
+      {/* Container filtri principali */}
+      <FiltersConsole genres={genres} />
 
-      <div className="flex justify-center gap-4 mb-12">
 
-        <FilterButton label="all" value="all" currentFilter={filter} onClick={setFilter} />
-        <FilterButton label="visual arts" value="artist" currentFilter={filter} onClick={setFilter} />
-        <FilterButton label="music" value="musician" currentFilter={filter} onClick={setFilter} />
-      </div>
-
+      {/* Lista artisti filtrata */}
       <div className="grid gap-8 md:grid-cols-3">
-        {filteredArtists.map((artist) => (
-          <ArtistCard key={artist.name} artist={artist} showBio={true} slug={artist.id} />
+        {filteredArtists.map(artist => (
+          <ArtistCard key={artist.id} artist={artist} showBio slug={artist.id} />
         ))}
       </div>
 

@@ -10,7 +10,7 @@ const ArtistBio = ({ slug, field = 'short', className = '', highlightClass = 'bi
   const parts = bioText.split(regex);
 
   return (
-    <p className={`${className} select-none`}>
+    <p className={`${className} select-none text-justify`}>
       {parts.map((part, index) =>
         part.toLowerCase() === slug.toLowerCase() ? (
           <mark key={index} className={highlightClass}>
