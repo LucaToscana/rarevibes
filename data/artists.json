@@ -14,9 +14,10 @@
       "review": "Odelia is gaining recognition for her unique mix of Alternative and Indie styles. Originating from Paris, she has built a growing fanbase.",
       "extended": "Odelia began her musical journey in Paris under the Independent label. Her sonic identity fuses Alternative and Indie music, with a passion for storytelling and sound exploration that captivates audiences worldwide."
     },
-    "genre": [
-      "Alternative",
-      "Indie"
+    "genres": [
+      "punk",
+      "garage-rock",
+      "lofi"
     ],
     "years_active": "2019–present",
     "origin": "Paris, France",
@@ -96,9 +97,10 @@
       "review": "Echo Shade creates immersive Electronic and Synthwave music. Originating from Berlin, Echo Shade has been making waves in the underground scene.",
       "extended": "Emerging from Berlin’s vibrant music scene, Echo Shade produces deep and atmospheric Electronic tracks fused with Synthwave influences. Their music explores nostalgic synth textures combined with modern beats, captivating listeners worldwide."
     },
-    "genre": [
-      "Electronic",
-      "Synthwave"
+    "genres": [
+      "punk",
+      "house",
+      "edm"
     ],
     "years_active": "2017–present",
     "origin": "Berlin, Germany",
@@ -178,9 +180,10 @@
       "review": "Luna Rae’s soulful voice and jazz influences create a warm and emotional sound. Hailing from New Orleans, her music touches hearts worldwide.",
       "extended": "Born and raised in New Orleans, Luna Rae combines classic Jazz and Soul elements with contemporary production. With a rich, expressive voice, she delivers heartfelt performances and has released multiple acclaimed albums."
     },
-    "genre": [
-      "Jazz",
-      "Soul"
+    "genres": [
+      "punk",
+      "house",
+      "idm"
     ],
     "years_active": "2015–present",
     "origin": "New Orleans, USA",
