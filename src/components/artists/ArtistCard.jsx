@@ -19,7 +19,7 @@ export default function ArtistCard({ artist, showBio = false }) {
   return (
     <Link
       to={`/artists/${artistSlug}`}
-      className="group relative overflow-hidden rounded-xl shadow-lg"
+      className="group relative overflow-hidden max-h-72 rounded-xl h-shadow-lg"
     >
       {/* Blur di caricamento */}
       <div
@@ -32,7 +32,7 @@ export default function ArtistCard({ artist, showBio = false }) {
         alt={artist?.name || "Artist image"}
         onLoad={() => setImgLoaded(true)}
         onError={handleImageError}
-        className={`w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0 ${imgLoaded ? "opacity-100" : "opacity-0"
+        className={`w-full max-h-72 object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0 ${imgLoaded ? "opacity-100" : "opacity-0"
           }`}
       />
 

@@ -1,61 +1,303 @@
 {
-  "title": "Música",
-  "blackMusicSoulHipHop": "Black Music / Soul / Hip-Hop",
-  "blues": "Blues",
-  "gospelMusic": "Música Gospel",
-  "funk": "Funk",
-  "disco": "Disco",
-  "hipHop": "Hip-Hop (Old School, East Coast, West Coast, Dirty South)",
-  "rap": "Rap (Hardcore Rap, Rap Político, Rap Underground)",
-  "neoSoul": "Neo-Soul",
-  "rnbSoul": "R’n B & Soul",
-  "jazzRap": "Jazz Rap",
-  "turntablism": "Turntablism",
-  "jazz": "Jazz",
-  "bebop": "Bebop",
-  "coolJazz": "Cool Jazz",
-  "freeJazz": "Free Jazz",
-  "fusion": "Fusión",
-  "latinJazz": "Latin Jazz",
-  "smoothJazz": "Smooth Jazz",
-  "swing": "Swing",
-  "vocalJazz": "Jazz Vocal",
-  "modalJazz": "Modal Jazz",
-  "electronicMusic": "Música Electrónica",
-  "ambient": "Ambient",
-  "chillOut": "Chill Out",
-  "breakBeat": "Break Beat",
-  "acidHouse": "Acid House",
-  "deepHouse": "Deep House",
-  "electro": "Electro",
-  "dubstep": "Dubstep",
-  "techno": "Techno (Detroit Techno, Minimal Techno)",
-  "trance": "Trance (Uplifting Trance, Trance Psicodélica)",
-  "drumAndBass": "Drum & Bass (Jungle, Liquid Funk, Neurofunk)",
-  "popMusic": "Música Pop",
-  "europop": "Europop",
-  "indiePop": "Indie Pop",
-  "synthPop": "Synth Pop",
-  "urbanPop": "Urban Pop",
-  "dancePop": "Dance Pop",
-  "rockMusic": "Música Rock",
-  "classicRock": "Classic Rock",
-  "alternativeRock": "Rock Alternativo",
-  "punk": "Punk (Hardcore Punk, Pop Punk)",
-  "grunge": "Grunge",
-  "hardRock": "Hard Rock",
-  "heavyMetal": "Heavy Metal (Thrash Metal, Black Metal, Death Metal)",
-  "progressiveRock": "Rock Progresivo",
-  "gothicRock": "Gothic Rock",
-  "worldFolkTraditional": "Música World / Folk / Tradicional",
-  "reggae": "Reggae (Dancehall, Dub, Ska)",
-  "latinMusic": "Música Latina (Salsa, Merengue, Samba, Tango)",
-  "flamenco": "Flamenco",
-  "celticMusic": "Música Celta",
-  "africanTraditional": "Música Tradicional Africana",
-  "countryBluegrass": "Country / Bluegrass",
-  "otherMiscellaneous": "Otros / Misceláneos",
-  "acousticUnplugged": "Acústico / Unplugged",
-  "soundtrackFilmScore": "Banda Sonora / Música de Película",
-  "operaClassical": "Ópera / Clásica"
+    "title": "artist",
+    "genres": [
+        {
+            "key": "rock",
+            "label": "Rock",
+            "subgenres": [
+                {
+                    "key": "punk",
+                    "label": "Punk Rock"
+                },
+                {
+                    "key": "hardcore-punk",
+                    "label": "Hardcore Punk"
+                },
+                {
+                    "key": "emo",
+                    "label": "Emo"
+                },
+                {
+                    "key": "grunge",
+                    "label": "Grunge"
+                },
+                {
+                    "key": "garage-rock",
+                    "label": "Garage Rock"
+                },
+                {
+                    "key": "alt-rock",
+                    "label": "Alternative Rock"
+                },
+                {
+                    "key": "psych-rock",
+                    "label": "Psychedelic Rock"
+                },
+                {
+                    "key": "indie-rock",
+                    "label": "Indie Rock"
+                },
+                {
+                    "key": "post-punk",
+                    "label": "Post-Punk"
+                },
+                {
+                    "key": "horror-punk",
+                    "label": "Horror Punk"
+                }
+            ]
+        },
+        {
+            "key": "metal",
+            "label": "Metal",
+            "subgenres": [
+                {
+                    "key": "heavy-metal",
+                    "label": "Heavy Metal"
+                },
+                {
+                    "key": "black-metal",
+                    "label": "Black Metal"
+                },
+                {
+                    "key": "death-metal",
+                    "label": "Death Metal"
+                },
+                {
+                    "key": "doom-metal",
+                    "label": "Doom Metal"
+                },
+                {
+                    "key": "thrash-metal",
+                    "label": "Thrash Metal"
+                },
+                {
+                    "key": "metalcore",
+                    "label": "Metalcore"
+                },
+                {
+                    "key": "nu-metal",
+                    "label": "Nu Metal"
+                },
+                {
+                    "key": "progressive-metal",
+                    "label": "Progressive Metal"
+                }
+            ]
+        },
+        {
+            "key": "pop",
+            "label": "Pop",
+            "subgenres": [
+                {
+                    "key": "synth-pop",
+                    "label": "Synth Pop"
+                },
+                {
+                    "key": "dance-pop",
+                    "label": "Dance Pop"
+                },
+                {
+                    "key": "teen-pop",
+                    "label": "Teen Pop"
+                },
+                {
+                    "key": "indie-pop",
+                    "label": "Indie Pop"
+                },
+                {
+                    "key": "electropop",
+                    "label": "Electropop"
+                },
+                {
+                    "key": "k-pop",
+                    "label": "K-Pop"
+                },
+                {
+                    "key": "hyperpop",
+                    "label": "Hyperpop"
+                }
+            ]
+        },
+        {
+            "key": "hiphop",
+            "label": "Hip Hop",
+            "subgenres": [
+                {
+                    "key": "trap",
+                    "label": "Trap"
+                },
+                {
+                    "key": "boom-bap",
+                    "label": "Boom Bap"
+                },
+                {
+                    "key": "lofi",
+                    "label": "Lo-fi Hip Hop"
+                },
+                {
+                    "key": "gangsta-rap",
+                    "label": "Gangsta Rap"
+                },
+                {
+                    "key": "conscious-rap",
+                    "label": "Conscious Rap"
+                },
+                {
+                    "key": "drill",
+                    "label": "Drill"
+                },
+                {
+                    "key": "alternative-hiphop",
+                    "label": "Alternative Hip Hop"
+                }
+            ]
+        },
+        {
+            "key": "electronic",
+            "label": "Electronic",
+            "subgenres": [
+                {
+                    "key": "techno",
+                    "label": "Techno"
+                },
+                {
+                    "key": "house",
+                    "label": "House"
+                },
+                {
+                    "key": "edm",
+                    "label": "EDM"
+                },
+                {
+                    "key": "trance",
+                    "label": "Trance"
+                },
+                {
+                    "key": "dubstep",
+                    "label": "Dubstep"
+                },
+                {
+                    "key": "drum-and-bass",
+                    "label": "Drum & Bass"
+                },
+                {
+                    "key": "ambient",
+                    "label": "Ambient"
+                },
+                {
+                    "key": "idm",
+                    "label": "Intelligent Dance Music (IDM)"
+                }
+            ]
+        },
+        {
+            "key": "jazz",
+            "label": "Jazz",
+            "subgenres": [
+                {
+                    "key": "swing",
+                    "label": "Swing"
+                },
+                {
+                    "key": "bebop",
+                    "label": "Bebop"
+                },
+                {
+                    "key": "cool-jazz",
+                    "label": "Cool Jazz"
+                },
+                {
+                    "key": "fusion",
+                    "label": "Jazz Fusion"
+                },
+                {
+                    "key": "free-jazz",
+                    "label": "Free Jazz"
+                },
+                {
+                    "key": "vocal-jazz",
+                    "label": "Vocal Jazz"
+                }
+            ]
+        },
+        {
+            "key": "classical",
+            "label": "Classical",
+            "subgenres": [
+                {
+                    "key": "baroque",
+                    "label": "Baroque"
+                },
+                {
+                    "key": "romantic",
+                    "label": "Romantic"
+                },
+                {
+                    "key": "modern",
+                    "label": "Modern Classical"
+                },
+                {
+                    "key": "minimalism",
+                    "label": "Minimalism"
+                },
+                {
+                    "key": "opera",
+                    "label": "Opera"
+                }
+            ]
+        },
+        {
+            "key": "folk",
+            "label": "Folk",
+            "subgenres": [
+                {
+                    "key": "americana",
+                    "label": "Americana"
+                },
+                {
+                    "key": "neofolk",
+                    "label": "Neofolk"
+                },
+                {
+                    "key": "celtic",
+                    "label": "Celtic Folk"
+                },
+                {
+                    "key": "folk-rock",
+                    "label": "Folk Rock"
+                },
+                {
+                    "key": "traditional",
+                    "label": "Traditional Folk"
+                }
+            ]
+        },
+        {
+            "key": "reggae",
+            "label": "Reggae",
+            "subgenres": [
+                {
+                    "key": "roots",
+                    "label": "Roots Reggae"
+                },
+                {
+                    "key": "dub",
+                    "label": "Dub"
+                },
+                {
+                    "key": "ska",
+                    "label": "Ska"
+                },
+                {
+                    "key": "rocksteady",
+                    "label": "Rocksteady"
+                },
+                {
+                    "key": "dancehall",
+                    "label": "Dancehall"
+                }
+            ]
+        }
+    ]
 }
