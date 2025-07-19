@@ -34,7 +34,6 @@ export default function SubFilterList() {
     <div className="h-24">
       <div className="flex flex-wrap gap-1 w-full  ">
 
-        {/* 👇 Nuovo elemento sotto al titolo */}
 
         {subFilters
           .filter(key => !mainGenres.includes(key)) // escludi quelli in mainGenres

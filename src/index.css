@@ -170,12 +170,12 @@ monoton
 }
 
 .bio-highlight {
-  @apply bg-monza arvo-white  font-bold mt-5 inline-block;
+  @apply bg-monza arvo-white   mt-5 inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white {
-  @apply bg-white arvo-monza  font-bold mt-5 inline-block;
+  @apply bg-white arvo-monza  mt-5 inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
@@ -195,4 +195,20 @@ monoton
   color: white;
   padding: 0.2em 0.4em;
   border-radius: 4px;
+}
+
+/* Solo per browser WebKit (Chrome, Safari, Edge) */
+.scrollbar-red::-webkit-scrollbar {
+  width: 8px; /* o "height" se è orizzontale */
+}
+
+.scrollbar-red::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-red::-webkit-scrollbar-thumb {
+  background-color: red; /* ROSSA */
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }

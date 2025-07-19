@@ -1,0 +1,111 @@
+{
+  "title": "artist",
+  "genres": [
+    {
+      "key": "painting",
+      "label": "Painting",
+      "subgenres": [
+        { "key": "oil", "label": "Oil Painting" },
+        { "key": "acrylic", "label": "Acrylic Painting" },
+        { "key": "watercolor", "label": "Watercolor" },
+        { "key": "gouache", "label": "Gouache" },
+        { "key": "encaustic", "label": "Encaustic" },
+        { "key": "fresco", "label": "Fresco" }
+      ]
+    },
+    {
+      "key": "drawing",
+      "label": "Drawing",
+      "subgenres": [
+        { "key": "pencil", "label": "Pencil" },
+        { "key": "charcoal", "label": "Charcoal" },
+        { "key": "ink", "label": "Ink" },
+        { "key": "pastel", "label": "Pastel" },
+        { "key": "crayon", "label": "Crayon" }
+      ]
+    },
+    {
+      "key": "printmaking",
+      "label": "Printmaking",
+      "subgenres": [
+        { "key": "etching", "label": "Etching" },
+        { "key": "lithography", "label": "Lithography" },
+        { "key": "woodcut", "label": "Woodcut" },
+        { "key": "screenprint", "label": "Screen Printing" },
+        { "key": "monotype", "label": "Monotype" }
+      ]
+    },
+    {
+      "key": "sculpture",
+      "label": "Sculpture",
+      "subgenres": [
+        { "key": "stone", "label": "Stone Sculpture" },
+        { "key": "wood", "label": "Wood Sculpture" },
+        { "key": "metal", "label": "Metal Sculpture" },
+        { "key": "clay", "label": "Clay / Ceramic" },
+        { "key": "mixed-media", "label": "Mixed Media" }
+      ]
+    },
+    {
+      "key": "photography",
+      "label": "Photography",
+      "subgenres": [
+        { "key": "portrait", "label": "Portrait" },
+        { "key": "landscape", "label": "Landscape" },
+        { "key": "documentary", "label": "Documentary" },
+        { "key": "street", "label": "Street Photography" },
+        { "key": "experimental", "label": "Experimental" }
+      ]
+    },
+    {
+      "key": "digital-art",
+      "label": "Digital Art",
+      "subgenres": [
+        { "key": "3d", "label": "3D Modeling" },
+        { "key": "digital-painting", "label": "Digital Painting" },
+        { "key": "vector", "label": "Vector Art" },
+        { "key": "pixel", "label": "Pixel Art" },
+        { "key": "generative", "label": "Generative Art" },
+        { "key": "ai-art", "label": "AI Art" }
+      ]
+    },
+    {
+      "key": "illustration",
+      "label": "Illustration",
+      "subgenres": [
+        { "key": "editorial", "label": "Editorial" },
+        { "key": "concept-art", "label": "Concept Art" },
+        { "key": "comic", "label": "Comic / Manga" },
+        { "key": "children", "label": "Children’s Book Illustration" },
+        { "key": "fashion", "label": "Fashion Illustration" }
+      ]
+    },
+    {
+      "key": "installation",
+      "label": "Installation Art",
+      "subgenres": [
+        { "key": "site-specific", "label": "Site-Specific" },
+        { "key": "interactive", "label": "Interactive" },
+        { "key": "immersive", "label": "Immersive" }
+      ]
+    },
+    {
+      "key": "performance-art",
+      "label": "Performance Art",
+      "subgenres": [
+        { "key": "body-art", "label": "Body Art" },
+        { "key": "live", "label": "Live Performance" },
+        { "key": "happening", "label": "Happening" }
+      ]
+    },
+    {
+      "key": "conceptual",
+      "label": "Conceptual Art",
+      "subgenres": [
+        { "key": "text-based", "label": "Text-Based" },
+        { "key": "minimal", "label": "Minimal Conceptualism" },
+        { "key": "social", "label": "Social Practice Art" }
+      ]
+    }
+  ]
+}

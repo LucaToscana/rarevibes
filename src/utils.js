@@ -4,7 +4,9 @@ export function getClasses({ isActive, type, extraClass = '' }) {
     const baseButton = 'text-2xs sm:text-base px-4 py-2 rounded-xs';
     const active = 'text-2xs bio-highlight line-through  decoration-2 p-1';
     const inactive = 'text-2xs  bio-highlight-white';
+
     return `${base} ${baseButton} ${isActive ? active : inactive} ${extraClass}`;
+
   }
   if (type === 'filter-button') {
     const baseButton = 'text-base sm:text-base px-4 py-2 rounded-xs';
@@ -22,4 +24,22 @@ export function getClasses({ isActive, type, extraClass = '' }) {
 }
 
 
-'button-filter'
+/**
+ * @file This file contains a utility function for fetching all artist data.
+ */
+
+/**
+ * Fetches all artist data directly from the JSON file.
+ * This is a pure utility function, independent of React components or hooks,
+ * making it suitable for data fetching in various parts of the application.
+ *
+ * @returns {Promise<Array<Object>>} A promise that resolves to an array of all
+ * artist objects. Returns an empty array in case of an error to ensure consistency.
+ * @example
+ * import { fetchAllArtists } from './utils/fetchAllArtists';
+ *
+ * async function loadData() {
+ * const allArtists = await fetchAllArtists();
+ * console.log(allArtists); // The complete list of artists
+ * }
+ */
