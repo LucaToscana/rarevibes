@@ -16,11 +16,11 @@ export default function Navbar() {
         <Link to="/">
           <h1 className="heading-monoton">RARE VIBES</h1>
         </Link>
-<div>
-        <div className='sm:hidden'>
-          <LanguageSwitcher />
+        <div>
+          <div className='sm:hidden'>
+            <LanguageSwitcher />
+          </div>
         </div>
-</div>
         <button
           className="sm:hidden focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}

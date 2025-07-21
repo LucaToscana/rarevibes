@@ -7,6 +7,6 @@ export const store = configureStore({
   reducer: {
     player: playerReducer,
     artists: artistsReducer, 
-    filters: filtersReducer // <--- aggiungi qui!
+    filters: filtersReducer 
   },
 });

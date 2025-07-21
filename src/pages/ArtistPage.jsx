@@ -14,6 +14,7 @@ import ArtistImages from '../components/artists/ArtistImages'
 import ArtistControls from '../components/artists/ArtistControls'
 import RelatedArtistsSection from '../components/artists/RelatedArtistsSection'
 import { useTranslation } from 'react-i18next'
+import ArtistTags from '../components/artists/ArtistTags'
 
 export default function ArtistPage() {
   const { slug } = useParams()
@@ -72,6 +73,10 @@ export default function ArtistPage() {
 
         {/* Info artista */}
         <section className="lg:w-1/3 flex flex-col gap-8 h-full min-h-[500px]">
+          <div className="relative">
+            <ArtistTags artist={selectedArtist}  />
+
+          </div>
           <ArtistHeader artist={selectedArtist} />
 
           <ArtistBio slug={selectedArtist.slug}

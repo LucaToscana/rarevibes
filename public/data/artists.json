@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Odelia",
     "slug": "odelia",
-    "type": "musician",
+    "type": ["musician"],
     "images": [
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg",
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
@@ -14,11 +14,7 @@
       "review": "Odelia is gaining recognition for her unique mix of Alternative and Indie styles. Originating from Paris, she has built a growing fanbase.",
       "extended": "Odelia began her musical journey in Paris under the Independent label. Her sonic identity fuses Alternative and Indie music, with a passion for storytelling and sound exploration that captivates audiences worldwide."
     },
-    "genres": [
-      "punk",
-      "garage-rock",
-      "lofi"
-    ],
+    "genres": ["punk", "garage-rock", "lofi"],
     "years_active": "2019–present",
     "origin": "Paris, France",
     "label": "Independent",
@@ -86,7 +82,7 @@
     "id": 2,
     "name": "Kael",
     "slug": "kael",
-    "type": "musician",
+    "type": ["musician", "artist"],
     "images": [
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg",
@@ -97,11 +93,7 @@
       "review": "Echo Shade creates immersive Electronic and Synthwave music. Originating from Berlin, Echo Shade has been making waves in the underground scene.",
       "extended": "Emerging from Berlin’s vibrant music scene, Echo Shade produces deep and atmospheric Electronic tracks fused with Synthwave influences. Their music explores nostalgic synth textures combined with modern beats, captivating listeners worldwide."
     },
-    "genres": [
-      "punk",
-      "house",
-      "edm"
-    ],
+    "genres": ["punk", "house", "edm", "pencil", "woodcut", "comic"],
     "years_active": "2017–present",
     "origin": "Berlin, Germany",
     "label": "Neon Tapes",
@@ -110,9 +102,7 @@
         "title": "Midnight Drive",
         "year": 2024,
         "cover": "/singles/midnight-drive.jpg",
-        "featuring": [
-          "Luna Rae"
-        ],
+        "featuring": ["Luna Rae"],
         "platforms": {
           "spotify": "https://open.spotify.com/track/6rqhFgbbKwnb9MLmUQDhG6",
           "youtube": "bvttDWdl0OQ",
@@ -169,7 +159,7 @@
     "id": 4,
     "name": "Leona painting",
     "slug": "leonapainting ",
-    "type": "artist",
+    "type": ["artist"],
     "images": [
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
@@ -180,30 +170,12 @@
       "review": "Luna Rae’s soulful voice and jazz influences create a warm and emotional sound. Hailing from New Orleans, her music touches hearts worldwide.",
       "extended": "Born and raised in New Orleans, Luna Rae combines classic Jazz and Soul elements with contemporary production. With a rich, expressive voice, she delivers heartfelt performances and has released multiple acclaimed albums."
     },
-    "genres": [
-      "pencil",
-      "woodcut",
-      "comic"
-    ],
+    "genres": ["pencil", "woodcut", "comic"],
     "years_active": "2015–present",
     "origin": "New Orleans, USA",
     "label": "Moonlight Records",
     "singles": [
-      {
-        "title": "Midnight Whisper",
-        "year": 2022,
-        "cover": "/singles/midnight-whisper.jpg",
-        "featuring": [],
-        "platforms": {
-          "spotify": "https://open.spotify.com/track/1a2b3c4d5e6f7g8h9i0j",
-          "youtube": "PRHCP-Czj0Y",
-          "bandcamp": "2380770719",
-          "soundcloud": "https://soundcloud.com/lunarae/midnight-whisper",
-          "appleMusic": "https://music.apple.com/us/album/midnight-whisper/1234567890?i=1234567890",
-          "deezer": "https://www.deezer.com/track/23456789",
-          "tidal": "https://tidal.com/browse/track/98765432"
-        }
-      }
+
     ],
     "defaultPlatform": "youtube",
     "platforms": {
@@ -252,7 +224,7 @@
     "id": 3,
     "name": "Leona",
     "slug": "leona",
-    "type": "musician",
+    "type": ["musician"],
     "images": [
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
@@ -263,11 +235,7 @@
       "review": "Luna Rae’s soulful voice and jazz influences create a warm and emotional sound. Hailing from New Orleans, her music touches hearts worldwide.",
       "extended": "Born and raised in New Orleans, Luna Rae combines classic Jazz and Soul elements with contemporary production. With a rich, expressive voice, she delivers heartfelt performances and has released multiple acclaimed albums."
     },
-    "genres": [
-      "punk",
-      "house",
-      "idm"
-    ],
+    "genres": ["punk", "house", "idm"],
     "years_active": "2015–present",
     "origin": "New Orleans, USA",
     "label": "Moonlight Records",

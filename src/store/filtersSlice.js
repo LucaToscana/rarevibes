@@ -16,6 +16,16 @@ const filtersSlice = createSlice({
       "folk",
       "reggae",
       "all",
+      "painting",
+      "drawing",
+      "printmaking",
+      "sculpture",
+      "photography",
+      "digital-art",
+      "illustration",
+      "installation",
+      "performance-art",
+      "conceptual",
     ],
   },
   reducers: {
@@ -30,7 +40,6 @@ const filtersSlice = createSlice({
       } else {
         state.mainFilter = newFilter; // Otherwise, set the new filter
       }
-
     },
     setSubFilter(state, action) {
       state.subFilter =

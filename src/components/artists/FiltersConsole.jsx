@@ -119,7 +119,7 @@ export default function FiltersConsole({ genres }) {
                   <button
                     aria-label={isExpanded ? 'Collapse' : 'Expand'}
                     onClick={() => toggleExpand(genre.key)}
-                    className="ml-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded"
+                    className="ml-2 mt-2 text-monza hover:text-monzadark focus:outline-none focus:ring-2 focus:ring-gray-300 rounded"
                     style={{ fontSize: '1.2rem', lineHeight: 1 }}
                   >
                     {isExpanded ? '▾' : '▸'}

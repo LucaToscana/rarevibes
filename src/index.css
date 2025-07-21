@@ -189,7 +189,16 @@ monoton
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
-
+.bio-highlight-white-xs {
+  @apply bg-white arvo-monza text-xs   mt-1 inline-block;
+  transform: skew(-10deg);
+  padding: 0 0.1rem; /* aggiusta il padding per non tagliare il testo */
+}
+.bio-highlight-monza-xs {
+  @apply bg-monza arvo-white text-xs   mt-1 inline-block;
+  transform: skew(-10deg);
+  padding: 0 0.1rem; /* aggiusta il padding per non tagliare il testo */
+}
 .custom-mark {
   background-color: #ff007a;
   color: white;
