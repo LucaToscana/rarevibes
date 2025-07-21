@@ -32,7 +32,7 @@ export default function Navbar() {
           <NavLinkCustom to="/">Home</NavLinkCustom>
           <NavLinkCustom to="/artists"> {t('artists')}</NavLinkCustom>
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>
-          <NavLinkCustom to="/submit" extraClass="btn-monza">
+          <NavLinkCustom to="/submit" extraClass="button">
             {t("submit")}
 
           </NavLinkCustom>

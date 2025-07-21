@@ -13,5 +13,6 @@
   "backToArtists": "Volver a los artistas",
   "youMightBeInterestedIn": "Podrías estar interesado en",
   "listenTo": "Escucha ",
-  "onYourFavoritePlatform": "en tu plataforma favorita"
+  "onYourFavoritePlatform": "en tu plataforma favorita",
+  "placeholdersFilter" : "Buscar por nombre, sello, singles o biografía"
 }

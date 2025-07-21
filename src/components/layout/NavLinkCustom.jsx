@@ -7,7 +7,8 @@ function CustomNavLink({ to, children, extraClass = '', onClick }) {
   const location = useLocation();
   const isActive = location.pathname === to;
 
-  const className = getClasses({ isActive, type: 'link', extraClass });
+  const type = extraClass === 'button' ? 'button-nav' : 'link-nav';
+  const className = getClasses({ isActive, type, extraClass });
 
   return (
     <Link to={to} className={className} onClick={onClick}>

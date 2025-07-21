@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ArtistBio from "./ArtistBio";
 
-export default function ArtistCard({ artist, showBio = false }) {
+export default function ArtistCard({ artist, showBio = false,foundIn }) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const [imgError, setImgError] = useState(false);
 
@@ -38,7 +38,7 @@ export default function ArtistCard({ artist, showBio = false }) {
 
       {/* Gradiente nero trasparente in basso */}
       <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-monza/95 via-monza/70 to-monza/50 z-20 rounded-b-xl" />
-
+      {foundIn}
       {/* Contenuto */}
       <div className="absolute bottom-4 left-4 right-4 z-30 text-white">
         <h3 className="font-monoton text-xl text-white drop-shadow-lg">
