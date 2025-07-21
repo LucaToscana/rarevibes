@@ -54,7 +54,7 @@ export default function Navbar() {
           <NavLinkCustom to="/privacy" onClick={() => setMenuOpen(false)}>
             Privacy
           </NavLinkCustom>
-          <NavLinkCustom to="/submit" extraClass="btn-monza" onClick={() => setMenuOpen(false)}>
+          <NavLinkCustom to="/submit" extraClass="button" onClick={() => setMenuOpen(false)}>
             {t("submit")}
           </NavLinkCustom>
 

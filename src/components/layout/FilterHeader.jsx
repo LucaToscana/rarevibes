@@ -3,7 +3,7 @@ import { FaRedo } from 'react-icons/fa'; // Import the icon you want to use
 
 const FilterHeader = ({ count, onReset }) => {
   return (
-    <div className="flex items-center justify-between w-full py-2 border-t border-gray-300"> {/* Added justify-between */}
+    <div className="flex items-center justify-between w-full py-2 border-t border-gray-300 "> {/* Added justify-between */}
       <button
         onClick={onReset}
         className="flex items-center gap-1 text-monza underline hover:text-black transition focus:outline-none focus:ring-2 focus:ring-monza focus:ring-offset-2"

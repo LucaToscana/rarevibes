@@ -19,7 +19,7 @@ export default function ArtistCard({ artist, showBio = false,foundIn }) {
   return (
     <Link
       to={`/artists/${artistSlug}`}
-      className="group relative overflow-hidden max-h-72 rounded-xl h-shadow-lg"
+      className="group relative overflow-hidden h-32 max-h-32 md:h-72 md:max-h-72 rounded-xl h-shadow-lg"
     >
       {/* Blur di caricamento */}
       <div
@@ -32,16 +32,16 @@ export default function ArtistCard({ artist, showBio = false,foundIn }) {
         alt={artist?.name || "Artist image"}
         onLoad={() => setImgLoaded(true)}
         onError={handleImageError}
-        className={`w-full max-h-72 object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0 ${imgLoaded ? "opacity-100" : "opacity-0"
+        className={`w-full  h-32 max-h-32 md:h-72 md:max-h-72 object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0 ${imgLoaded ? "opacity-100" : "opacity-0"
           }`}
       />
 
       {/* Gradiente nero trasparente in basso */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-monza/95 via-monza/70 to-monza/50 z-20 rounded-b-xl" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 md:h-28 bg-gradient-to-t from-monza/95 via-monza/70 to-monza/50 z-20 rounded-b-xl" />
       {foundIn}
       {/* Contenuto */}
       <div className="absolute bottom-4 left-4 right-4 z-30 text-white">
-        <h3 className="font-monoton text-xl text-white drop-shadow-lg">
+        <h3 className="hidden md:block font-monoton text-xl text-white drop-shadow-lg">
           {artist?.name || "Artist"}
         </h3>
         {showBio && artist?.bio?.short && (
@@ -54,58 +54,3 @@ export default function ArtistCard({ artist, showBio = false,foundIn }) {
     </Link>
   );
 }
-/**{
-  "id": null,
-  "name": "",
-  "slug": "",
-  "type": "musician",
-  "images": [],
-  "bio": {
-    "short": "",
-    "review": "",
-    "extended": ""
-  },
-  "genre": [],
-  "years_active": "",
-  "origin": "",
-  "label": "",
-  "singles": [],
-  "albums": [],
-  "collaborations": [],
-  "defaultPlatform": "spotify",
-  "platforms": {
-    "spotify": "",
-    "soundcloud": "",
-    "youtube": "",
-    "bandcamp": "",
-    "appleMusic": "",
-    "deezer": "",
-    "tidal": "",
-    "amazonMusic": "",
-    "audiomack": "",
-    "napster": "",
-    "beatport": "",
-    "boomplay": "",
-    "shazam": "",
-    "pandora": ""
-  },
-  "socials": {
-    "instagram": "",
-    "twitter": "",
-    "tiktok": "",
-    "facebook": "",
-    "youtube": "",
-    "threads": "",
-    "linkedin": "",
-    "snapchat": "",
-    "telegram": "",
-    "discord": "",
-    "website": ""
-  },
-  "press_kit": {
-    "pdf": "",
-    "contact_email": ""
-  },
-  "merch": []
-}
- */

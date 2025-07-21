@@ -17,7 +17,7 @@ const LanguageSwitcher = () => {
   const current = languages.find(lang => lang.code === currentLang) || languages[0];
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left lg:mt-4">
       <button
         onClick={() => setOpen(prev => !prev)}
         className="inline-flex items-center px-3 py-1.5 rounded-md bg-white text-sm font-medium shadow-sm border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
