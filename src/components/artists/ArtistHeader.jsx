@@ -5,10 +5,12 @@ export default function ArtistHeader({ artist }) {
   const artistName = artist?.name?.trim() || "Artista sconosciuto"
 
   return (
-    <div className="flex flex-col gap-2">
-      <h1 className="artist-monoton text-center break-words w-full">
+    <div className="flex flex-col items-center gap-2">
+      <p className="artist-monoton text-center break-all w-full leading-tight p-2 overflow-hidden">
         {artistName}
-      </h1>
+      </p>
+
+
       {artist?.socials && (
         <div className="w-full flex justify-center">
           <SocialLinks socials={artist.socials} />

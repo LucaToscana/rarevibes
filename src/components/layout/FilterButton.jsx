@@ -1,7 +1,10 @@
 import { getClasses } from '../../utils';
+import { useTranslation } from 'react-i18next';
 
-function FilterButton({ label, value, currentFilter, onClick, custom }) {
+function FilterButton({ key, label, value, currentFilter, onClick, custom }) {
   let isActive
+  const { t } = useTranslation('filters');
+
   // Check if currentFilter is an array
   if (Array.isArray(currentFilter)) {
     // If it's an array, check if the array includes the button's value
@@ -17,7 +20,7 @@ function FilterButton({ label, value, currentFilter, onClick, custom }) {
 
   return (
     <button onClick={() => onClick(value)} className={className}>
-      {label}
+      {t(value, { defaultValue: label })}
     </button>
   );
 }

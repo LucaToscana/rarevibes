@@ -19,7 +19,7 @@ import ArtistTags from '../components/artists/ArtistTags'
 export default function ArtistPage() {
   const { slug } = useParams()
   const dispatch = useDispatch()
-  const { t } = useTranslation('common'); // 👈 specifica il namespace */
+  const { t } = useTranslation('common'); 
 
 
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function ArtistPage() {
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
 
         {/* Info artista */}
-        <section className="lg:w-1/3 flex flex-col gap-8 h-full min-h-[500px]">
+        <section className="lg:w-1/3 flex flex-col gap-6 h-full min-h-[500px]">
           <div className="relative">
             <ArtistTags artist={selectedArtist}  />
 

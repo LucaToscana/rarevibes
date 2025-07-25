@@ -1,5 +1,5 @@
-import musicFilters from "../locales/en/musicFilters.json";
-import artFilters from "../locales/en/artFilters.json";
+import musicFilters from "../data/musicFilters.json";
+import artFilters from "../data/artFilters.json";
 
 import { useTranslation } from "react-i18next";
 import FiltersConsole from "../components/artists/FiltersConsole";
@@ -18,10 +18,17 @@ export default function Artists() {
   const [isSubFilterListVisible, setIsSubFilterListVisible] = useState(false);
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState("0px");
+
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchTimestamps, setSearchTimestamps] = useState([]);
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [captchaInput, setCaptchaInput] = useState("");
+  const captchaAnswer = 7; // esempio 3 + 4
 
   const { t } = useTranslation("common");
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const mergeGenres = (genres1, genres2) => {
     const map = {};
     [...genres1, ...genres2].forEach((g) => {
@@ -72,6 +79,38 @@ export default function Artists() {
     setIsSubFilterListVisible((prev) => !prev);
   };
 
+  // Gestione input ricerca con rate limiting
+  const handleSearchChange = (e) => {
+    const now = Date.now();
+
+    // Tieni solo i timestamps degli ultimi 60s
+    const recentTimestamps = searchTimestamps.filter(
+      (t) => now - t < 60000
+    );
+
+    if (recentTimestamps.length >= 100) {
+      // Troppe ricerche in 60s => mostra captcha
+      setShowCaptcha(true);
+      return; // blocca aggiornamento ricerca
+    }
+
+    // Aggiorna lista timestamps e searchTerm
+    setSearchTimestamps([...recentTimestamps, now]);
+    setSearchTerm(e.target.value);
+  };
+
+  // Verifica risposta captcha
+  const handleCaptchaSubmit = (e) => {
+    e.preventDefault();
+    if (parseInt(captchaInput) === captchaAnswer) {
+      setShowCaptcha(false);
+      setCaptchaInput("");
+      setSearchTimestamps([]); // resetta contatore
+    } else {
+      alert("Risposta errata, riprova!");
+    }
+  };
+
   return (
     <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto">
       <div>
@@ -83,13 +122,38 @@ export default function Artists() {
         <div className="flex flex-row w-full items-center justify-between gap-4 mt-8">
           <div className="relative flex-[3]">
             <FaSearch className="absolute top-3 left-3 text-gray-500" />
-            <input
-              type="text"
-              placeholder={t("placeholdersFilter") || "Search by name"}
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-monza"
-            />
+
+            {!showCaptcha ? (
+              <input
+                type="text"
+                placeholder={t("placeholdersFilter") || "Search by name"}
+                value={searchTerm}
+                onChange={handleSearchChange}
+                className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-monza"
+              />
+            ) : (
+              <form
+                onSubmit={handleCaptchaSubmit}
+                className="pl-10 pr-4 py-2 w-full border border-red-500 rounded-md text-black flex items-center gap-2"
+              >
+                <label className="text-red-600 font-semibold whitespace-nowrap">
+                  Sei umano? Quanto fa 3 + 4?
+                </label>
+                <input
+                  type="number"
+                  value={captchaInput}
+                  onChange={(e) => setCaptchaInput(e.target.value)}
+                  className="w-16 p-1 border border-gray-400 rounded"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="bg-monza text-white px-3 py-1 rounded"
+                >
+                  Verifica
+                </button>
+              </form>
+            )}
           </div>
 
           <div className="flex flex-row flex-[1] items-center gap-4 justify-end">
@@ -118,6 +182,7 @@ export default function Artists() {
             </button>
           </div>
         </div>
+
         {/* Subfiltri a scomparsa */}
         <div
           ref={contentRef}
@@ -160,7 +225,7 @@ export default function Artists() {
 
         <section className="md:col-span-3 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:[grid-auto-rows:300px]">
           {filteredArtists.length > 0 ? (
-            filteredArtists.map((artist, index) => (
+            filteredArtists.map((artist) => (
               <ArtistCard
                 key={artist.id}
                 artist={artist}
@@ -170,7 +235,9 @@ export default function Artists() {
             ))
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center text-center text-gray-400 py-12">
-              <p className="text-xl">{t("no_artists_found") || "No artists found."}</p>
+              <p className="text-xl">
+                {t("no_artists_found") || "No artists found."}
+              </p>
             </div>
           )}
         </section>

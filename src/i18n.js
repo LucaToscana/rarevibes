@@ -23,15 +23,10 @@ import privacyES from "./locales/es/privacy.json";
 import biosES from "./locales/es/bios.json";
 import articlesES from "./locales/es/articles.json";
 
-import musicFiltersEN from "./locales/en/musicFilters.json";
-import musicFiltersES from "./locales/es/musicFilters.json";
-import musicFiltersIT from "./locales/it/musicFilters.json";
-import musicFiltersFR from "./locales/fr/musicFilters.json";
-
-import artFiltersEN from "./locales/en/artFilters.json";
-import artFiltersES from "./locales/es/artFilters.json";
-import artFiltersIT from "./locales/it/artFilters.json";
-import artFiltersFR from "./locales/fr/artFilters.json";
+import filtersEN from "./locales/en/filters.json";
+import filtersES from "./locales/es/filters.json";
+import filtersIT from "./locales/it/filters.json";
+import filtersFR from "./locales/fr/filters.json";
 
 i18n
   .use(LanguageDetector)
@@ -39,7 +34,7 @@ i18n
   .init({
     fallbackLng: "en",
     lng: "en",
-    ns: ["common", "privacy", "bios", "articles", "musicFilters"],
+    ns: ["common", "privacy", "bios", "articles", "filters"],
     defaultNS: "common",
     resources: {
       en: {
@@ -47,32 +42,28 @@ i18n
         privacy: privacyEN,
         bios: biosEN,
         articles: articlesEN,
-        musicFilters: musicFiltersEN,
-        artFilters: artFiltersEN,
+        filters: filtersEN,
       },
       it: {
         common: commonIT,
         privacy: privacyIT,
         bios: biosIT,
         articles: articlesIT,
-        musicFilters: musicFiltersIT,
-        artFilters: artFiltersIT,
+        filters: filtersIT
       },
       fr: {
         common: commonFR,
         privacy: privacyFR,
         bios: biosFR,
         articles: articlesFR,
-        musicFilters: musicFiltersFR,
-        artFilters: artFiltersFR,
+        filters: filtersFR,
       },
       es: {
         common: commonES,
         privacy: privacyES,
         bios: biosES,
         articles: articlesES,
-        musicFilters: musicFiltersES,
-        artFilters: artFiltersES,
+        filters: filtersES,
       },
     },
     interpolation: {

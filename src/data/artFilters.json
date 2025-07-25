@@ -58,17 +58,14 @@
       ]
     },
     {
-      "key": "digital-art",
-      "label": "Digital Art",
+      "key": "body_art",
+      "label": "Body Art",
       "subgenres": [
-        { "key": "3d", "label": "3D Modeling" },
-        { "key": "digital-painting", "label": "Digital Painting" },
-        { "key": "vector", "label": "Vector Art" },
-        { "key": "pixel", "label": "Pixel Art" },
-        { "key": "generative", "label": "Generative Art" },
-        { "key": "ai-art", "label": "AI Art" }
+        { "key": "tattoos", "label": "Tattoos" },
+        { "key": "piercing", "label": "Piercing" }
       ]
     },
+  
     {
       "key": "illustration",
       "label": "Illustration",
@@ -78,6 +75,17 @@
         { "key": "comic", "label": "Comic / Manga" },
         { "key": "children", "label": "Children’s Book Illustration" },
         { "key": "fashion", "label": "Fashion Illustration" }
+      ]
+    },  {
+      "key": "digital-art",
+      "label": "Digital Art",
+      "subgenres": [
+        { "key": "3d", "label": "3D Modeling" },
+        { "key": "digital-painting", "label": "Digital Painting" },
+        { "key": "vector", "label": "Vector Art" },
+        { "key": "pixel", "label": "Pixel Art" },
+        { "key": "generative", "label": "Generative Art" },
+        { "key": "ai-art", "label": "AI Art" }
       ]
     },
     {

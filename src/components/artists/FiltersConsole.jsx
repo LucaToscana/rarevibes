@@ -17,7 +17,7 @@ export default function FiltersConsole({ genres }) {
     dispatchMainFilter
   } = useFilterManagement(genres);
 
-  const { t } = useTranslation('common');
+const { t } = useTranslation(['musicFilters', 'artFilters']);
   const [showFilters, setShowFilters] = useState(false);
 
   return (
@@ -26,18 +26,21 @@ export default function FiltersConsole({ genres }) {
       <div className="mb-6 overflow-x-auto no-scrollbar">
         <div className="flex items-center gap-4 px-4 min-w-max">
           <FilterButton
+            key={"musician"}
             label={"musician"}
             value="musician"
             currentFilter={mainFilter.includes('musician') ? 'musician' : ''}
             onClick={() => dispatchMainFilter(['musician'])}
           />
           <FilterButton
+            key={"artist"}
             label={"artist"}
             value="artist"
             currentFilter={mainFilter.includes('artist') ? 'artist' : ''}
             onClick={() => dispatchMainFilter(['artist'])}
           />
           <FilterButton
+            key={"all"}
             label={"all"}
             value="all"
             currentFilter={mainFilter.includes('all') ? 'all' : ''}
@@ -51,11 +54,11 @@ export default function FiltersConsole({ genres }) {
             className="ml-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded md:hidden"
             style={{ fontSize: '1.2rem', lineHeight: 1 }}
           >
-            {showFilters ? 
-            <FaChevronUp
-              className="h-5 w-5 bg-iron text-monza  rounded-full"
-              aria-hidden="true"
-            />
+            {showFilters ?
+              <FaChevronUp
+                className="h-5 w-5 bg-iron text-monza  rounded-full"
+                aria-hidden="true"
+              />
               :
               <FaChevronDown
                 className="h-5 w-5 bg-iron text-monza rounded-full"
@@ -110,6 +113,7 @@ export default function FiltersConsole({ genres }) {
             <div key={genre.key}>
               <div className="flex items-center justify-between">
                 <FilterButton
+                  key={genre.key}
                   label={genre.label}
                   value={genre.key}
                   currentFilter={mainSelected ? genre.key : ""}
@@ -136,6 +140,7 @@ export default function FiltersConsole({ genres }) {
                       value={sub.key}
                       currentFilter={subFilters.includes(sub.key) ? sub.key : ""}
                       onClick={() => toggleSubFilter(sub.key)}
+
                     />
                   ))}
                 </div>

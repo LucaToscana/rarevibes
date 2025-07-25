@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export default function Submit() {
   const [form, setForm] = useState({
@@ -15,14 +16,24 @@ export default function Submit() {
   })
 
   const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [captchaToken, setCaptchaToken] = useState(null)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const artistKey = `submittedArtist_${form.artistName.toLowerCase().trim()}`
+
+    if (!captchaToken) {
+      alert('Completa il reCAPTCHA per continuare.')
+      return
+    }
 
     if (localStorage.getItem(artistKey)) {
       alert('Hai già inviato una traccia con questo nome artista!')
@@ -53,6 +64,7 @@ export default function Submit() {
           socials: '',
           albumLink: '',
         })
+        setCaptchaToken(null)
       })
       .catch((err) => {
         console.error('EmailJS error:', err)
@@ -76,7 +88,6 @@ export default function Submit() {
       {status === 'error' && (
         <p className="text-red-500 mb-4 text-center">❌ Submission failed. Please try again.</p>
       )}
-
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {[
@@ -102,7 +113,7 @@ export default function Submit() {
                 onChange={handleChange}
                 required={required}
                 rows={4}
-                className="w-full p-4 rounded-md bg-neutral-100 order border-neutral-700 placeholder:text-neutral-500 arvo-monza resize-none h-32 focus:ring-2 focus:ring-monza focus:outline-none"
+                className="w-full p-4 rounded-md bg-neutral-100 border border-neutral-700 placeholder:text-neutral-500 arvo-monza resize-none h-32 focus:ring-2 focus:ring-monza focus:outline-none"
                 placeholder="Track and project: idea, inspirations, instruments, collaborations, visuals..."
               />
             ) : (
@@ -118,6 +129,12 @@ export default function Submit() {
             )}
           </div>
         ))}
+
+        {/* CAPTCHA */}
+        <ReCAPTCHA
+          sitekey={      import.meta.env.VITE_GOOGLE_CAPTCHA_HTML} // ← sostituisci con la tua chiave pubblica di Google reCAPTCHA
+          onChange={handleCaptchaChange}
+        />
 
         <button
           type="submit"

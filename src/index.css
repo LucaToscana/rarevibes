@@ -104,12 +104,12 @@ body {
    Tipografia personalizzata
    ================================ */
 .heading-monoton {
-  @apply font-monoton text-3xl tracking-tight whitespace-nowrap select-none;
+  @apply font-monoton text-3xl tracking-tight select-none;
 }
 
 .artist-monoton {
-  @apply font-monoton text-4xl tracking-tight whitespace-nowrap select-none;
-  @apply sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl select-none;
+  @apply font-monoton text-4xl tracking-tight select-none;
+  @apply sm:text-4xl md:text-5xl lg:text-6xl  select-none;
 }
 
 
