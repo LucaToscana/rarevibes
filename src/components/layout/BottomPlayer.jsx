@@ -1,16 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { setPlayerOpen, setAutoPlay } from '../../store/playerSlice' // Controlla che il path sia corretto
-import SpotifyPlayer from './SpotifyPlayer'
-import SoundCloudPlayer from './SoundCloudPlayer'
-import YouTubePlayer from './YouTubePlayer'
 import { useState, useEffect } from 'react'
-import TogglePlayerButton from './TogglePlayerButton'
-import BottomPlayerDetails from './BottomPlayerDetails'
-import ArtistTrackListCard from './ArtistTrackListCard'
+import TogglePlayerButton from '../players/TogglePlayerButton'
+import BottomPlayerDetails from '../players/BottomPlayerDetails'
+import ArtistTrackListCard from '../players/ArtistTrackListCard'
 import { setArtist, setPlatform } from '../../store/playerSlice'
 import SocialLinks from '../artists/SocialLinks'
 import defaultArtistRV from '../../../public/data/defaultArtist' // adatta il path alla posizione reale
-import PlayerRenderer from './PlayerRenderer'
+import PlayerRenderer from '../players/PlayerRenderer'
+import { addVisitedArtist } from '../../store/visitedArtistsSlice';
 
 
 export default function BottomPlayer() {
@@ -58,6 +56,11 @@ export default function BottomPlayer() {
     }
   }, [artist, platform])
 
+  useEffect(() => {
+    if (activeArtist?.id) {
+      dispatch(addVisitedArtist(activeArtist));
+    }
+  }, [activeArtist, dispatch]);
   // Se non c'è artista o piattaforma, non mostrare nulla
   if (!activeArtist || !activePlatform) return null
 
@@ -85,7 +88,7 @@ export default function BottomPlayer() {
       className={`
         fixed bottom-0 left-0 right-0 bg-monzadark text-white shadow-lg z-40
         transition-all duration-300
-        ${playerOpen ? 'md-h-[560px] lg-h-[460px] py-6 px-8' : 'h-[60px] py-2 px-4'}
+        ${playerOpen ? 'md-h-[560px] lg-h-[360px] py-3 px-4' : 'h-[60px] py-1 px-4'}
         flex items-center justify-between px-6
       `}
     >
@@ -99,10 +102,22 @@ export default function BottomPlayer() {
 
           {/* Informazioni artista */}
           {playerOpen ? (
+            <div className="relative flex flex-col items-start gap-4 ">
+              
+              <div className="bio-highlight-white text-3xl">
+                RARE VIBES
+              </div>
+              <BottomPlayerDetails
+                activeArtist={activeArtist}
+                selectedPlatform={
+                  selectedPlatform
+                    ? selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1)
+                    : ''
+                }
+                setSelectedPlatform={setSelectedPlatform}
+              />
 
-            <BottomPlayerDetails activeArtist={activeArtist} selectedPlatform={selectedPlatform
-              ? selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1)
-              : ''} setSelectedPlatform={setSelectedPlatform}></BottomPlayerDetails>
+            </div>
 
           ) : (
             // Vista compatta quando il player è chiuso
@@ -120,11 +135,11 @@ export default function BottomPlayer() {
 
               {/* Contenuto testo */}
               <div
-                className="relative z-40  p-4 h-full text-white flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4"
+                className="relative z-40  p-1 h-full text-white flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4"
               >
                 <div className="flex items-center space-x-2 truncate">
                   <span
-                    className="font-arvo text-sm uppercase truncate"
+                    className="font-arvo text-xs uppercase truncate "
                     title={activeArtist.name}
                   >
                     {activeArtist.name}

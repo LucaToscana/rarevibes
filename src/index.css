@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ================================
-   Reset base e setup globale
+   Reset base e setup globale [#D0D8D7]
    ================================ */
 html, body, #root {
   height: 100%;
@@ -12,7 +12,7 @@ html, body, #root {
 }
 
 body {
-  @apply antialiased font-sans bg-[#D0D8D7] text-[#dd1a1c];
+  @apply antialiased font-sans bg-iron text-[#dd1a1c];
 }
 
 /* ================================
@@ -104,11 +104,11 @@ body {
    Tipografia personalizzata
    ================================ */
 .heading-monoton {
-  @apply font-monoton text-3xl tracking-tight select-none;
+  @apply font-arvo text-3xl tracking-tight select-none;
 }
 
 .artist-monoton {
-  @apply font-monoton text-4xl tracking-tight select-none;
+  @apply font-arvo text-4xl tracking-tight select-none;
   @apply sm:text-4xl md:text-5xl lg:text-6xl  select-none;
 }
 
@@ -168,34 +168,38 @@ monoton
 .monoton-black {
   @apply font-monoton  text-black;
 }
+.bio-text-white {
+  @apply font-arvo text-sm text-black;
+
+}
 
 .bio-highlight {
-  @apply bg-monza arvo-white   mt-5 inline-block;
+  @apply bg-monza arvo-white   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white {
-  @apply bg-white arvo-monza  mt-5 inline-block;
+  @apply bg-white arvo-monza   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-small {
-  @apply bg-monza arvo-white text-sm  mt-2 inline-block;
+  @apply bg-monza arvo-white text-sm   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white-small {
-  @apply bg-white arvo-monza text-sm   mt-2 inline-block;
+  @apply bg-white arvo-monza text-sm   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white-xs {
-  @apply bg-white arvo-monza text-xs   mt-1 inline-block;
+  @apply bg-white arvo-monza text-xs    inline-block;
   transform: skew(-10deg);
   padding: 0 0.1rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-monza-xs {
-  @apply bg-monza arvo-white text-xs   mt-1 inline-block;
+  @apply bg-monza arvo-white text-xs   inline-block;
   transform: skew(-10deg);
   padding: 0 0.1rem; /* aggiusta il padding per non tagliare il testo */
 }
@@ -220,4 +224,89 @@ monoton
   border-radius: 4px;
   border: 2px solid transparent;
   background-clip: content-box;
+}
+
+
+@font-face {
+  font-family: 'wawe1';
+  src: url('./assets/fonts/BlueLagoonWave.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+.wave-badge {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wave {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  margin-left: -50%;
+  margin-top: -50%;
+  background: linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb);
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+  z-index: 0;
+}
+
+.wave:nth-child(2) {
+  animation-duration: 50s;
+}
+
+.wave:nth-child(3) {
+  animation-duration: 45s;
+}
+
+.site-title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: marquee 15s linear infinite;
 }

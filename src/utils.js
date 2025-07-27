@@ -1,5 +1,5 @@
 export function getClasses({ isActive, type, extraClass = "" }) {
-  const base = " transition duration-200";
+  const base = " transition duration-200 lowercase";
   if (type === "link-nav") {
     const baseButton = "text-base sm:text-base px-4 py-2 rounded-xs";
     const active =

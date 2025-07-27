@@ -20,7 +20,7 @@ export default function PlayerPlatformButtons({ activeArtist, selectedPlatform, 
   const platformList = firstSingle?.platforms || {}
 
   return (
-    <div className="flex space-x-3 mb-4">
+    <div className="flex space-x-3 mb-2">
       {['spotify', 'soundcloud', 'youtube', 'bandcamp'].map(platform => {
         if (!platformList[platform]) return null  // controllo sulle piattaforme della traccia
         const Icon = iconsMap[platform]
@@ -37,14 +37,14 @@ export default function PlayerPlatformButtons({ activeArtist, selectedPlatform, 
           <button
             key={platform}
             onClick={() => setSelectedPlatform(platform)}
-            className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors flex items-center justify-center ${isSelected
+            className={`px-3 py-2 rounded-full font-semibold text-sm transition-colors flex items-center justify-center ${isSelected
               ? `${colors[platform][0]} text-white shadow-lg`
               : `bg-gray-700 text-gray-300 ${colors[platform][1]} hover:text-white`
               }`}
             aria-label={platform}
             title={platform.charAt(0).toUpperCase() + platform.slice(1)}
           >
-            <Icon size={20} />
+            <Icon size={15} />
           </button>
         )
       })}

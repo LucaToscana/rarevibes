@@ -3,6 +3,7 @@ import { setArtist, setPlatform, setAutoPlay, setPlayerOpen } from '../../store/
 import { FaSpotify, FaSoundcloud, FaYoutube } from 'react-icons/fa'
 import { SiSoundcloud, SiYoutube, SiBandcamp } from 'react-icons/si'
 import { useTranslation } from 'react-i18next';
+import ArtistTags from '../artists/ArtistTags';
 
 export default function ArtistPlayerButtons({ artist }) {
   const dispatch = useDispatch()
@@ -27,36 +28,39 @@ export default function ArtistPlayerButtons({ artist }) {
 
   return (
     <div
-      className="max-w-md mx-auto rounded-lg shadow-md overflow-hidden border border-gray-200 relative text-white"
+      className="max-w-md rounded-lg shadow-md overflow-hidden border border-gray-200 relative text-white max-h-16"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        minHeight: '280px',
+        minHeight: '8px',
       }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
-      <div className=" relative p-6 flex flex-col justify-center h-full">
-        <h2 className="text-2xl mb-4 drop-shadow-lg">
-          {t('listenTo')} <span className="bio-highlight">{artist.name}</span> {t('onYourFavoritePlatform')}
+      <div className="absolute inset-0 bg-white bg-opacity-60" />
+      <div className="flex flex-col items-center gap-2">
 
-        </h2>
-        <div className="flex flex-col gap-3">
+
+      </div>
+      <div className="relative h-full">
+        <div className="flex w-full gap-2 ">
           {platforms.map(({ key, icon: Icon, label }) =>
             artist.platforms?.[key] ? (
               <button
                 key={key}
                 onClick={() => handlePlay(key)}
-                className="btn-monza w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md hover:bg-monza-dark transition"
+                className="flex-1 basis-0 flex items-center justify-center rounded-md transition text-monza min-h-[40px]"
                 aria-label={`Play ${artist.name} on ${label}`}
               >
-                <Icon size={20} />
-                {label}
+                <Icon
+                  size={28}
+                  className="w-7 h-7 hover:text-monza transition-colors hover:text-monzadark"
+                />
               </button>
             ) : null
           )}
         </div>
       </div>
+
     </div>
   )
 }

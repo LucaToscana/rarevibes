@@ -44,6 +44,14 @@ const filtersSlice = createSlice({
     setSubFilter(state, action) {
       state.subFilter =
         state.subFilter === action.payload ? [] : action.payload;
+      // Controlla se tutti gli elementi di newSubFilter sono in mainGenres
+      const isOnlyMainGenres = state.subFilter.every((item) =>
+        state.mainGenres.includes(item)
+      );
+
+      if (isOnlyMainGenres) {
+        state.subFilter = []; // resetta a 'all' se solo mainGenres
+      }
     },
   },
 });

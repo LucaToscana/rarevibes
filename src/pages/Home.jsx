@@ -3,6 +3,9 @@ import ArtistCard from '../components/artists/ArtistCard'
 import HeroSection from '../components/layout/HeroSection'
 import { useTranslation } from 'react-i18next';
 import data from '../data/defaultData'
+import SectionDivider from '../components/layout/SectionDivider';
+import SectionTitle from '../components/layout/SectionTitle';
+import CardWrapper from '../components/layout/CardWrapper';
 
 export default function Home() {
   const parallaxRef = useRef(null);
@@ -24,7 +27,7 @@ export default function Home() {
     const handleScroll = () => {
       const offset = window.scrollY
       if (parallaxRef.current) {
-        parallaxRef.current.style.transform = `translateY(${offset * 0.9}px)`
+        parallaxRef.current.style.transform = `translateY(${offset * 0.5}px)`
       }
     }
     window.addEventListener('scroll', handleScroll)
@@ -43,19 +46,22 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen p-16">
       {/* Hero parallax */}
+      <CardWrapper>
       <HeroSection
         heroImages={heroImages}
         currentIndex={currentIndex}
         parallaxRef={parallaxRef}
-      />
+      /></CardWrapper>
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <SectionDivider></SectionDivider>
 
-      {/* Artists */}
-      <section className="py-16 px-6">
-        <div className="artist-monoton mb-8 mt-10">{t('recentArtists')}</div>
-        <div className="h-1 bg-monza mb-16" />
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className='mb-8 mt-10 '>
+          <SectionTitle> {t('recentArtists')}</SectionTitle>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center   ">
           {featuredArtists.map((artist) => (
             <ArtistCard key={artist.name} artist={artist} showBio={true} />
           ))}

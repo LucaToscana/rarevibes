@@ -101,7 +101,7 @@
       "key": "performance-art",
       "label": "Performance Art",
       "subgenres": [
-        { "key": "body-art", "label": "Body Art" },
+     
         { "key": "live", "label": "Live Performance" },
         { "key": "happening", "label": "Happening" }
       ]

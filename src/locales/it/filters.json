@@ -10,7 +10,7 @@
   "indie-rock": "Indie Rock",
   "post-punk": "Post-Punk",
   "horror-punk": "Horror Punk",
-  "metal": "Metal",
+  "m-metal": "Metal",
   "heavy-metal": "Heavy Metal",
   "black-metal": "Black Metal",
   "death-metal": "Death Metal",
@@ -126,5 +126,5 @@
   "text-based": "Testuale",
   "minimal": "Concettualismo Minimo",
   "social": "Arte Sociale",
-  "body_art": "Arte Corporea"
+  "body_art": "Art Corporea"
 }

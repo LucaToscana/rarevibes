@@ -2,31 +2,47 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavLinkCustom from './NavLinkCustom';
 import { Menu, X } from 'lucide-react'; // o le tue icone
-import { useTranslation } from 'react-i18next'; // 👈 QUESTA È LA RIGA MANCANTE
+import { useTranslation } from 'react-i18next'; //  QUESTA È LA RIGA MANCANTE
 import LanguageSwitcher from '../../locales/LanguageSwitcher';
+import CardWrapper from './CardWrapper';
+import SectionTitle from './SectionTitle';
+import CardStaticWrapper from './CardStaticWrapper';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { t } = useTranslation('common'); // 👈 specifica il namespace
+  const { t } = useTranslation('common'); //  specifica il namespace
+  const bgImage = 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
 
   return (
-    <nav className="bg-iron fixed top-0 left-0 right-0 z-50 shadow-lg">
-      <div className="px-4 sm:px-8 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 right-0  z-50 pr-16 pl-16 pt-3 ">
 
-        <Link to="/">
-          <h1 className="heading-monoton">RARE VIBES</h1>
-        </Link>
+      <div className="p-2 w-full  flex justify-between items-center overflow-visible ">
+
+        <SectionTitle>
+          <Link to="/">
+            <div className='font-arvo text-xl'>
+              RARE VIBES
+            </div>
+          </Link>
+        </SectionTitle>
+
         <div>
           <div className='sm:hidden'>
             <LanguageSwitcher />
           </div>
         </div>
-        <button
-          className="sm:hidden focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+
+        <div className='sm:hidden '>
+          <CardWrapper >
+            <button
+              className="focus:outline-none"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </CardWrapper>
+
+        </div>
 
         <div className="hidden sm:flex space-x-6 items-center">
           <NavLinkCustom to="/">Home</NavLinkCustom>
@@ -39,12 +55,15 @@ export default function Navbar() {
           <LanguageSwitcher />
 
         </div>
+
+
+
       </div>
 
       {/* Mobile links dropdown */}
       {menuOpen && (<>
 
-        <div className="sm:hidden absolute left-0 right-0 px-4 py-4 flex flex-col space-y-3 z-40 shadow-md bg-iron">
+        <div className="sm:hidden absolute  right-8 px-4 py-4 flex flex-col space-y-3 z-50">
           <NavLinkCustom to="/" onClick={() => setMenuOpen(false)}>
             Home
           </NavLinkCustom>
@@ -61,5 +80,6 @@ export default function Navbar() {
         </div></>
       )}
     </nav>
+
   )
 }

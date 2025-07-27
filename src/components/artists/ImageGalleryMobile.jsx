@@ -18,8 +18,7 @@ export default function ImageGalleryMobile({ images = [], openZoom }) {
 
     return (
         <div
-            className="md:hidden relative h-[60vh] max-h-[400px] flex items-center justify-center select-none bg-black"
-            style={{ width: '100vw' }}
+            className="md:hidden relative  w-64 h-72 flex items-center justify-center select-none bg-black"
         >            <div
             role="button"
             tabIndex={0}

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { getClasses } from '../../utils'; // se hai creato un file utils.js
+import FiltersWrapper from './filtersWrapper';
 
 function CustomNavLink({ to, children, extraClass = '', onClick }) {
   const location = useLocation();
@@ -11,9 +12,11 @@ function CustomNavLink({ to, children, extraClass = '', onClick }) {
   const className = getClasses({ isActive, type, extraClass });
 
   return (
-    <Link to={to} className={className} onClick={onClick}>
-      {children}
-    </Link>
+    <FiltersWrapper>
+      <Link to={to} className={className} onClick={onClick}>
+        {children}
+      </Link>
+    </FiltersWrapper>
   );
 }
 

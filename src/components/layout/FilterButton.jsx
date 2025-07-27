@@ -1,5 +1,6 @@
 import { getClasses } from '../../utils';
 import { useTranslation } from 'react-i18next';
+import FiltersWrapper from './filtersWrapper';
 
 function FilterButton({ key, label, value, currentFilter, onClick, custom }) {
   let isActive
@@ -19,9 +20,12 @@ function FilterButton({ key, label, value, currentFilter, onClick, custom }) {
   const className = getClasses({ isActive, type: customTag });
 
   return (
+    <FiltersWrapper>
     <button onClick={() => onClick(value)} className={className}>
       {t(value, { defaultValue: label })}
     </button>
+    </FiltersWrapper>
+
   );
 }
 

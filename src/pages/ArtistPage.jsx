@@ -15,11 +15,16 @@ import ArtistControls from '../components/artists/ArtistControls'
 import RelatedArtistsSection from '../components/artists/RelatedArtistsSection'
 import { useTranslation } from 'react-i18next'
 import ArtistTags from '../components/artists/ArtistTags'
+import SocialLinks from '../components/artists/SocialLinks'
+import CardWrapper from '../components/layout/CardWrapper'
+import SectionDivider from '../components/layout/SectionDivider'
+import SectionTitle from '../components/layout/SectionTitle'
+import FiltersWrapper from '../components/layout/filtersWrapper'
 
 export default function ArtistPage() {
   const { slug } = useParams()
   const dispatch = useDispatch()
-  const { t } = useTranslation('common'); 
+  const { t } = useTranslation('common');
 
 
   useEffect(() => {
@@ -48,9 +53,9 @@ export default function ArtistPage() {
     }
   }, [slug, artistsData, dispatch])
 
-  if (loading) return <main className="min-h-screen flex items-center justify-center">Loading...</main>
-  if (error) return <main className="min-h-screen flex items-center justify-center">Error: {error}</main>
-  if (!selectedArtist) return <main className="min-h-screen flex items-center justify-center">Artist not found</main>
+  if (loading) return <main style={{ fontFamily: 'wawe1', fontSize: '32px' }} className="min-h-screen flex items-center justify-center">Loading...</main>
+  if (error) return <main style={{ fontFamily: 'wawe1', fontSize: '32px' }} className="min-h-screen flex items-center justify-center">Error: {error}</main>
+  if (!selectedArtist) return <main style={{ fontFamily: 'wawe1', fontSize: '32px' }} className="min-h-screen  flex items-center justify-center">Artist not found</main>
 
   const relatedArtists = artistsData
     .filter((a) => a.slug !== slug)
@@ -60,58 +65,86 @@ export default function ArtistPage() {
     <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto">
 
       {/* Link di ritorno */}
-      <div className="mt-8 mb-8">
-        <Link to="/artists" className="bio-highlight-white">
-          ← {t('backToArtists')}
-        </Link>
+      <div className="mt-8 font-arvo w-72">
+        <FiltersWrapper>
+
+          <Link to="/artists">
+            ← {t('backToArtists')}
+          </Link>
+
+        </FiltersWrapper>
+
+
       </div>
 
-      <div className="h-1 bg-monza mb-16" />
 
       {/* Contenuto principale: immagini e info */}
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-
         {/* Info artista */}
-        <section className="lg:w-1/3 flex flex-col gap-6 h-full min-h-[500px]">
-          <div className="relative">
-            <ArtistTags artist={selectedArtist}  />
 
-          </div>
-          <ArtistHeader artist={selectedArtist} />
+        <section className="lg:w-1/3 flex flex-col gap-6 h-full min-h-[500px] p-2">
+          <CardWrapper>
+            <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black w-1/2">
+              {selectedArtist.name}
+            </h2>
+            <ArtistControls artist={selectedArtist} />
 
-          <ArtistBio slug={selectedArtist.slug}
-            field="short"
-            className='arvo-black text-xl  drop-shadow'
-            highlightClass='bio-highlight-white' />
+          </CardWrapper>
 
-          <ArtistControls artist={selectedArtist} />
+          <CardWrapper>
+            <ArtistBio slug={selectedArtist.slug}
+              field="short"
+              className='bio-text-white  drop-shadow'
+              highlightClass='bio-highlight-white' />
 
-          <ArtistBio slug={selectedArtist.slug}
-            field="review"
-            className='arvo-black text-xl  drop-shadow'
-            highlightClass='bio-highlight-white' />
+
+            <ArtistBio slug={selectedArtist.slug}
+              field="review"
+              className='bio-text-white  drop-shadow'
+              highlightClass='bio-highlight-white mt-8' />
+
+            <ArtistBio slug={selectedArtist.slug}
+              field="extended"
+              className='bio-text-white drop-shadow'
+              highlightClass='bio-highlight-white mt-8' />
+          </CardWrapper>
+
         </section>
         {/* Immagini artista */}
 
         <div className="lg:w-2/3">
           <ArtistImages images={selectedArtist.images} key={slug} slug={slug} />
-          <div className='mt-8'>
 
+
+          <CardWrapper>
             <ArtistBio slug={selectedArtist.slug}
               field="extended"
-              className='arvo-black text-xl  drop-shadow'
+              className='bio-text-white drop-shadow'
               highlightClass='bio-highlight-white' />
-          </div>
-
+          </CardWrapper>
         </div>
 
       </div>
 
+
+      {selectedArtist?.socials && (
+        <div className="w-full flex justify-end mt-16">
+
+          <CardWrapper>
+            <SocialLinks socials={selectedArtist.socials} />
+          </CardWrapper>
+        </div>
+      )}
       {/* Artisti correlati */}
       <section className="mt-16">
-        <div className="h-1 bg-monza m-3" />
+
+
+        <SectionDivider></SectionDivider>
+
         <div className="flex justify-end">
-          <h2 className="bio-highlight-white select-none">{t('youMightBeInterestedIn')}</h2>
+
+          <SectionTitle>{t('youMightBeInterestedIn')}</SectionTitle>
+
         </div>
         <RelatedArtistsSection artists={relatedArtists} slug={slug} />
       </section>

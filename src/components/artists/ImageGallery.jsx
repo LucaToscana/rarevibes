@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setZoomOpen, closeZoom, setPlayerOpen } from '../../store/playerSlice'
 import ImageGalleryMobile from './ImageGalleryMobile'
+import CardWrapper from '../layout/CardWrapper'
 
 export default function ImageGallery({ images, slug }) {
   const dispatch = useDispatch()
@@ -60,24 +61,24 @@ export default function ImageGallery({ images, slug }) {
 
   return (
     <>
-      <div className="hidden md:grid grid-cols-3 gap-4 items-start">
+      <div className="hidden md:grid grid-cols-3 gap-4 items-start pb-8  pr-8">
         {/* Immagine principale (2/3 colonne) */}
         <div
-          className="col-span-2 rounded-lg overflow-hidden cursor-pointer h-[600px]"
+          className="col-span-2 rounded-lg overflow-hidden cursor-pointer lg:p-16 h-[600px] "
           role="button"
           tabIndex={0}
           onClick={() => openZoom(safeImages[0])}
           onKeyDown={(e) => e.key === 'Enter' && openZoom(safeImages[0])}
         >
-          <img
+          <CardWrapper>  <img
             src={safeImages[0]}
             alt="Main"
             className="w-full h-full object-contain object-center transition-transform duration-300 hover:scale-105"
-          />
+          /></CardWrapper>
         </div>
 
         {/* Colonna destra (1/3 colonna) */}
-        <div className="flex flex-col gap-4 h-[600px] justify-between">
+        <div className="flex flex-col gap-4 h-[600px] justify-between p-4">
           {[safeImages[1], safeImages[2]].map((img, idx) => (
             <div
               key={idx}
@@ -85,27 +86,41 @@ export default function ImageGallery({ images, slug }) {
               tabIndex={0}
               onClick={() => openZoom(img)}
               onKeyDown={(e) => e.key === 'Enter' && openZoom(img)}
-              className="rounded-lg overflow-hidden cursor-pointer h-1/2 transition-opacity transition-transform"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? 'translateY(0)' : 'translateY(20px)',
                 transitionDelay: `${300 + idx * 200}ms`,
               }}
+              className="h-1/2"
             >
-              <img
-                src={img}
-                alt={`Side ${idx + 1}`}
-                className="w-full h-full object-contain object-center transition-transform duration-300 hover:scale-105"
-                draggable={false}
-              />
+              <CardWrapper>
+                <img
+                  src={img}
+                  alt={`Side ${idx + 1}`}
+                  className="w-full h-full object-contain object-center transition-transform duration-300 hover:scale-105"
+                  draggable={false}
+                />
+              </CardWrapper>
             </div>
           ))}
         </div>
+
       </div>
 
       {/* Mobile layout visibile solo su piccoli schermi */}
-      <div className="block md:hidden">
-        <ImageGalleryMobile images={safeImages} openZoom={openZoom} />
+      <div className="block md:hidden ">
+        <div className='p-8'>
+
+          <CardWrapper>
+
+
+
+
+            <ImageGalleryMobile images={safeImages} openZoom={openZoom} />
+
+
+          </CardWrapper>
+        </div>
       </div>
 
 

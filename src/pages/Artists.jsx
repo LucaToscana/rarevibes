@@ -10,7 +10,11 @@ import { useFilteredArtists, useFilterManagement } from "../hook/useFilters";
 import { useEffect, useRef, useState } from "react";
 import { FaChevronUp, FaChevronDown, FaSearch } from "react-icons/fa";
 import { filterArtists } from "../utils/filterArtists";
-
+import SectionDivider from '../components/layout/SectionDivider'
+import SectionTitle from '../components/layout/SectionTitle'
+import CardWrapper from "../components/layout/CardWrapper";
+import SearchWithCaptcha from "../components/layout/SearchWithCaptcha";
+import CardStaticWrapper from "../components/layout/CardStaticWrapper";
 const bgImage =
   "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg";
 
@@ -107,115 +111,107 @@ export default function Artists() {
       setCaptchaInput("");
       setSearchTimestamps([]); // resetta contatore
     } else {
-      alert("Risposta errata, riprova!");
+      alert("error!");
     }
   };
 
   return (
-    <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto">
+    <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto  pt-24">
       <div>
-        <h1 className="artist-monoton text-2xl sm:text-3xl lg:text-6xl whitespace-nowrap mt-12">
-          {t("artists")}
-        </h1>
 
         {/* Header con barra ricerca + reset filtri */}
-        <div className="flex flex-row w-full items-center justify-between gap-4 mt-8">
-          <div className="relative flex-[3]">
-            <FaSearch className="absolute top-3 left-3 text-gray-500" />
+        <div className="flex flex-col md:flex-row w-full gap-8 mt-8 mb-8">
+          <SectionTitle> {t('artists')}</SectionTitle>
 
-            {!showCaptcha ? (
-              <input
-                type="text"
-                placeholder={t("placeholdersFilter") || "Search by name"}
-                value={searchTerm}
-                onChange={handleSearchChange}
-                className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-monza"
-              />
-            ) : (
-              <form
-                onSubmit={handleCaptchaSubmit}
-                className="pl-10 pr-4 py-2 w-full border border-red-500 rounded-md text-black flex items-center gap-2"
-              >
-                <label className="text-red-600 font-semibold whitespace-nowrap">
-                  Sei umano? Quanto fa 3 + 4?
-                </label>
-                <input
-                  type="number"
-                  value={captchaInput}
-                  onChange={(e) => setCaptchaInput(e.target.value)}
-                  className="w-16 p-1 border border-gray-400 rounded"
-                  required
+          <SearchWithCaptcha
+            searchTerm={searchTerm}
+            onSearchChange={handleSearchChange}
+            showCaptcha={showCaptcha}
+            onCaptchaSubmit={handleCaptchaSubmit}
+            captchaInput={captchaInput}
+            onCaptchaInputChange={(e) => setCaptchaInput(e.target.value)}
+            placeholder={t("placeholdersFilter")}
+          />
+          <div  className="flex flex-row items-center justify-center  gap-6 w-fit h-full">
+            <CardWrapper>
+              <div className="flex flex-row items-center justify-center w-fit h-full">
+                <FilterHeader
+                  count={
+                    cleanedSubFilters.length +
+                    (mainFilter.includes("all") && mainFilter.length === 1
+                      ? 0
+                      : mainFilter.length)
+                  }
+                  onReset={handleReset}
                 />
+              </div>
+            </CardWrapper>
+
+
+
+            <CardWrapper>
+              <div
+                onClick={toggleSubFilterListVisibility}
+
+                className="flex flex-row items-center justify-center gap-4 h-full">
                 <button
-                  type="submit"
-                  className="bg-monza text-white px-3 py-1 rounded"
+                  className="focus:outline-none "
+                  aria-label={
+                    isSubFilterListVisible ? t("hide_filters") : t("show_filters")
+                  }
                 >
-                  Verifica
+                  {isSubFilterListVisible ? (
+                    <FaChevronUp className="h-5 w-5  text-monza rounded-full" />
+                  ) : (
+                    <FaChevronDown className="h-5 w-5  text-monza rounded-full" />
+                  )}
                 </button>
-              </form>
-            )}
-          </div>
+              </div>
 
-          <div className="flex flex-row flex-[1] items-center gap-4 justify-end">
-            <FilterHeader
-              count={
-                cleanedSubFilters.length +
-                (mainFilter.includes("all") && mainFilter.length === 1
-                  ? 0
-                  : mainFilter.length)
-              }
-              onReset={handleReset}
-            />
-
-            <button
-              onClick={toggleSubFilterListVisibility}
-              className="focus:outline-none rounded-full p-2"
-              aria-label={
-                isSubFilterListVisible ? t("hide_filters") : t("show_filters")
-              }
-            >
-              {isSubFilterListVisible ? (
-                <FaChevronUp className="h-5 w-5 bg-iron text-monza rounded-full" />
-              ) : (
-                <FaChevronDown className="h-5 w-5 bg-iron text-monza rounded-full" />
-              )}
-            </button>
+            </CardWrapper>
           </div>
         </div>
 
-        {/* Subfiltri a scomparsa */}
-        <div
-          ref={contentRef}
-          style={{ maxHeight: isSubFilterListVisible ? contentHeight : "0px" }}
-          className={`
-            overflow-hidden h-96 transition-[max-height] duration-300 ease-in-out
-            relative rounded-md ${isSubFilterListVisible ? "mt-4" : ""}
-          `}
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${bgImage})` }}
-            aria-hidden="true"
-          />
-          <div
-            className="absolute inset-0 bg-black bg-opacity-60"
-            aria-hidden="true"
-          />
-          {isSubFilterListVisible && (
+
+        {isSubFilterListVisible && (
+
+
+          <CardStaticWrapper>
+
+            {/* Subfiltri a scomparsa */}
             <div
-              className="relative z-10 p-4 w-full h-48 text-white custom-red-scrollbar"
-              style={{
-                maxHeight: `${contentRef.current?.scrollHeight - 32}px`,
-                overflowY: "auto",
-              }}
+              ref={contentRef}
+              style={{ maxHeight: isSubFilterListVisible ? contentHeight : "0px" }}
+              className={`
+            overflow-hidden h-96 transition-[max-height] duration-300 ease-in-out
+            relative  ${isSubFilterListVisible ? "mt-4" : ""}
+          `}
             >
-              <SubFilterList genres={currentFilterData} />
-            </div>
-          )}
-        </div>
-      </div>
 
-      <div className="h-1 bg-monza mb-8" />
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${bgImage})` }}
+                aria-hidden="true"
+              />
+              <div
+                className="absolute inset-0 bg-black bg-opacity-60"
+                aria-hidden="true"
+              />
+              {isSubFilterListVisible && (
+                <div
+                  className="relative z-10 p-4 w-full h-48 text-white custom-red-scrollbar"
+                  style={{
+                    maxHeight: `${contentRef.current?.scrollHeight - 32}px`,
+                    overflowY: "auto",
+                  }}
+                >
+                  <SubFilterList genres={currentFilterData} />
+                </div>
+              )}
+            </div>
+          </CardStaticWrapper>
+        )}
+      </div>
 
       {/* Layout */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -223,15 +219,19 @@ export default function Artists() {
           <FiltersConsole genres={currentFilterData} />
         </aside>
 
-        <section className="md:col-span-3 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:[grid-auto-rows:300px]">
+        <section
+          className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4"
+          style={{ alignContent: 'start' }}
+        >
           {filteredArtists.length > 0 ? (
             filteredArtists.map((artist) => (
-              <ArtistCard
-                key={artist.id}
-                artist={artist}
-                showBio
-                slug={artist.id}
-              />
+              <div>
+                <ArtistCard
+                  key={artist.id}
+                  artist={artist}
+                  showBio
+                  slug={artist.id}
+                /></div>
             ))
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center text-center text-gray-400 py-12">
@@ -241,6 +241,7 @@ export default function Artists() {
             </div>
           )}
         </section>
+
       </div>
     </main>
   );

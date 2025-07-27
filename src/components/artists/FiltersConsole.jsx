@@ -4,6 +4,7 @@ import FilterButton from '../layout/FilterButton';
 import { useFilterManagement } from '../../hook/useFilters';
 import { FiFilter, FiX } from 'react-icons/fi';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import FiltersWrapper from '../layout/filtersWrapper';
 
 export default function FiltersConsole({ genres }) {
   const {
@@ -17,13 +18,14 @@ export default function FiltersConsole({ genres }) {
     dispatchMainFilter
   } = useFilterManagement(genres);
 
-const { t } = useTranslation(['musicFilters', 'artFilters']);
+  const { t } = useTranslation(['musicFilters', 'artFilters']);
   const [showFilters, setShowFilters] = useState(false);
 
   return (
     <>
+
       {/* Main filters + Mobile toggle icon (in one line) */}
-      <div className="mb-6 overflow-x-auto no-scrollbar">
+      <div className="mb-6  ">
         <div className="flex items-center gap-4 px-4 min-w-max">
           <FilterButton
             key={"musician"}
@@ -48,6 +50,7 @@ const { t } = useTranslation(['musicFilters', 'artFilters']);
           />
 
           {/* Mobile toggle button reusing expand/collapse style */}
+
           <button
             aria-label={showFilters ? t('hideFilters', 'Hide Filters') : t('showFilters', 'Show Filters')}
             onClick={() => setShowFilters(prev => !prev)}
@@ -123,10 +126,12 @@ const { t } = useTranslation(['musicFilters', 'artFilters']);
                   <button
                     aria-label={isExpanded ? 'Collapse' : 'Expand'}
                     onClick={() => toggleExpand(genre.key)}
-                    className="ml-2 mt-2 text-monza hover:text-monzadark focus:outline-none focus:ring-2 focus:ring-gray-300 rounded"
+                    className="ml-2  text-monza hover:text-monzadark focus:outline-none focus:ring-2 focus:ring-gray-300 rounded"
                     style={{ fontSize: '1.2rem', lineHeight: 1 }}
                   >
-                    {isExpanded ? '▾' : '▸'}
+                    <FiltersWrapper>
+                      {isExpanded ? '▾' : '▸'}
+                    </FiltersWrapper>
                   </button>
                 )}
               </div>

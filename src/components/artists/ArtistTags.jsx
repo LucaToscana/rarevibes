@@ -1,28 +1,20 @@
-import PlayButton from "../players/PlayButton";
-
 export default function ArtistTags({ artist = {} }) {
-  return (
-    <div className="z-30 flex flex-col items-end gap-1">
-      {artist.type.length > 0 && (
-        <div className="flex flex-wrap gap-1 justify-end items-center">
-          {artist.type.map((t, index) => (
-            <span key={index} className="bio-highlight-monza-xs">
-              {t}
-            </span>
-          ))}
-          <PlayButton artist={artist} />
-        </div>
-      )}
+  const tags = [
+    ...(artist.type || []),
+    ...(artist.genres || [])
+  ];
 
-      {artist.genres.length > 0 && (
-        <div className="flex flex-wrap gap-1 justify-end">
-          {artist.genres.map((g, index) => (
-            <span key={index} className="bio-highlight-white-xs">
-              {g}
-            </span>
-          ))}
-        </div>
-      )}
+  if (tags.length === 0) return null;
+
+  return (
+    <div className="marquee-wrapper w-full max-w-xs">
+      <div className="marquee-content text-white font-semibold gap-4">
+        {tags.map((tag, i) => (
+          <span key={i} className="mx-2 bio-highlight-white-xs inline-block">
+            {tag}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
