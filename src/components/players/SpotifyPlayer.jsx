@@ -12,13 +12,13 @@ export default function SpotifyPlayer({ url }) {
   const embedUrl = `https://open.spotify.com/embed/${type}/${id}`;
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-20">
       <iframe
         src={embedUrl}
         width="100%"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
-        className="rounded-md"
+
         allowFullScreen={true}
       />
     </div>

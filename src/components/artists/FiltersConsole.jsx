@@ -58,15 +58,19 @@ export default function FiltersConsole({ genres }) {
             style={{ fontSize: '1.2rem', lineHeight: 1 }}
           >
             {showFilters ?
-              <FaChevronUp
-                className="h-5 w-5 bg-iron text-monza  rounded-full"
-                aria-hidden="true"
-              />
-              :
-              <FaChevronDown
-                className="h-5 w-5 bg-iron text-monza rounded-full"
-                aria-hidden="true"
-              />}
+
+              <FiltersWrapper>
+                <FaChevronUp
+                  className="h-5 w-5 text-monza  rounded-full"
+                  aria-hidden="true"
+                /></FiltersWrapper>
+              : <FiltersWrapper>
+                <FaChevronDown
+                  className="h-5 w-5 text-monza rounded-full"
+                  aria-hidden="true"
+                />
+              </FiltersWrapper>
+            }
           </button>
         </div>
       </div>
@@ -77,7 +81,7 @@ export default function FiltersConsole({ genres }) {
       {genres.length > 0 && (
         <div className="flex">
           {/* Desktop sidebar */}
-          <aside className="hidden md:block w-48 min-w-[200px] p-4 border-r border-gray-200">
+          <aside className="hidden md:block w-48 min-w-[200px] p-4 ">
             {renderGenreFilters()}
           </aside>
 

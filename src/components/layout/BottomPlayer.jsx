@@ -9,6 +9,11 @@ import SocialLinks from '../artists/SocialLinks'
 import defaultArtistRV from '../../../public/data/defaultArtist' // adatta il path alla posizione reale
 import PlayerRenderer from '../players/PlayerRenderer'
 import { addVisitedArtist } from '../../store/visitedArtistsSlice';
+import CardWrapper from './CardWrapper'
+import CardStaticWrapper from './CardStaticWrapper'
+import FiltersWrapper from './filtersWrapper'
+import SectionTitle from './SectionTitle'
+import { Link } from 'react-router-dom'
 
 
 export default function BottomPlayer() {
@@ -83,146 +88,167 @@ export default function BottomPlayer() {
   const url = firstSingle?.platforms?.[selectedPlatform] || ''
 
   return (
-    <div
+    <div className=''>
+      <div
+        className={`
+    fixed bottom-1 left-6 right-6 m-8
+    bg-monza text-black shadow-[8px_8px_0px_#000] 
+    border-[3px] border-black z-40
+    transition-all duration-300 ease-in-out
+    ${playerOpen ? 'md:h-[320px] lg:h-[150px] py-3 px-4' : 'h-[60px] py-1 px-4'}
+    flex items-center justify-between
+    rotate-[-2deg] hover:rotate-0 hover:scale-105 
+  `}
+      >
 
-      className={`
-        fixed bottom-0 left-0 right-0 bg-monzadark text-white shadow-lg z-40
-        transition-all duration-300
-        ${playerOpen ? 'md-h-[560px] lg-h-[360px] py-3 px-4' : 'h-[60px] py-1 px-4'}
-        flex items-center justify-between px-6
-      `}
-    >
-      {/* Wrapper principale flex row */}
-      <div className="flex flex-row items-center gap-6 w-full">
+        {/* Wrapper principale flex row */}
+        <div className="flex flex-row items-center gap-6 w-full ">
 
-        {/* Info artista + player + lista tracce */}
-        <div
-          className="flex flex-col md:flex-row gap-1 md:gap-6 flex-grow transition-all ">
+          {/* Info artista + player + lista tracce */}
+          <div
+            className="flex flex-col md:flex-row gap-1 md:gap-6 flex-grow transition-all ">
 
 
-          {/* Informazioni artista */}
-          {playerOpen ? (
-            <div className="relative flex flex-col items-start gap-4 ">
-              
-              <div className="bio-highlight-white text-3xl">
-                RARE VIBES
+            {/* Informazioni artista */}
+            {playerOpen ? (
+              <div className="relative flex flex-col items-start gap-4 ">
+
+
+
+                <CardStaticWrapper>
+
+                  <BottomPlayerDetails
+                    activeArtist={activeArtist}
+                    selectedPlatform={
+                      selectedPlatform
+                        ? selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1)
+                        : ''
+                    }
+                    setSelectedPlatform={setSelectedPlatform}
+                  />
+                </CardStaticWrapper>
+
+
+
               </div>
-              <BottomPlayerDetails
-                activeArtist={activeArtist}
-                selectedPlatform={
-                  selectedPlatform
-                    ? selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1)
-                    : ''
-                }
-                setSelectedPlatform={setSelectedPlatform}
-              />
 
-            </div>
+            ) : (
 
-          ) : (
-            // Vista compatta quando il player è chiuso
-            <div className="absolute inset-0 bg-black bg-opacity-50 transition  cursor-pointer duration-300 group-hover:bg-opacity-60"
-              onClick={toggleOpen}
-              style={{
-                backgroundImage: `url(${bgImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
-              {/* Overlay scuro trasparente */}
-              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-              {/* Contenuto testo */}
-              <div
-                className="relative z-40  p-1 h-full text-white flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4"
+              <div className="absolute w-full inset-0 bg-black bg-opacity-50 transition  cursor-pointer duration-300 group-hover:bg-opacity-60"
+                onClick={toggleOpen}
+                style={{
+                  backgroundImage: `url(${bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
               >
-                <div className="flex items-center space-x-2 truncate">
-                  <span
-                    className="font-arvo text-xs uppercase truncate "
-                    title={activeArtist.name}
-                  >
-                    {activeArtist.name}
-                  </span>
+                {/* Overlay scuro trasparente */}
+                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-                  {/* Separatore - */}
-                  <span className="text-sm opacity-50 select-none">-</span>
-                  <span
-                    className="font-arvo text-sm italic truncate opacity-90"
-                    title={activeArtist.singles?.[0]?.title}
-                  >
-                    {activeArtist.singles?.[0]?.title}
-                  </span>
+                {/* Contenuto testo */}
+                <div
+                  className="relative z-40  p-1 h-full text-white flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-fit"
+                >
+
+                  <CardWrapper>
+                    <div className='h-12'>
+                      <h2 className=" text-sm font-bold text-monza font-arvo uppercase mb-2 border-b-2 border-black">
+                        {activeArtist.name}
+                      </h2>
+                      <div className="flex items-center space-x-2 truncate">
+
+                        {/* Separatore - */}
+                        <span className="text-blacktext-sm opacity-50 select-none">-</span>
+                        <span
+                          className="font-arvo text-black text-sm italic truncate opacity-90"
+                          title={activeArtist.singles?.[0]?.title}
+                        >
+                          {activeArtist.singles?.[0]?.title}
+                        </span>
+                      </div>
+
+                      <span
+                        className="text-sm tracking-wide truncate opacity-70 hidden md:block"
+                        title={activePlatform}
+                      >
+                        {activePlatform ? activePlatform.charAt(0).toUpperCase() + activePlatform.slice(1) : ''}
+                      </span>
+                    </div>
+                  </CardWrapper>
+
                 </div>
 
-                <span
-                  className="text-sm tracking-wide truncate opacity-70 hidden md:block"
-                  title={activePlatform}
-                >
-                  {activePlatform ? activePlatform.charAt(0).toUpperCase() + activePlatform.slice(1) : ''}
-                </span>
               </div>
 
-            </div>
-
-          )}
+            )}
 
 
-          {/* Contenitore del player musicale */}
-          <div
-            key={playerKey}
-            className={`relative rounded-md overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
-           ${playerOpen ? 'w-full sm:w-[400px] h-48' : 'hidden w-[350px] h-[50px] scale-[0.85]'}`}
-          >
-            <PlayerRenderer
-              platform={selectedPlatform}
-              url={url}
-              isPlaying={isPlaying}
-              setIsPlaying={setIsPlaying}
-            />
 
-            {/* Etichetta sempre in basso */}
-            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white text-sm px-2 py-1 z-40">
-              {activeArtist.name} -  {activeArtist.singles?.[0]?.title}
+            {/* Contenitore del player musicale */}
+            <div
+              key={playerKey}
+              className={`relative rounded-md p-8 overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
+           ${playerOpen ? 'w-full sm:w-[400px] h-72' : 'hidden w-full h-[50px] scale-[0.85]'}`}
+            >
+              <CardStaticWrapper>
+                <PlayerRenderer
+                  platform={selectedPlatform}
+                  url={url}
+                  isPlaying={isPlaying}
+                  setIsPlaying={setIsPlaying}
+                />
+              </CardStaticWrapper>
 
             </div>
+
+
+
+            {playerOpen ? (
+
+
+              <div //className="hidden 2xl:block"
+              >
+                <ArtistTrackListCard
+                  title="recents"
+                  items={trackList}
+                  onSelect={handleSelect}
+                />
+              </div>
+
+            ) : null}
           </div>
 
-          {playerOpen ? (
-            <div //className="hidden 2xl:block"
-            >
-              <ArtistTrackListCard
-                title="recents"
-                items={trackList}
-                onSelect={handleSelect}
-              />
-            </div>
-          ) : null}
+
+          {/** SocialLinks */}
+          {playerOpen ?
+
+            <div className='hidden  lg:block'>
+              <SectionTitle>
+                <Link to="/">
+                  <div className='font-arvo text-xl text-monza '>
+                    RARE VIBES
+                  </div>
+                </Link>
+              </SectionTitle> </div>
+            : <> </>}
+
         </div>
 
+        <div className="fixed right-16 mt-1 bottom-1 hidden xl:block z-50"
+        ><FiltersWrapper>
+            <SocialLinks socials={{
+              instagram: "https://instagram.com/smallenginetechnician",
+              twitter: "https://twitter.com/smallenginetechnician"
+            }} /> </FiltersWrapper>
+        </div>
 
-        {/** SocialLinks */}
-        {playerOpen ?
-          <div className="hidden 2xl:block bottom-1 right-16 p-2">
-            <h1 className="font-monoton text-4xl md:text-4xl lg:text-4xl mb-4 tracking-tight">RARE VIBES</h1>
-          </div>
-          : <> </>}
-
+        {/* Bottone per aprire/chiudere il player */}
+        <div className="absolute top-2 right-2 ">
+          <TogglePlayerButton playerOpen={playerOpen} onClick={toggleOpen} />
+        </div>
       </div>
-
-      <div className="fixed right-16 mt-1 bottom-1 hidden xl:block z-50"
-      >
-        <SocialLinks socials={{
-          instagram: "https://instagram.com/smallenginetechnician",
-          twitter: "https://twitter.com/smallenginetechnician"
-        }} />
-      </div>
-
-      {/* Bottone per aprire/chiudere il player */}
-      <div className="absolute top-2 right-2 ">
-        <TogglePlayerButton playerOpen={playerOpen} onClick={toggleOpen} />
-      </div>
-
-    </div>
+    </div >
   )
 }

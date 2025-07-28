@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
@@ -20,11 +20,19 @@ import CardWrapper from '../components/layout/CardWrapper'
 import SectionDivider from '../components/layout/SectionDivider'
 import SectionTitle from '../components/layout/SectionTitle'
 import FiltersWrapper from '../components/layout/filtersWrapper'
+import PlayerPlatformButtons from '../components/players/PlayerPlatformButtons'
+import { setArtist, setAutoPlay, setPlatform, setPlayerOpen } from '../store/playerSlice'
 
 export default function ArtistPage() {
   const { slug } = useParams()
   const dispatch = useDispatch()
   const { t } = useTranslation('common');
+  const { artist, platform, playerOpen, autoPlay } = useSelector((state) => state.player)
+
+
+  // Stati locali per controllare riproduzione e piattaforma selezionata
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [selectedPlatform, setSelectedPlatform] = useState(platform)
 
 
   useEffect(() => {
@@ -53,9 +61,20 @@ export default function ArtistPage() {
     }
   }, [slug, artistsData, dispatch])
 
-  if (loading) return <main style={{ fontFamily: 'wawe1', fontSize: '32px' }} className="min-h-screen flex items-center justify-center">Loading...</main>
-  if (error) return <main style={{ fontFamily: 'wawe1', fontSize: '32px' }} className="min-h-screen flex items-center justify-center">Error: {error}</main>
-  if (!selectedArtist) return <main style={{ fontFamily: 'wawe1', fontSize: '32px' }} className="min-h-screen  flex items-center justify-center">Artist not found</main>
+
+    const handlePlay = (platform) => {
+     const artist = artistsData.find((a) => a.slug === slug)
+
+    dispatch(setArtist(artist))
+    dispatch(setPlatform(platform))
+    dispatch(setAutoPlay(true))
+    dispatch(setPlayerOpen(true))
+    setSelectedPlatform
+  }
+
+  if (loading) return <main className="min-h-screen flex items-center justify-center">Loading...</main>
+  if (error) return <main className="min-h-screen flex items-center justify-center">Error: {error}</main>
+  if (!selectedArtist) return <main className="min-h-screen  flex items-center justify-center">Artist not found</main>
 
   const relatedArtists = artistsData
     .filter((a) => a.slug !== slug)
@@ -65,7 +84,7 @@ export default function ArtistPage() {
     <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto">
 
       {/* Link di ritorno */}
-      <div className="mt-8 font-arvo w-72">
+      <div className="mt-8 font-arvo w-72 mb-8 pt-12">
         <FiltersWrapper>
 
           <Link to="/artists">
@@ -79,15 +98,21 @@ export default function ArtistPage() {
 
 
       {/* Contenuto principale: immagini e info */}
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
         {/* Info artista */}
 
         <section className="lg:w-1/3 flex flex-col gap-6 h-full min-h-[500px] p-2">
           <CardWrapper>
-            <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black w-1/2">
+            <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black w-64">
               {selectedArtist.name}
             </h2>
-            <ArtistControls artist={selectedArtist} />
+            <div className="flex justify-center mt-2">
+              <PlayerPlatformButtons
+                activeArtist={selectedArtist}
+                selectedPlatform={platform}
+                setSelectedPlatform={handlePlay}
+              />
+            </div> 
 
           </CardWrapper>
 
@@ -141,9 +166,9 @@ export default function ArtistPage() {
 
         <SectionDivider></SectionDivider>
 
-        <div className="flex justify-end">
+        <div className="flex justify-end text-xs">
 
-          <SectionTitle>{t('youMightBeInterestedIn')}</SectionTitle>
+          <SectionTitle><p className='text-xs'>{t('youMightBeInterestedIn')}</p></SectionTitle>
 
         </div>
         <RelatedArtistsSection artists={relatedArtists} slug={slug} />

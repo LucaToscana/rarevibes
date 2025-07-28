@@ -4,6 +4,7 @@ import { FaSpotify, FaSoundcloud, FaYoutube } from 'react-icons/fa'
 import { SiSoundcloud, SiYoutube, SiBandcamp } from 'react-icons/si'
 import { useTranslation } from 'react-i18next';
 import ArtistTags from '../artists/ArtistTags';
+import FiltersWrapper from '../layout/filtersWrapper';
 
 export default function ArtistPlayerButtons({ artist }) {
   const dispatch = useDispatch()
@@ -45,6 +46,8 @@ export default function ArtistPlayerButtons({ artist }) {
         <div className="flex w-full gap-2 ">
           {platforms.map(({ key, icon: Icon, label }) =>
             artist.platforms?.[key] ? (
+                        <FiltersWrapper>
+
               <button
                 key={key}
                 onClick={() => handlePlay(key)}
@@ -55,7 +58,7 @@ export default function ArtistPlayerButtons({ artist }) {
                   size={28}
                   className="w-7 h-7 hover:text-monza transition-colors hover:text-monzadark"
                 />
-              </button>
+              </button>  </FiltersWrapper>
             ) : null
           )}
         </div>

@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import PlayerPlatformButtons from "./PlayerPlatformButtons";
+import CardWrapper from "../layout/CardWrapper";
 
 export default function BottomPlayerDetails({ activeArtist, selectedPlatform, setSelectedPlatform }) {
   const artistSlug = activeArtist?.slug || activeArtist.id || "unknown-artist";
   const bgImage = activeArtist.images?.[0] || 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg';
 
   return (
-    <div className="relative w-full rounded-md overflow-hidden h-24 justify-end">
+    <div className="relative w-72 rounded-md overflow-hidden h-32 justify-end">
       {/* Sfondo immagine */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -23,9 +24,14 @@ export default function BottomPlayerDetails({ activeArtist, selectedPlatform, se
         <div className="flex flex-row items-center justify-between gap-3 w-full">
           <Link
             to={`/artists/${artistSlug}`}
-            className="text-xs truncate hover:underline w-1/3 bio-highlight text-center "
+            className="text-xs "
           >
-            {activeArtist.name}
+
+            <CardWrapper>
+              <h2 className="text-sm font-bold text-monza font-arvo uppercase mb-2 border-b-2 border-black w-1/2">
+                {activeArtist.name}
+              </h2>
+            </CardWrapper>
           </Link>
 
           <p className="font-arvo text-[11px] line-clamp-2 w-2/3 overflow-hidden mt-1">
@@ -42,7 +48,7 @@ export default function BottomPlayerDetails({ activeArtist, selectedPlatform, se
           />
         </div>
       </div>
-      
+
     </div>
   );
 }

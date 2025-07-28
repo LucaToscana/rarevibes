@@ -225,7 +225,7 @@ export default function Artists() {
         >
           {filteredArtists.length > 0 ? (
             filteredArtists.map((artist) => (
-              <div>
+              <div className="w-full">
                 <ArtistCard
                   key={artist.id}
                   artist={artist}

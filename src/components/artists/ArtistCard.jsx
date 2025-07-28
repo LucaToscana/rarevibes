@@ -20,12 +20,11 @@ export default function ArtistCard({ artist, showBio = false }) {
   return (
     <CardWrapper>
 
-      {/* Banner diagonale */}
-      <div className="z-50 absolute top-1 right-[-85px] w-[300px] bg-black text-white py-1 rotate-45 transition-colors duration-500 overflow-hidden">
-        <div className="flex flex-wrap justify-center items-center gap-1 text-xs">
-          <ArtistTags artist={artist} />
-        </div>
+      <div className="marquee-wrapper flex flex-row w-full justify-center items-center">
+        <ArtistTags artist={artist} />
       </div>
+
+ 
       {/* Titolo */}
       <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black w-1/2">
         {artist?.name}

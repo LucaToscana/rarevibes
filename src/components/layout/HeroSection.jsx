@@ -6,20 +6,20 @@ export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
   const { t } = useTranslation('common');
   return (
     <section className="relative h-[220vh] overflow-hidden group">
-<div ref={parallaxRef} className="absolute inset-0 w-full h-full z-0 will-change-transform">
-  <div className="absolute inset-0 w-full h-full">
-    {heroImages.map((img, index) => (
-      <img
-        key={index}
-        src={img}
-        alt={`Hero ${index}`}
-        className={`absolute top-0 left-0 w-full h-full object-cover object-top transition-opacity duration-1000 ease-in-out
+      <div ref={parallaxRef} className="absolute inset-0 w-full h-full z-0 will-change-transform">
+        <div className="absolute inset-0 w-full h-full">
+          {heroImages.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Hero ${index}`}
+              className={`absolute top-0 left-0 w-full h-full object-cover object-top transition-opacity duration-1000 ease-in-out
           ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
           grayscale group-hover:grayscale-0`}
-      />
-    ))}
-  </div>
-</div>
+            />
+          ))}
+        </div>
+      </div>
 
       {/* Overlay Content */}
 
