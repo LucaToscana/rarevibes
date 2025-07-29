@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import musicFilters from "../data/musicFilters.json";
 import artFilters from "../data/artFilters.json";
-import FiltersWrapper from "../components/layout/FiltersWrapper";
+import ModalCustom from "../components/layout/ModalCustom";
+
 import Step5Privacy from "../components/submit/Step5Privacy";
 import Step4Filters from "../components/submit/Step4Filters";
 import Step3Music from "../components/submit/Step3Music";
@@ -13,23 +14,42 @@ import {
   formVisualInitialState,
   formMusicInitialState,
 } from "../components/submit/formInitialStates";
+import {
+  validateStep1,
+  validateStep2Visual,
+  validateStep3Music,
+  validateStep4Genres,
+} from "../components/submit/validation";
+import Step6Success from "../components/submit/Step6Success";
+import FiltersWrapper from "../components/layout/FiltersWrapper";
 
 export default function Submit() {
   const [artistType, setArtistType] = useState("visual");
   const [formBase, setFormBase] = useState(formBaseInitialState);
   const [formVisual, setFormVisual] = useState(formVisualInitialState);
   const [formMusic, setFormMusic] = useState(formMusicInitialState);
-
+  const [acceptPrivacy, setAcceptPrivacy] = useState(false);
+  const [acceptNewsletter, setAcceptNewsletter] = useState(false);
   const [selectedSubgenres, setSelectedSubgenres] = useState([]);
   const [expandedGenre, setExpandedGenre] = useState(null);
   const [captchaToken, setCaptchaToken] = useState(null);
   const [status, setStatus] = useState("idle");
   const [currentStep, setCurrentStep] = useState(1);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [modalType, setModalType] = useState("info");
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+
+
+  const showModal = (message, type = "info") => {
+    setModalMessage(message);
+    setModalType(type);
+    setModalOpen(true);
+  };
 
   // Handlers
   const handleBaseInputChange = (e) => {
@@ -48,6 +68,7 @@ export default function Submit() {
   };
 
   const toggleSubgenre = (key) => {
+    console.log(key)
     setSelectedSubgenres((prev) =>
       prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
     );
@@ -71,11 +92,16 @@ export default function Submit() {
     setCaptchaToken(token);
   };
 
+  //////////////////////////////////////////////////
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!captchaToken) {
-      alert("Completa il reCAPTCHA per continuare.");
+      showModal("Completa il reCAPTCHA per continuare.", "warning");
+      return;
+    }
+    if (!acceptPrivacy) {
+      showModal("Accetta le condizione della privacy.", "warning");
       return;
     }
 
@@ -85,18 +111,20 @@ export default function Submit() {
     const artistName =
       artistNameVisual || artistNameMusic || formBase.name.trim().toLowerCase();
 
+
     if (!artistName) {
-      alert("Inserisci il nome artista nei campi richiesti.");
+      showModal("Inserisci il nome artista nei campi richiesti.", "error");
       return;
     }
 
     const artistKey = `submittedArtist_${artistName}`;
+
     if (localStorage.getItem(artistKey)) {
-      alert("Hai già inviato una submission con questo nome artista.");
+      showModal("Hai già inviato una submission con questo nome artista.", "warning");
       return;
     }
-
     setStatus("sending");
+    showModal("Invio in corso.", "warning");
 
     const dataToSend = {
       ...formBase,
@@ -116,19 +144,20 @@ export default function Submit() {
       )
       .then(() => {
         setStatus("success");
-        alert(" Email inviata con successo!");
+        showModal("Email inviata con successo!", "success");
         setFormBase(formBaseInitialState);
         setFormVisual(formVisualInitialState);
         setFormMusic(formMusicInitialState);
         setSelectedSubgenres([]);
         setCaptchaToken(null);
-        setCurrentStep(1);
+        setCurrentStep(6); // passo 6: messaggio di successo
         localStorage.setItem(artistKey, "true");
+
       })
       .catch((err) => {
         console.error("EmailJS error:", err);
         setStatus("error");
-        alert("Errore durante l’invio. Riprova più tardi.");
+        showModal("Errore durante l'invio. Riprova più tardi.", "error");
       });
   };
 
@@ -142,12 +171,12 @@ export default function Submit() {
       // Salta lo step 3 se non è music o both
       if (next === 3 && artistType === "visual") next++;
 
-      // Limita a max 5
-      return Math.min(next, 5);
+      // Ora consenti fino a 6 (il nuovo step success)
+      return Math.min(next, 6);
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
-
   };
+
 
   const goPrevStep = () => {
     setCurrentStep((prev) => {
@@ -220,10 +249,25 @@ export default function Submit() {
         )}
 
         {currentStep === 5 && (
-          <Step5Privacy status={status} handleCaptchaChange={handleCaptchaChange} />
+          <Step5Privacy
+            status={status}
+            handleCaptchaChange={handleCaptchaChange}
+            acceptPrivacy={acceptPrivacy}
+            setAcceptPrivacy={setAcceptPrivacy}
+            acceptNewsletter={acceptNewsletter}
+            setAcceptNewsletter={setAcceptNewsletter}
+          />)}
+        {currentStep === 6 && (
+          <Step6Success
+            reset={() => {
+              setStatus("idle");
+              setCurrentStep(1);
+              setModalOpen(false);
+            }}
+          />
         )}
 
-        <div className="flex justify-between mt-6">
+        {currentStep < 6 ? <div className="flex justify-between mt-6">
           {currentStep > 1 ? (
             <FiltersWrapper>
               <button
@@ -237,29 +281,50 @@ export default function Submit() {
           ) : (
             <div />
           )}
-
           {currentStep < 5 ? (
-
             <FiltersWrapper>
               <button
                 type="button"
-                onClick={goNextStep}
+                onClick={() => {
+                  if (currentStep === 1) {
+                    validateStep1(formBase, artistType, setModalMessage, setModalType, setModalOpen, goNextStep);
+                  } else if (currentStep === 2 && (artistType === "visual" || artistType === "both")) {
+                    validateStep2Visual(formVisual, setModalMessage, setModalType, setModalOpen, goNextStep);
+                  } else if (currentStep === 3 && (artistType === "music" || artistType === "both")) {
+                    validateStep3Music(formMusic, setModalMessage, setModalType, setModalOpen, goNextStep);
+                  } else if (currentStep === 4) {
+                    validateStep4Genres(selectedSubgenres, setModalMessage, setModalType, setModalOpen, goNextStep);
+                  } else {
+                    goNextStep();
+                  }
+                }}
                 className="px-4 py-2 bg-monza text-white hover:bg-monzadark"
               >
                 Avanti
-              </button></FiltersWrapper>
+              </button>
+            </FiltersWrapper>
           ) : (
-            <FiltersWrapper>    <button
-              type="submit"
-              disabled={status === "sending"}
-              className="px-4 py-2 bg-green-600 text-white hover:bg-green-700"
-            >
-              Invia
-            </button>
+            <FiltersWrapper>
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="px-4 py-2 bg-green-600 text-white hover:bg-green-700"
+              >
+                Invia
+              </button>
             </FiltersWrapper>
           )}
-        </div>
+
+        </div> : <></>}
       </form>
+
+      <ModalCustom
+        isOpen={modalOpen}
+        message={modalMessage}
+        type={modalType}
+        onClose={() => setModalOpen(false)}
+      />
+
     </main>
   );
 }

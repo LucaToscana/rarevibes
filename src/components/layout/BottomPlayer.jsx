@@ -91,9 +91,11 @@ export default function BottomPlayer() {
     <div className=''>
       <div
         className={`
-    fixed bottom-1 left-6 right-6 m-8
+    fixed bottom-1 
+    left-2 right-2 sm:left-4 sm:right-4 md:left-16 md:right-16
+    px-4 py-2 md:bottom-8
     bg-monza text-black shadow-[8px_8px_0px_#000] 
-    border-[3px] border-black z-40
+    border-[3px] border-black z-40 
     transition-all duration-300 ease-in-out
     ${playerOpen ? 'md:h-[320px] lg:h-[150px] py-3 px-4' : 'h-[60px] py-1 px-4'}
     flex items-center justify-between
@@ -102,19 +104,15 @@ export default function BottomPlayer() {
       >
 
         {/* Wrapper principale flex row */}
-        <div className="flex flex-row items-center gap-6 w-full ">
+        <div className="flex flex-row items-start  md:items-center gap-4 w-full ">
 
           {/* Info artista + player + lista tracce */}
           <div
-            className="flex flex-col md:flex-row gap-1 md:gap-6 flex-grow transition-all ">
-
+            className="flex flex-col md:flex-row gap-1 md:gap-4 flex-grow transition-all ">
 
             {/* Informazioni artista */}
             {playerOpen ? (
               <div className="relative flex flex-col items-start gap-4 ">
-
-
-
                 <CardStaticWrapper>
 
                   <BottomPlayerDetails
@@ -153,7 +151,7 @@ export default function BottomPlayer() {
                 >
 
                   <CardWrapper>
-                    <div className='h-12'>
+                    <div className='h-12 w-fit'>
                       <h2 className=" text-sm font-bold text-monza font-arvo uppercase mb-2 border-b-2 border-black">
                         {activeArtist.name}
                       </h2>
@@ -162,7 +160,7 @@ export default function BottomPlayer() {
                         {/* Separatore - */}
                         <span className="text-blacktext-sm opacity-50 select-none">-</span>
                         <span
-                          className="font-arvo text-black text-sm italic truncate opacity-90"
+                          className="font-arvo text-black text-xs italic lowercase truncate opacity-90"
                           title={activeArtist.singles?.[0]?.title}
                         >
                           {activeArtist.singles?.[0]?.title}
@@ -189,8 +187,8 @@ export default function BottomPlayer() {
             {/* Contenitore del player musicale */}
             <div
               key={playerKey}
-              className={`relative rounded-md p-8 overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
-           ${playerOpen ? 'w-full sm:w-[400px] h-72' : 'hidden w-full h-[50px] scale-[0.85]'}`}
+              className={`relative rounded-md p-2 md:p-8 overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
+           ${playerOpen ? 'w-full sm:w-[400px] md:h-72 h-64' : 'hidden w-full h-[50px] scale-[0.85]'}`}
             >
               <CardStaticWrapper>
                 <PlayerRenderer

@@ -5,15 +5,16 @@ import FiltersWrapper from "../layout/filtersWrapper";
 export default function ArtistTrackListCard({ title = 'new artists', items = [], onSelect }) {
   const { t } = useTranslation('common'); // 👈 specifica il namespace */
 
-  const bgImage =   'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg'
+  const bgImage = 'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg'
 
 
   return (
-    <div className="w-[400px] h-full p-2 flex flex-col justify-between hidden sm:block relative  ">
+    <div className="w-full sm:w-[400px] h-24  md:h-full p-2   flex flex-col justify-between block relative">
+
       <CardStaticWrapper>
 
 
-        <h2 className="text-xs font-bold font-arvo mb-2 uppercase w-fit z-10 pl-1 pt-1">
+        <h2 className="text-xs  font-arvo md:mb-2 uppercase  z-10 pl-1 pt-1 lowercase">
           {t('recentArtists')}
         </h2>
         <div
@@ -22,7 +23,7 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
             backgroundImage: `url(${bgImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            minHeight: '40px',
+            minHeight: '60px',
           }}
         >
           <div className="absolute inset-0 bg-white bg-opacity-40" />
@@ -30,7 +31,7 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
 
 
           {/* Lista con sfondo per ogni artista */}
-          <ul className="relative z-10 space-y-2 overflow-y-auto pr-1 max-h-[150px] p-3  m-3">
+          <ul className="relative z-10 space-y-2 overflow-y-auto pr-1 max-h-[150px] p-1  ml-8 ">
             {items.slice(0, 10).map((item, index) => {
               const backgroundImage = item.images?.[0] || '';
 
@@ -39,7 +40,7 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
                   <li
                     key={index}
                     onClick={() => onSelect(item)}
-                    className="cursor-pointer relative w-72 font-arvo overflow-hidden group z-50 "
+                    className="cursor-pointer relative w-72 md:w-72 font-arvo overflow-hidden group z-50 "
                     style={{
                       backgroundImage: `url(${backgroundImage})`,
                       backgroundSize: 'cover',

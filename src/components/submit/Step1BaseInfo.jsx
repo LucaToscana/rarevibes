@@ -1,25 +1,45 @@
 import CardStaticWrapper from "../layout/CardStaticWrapper";
+import FiltersWrapper from "../layout/FiltersWrapper";
 
-const Step1BaseInfo = ({ artistType, setArtistType, formBase, handleBaseInputChange }) => (
-  
+const Step1BaseInfo = ({ artistType, setArtistType, formBase, handleBaseInputChange}) => (
+
   <CardStaticWrapper>
 
     <div className="p-3 ">
       <fieldset className="mb-6">
         <legend className="font-semibold mb-2">What is your area of art?</legend>
-        <div className="flex flex-wrap gap-4 text-black">
+        <div className="flex flex-row gap-4  items-center   text-black">
           {["visual", "music", "both"].map((type) => (
-            <label key={type} className="inline-flex items-center cursor-pointer">
-              <input
-                type="radio"
-                name="artistType"
-                value={type}
-                checked={artistType === type}
-                onChange={() => setArtistType(type)}
-                className="p-3 border-[1px] border-black text-base transition-transform focus:outline-none focus:scale-105 w-full"
-              />
-              {type === "visual" ? "Artista Visuale" : type === "music" ? "Musicista" : "Entrambi"}
-            </label>
+            <FiltersWrapper>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="artistType"
+                  value={type}
+                  checked={artistType === type}
+                  onChange={() => setArtistType(type)}
+                  className="peer hidden"
+                />
+                <div
+                  className={`w-5 h-5 rounded-full border flex items-center justify-center transition
+                    ${artistType === type ? 'bg-monza border-black' : 'bg-white border-black'}
+                  `}
+                >
+                  {artistType === type && (
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                    // piccolo cerchio bianco dentro (classico per radio)
+                  )}
+                </div>
+                <span>
+                  {type === "visual"
+                    ? "Artista Visuale"
+                    : type === "music"
+                      ? "Musicista"
+                      : "Entrambi"}
+                </span>
+              </label>
+            </FiltersWrapper>
+
           ))}
         </div>
       </fieldset>

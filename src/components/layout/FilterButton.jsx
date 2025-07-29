@@ -1,8 +1,8 @@
 import { getClasses } from '../../utils';
 import { useTranslation } from 'react-i18next';
-import FiltersWrapper from './filtersWrapper';
+import FiltersWrapper from './FiltersWrapper';
 
-function FilterButton({ key, label, value, currentFilter, onClick, custom }) {
+function FilterButton({  label, value, currentFilter, onClick, custom }) {
   let isActive
   const { t } = useTranslation('filters');
 

@@ -60,7 +60,7 @@ const PrivacyPolicy = () => {
       </div>
 
 
-      <div className='m-4 mt-16 w-96 h-24'>
+      <div className='m-4 mt-16 w-fit h-24'>
         <CardWrapper>
           <p className="ext-sm text-gray-500">{t('lastUpdated')}</p>
         </CardWrapper>

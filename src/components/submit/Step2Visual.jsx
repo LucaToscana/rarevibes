@@ -17,6 +17,7 @@ const Step2Visual = ({ formVisual, handleVisualInputChange }) => {
 
       <div className="mt-4"></div>
       <CardStaticWrapper>
+        
         <FiltersWrapper>
           <h2 className="text-2xl font-bold w-fit text-monza">
             Arti Visive

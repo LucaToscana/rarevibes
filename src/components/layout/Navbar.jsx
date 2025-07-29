@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavLinkCustom from './NavLinkCustom';
 import { Menu, X } from 'lucide-react'; // o le tue icone
@@ -6,17 +6,15 @@ import { useTranslation } from 'react-i18next'; //  QUESTA È LA RIGA MANCANTE
 import LanguageSwitcher from '../../locales/LanguageSwitcher';
 import CardWrapper from './CardWrapper';
 import SectionTitle from './SectionTitle';
-import CardStaticWrapper from './CardStaticWrapper';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useTranslation('common'); //  specifica il namespace
-  const bgImage = 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 pr-16 pl-16 pt-3 pointer-events-none">
+    <nav className="fixed top-0 left-0 right-0 z-50   pr-8 pl-8  md:pr-16 md:pl-16 pt-3 pointer-events-none">
 
-      <div className="p-2 w-full  flex justify-between items-center overflow-visible ">
+      <div className="p-2 w-full  flex justify-between items-center gap-4 overflow-visible ">
 
         <SectionTitle>
           <Link to="/">

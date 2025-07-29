@@ -1,4 +1,3 @@
-import React from "react";
 import SubmitArtistFields from "../layout/SubmitArtistField";
 import { musicianFieldsConfig, groupFieldsByCategory } from "../../data/artistFieldsConfig"; // esempio percorso
 import CardStaticWrapper from "../layout/CardStaticWrapper";
@@ -6,15 +5,12 @@ import FiltersWrapper from "../layout/FiltersWrapper";
 import CompactMerchFields from "./CompactMerchFields";
 
 const groupedFields = groupFieldsByCategory(musicianFieldsConfig);
- 
- console.log(groupedFields)
+
+
 const Step3Music = ({ formMusic, handleMusicInputChange }) => (
- 
-
- <section className="p-6  text-black">
 
 
-
+  <section className="p-6  text-black">
     <div className="mt-4"></div>
     <CardStaticWrapper>
       <FiltersWrapper>

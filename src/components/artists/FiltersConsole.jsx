@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import FilterButton from '../layout/FilterButton';
 import { useFilterManagement } from '../../hook/useFilters';
-import { FiFilter, FiX } from 'react-icons/fi';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import FiltersWrapper from '../layout/filtersWrapper';
+import FiltersWrapper from '../layout/FiltersWrapper';
 
 export default function FiltersConsole({ genres }) {
   const {

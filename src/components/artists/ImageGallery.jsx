@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setZoomOpen, closeZoom, setPlayerOpen } from '../../store/playerSlice'
 import ImageGalleryMobile from './ImageGalleryMobile'
 import CardWrapper from '../layout/CardWrapper'
+import ZoomModal from '../layout/ZoomModal'
 
 export default function ImageGallery({ images, slug }) {
   const dispatch = useDispatch()
@@ -127,16 +128,11 @@ export default function ImageGallery({ images, slug }) {
 
 
       {zoomOpen && zoomImg && (
-        <div
-          onClick={handleCloseZoom}
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center cursor-zoom-out z-50"
-        >
-          <img
-            src={zoomImg}
-            alt="Zoomed"
-            className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-lg"
-          />
-        </div>
+        <ZoomModal
+          zoomOpen={zoomOpen}
+          zoomImg={zoomImg}
+          handleCloseZoom={handleCloseZoom}
+        />
       )}
     </>
   )
