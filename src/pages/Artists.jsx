@@ -8,9 +8,8 @@ import SubFilterList from "../components/layout/SubFilterList";
 import FilterHeader from "../components/layout/FilterHeader";
 import { useFilteredArtists, useFilterManagement } from "../hook/useFilters";
 import { useEffect, useRef, useState } from "react";
-import { FaChevronUp, FaChevronDown, FaSearch } from "react-icons/fa";
+import { FaChevronUp, FaChevronDown} from "react-icons/fa";
 import { filterArtists } from "../utils/filterArtists";
-import SectionDivider from '../components/layout/SectionDivider'
 import SectionTitle from '../components/layout/SectionTitle'
 import CardWrapper from "../components/layout/CardWrapper";
 import SearchWithCaptcha from "../components/layout/SearchWithCaptcha";
@@ -30,9 +29,11 @@ export default function Artists() {
   const captchaAnswer = 7; // esempio 3 + 4
 
   const { t } = useTranslation("common");
+  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+ 
   const mergeGenres = (genres1, genres2) => {
     const map = {};
     [...genres1, ...genres2].forEach((g) => {

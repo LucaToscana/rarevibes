@@ -8,13 +8,10 @@ import {
   clearSelectedArtist,
 } from '../store/artistsSlice'
 
-import ArtistHeader from '../components/artists/ArtistHeader'
 import ArtistBio from '../components/artists/ArtistBio'
 import ArtistImages from '../components/artists/ArtistImages'
-import ArtistControls from '../components/artists/ArtistControls'
 import RelatedArtistsSection from '../components/artists/RelatedArtistsSection'
 import { useTranslation } from 'react-i18next'
-import ArtistTags from '../components/artists/ArtistTags'
 import SocialLinks from '../components/artists/SocialLinks'
 import CardWrapper from '../components/layout/CardWrapper'
 import SectionDivider from '../components/layout/SectionDivider'

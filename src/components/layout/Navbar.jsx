@@ -14,25 +14,25 @@ export default function Navbar() {
   const bgImage = 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
 
   return (
-    <nav className="fixed top-0 left-0 right-0  z-50 pr-16 pl-16 pt-3 ">
+    <nav className="fixed top-0 left-0 right-0 z-50 pr-16 pl-16 pt-3 pointer-events-none">
 
       <div className="p-2 w-full  flex justify-between items-center overflow-visible ">
 
         <SectionTitle>
           <Link to="/">
-            <div className='font-arvo text-xl'>
+            <div className='font-arvo text-xl pointer-events-auto'>
               RARE VIBES
             </div>
           </Link>
         </SectionTitle>
 
         <div>
-          <div className='sm:hidden'>
+          <div className='sm:hidden pointer-events-auto'>
             <LanguageSwitcher />
           </div>
         </div>
 
-        <div className='sm:hidden '>
+        <div className='sm:hidden pointer-events-auto'>
           <CardWrapper >
             <button
               className="focus:outline-none"
@@ -44,7 +44,7 @@ export default function Navbar() {
 
         </div>
 
-        <div className="hidden sm:flex space-x-6 items-center">
+        <div className="hidden sm:flex space-x-6 items-center pointer-events-auto ">
           <NavLinkCustom to="/">Home</NavLinkCustom>
           <NavLinkCustom to="/artists"> {t('artists')}</NavLinkCustom>
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>
@@ -63,7 +63,7 @@ export default function Navbar() {
       {/* Mobile links dropdown */}
       {menuOpen && (<>
 
-        <div className="sm:hidden absolute  right-8 px-4 py-4 flex flex-col space-y-3 z-50">
+        <div className="sm:hidden absolute  right-8 px-4 py-4 flex flex-col space-y-3 z-50 pointer-events-auto">
           <NavLinkCustom to="/" onClick={() => setMenuOpen(false)}>
             Home
           </NavLinkCustom>
