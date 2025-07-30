@@ -11,7 +11,7 @@ import PlayerRenderer from '../players/PlayerRenderer'
 import { addVisitedArtist } from '../../store/visitedArtistsSlice';
 import CardWrapper from './CardWrapper'
 import CardStaticWrapper from './CardStaticWrapper'
-import FiltersWrapper from './filtersWrapper'
+import FiltersWrapper from './FiltersWrapper'
 import SectionTitle from './SectionTitle'
 import { Link } from 'react-router-dom'
 

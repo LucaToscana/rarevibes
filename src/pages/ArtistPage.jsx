@@ -16,7 +16,7 @@ import SocialLinks from '../components/artists/SocialLinks'
 import CardWrapper from '../components/layout/CardWrapper'
 import SectionDivider from '../components/layout/SectionDivider'
 import SectionTitle from '../components/layout/SectionTitle'
-import FiltersWrapper from '../components/layout/filtersWrapper'
+import FiltersWrapper from '../components/layout/FiltersWrapper'
 import PlayerPlatformButtons from '../components/players/PlayerPlatformButtons'
 import { setArtist, setAutoPlay, setPlatform, setPlayerOpen } from '../store/playerSlice'
 
@@ -24,11 +24,8 @@ export default function ArtistPage() {
   const { slug } = useParams()
   const dispatch = useDispatch()
   const { t } = useTranslation('common');
-  const { artist, platform, playerOpen, autoPlay } = useSelector((state) => state.player)
+  const { platform} = useSelector((state) => state.player)
 
-
-  // Stati locali per controllare riproduzione e piattaforma selezionata
-  const [isPlaying, setIsPlaying] = useState(false)
   const [selectedPlatform, setSelectedPlatform] = useState(platform)
 
 

@@ -14,23 +14,32 @@ export default function ModalCustom({ isOpen, message, type = "info", onClose })
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-30">
-      <CardWrapper>
+    <div className="fixed inset-0 z-[1000]">
+      {/* Sfondo oscurante */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 pointer-events-auto" />
 
-        <div className={` shadow-lg p-6 max-w-md w-full ${colors[type]} bg-white`}>
-          <p className="mb-4">{message}</p>
-
-          <FiltersWrapper>
-            <button
-              className="px-4 py-2 rounded bg-gray-800 text-white hover:bg-gray-700"
+      {/* Contenuto della modale */}
+      <div className="relative flex items-center justify-center min-h-screen">
+        <CardWrapper>
+          <div className={`shadow-lg p-4 max-w-md w-full ${colors[type]}`}>
+            <div
               onClick={onClose}
-            >
-              X
-            </button>
-          </FiltersWrapper>
-        </div>
 
-      </CardWrapper>
+              className="flex justify-end">
+              <FiltersWrapper>
+                <button
+                  className="px-4 py-2 top-2 bg-gray-800 text-white hover:bg-gray-700"
+                >
+                  X
+                </button>
+              </FiltersWrapper>
+            </div>
+            <p className="m-4 text-2xl font-arvo">{message}</p>
+          </div>
+        </CardWrapper>
+      </div>
     </div>
+
+
   );
 }

@@ -22,6 +22,7 @@ import {
 } from "../components/submit/validation";
 import Step6Success from "../components/submit/Step6Success";
 import FiltersWrapper from "../components/layout/FiltersWrapper";
+import { useTranslation } from "react-i18next";
 
 export default function Submit() {
   const [artistType, setArtistType] = useState("visual");
@@ -38,6 +39,7 @@ export default function Submit() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [modalType, setModalType] = useState("info");
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -46,6 +48,7 @@ export default function Submit() {
 
 
   const showModal = (message, type = "info") => {
+    console.log(message)
     setModalMessage(message);
     setModalType(type);
     setModalOpen(true);
@@ -97,11 +100,11 @@ export default function Submit() {
     e.preventDefault();
 
     if (!captchaToken) {
-      showModal("Completa il reCAPTCHA per continuare.", "warning");
+      showModal(t("recaptchacheck"), "error");
       return;
     }
     if (!acceptPrivacy) {
-      showModal("Accetta le condizione della privacy.", "warning");
+      showModal(t("acceptPrivacy"), "error");
       return;
     }
 
@@ -113,18 +116,18 @@ export default function Submit() {
 
 
     if (!artistName) {
-      showModal("Inserisci il nome artista nei campi richiesti.", "error");
+      showModal(t("enterartistname"), "error");
       return;
     }
 
     const artistKey = `submittedArtist_${artistName}`;
 
     if (localStorage.getItem(artistKey)) {
-      showModal("Hai già inviato una submission con questo nome artista.", "warning");
+      showModal(t("duplicateSubmission"), "error");
       return;
     }
     setStatus("sending");
-    showModal("Invio in corso.", "warning");
+    showModal(t("sending"), "error");
 
     const dataToSend = {
       ...formBase,
@@ -144,7 +147,7 @@ export default function Submit() {
       )
       .then(() => {
         setStatus("success");
-        showModal("Email inviata con successo!", "success");
+        showModal(t("emailsent"), "success");
         setFormBase(formBaseInitialState);
         setFormVisual(formVisualInitialState);
         setFormMusic(formMusicInitialState);
@@ -157,7 +160,7 @@ export default function Submit() {
       .catch((err) => {
         console.error("EmailJS error:", err);
         setStatus("error");
-        showModal("Errore durante l'invio. Riprova più tardi.", "error");
+        showModal(t("submissionError"), "error");
       });
   };
 
@@ -199,24 +202,9 @@ export default function Submit() {
   return (
     <main className="max-w-3xl mx-auto p-6 pb-48 pt-24 font-arvo">
       <FiltersWrapper>
-        <h1 className="font-arvo font-bold text-center">Submit Your Art & Music</h1>
+        <h1 className="font-arvo font-bold text-center">{t("submitam")}</h1>
       </FiltersWrapper>
 
-      {status === "sending" && (
-        <p className="text-yellow-600 font-semibold mb-4 text-center animate-pulse">
-          🎧 Invio in corso...
-        </p>
-      )}
-      {status === "success" && (
-        <p className="text-green-600 font-semibold mb-4 text-center">
-          ✅ Messaggio inviato con successo!
-        </p>
-      )}
-      {status === "error" && (
-        <p className="text-red-600 font-semibold mb-4 text-center">
-          Errore durante l'invio. Riprova più tardi.
-        </p>
-      )}
 
       <form onSubmit={handleSubmit} className="max-w-3xl mx-auto p-4 space-y-8 mt-4y">
         {currentStep === 1 && (
@@ -259,11 +247,13 @@ export default function Submit() {
           />)}
         {currentStep === 6 && (
           <Step6Success
+
             reset={() => {
               setStatus("idle");
               setCurrentStep(1);
               setModalOpen(false);
             }}
+            t={t}
           />
         )}
 
@@ -275,7 +265,7 @@ export default function Submit() {
                 onClick={goPrevStep}
                 className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
               >
-                Indietro
+                {t("back")}
               </button>
             </FiltersWrapper>
           ) : (
@@ -287,20 +277,20 @@ export default function Submit() {
                 type="button"
                 onClick={() => {
                   if (currentStep === 1) {
-                    validateStep1(formBase, artistType, setModalMessage, setModalType, setModalOpen, goNextStep);
+                    validateStep1(formBase, artistType, showModal, goNextStep, t);
                   } else if (currentStep === 2 && (artistType === "visual" || artistType === "both")) {
-                    validateStep2Visual(formVisual, setModalMessage, setModalType, setModalOpen, goNextStep);
+                    validateStep2Visual(formVisual, showModal, goNextStep, t);
                   } else if (currentStep === 3 && (artistType === "music" || artistType === "both")) {
-                    validateStep3Music(formMusic, setModalMessage, setModalType, setModalOpen, goNextStep);
+                    validateStep3Music(formMusic, showModal, goNextStep, t);
                   } else if (currentStep === 4) {
-                    validateStep4Genres(selectedSubgenres, setModalMessage, setModalType, setModalOpen, goNextStep);
+                    validateStep4Genres(selectedSubgenres, showModal, goNextStep, t);
                   } else {
                     goNextStep();
                   }
                 }}
                 className="px-4 py-2 bg-monza text-white hover:bg-monzadark"
               >
-                Avanti
+                {t("next")}
               </button>
             </FiltersWrapper>
           ) : (
@@ -310,7 +300,7 @@ export default function Submit() {
                 disabled={status === "sending"}
                 className="px-4 py-2 bg-green-600 text-white hover:bg-green-700"
               >
-                Invia
+                {t("submit")}
               </button>
             </FiltersWrapper>
           )}

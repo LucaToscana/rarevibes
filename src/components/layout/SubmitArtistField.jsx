@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 
 function RenderField({ field, form, onChange, parentName = "" }) {
     const {
@@ -10,6 +11,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
         fields: groupFields,
         itemFields,
     } = field;
+    const { t } = useTranslation("common");
 
     const fieldName = parentName ? `${parentName}.${id}` : id;
     const value = getValue(form, fieldName);
@@ -45,7 +47,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
     if (type === "textarea" || isTextArea) {
         return (
             <div className="mb-4 ">
-                <label htmlFor={fieldName} className="block font-medium mb-1">{label}</label>
+                <label htmlFor={fieldName} className="block font-medium mb-1">  {t(label)}</label>
                 <textarea
                     id={fieldName}
                     name={fieldName}
@@ -62,7 +64,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
     if (type === "select") {
         return (
             <div className="mb-4">
-                <label htmlFor={fieldName} className="block font-medium mb-1">{label}</label>
+                <label htmlFor={fieldName} className="block font-medium mb-1">  {t(label)}</label>
                 <select
                     id={fieldName}
                     name={fieldName}
@@ -83,7 +85,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
     if (type === "multiselect") {
         return (
             <div className="mb-4">
-                <label htmlFor={fieldName} className="block font-medium mb-1">{label}</label>
+                <label htmlFor={fieldName} className="block font-medium mb-1"> {t(label)}</label>
                 <select
                     multiple
                     id={fieldName}
@@ -110,7 +112,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
     if (type === "tags") {
         return (
             <div className="mb-4 font-arvo">
-                <label htmlFor={fieldName} className="block font-medium mb-1">{label}</label>
+                <label htmlFor={fieldName} className="block font-medium mb-1"> {t(label)}</label>
                 <input
                     type="text"
                     id={fieldName}
@@ -126,7 +128,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
                     }
                     className="p-3 border-[1px] border-black text-base  w-full"
                 />
-                <p className="text-sm text-gray-500 mt-1">Separare con virgola</p>
+                <p className="text-sm text-gray-500 mt-1">{t("separateWithComma")}</p>
             </div>
         );
     }
@@ -143,7 +145,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
     if (type === "image-array") {
         return (
             <div className="mb-4">
-                <label htmlFor={fieldName} className="block font-medium mb-1">{label}</label>
+                <label htmlFor={fieldName} className="block font-medium mb-1"> {t(label)}</label>
                 <input
                     type="text"
                     id={fieldName}
@@ -157,9 +159,11 @@ function RenderField({ field, form, onChange, parentName = "" }) {
                             },
                         })
                     }
-                    placeholder="Inserisci URL immagini separati da virgole"
+                    placeholder={t("imageurls")}
                     className="p-3 border-[1px] border-black text-base w-full"
                 />
+                <p className="text-sm text-gray-500 mt-1">{t("separateWithComma")}</p>
+
             </div>
         );
     }
@@ -167,7 +171,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
     // Default input
     return (
         <div className="mb-4">
-            <label htmlFor={fieldName} className="block font-medium mb-1">{label}</label>
+            <label htmlFor={fieldName} className="block font-medium mb-1"> {t(label)}</label>
             <input
                 type={type}
                 id={fieldName}

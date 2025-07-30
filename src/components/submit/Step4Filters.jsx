@@ -4,6 +4,7 @@ import { CheckboxCustom } from "../layout/CheckboxCustom";
 import FiltersWrapper from "../layout/FiltersWrapper";
 import SectionTitle from "../layout/SectionTitle";
 
+
 function Step4Filters({
   artistType,
   artFilters,

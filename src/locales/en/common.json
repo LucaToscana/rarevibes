@@ -12,7 +12,67 @@
   "tagline": "A fanzine for raw sounds, weird thoughts, and glorious nonsense.",
   "backToArtists": "Back to artists",
   "youMightBeInterestedIn": "You might be interested in",
-  "listenTo":"Listen to",
-  "onYourFavoritePlatform":"on your favorite platform",
-  "placeholdersFilter" : "Search by name, label, singles or bio"
+  "listenTo": "Listen to",
+  "onYourFavoritePlatform": "on your favorite platform",
+  "placeholdersFilter": "Search by name, label, singles or bio",
+  "whatarea": "What is your area of art?",
+  "visualart": "Visual Art",
+  "music": "Music",
+  "both": "Both",
+  "fullname": "Full Name",
+  "email": "Email",
+  "aboutyou_min50": "Tell us a bit about yourselves... (min 50 characters)",
+  "next": "Next",
+  "whatsyourname": "What`s your name?",
+  "whatsyouremail": "What`s your email so we can contact you?",
+  "aboutyou": "Tell us a bit about yourself",
+  "allfieldsrequired": "Oops, all fields are required in this section",
+  "visualarts": "Visual Arts",
+  "artistname": "Artist Name",
+  "images": "Images",
+  "imageurls": "Enter at least one image URL, separated by commas if needed",
+  "aboutproject_min50": "Tell us about your artistic project, for example how it was born (at least 50 characters)",
+  "product": "Product",
+  "price": "Price",
+  "buylink": "Purchase Link",
+  "imageurl": "Image (URL)",
+  "website": "Website",
+  "back": "Back",
+  "enterartistname": "Enter your artist name.",
+  "entersocials": "Enter at least one social link or website where we can find you.",
+  "visualgenres": "Visual Art Genres",
+  "submitam": "Submit Your Art & Music",
+  "gdprconsent": "I declare that I have read and accept the privacy policy, and I consent to the processing of personal data in accordance with the GDPR.",
+  "submitbtn": "Submit",
+  "recaptchacheck": "Complete the reCAPTCHA to continue.",
+  "sending": "Sending...",
+  "emailsent": "Email sent successfully!",
+  "submissioncomplete": "Submission completed successfully!",
+  "thankyou": "Thank you for submitting your application. We` ll contact you soon!",
+  "invalidemail": "Please enter a valid email address, like name@email.com",
+  "atleastoneimage": "Add at least one image that represents your work.",
+  "min1subgenres": "Select at least one subgenre to best represent your style.",
+  "atleastonelink": "Enter at least one link to listen to your song or album.",
+  "enterTitleAndYear": "Enter the title and year of the song or album.",
+  "acceptPrivacy": "Accept the privacy terms.",
+  "duplicateSubmission": "You have already submitted an entry with this artist name.",
+  "submissionError": "Error during submission. Please try again later.",
+  "artistOrBandName": "Artist/Band Name",
+  "abouttrack_min50": "Tell us something about the track or album you want to submit (minimum 50 characters).",
+  "title_single_ep_album": "Title of the single, EP or album",
+  "year": "Year",
+  "coverUrl": "Cover (URL)",
+  "featuringTags": "Featuring (multiple tags separated by commas)",
+  "separateWithComma": "Separate with commas"
+
+
+
+
+
+
+
+
+
+
+
 }

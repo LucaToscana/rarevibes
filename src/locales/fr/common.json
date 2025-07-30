@@ -12,7 +12,66 @@
   "tagline": "Un fanzine pour des sons bruts, des pensées étranges et un merveilleux non-sens.",
   "backToArtists": "Retour aux artistes",
   "youMightBeInterestedIn": "Vous pourriez être intéressé par",
-    "listenTo":"Écoutez",
-  "onYourFavoritePlatform":" sur votre plateforme préférée",
-  "placeholdersFilter" : "Rechercher par nom, label, singles ou bio"
+  "listenTo": "Écoutez",
+  "onYourFavoritePlatform": " sur votre plateforme préférée",
+  "placeholdersFilter": "Rechercher par nom, label, singles ou bio",
+  "whatarea": "Quel est votre domaine artistique ?",
+  "music": "Musique",
+  "both": "Les deux",
+  "fullname": "Nom et prénom",
+  "email": "E-mail",
+  "aboutyou_min50": "Parlez-nous un peu de vous... (min 50 caractères)",
+  "next": "Suivant",
+  "whatsyourname": "Comment t`appelles-tu ?",
+  "whatsyouremail": "Quelle est ton adresse email pour que nous puissions te contacter ?",
+  "aboutyou": "Parlez-nous un peu de vous",
+  "allfieldsrequired": "Oups, tous les champs sont obligatoires dans cette section",
+  "visualarts": "Arts visuels",
+  "artistname": "Nom d`artiste",
+  "images": "Images",
+  "imageurls": "Entrez au moins une URL d’image, séparée par des virgules si nécessaire",
+  "aboutproject_min50": "Parlez-nous de votre projet artistique, par exemple comment il est né (au moins 50 caractères)",
+  "product": "Produit",
+  "price": "Prix",
+  "buylink": "Lien d`achat",
+  "imageurl": "Image (URL)",
+  "website": "Site Web",
+  "back": "Retour",
+  "enterartistname": "Entrez votre nom d`artiste.",
+  "entersocials": "Entrez au moins un lien social ou un site web où nous pouvons vous trouver.",
+  "visualgenres": "Genres `arts visuels",
+  "submitam": "Soumettez votre art et musique",
+  "gdprconsent": "Je déclare avoir lu et accepté la politique de confidentialité, et je consens au traitement de mes données personnelles conformément au RGPD.",
+  "submitbtn": "Envoyer",
+  "recaptchacheck": "Complétez le reCAPTCHA pour continuer.",
+  "sending": "Envoi en cours...",
+  "emailsent": "E-mail envoyée avec succès !",
+  "submissioncomplete": "Soumission complétée avec succès !",
+  "thankyou": "Merci d`avoir soumis votre candidature. Nous vous contacterons bientôt !",
+  "invalidemail": "Veuillez entrer une adresse email valide, comme nom@email.com",
+  "atleastoneimage": "Ajoutez au moins une image représentative de votre travail.",
+  "min1subgenres": "Sélectionnez au moins un sous-genre pour mieux représenter votre style.",
+  "atleastonelink": "Entrez au moins un lien pour écouter votre morceau ou album.",
+  "enterTitleAndYear": "Entrez le titre et l'année du morceau ou de l'album.",
+  "acceptPrivacy": "Acceptez les conditions de confidentialité.",
+  "duplicateSubmission": "Vous avez déjà soumis une candidature avec ce nom d'artiste.",
+  "submissionError": "Erreur lors de l'envoi. Veuillez réessayer plus tard.",
+  "artistOrBandName": "Nom de l’artiste/groupe",
+  "abouttrack_min50": "Dis-nous quelque chose sur le morceau ou l’album que tu veux envoyer (minimum 50 caractères).",
+  "title_single_ep_album": "Titre du single, EP ou album",
+  "year": "Année",
+  "coverUrl": "Pochette (URL)",
+  "featuringTags": "Featuring (tags multiples séparés par des virgules)",
+  "separateWithComma": "Séparer par des virgules"
+
+
+
+
+
+
+
+
+
+
+
 }

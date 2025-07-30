@@ -1,7 +1,12 @@
 import React from "react";
 import FiltersWrapper from "./FiltersWrapper";
+import { useTranslation } from "react-i18next";
 
 export function CheckboxCustom({ item, isSelected, onToggle }) {
+  const { t } = useTranslation('filters');
+
+
+
   return (
     <FiltersWrapper>
       <label className="flex items-center gap-2 cursor-pointer">
@@ -12,7 +17,7 @@ export function CheckboxCustom({ item, isSelected, onToggle }) {
           className="peer hidden"
         />
         <div
-          className={`w-5 h-5 rounded border flex items-center justify-center transition
+          className={`w-5 h-5  rounded border flex items-center justify-center transition
             ${isSelected ? 'bg-monza border-black' : 'bg-white border-black'}
           `}
         >
@@ -22,7 +27,8 @@ export function CheckboxCustom({ item, isSelected, onToggle }) {
             </svg>
           )}
         </div>
-        {item.label}
+       <span className="mr-2">{t(item.key, { defaultValue: item.label })}</span> 
+
       </label>
     </FiltersWrapper>
   );

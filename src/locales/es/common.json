@@ -14,5 +14,65 @@
   "youMightBeInterestedIn": "Podrías estar interesado en",
   "listenTo": "Escucha ",
   "onYourFavoritePlatform": "en tu plataforma favorita",
-  "placeholdersFilter" : "Buscar por nombre, sello, singles o biografía"
+  "placeholdersFilter": "Buscar por nombre, sello, singles o biografía",
+  "whatarea": "¿Cuál es tu área de arte?",
+  "visualart": "Arte visual",
+  "music": "Música",
+  "both": "Ambos",
+  "fullname": "Nombre y Apellido",
+  "email": "Correo electrónico",
+  "aboutyou_min50": "Cuéntanos un poco sobre ti... (mínimo 50 caracteres)",
+  "next": "Siguiente",
+  "whatsyourname": "¿Cómo te llamas?",
+  "whatsyouremail": "¿Cuál es tu correo electrónico para poder contactarte?",
+  "aboutyou": "Cuéntanos un poco sobre ti",
+  "allfieldsrequired": "Ups, todos los campos son obligatorios en esta sección",
+  "visualarts": "Artes visuales",
+  "artistname": "Nombre artístico",
+  "images": "Imágenes",
+  "imageurls": "Introduce al menos una URL de imagen, separadas por comas si es necesario",
+  "aboutproject_min50": "Háblanos de tu proyecto artístico, por ejemplo cómo nació (mínimo 50 caracteres)",
+  "product": "Producto",
+  "price": "Precio",
+  "buylink": "Enlace de compra",
+  "imageurl": "Imagen (URL)",
+  "website": "Sitio web",
+  "back": "Atrás",
+  "enterartistname": "Introduce tu nombre artístico.",
+  "entersocials": "Introduce al menos un enlace social o sitio web donde podamos encontrarte.",
+  "visualgenres": "Géneros de arte visual",
+  "submitam": "Envía tu Arte y Música",
+  "gdprconsent": "Declaro haber leído y aceptado la política de privacidad, y doy mi consentimiento para el tratamiento de datos personales conforme al RGPD.",
+  "submitbtn": "Enviar",
+  "recaptchacheck": "Completa el reCAPTCHA para continuar.",
+  "sending": "Enviando...",
+  "emailsent": "¡Correo enviado con éxito!",
+  "submissioncomplete": "¡Envío completado con éxito!",
+  "thankyou": "Gracias por enviar tu candidatura. ¡Nos pondremos en contacto contigo pronto!",
+  "invalidemail": "Introduce una dirección de correo válida, como nombre@email.com",
+  "atleastoneimage": "Agrega al menos una imagen representativa de tu trabajo.",
+  "min1subgenres": "Selecciona al menos un subgénero para representar mejor tu estilo.",
+  "atleastonelink": "Introduce al menos un enlace para escuchar tu canción o álbum.",
+  "enterTitleAndYear": "Introduce el título y el año de la canción o álbum.",
+  "acceptPrivacy": "Acepta las condiciones de privacidad.",
+  "duplicateSubmission": "Ya has enviado una propuesta con este nombre de artista.",
+  "submissionError": "Error al enviar. Por favor, inténtalo de nuevo más tarde.",
+  "artistOrBandName": "Nombre del artista/grupo",
+  "abouttrack_min50": "Cuéntanos algo sobre la canción o álbum que quieres enviar (mínimo 50 caracteres).",
+  "title_single_ep_album": "Título del single, EP o álbum",
+  "year": "Año",
+  "coverUrl": "Portada (URL)",
+  "featuringTags": "Featuring (etiquetas múltiples separadas por comas)",
+  "separateWithComma": "Separar con comas"
+
+
+
+
+
+
+
+
+
+
+
 }

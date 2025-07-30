@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import FiltersWrapper from '../layout/FiltersWrapper'
+import { useTranslation } from "react-i18next";
 
 
 export default function CompactMerchFields({ fields, form, onChange }) {
   // Tutti i numeri prodotti trovati in fields (es: ["1", "2", "3"])
+    const { t } = useTranslation("common");
+  
   const allProductNums = Array.from(
     new Set(
       fields
@@ -57,14 +60,14 @@ export default function CompactMerchFields({ fields, form, onChange }) {
           key={productNum}
           className="border p-4 rounded-md bg-white shadow-sm"
         >
-          <h3 className="font-semibold mb-3">Prodotto {productNum}</h3>
+          <h3 className="font-semibold mb-3"> {t("product")} {productNum}</h3>
           <div className="grid grid-cols-2 gap-4">
             {groupedByProduct[productNum]?.map(({ id, label, type }) => {
               const value = form[id] || "";
               return (
                 <div key={id} className="flex flex-col">
                   <label htmlFor={id} className="mb-1 font-medium">
-                    {label}
+                    {t(label)}
                   </label>
                   <input
                     type={type === "url" ? "url" : "text"}
@@ -90,10 +93,10 @@ export default function CompactMerchFields({ fields, form, onChange }) {
             disabled={visibleProducts.length >= 3}
             className={`px-4 py-2 rounded ${visibleProducts.length >= 3
               ? "bg-gray-300 cursor-not-allowed"
-              : "bg-blue-600 text-white hover:bg-blue-700"
+              : "bg-monza text-white hover:bg-monzadark"
               }`}
           >
-            Aggiungi Prodotto
+            +
           </button>
         </FiltersWrapper>
 
@@ -108,7 +111,7 @@ export default function CompactMerchFields({ fields, form, onChange }) {
               : "bg-red-600 text-white hover:bg-red-700"
               }`}
           >
-            Rimuovi Prodotto
+           -
           </button>
         </FiltersWrapper>
 

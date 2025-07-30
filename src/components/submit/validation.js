@@ -1,38 +1,30 @@
 export const validateStep1 = (
   formBase,
   artistType,
-  setModalMessage,
-  setModalType,
-  setModalOpen,
-  goNextStep
+  showModal,
+  goNextStep,
+  t
 ) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!formBase.name || !formBase.email || !formBase.message || !artistType) {
-    setModalMessage("Tutti i campi sono obbligatori.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(t("allfieldsrequired"), "error");
     return;
   }
 
   if (!emailRegex.test(formBase.email)) {
-    setModalMessage("Inserisci un indirizzo email valido, tipo nome@email.com");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(t("invalidemail"), "error");
     return;
   }
 
-  if (formBase.message.trim().length < 100) {
-    setModalMessage("Hey, dedicaci qualche riga in più! La tua biografia merita almeno 100 caratteri.");
-    setModalType("error");
-    setModalOpen(true);
+  if (formBase.message.trim().length < 50) {
+    showModal(t("aboutyou_min50"), "error");
     return;
   }
 
   goNextStep();
 };
-
-export const validateStep2Visual = (formVisual, setModalMessage, setModalType, setModalOpen, goNextStep) => {
+export const validateStep2Visual = (formVisual, showModal, goNextStep, t) => {
   const {
     "name-va": name,
     "images-va": images,
@@ -51,23 +43,23 @@ export const validateStep2Visual = (formVisual, setModalMessage, setModalType, s
   } = formVisual;
 
   if (!name.trim()) {
-    setModalMessage("Inserisci il nome d’arte.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(t("enterartistname"), "error");
     return;
   }
 
   if (!images || images.length === 0) {
-    setModalMessage("Aggiungi almeno un’immagine rappresentativa del tuo lavoro.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(
+      t("atleastoneimage"),
+      "error"
+    );
     return;
   }
 
-  if (bio.trim().length < 100) {
-    setModalMessage("Raccontaci qualcosa in più su un tuo progetto, opera o visione artistica. Almeno 100 caratteri.");
-    setModalType("error");
-    setModalOpen(true);
+  if (bio.trim().length < 50) {
+    showModal(
+      t("aboutproject_min50"),
+      "error"
+    );
     return;
   }
 
@@ -86,47 +78,40 @@ export const validateStep2Visual = (formVisual, setModalMessage, setModalType, s
   ].some((link) => link && link.trim() !== "");
 
   if (!atLeastOneSocial) {
-    setModalMessage("Inserisci almeno un link social o un sito web dove possiamo trovarti.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(
+      t("entersocials"),
+      "error"
+    );
     return;
   }
 
   goNextStep();
 };
 
-export const validateStep3Music = (
-  formMusic,
-  setModalMessage,
-  setModalType,
-  setModalOpen,
-  goNextStep
-) => {
+export const validateStep3Music = (formMusic, showModal, goNextStep ,t ) => {
   if (!formMusic["name-mu"].trim()) {
-    setModalMessage("Inserisci il nome dell’artista.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(t("enterartistname"), "error");
     return;
   }
 
   if (!formMusic["images-mu"] || formMusic["images-mu"].length === 0) {
-    setModalMessage("Carica almeno un’immagine rappresentativa.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(t("atleastoneimage"), "error");
     return;
   }
 
-  if (!formMusic["bio-extended-mu"] || formMusic["bio-extended-mu"].trim().length < 100) {
-    setModalMessage("Raccontaci un po’ di più! La biografia deve contenere almeno 100 caratteri.");
-    setModalType("error");
-    setModalOpen(true);
+  if (
+    !formMusic["bio-extended-mu"] ||
+    formMusic["bio-extended-mu"].trim().length < 50
+  ) {
+    showModal(
+      t("aboutproject_min50"),
+      "error"
+    );
     return;
   }
 
   if (!formMusic["single-title-mu"] || !formMusic["single-year-mu"]) {
-    setModalMessage("Inserisci il titolo e l’anno del brano o album.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(t("enterTitleAndYear"), "error");
     return;
   }
 
@@ -145,9 +130,10 @@ export const validateStep3Music = (
   );
 
   if (!hasSinglePlatform) {
-    setModalMessage("Inserisci almeno un link per ascoltare il tuo brano o album.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(
+      t("atleastonelink"),
+      "error"
+    );
     return;
   }
 
@@ -173,9 +159,10 @@ export const validateStep3Music = (
   );
 
   if (!hasGeneralPlatform) {
-    setModalMessage("Inserisci almeno un link a una piattaforma dove si può trovare la tua musica.");
-    setModalType("error");
-    setModalOpen(true);
+    showModal(
+      t("atleastonelink"),
+      "error"
+    );
     return;
   }
 
@@ -184,15 +171,15 @@ export const validateStep3Music = (
 
 export const validateStep4Genres = (
   selectedSubgenres,
-  setModalMessage,
-  setModalType,
-  setModalOpen,
-  goNextStep
+  showModal,
+  goNextStep,
+  t
 ) => {
-  if (!selectedSubgenres || selectedSubgenres.length < 3) {
-    setModalMessage("Seleziona almeno 3 sottogeneri per rappresentare al meglio il tuo stile.");
-    setModalType("error");
-    setModalOpen(true);
+  if (!selectedSubgenres || selectedSubgenres.length < 1) {
+    showModal(
+      t("min1subgenres"),
+      "error"
+    );
     return;
   }
 
