@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import FiltersWrapper from '../layout/FiltersWrapper'
 
 
 export default function ImageGalleryMobile({ images = [], openZoom }) {
@@ -18,13 +20,13 @@ export default function ImageGalleryMobile({ images = [], openZoom }) {
 
     return (
         <div
-            className="md:hidden relative  w-64 h-72 flex items-center justify-center select-none bg-black"
+            className="md:hidden relative w-72  sm:w-96 h-72 flex items-center justify-center select-none bg-black"
         >            <div
             role="button"
             tabIndex={0}
             onClick={() => openZoom(safeImages[currentIndex])}
             onKeyDown={(e) => e.key === 'Enter' && openZoom(safeImages[currentIndex])}
-            className="w-full h-full flex items-center justify-center cursor-pointer overflow-hidden rounded-lg"
+            className="w-full h-full flex items-center justify-center cursor-pointer overflow-hidden"
         >
                 <img
                     src={safeImages[currentIndex]}
@@ -35,25 +37,33 @@ export default function ImageGalleryMobile({ images = [], openZoom }) {
                 />
             </div>
 
-            <button
-                onClick={prevImage}
-                aria-label="Previous Image"
-                className="absolute top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none"
-                type="button"
-                style={{ left: 16 }}
-            >
-                ‹
-            </button>
+            <div onClick={prevImage}
+                style={{ left: 0 }}
+                className="absolute top-1/2 -translate-y-1/2 p-2">
+                <FiltersWrapper>
+                    <button
+                        aria-label="Previous Image"
+                        type="button"
 
-            <button
-                onClick={nextImage}
-                aria-label="Next Image"
-                className="absolute top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none"
-                type="button"
-                style={{ right: 16 }}
-            >
-                ›
-            </button>
+                    >
+                        <FaChevronLeft className="w-5 h-5 text-monza mt-1" />
+                    </button>
+                </FiltersWrapper>
+            </div>
+
+            <div onClick={nextImage}
+                style={{ right: 0 }}
+
+                className="absolute top-1/2 -translate-y-1/2 ">
+                <FiltersWrapper>
+                    <button
+                        aria-label="Next Image"
+                        type="button"
+                    >
+                        <FaChevronRight className="w-5 h-5  text-monza mt-1" />
+                    </button>
+                </FiltersWrapper>
+            </div>
 
         </div>
     )

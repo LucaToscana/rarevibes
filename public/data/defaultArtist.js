@@ -28,7 +28,7 @@ const defaultArtist = {
       platforms: {
         spotify: "https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp",
         youtube: "HamLxGxeDqI",
-        soundcloud: "https://soundcloud.com/artist/sunset-drive",
+        soundcloud: "https%3A//api.soundcloud.com/tracks/2113037745",
         appleMusic: "https://music.apple.com/us/album/sunset-drive/1440831170?i=1440831172",
         deezer: "https://www.deezer.com/track/87654321",
         bandcamp: "2380770719",

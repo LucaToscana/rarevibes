@@ -5,7 +5,6 @@ export default function TogglePlayerButton({ playerOpen, onClick }) {
   return (
     <button
       onClick={onClick}
-      aria-label={playerOpen ? 'Nascondi player' : 'Espandi player'}
       className="p-2 "
     >
       <FiltersWrapper>

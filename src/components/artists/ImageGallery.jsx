@@ -74,6 +74,8 @@ export default function ImageGallery({ images, slug }) {
           <CardWrapper>  <img
             src={safeImages[0]}
             alt="Main"
+            style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
+            onContextMenu={(e) => e.preventDefault()}
             className="w-full h-full object-contain object-center transition-transform duration-300 hover:scale-105"
           /></CardWrapper>
         </div>
@@ -98,6 +100,8 @@ export default function ImageGallery({ images, slug }) {
                 <img
                   src={img}
                   alt={`Side ${idx + 1}`}
+                  style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
+                  onContextMenu={(e) => e.preventDefault()}
                   className="w-full h-full object-contain object-center transition-transform duration-300 hover:scale-105"
                   draggable={false}
                 />
@@ -114,12 +118,7 @@ export default function ImageGallery({ images, slug }) {
 
           <CardWrapper>
 
-
-
-
             <ImageGalleryMobile images={safeImages} openZoom={openZoom} />
-
-
           </CardWrapper>
         </div>
       </div>

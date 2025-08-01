@@ -90,16 +90,16 @@ export default function BottomPlayer() {
   return (
     <div className=''>
       <div
-        className={` w-fit
-    fixed bottom-8  min-w-[300px] md:min-w-[400px]	right-8 
+        className={`w-80 sm:w-fit
+    fixed bottom-8  min-w-[300px] md:min-w-[400px]	right-6 
     sm:right-8  md:right-16
     px-4 py-2 md:bottom-10 
     bg-monza text-black shadow-[8px_8px_0px_#000] 
     border-[3px] border-black z-40 
     transition-all duration-300 ease-in-out
-    ${playerOpen ? 'md:h-[320px] lg:h-[180px] pt-12 ' : 'h-[60px] py-1 px-4  right-32  '}
+    ${playerOpen ? 'h-fit md:h-[180px] lg:h-[180px] pt-12 ' : 'h-[60px] py-1 px-4  right-32  '}
     flex items-center justify-between
-    rotate-[-2deg] hover:rotate-0 hover:scale-105 
+    rotate-[-2deg] hover:rotate-0 
   `}
         style={{
           backgroundImage: `url(${bgImage})`,
@@ -116,7 +116,7 @@ export default function BottomPlayer() {
           <div className="flex flex-col md:flex-row gap-1 md:gap-4 flex-grow transition-all ">
             {/* Informazioni artista */}
             {playerOpen ? (
-              <div className="relative flex flex-col items-start gap-4 ">
+              <div className="relative flex flex-col items-start gap-2 ">
                 <CardStaticWrapper>
                   <BottomPlayerDetails
                     activeArtist={activeArtist}
@@ -146,9 +146,9 @@ export default function BottomPlayer() {
             {/* Contenitore del player musicale */}
             <div
               key={playerKey}
-              className={`relative  p-2 md:p-8 sm:mr-8 pt-12 sm:m-0 transition-all duration-300 ease-in-out flex-shrink-0
+              className={`relative p-4 md:p-8 sm:mr-8 pt-2 sm:m-0 transition-all duration-300 ease-in-out flex-shrink-0
               ${playerOpen
-                  ? 'opacity-100 scale-100 h-64 md:h-72 w-80 sm:w-[400px]'
+                  ? 'opacity-100 scale-100 h-48 md:h-72 w-80 sm:w-[400px]'
                   : 'opacity-0 scale-95 h-0 pointer-events-none'}`}
             >
               <PlayerRenderer

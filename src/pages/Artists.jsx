@@ -236,13 +236,13 @@ export default function Artists() {
             ))
           ) : (
             <div className="animate-fade-in">
-            <CardWrapper>
-              <div className="col-span-full flex flex-col items-center justify-center text-center py-12">
-                <p className="text-xl font-arvo text-monza">
-                  {t("no_artists_found") || "No artists found."}
-                </p>
-              </div>
-            </CardWrapper></div>
+              <CardWrapper>
+                <div className="col-span-full flex flex-col items-center justify-center text-center py-12">
+                  <p className="text-xl font-arvo text-monza">
+                    {t("no_artists_found") || "No artists found."}
+                  </p>
+                </div>
+              </CardWrapper></div>
           )}
         </section>
 

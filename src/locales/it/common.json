@@ -66,5 +66,7 @@
   "coverUrl": "Copertina (URL)",
   "featuringTags": "Featuring (tag multipli separati da virgola)",
   "separateWithComma": "Separare con virgola",
-  "no_artists_found": "Nessun artista trovato"
+  "no_artists_found": "Nessun artista trovato",
+      "error_platform_not_found": "errore: piattaforma non trovata"
+
 }

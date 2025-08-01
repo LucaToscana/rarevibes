@@ -40,12 +40,12 @@ export default function ArtistOverlayCard({
 
             {/* Testo artista */}
             <div className="min-w-0">
-              <h2 className="text-sm font-bold text-monza font-arvo uppercase border-b-2 border-black truncate">
+              <h2 className="text-xs font-bold text-monza font-arvo uppercase border-b-2 border-black truncate ">
                 {activeArtist.name}
               </h2>
 
               <span
-                className="font-arvo text-black text-sm italic lowercase block truncate"
+                className="font-arvo text-black text-xs italic lowercase block truncate"
                 title={activeArtist.singles?.[0]?.title}
               >
                 {activeArtist.singles?.[0]?.title}

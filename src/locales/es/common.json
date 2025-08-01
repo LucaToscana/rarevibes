@@ -65,7 +65,9 @@
   "coverUrl": "Portada (URL)",
   "featuringTags": "Featuring (etiquetas múltiples separadas por comas)",
   "separateWithComma": "Separar con comas",
-    "no_artists_found":"No se encontraron artistas."
+    "no_artists_found":"No se encontraron artistas.",
+        "error_platform_not_found": "error: plataforma no encontrada"
+
 
 
 

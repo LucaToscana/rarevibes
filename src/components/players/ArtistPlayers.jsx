@@ -29,7 +29,7 @@ export default function ArtistPlayers({ artist }) {
             )}
             {artist.soundcloud && (
                 <PlayerWrapper label="SoundCloud">
-                    <SoundCloudPlayer url={artist.soundcloud} height={120} />
+                    <SoundCloudPlayer url={artist.soundcloud} height={166} />
                 </PlayerWrapper>
             )}
             {artist.spotify && (

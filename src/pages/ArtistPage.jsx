@@ -66,9 +66,9 @@ export default function ArtistPage() {
     setSelectedPlatform
   }
 
-  if (loading) return <main className="min-h-screen flex items-center justify-center">Loading...</main>
-  if (error) return <main className="min-h-screen flex items-center justify-center">Error: {error}</main>
-  if (!selectedArtist) return <main className="min-h-screen  flex items-center justify-center">Artist not found</main>
+  if (loading) return <main className="font-arvo text-monza min-h-screen flex items-center justify-center font-arvo"><CardWrapper>RARE VIBES</CardWrapper></main>
+  if (error) return <main className="font-arvo text-monza min-h-screen flex items-center justify-center"><CardWrapper>Error: {error}</CardWrapper></main>
+  if (!selectedArtist) return <main className="font-arvo text-monza min-h-screen  flex items-center justify-center"><CardWrapper> {t("no_artists_found")}</CardWrapper></main>
 
   const relatedArtists = artistsData
     .filter((a) => a.slug !== slug)

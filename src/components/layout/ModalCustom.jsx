@@ -1,6 +1,8 @@
 import CardWrapper from "./CardWrapper";
 import FiltersWrapper from "./FiltersWrapper";
 
+import ReactDOM from "react-dom";
+
 export default function ModalCustom({ isOpen, message, type = "info", onClose }) {
   if (!isOpen) return null;
 
@@ -10,36 +12,28 @@ export default function ModalCustom({ isOpen, message, type = "info", onClose })
     error: "bg-red-800 text-white",
     warning: "bg-yellow-100 text-yellow-800",
     sending: "bg-blue-700 text-white",
-
   };
 
-  return (
-    <div className="fixed inset-0 z-[1000]">
-      {/* Sfondo oscurante */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 pointer-events-auto" />
-
-      {/* Contenuto della modale */}
-      <div className="relative flex items-center justify-center min-h-screen">
-        <CardWrapper>
-          <div className={`shadow-lg p-4 max-w-md w-full ${colors[type]}`}>
-            <div
+  return ReactDOM.createPortal(
+    <div
+      onClick={onClose}
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[99999] cursor-pointer"
+    >    <CardWrapper>
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className={`max-w-md w-full p-6 shadow-lg ${colors[type]} cursor-default`}
+        >
+          <div className="flex justify-end">
+            <FiltersWrapper> <button
               onClick={onClose}
-
-              className="flex justify-end">
-              <FiltersWrapper>
-                <button
-                  className="px-4 py-2 top-2 bg-gray-800 text-white hover:bg-gray-700"
-                >
-                  X
-                </button>
-              </FiltersWrapper>
-            </div>
-            <p className="m-4 text-2xl font-arvo">{message}</p>
+              className="px-4 py-2 bg-monzadark text-white hover:bg-monza  "
+            >
+              X
+            </button></FiltersWrapper>
           </div>
-        </CardWrapper>
-      </div>
-    </div>
-
-
+          <p className="mt-4 text-xl font-arvo text-center">{message}</p>
+        </div></CardWrapper>
+    </div>,
+    document.body
   );
 }

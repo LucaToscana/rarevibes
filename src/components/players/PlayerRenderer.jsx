@@ -4,6 +4,7 @@ import SoundCloudPlayer from './SoundCloudPlayer'
 import YouTubePlayer from './YouTubePlayer'
 import BandcampPlayer from './BandcampPlayer'
 import CardStaticWrapper from '../layout/CardStaticWrapper'
+import { useTranslation } from 'react-i18next'
 
 const PlayerRenderer = ({ platform, url, isPlaying, setIsPlaying }) => {
   if (!url) {
@@ -13,8 +14,9 @@ const PlayerRenderer = ({ platform, url, isPlaying, setIsPlaying }) => {
       youtube: 'youTube',
       bandcamp: 'bandcamp',
     }[platform] || 'selezionata'
+  const { t } = useTranslation('common');
 
-    return <CardStaticWrapper> <div className="p-4 text-center">Nessun link {platformName} disponibile</div></CardStaticWrapper>
+    return <CardStaticWrapper> <div className="p-2 text-center font-arvo  text-sm "> {platformName} {t("error_platform_not_found")} </div> </CardStaticWrapper>
   }
 
   switch (platform) {
@@ -63,7 +65,7 @@ const PlayerRenderer = ({ platform, url, isPlaying, setIsPlaying }) => {
     }
 
     default:
-      return <CardStaticWrapper> <div className="p-4 text-center">Piattaforma non supportata</div>
+      return <CardStaticWrapper> <div className="p-4 text-center">{t("error_platform_not_found")}</div>
       </CardStaticWrapper>
   }
 }

@@ -49,7 +49,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-screen p-16">
+    <main className="min-h-screen p-4 ">
       {/* Hero parallax */}
       <div className=' mt-24 '>
         <CardWrapper>

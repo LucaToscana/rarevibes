@@ -35,7 +35,7 @@ export default function PlayerPlatformButtons({ activeArtist, selectedPlatform, 
         }
 
         return (
-          <FiltersWrapper>
+          <FiltersWrapper key={platform} >
             <button
               key={platform}
               onClick={() => setSelectedPlatform(platform)}
