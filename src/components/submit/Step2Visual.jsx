@@ -16,7 +16,7 @@ const Step2Visual = ({ formVisual, handleVisualInputChange }) => {
 
         <FiltersWrapper>
           <h2 className="text-2xl font-bold w-fit text-monza">
-            {t("visualart")}
+            {t("visualarts")}
           </h2>
         </FiltersWrapper>
         <div className="p-2">

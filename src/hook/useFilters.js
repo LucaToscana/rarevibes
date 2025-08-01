@@ -29,7 +29,7 @@ export function useFilteredArtists() {
         return artist.genres.some((g) => subFilters.includes(g));
       }
 
-      if (mainFilters.includes("artist") || mainFilters.includes("musician")) {
+      if (mainFilters.includes("visualarts") || mainFilters.includes("music")) {
         if (subFilters.length === 0) {
           // artista ha almeno uno dei tipi selezionati
           return artist.type.some((type) => mainFilters.includes(type));

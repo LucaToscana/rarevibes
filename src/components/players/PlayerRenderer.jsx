@@ -3,6 +3,7 @@ import SpotifyPlayer from './SpotifyPlayer'
 import SoundCloudPlayer from './SoundCloudPlayer'
 import YouTubePlayer from './YouTubePlayer'
 import BandcampPlayer from './BandcampPlayer'
+import CardStaticWrapper from '../layout/CardStaticWrapper'
 
 const PlayerRenderer = ({ platform, url, isPlaying, setIsPlaying }) => {
   if (!url) {
@@ -13,46 +14,57 @@ const PlayerRenderer = ({ platform, url, isPlaying, setIsPlaying }) => {
       bandcamp: 'bandcamp',
     }[platform] || 'selezionata'
 
-    return <div className="p-4 text-center">Nessun link {platformName} disponibile</div>
+    return <CardStaticWrapper> <div className="p-4 text-center">Nessun link {platformName} disponibile</div></CardStaticWrapper>
   }
 
   switch (platform) {
     case 'spotify':
       return (
-        <SpotifyPlayer
-          url={url}
-          isPlaying={isPlaying}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-        />
+        <CardStaticWrapper>
+
+          <SpotifyPlayer
+            url={url}
+            isPlaying={isPlaying}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+          />
+        </CardStaticWrapper>
       )
     case 'soundcloud':
       return (
-        <SoundCloudPlayer
-          url={url}
-          isPlaying={isPlaying}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-        />
+        <CardStaticWrapper>
+
+          <SoundCloudPlayer
+            url={url}
+            isPlaying={isPlaying}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+          />
+        </CardStaticWrapper>
+
       )
     case 'youtube': {
       const videoId = url.includes('watch?v=') ? url.split('watch?v=')[1] : url
       return (
-        <YouTubePlayer
-          videoId={videoId}
-          isPlaying={isPlaying}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-        />
+        <CardStaticWrapper>
+          <YouTubePlayer
+            videoId={videoId}
+            isPlaying={isPlaying}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+          />            </CardStaticWrapper>
+
       )
     }
     case 'bandcamp': {
 
-      return <BandcampPlayer albumId={url} />
+      return <CardStaticWrapper> <BandcampPlayer albumId={url} />        </CardStaticWrapper>
+
     }
 
     default:
-      return <div className="p-4 text-center">Piattaforma non supportata</div>
+      return <CardStaticWrapper> <div className="p-4 text-center">Piattaforma non supportata</div>
+      </CardStaticWrapper>
   }
 }
 

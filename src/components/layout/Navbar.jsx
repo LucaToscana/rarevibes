@@ -39,7 +39,6 @@ export default function Navbar() {
               {menuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </CardWrapper>
-
         </div>
 
         <div className="hidden sm:flex space-x-6 items-center pointer-events-auto ">
@@ -48,7 +47,6 @@ export default function Navbar() {
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>
           <NavLinkCustom to="/submit" extraClass="button">
             {t("submit")}
-
           </NavLinkCustom>
           <LanguageSwitcher />
 

@@ -7,7 +7,7 @@ export default function BottomPlayerDetails({ activeArtist, selectedPlatform, se
   const bgImage = activeArtist.images?.[0] || 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg';
 
   return (
-    <div className="relative w-72 rounded-md overflow-hidden h-32 justify-end">
+    <div className="relative w-72 rounded-md overflow-hidden h-32     justify-end">
       {/* Sfondo immagine */}
       <div
         className="absolute inset-0 bg-cover bg-center"

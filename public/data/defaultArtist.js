@@ -4,7 +4,7 @@ const defaultArtist = {
   id: 1,
   name: "Odelia",
   slug: "odelia",
-  type: "musician",
+  type: "music",
   images: [
     "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg",
     "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",

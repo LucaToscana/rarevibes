@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronDown } from 'lucide-react';
-import FiltersWrapper from '../components/layout/filtersWrapper';
+import FiltersWrapper from '../components/layout/FiltersWrapper';
 
 const languages = [
   { code: 'en', label: '🇬🇧' },

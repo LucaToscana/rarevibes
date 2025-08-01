@@ -18,6 +18,8 @@
   "whatarea": "What is your area of art?",
   "visualart": "Visual Art",
   "music": "Music",
+  "visualarts": "Visual Arts",
+
   "both": "Both",
   "fullname": "Full Name",
   "email": "Email",
@@ -27,7 +29,6 @@
   "whatsyouremail": "What`s your email so we can contact you?",
   "aboutyou": "Tell us a bit about yourself",
   "allfieldsrequired": "Oops, all fields are required in this section",
-  "visualarts": "Visual Arts",
   "artistname": "Artist Name",
   "images": "Images",
   "imageurls": "Enter at least one image URL, separated by commas if needed",
@@ -63,16 +64,6 @@
   "year": "Year",
   "coverUrl": "Cover (URL)",
   "featuringTags": "Featuring (multiple tags separated by commas)",
-  "separateWithComma": "Separate with commas"
-
-
-
-
-
-
-
-
-
-
-
+  "separateWithComma": "Separate with commas",
+  "no_artists_found": "No artists found. "
 }

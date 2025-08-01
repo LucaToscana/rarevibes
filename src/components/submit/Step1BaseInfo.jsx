@@ -33,7 +33,7 @@ const { t } = useTranslation("common");
                   </div>
                   <span>
                     {type === "visual"
-                      ? t("visualart")
+                      ? t("visualarts")
                       : type === "music"
                       ? t("music")
                       : t("both")}

@@ -1,6 +1,6 @@
 import { FaSpotify, FaInstagram, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa'
 import { SiSoundcloud, SiYoutube, SiBandcamp } from 'react-icons/si'
-import FiltersWrapper from '../layout/filtersWrapper'
+import FiltersWrapper from '../layout/FiltersWrapper'
 
 const iconsMap = {
   instagram: FaInstagram,

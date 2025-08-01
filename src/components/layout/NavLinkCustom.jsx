@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { getClasses } from '../../utils'; // se hai creato un file utils.js
-import FiltersWrapper from './filtersWrapper';
+import FiltersWrapper from './FiltersWrapper';
 
 function CustomNavLink({ to, children, extraClass = '', onClick }) {
   const location = useLocation();

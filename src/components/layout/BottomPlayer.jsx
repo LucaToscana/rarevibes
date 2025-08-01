@@ -9,11 +9,11 @@ import SocialLinks from '../artists/SocialLinks'
 import defaultArtistRV from '../../../public/data/defaultArtist' // adatta il path alla posizione reale
 import PlayerRenderer from '../players/PlayerRenderer'
 import { addVisitedArtist } from '../../store/visitedArtistsSlice';
-import CardWrapper from './CardWrapper'
 import CardStaticWrapper from './CardStaticWrapper'
 import FiltersWrapper from './FiltersWrapper'
 import SectionTitle from './SectionTitle'
 import { Link } from 'react-router-dom'
+import ArtistOverlayCard from '../players/ArtistOverlayCard'
 
 
 export default function BottomPlayer() {
@@ -90,31 +90,34 @@ export default function BottomPlayer() {
   return (
     <div className=''>
       <div
-        className={`
-    fixed bottom-1 
-    left-2 right-2 sm:left-4 sm:right-4 md:left-16 md:right-16
-    px-4 py-2 md:bottom-8
+        className={` w-fit
+    fixed bottom-8  min-w-[300px] md:min-w-[400px]	right-8 
+    sm:right-8  md:right-16
+    px-4 py-2 md:bottom-10 
     bg-monza text-black shadow-[8px_8px_0px_#000] 
     border-[3px] border-black z-40 
     transition-all duration-300 ease-in-out
-    ${playerOpen ? 'md:h-[320px] lg:h-[150px] py-3 px-4' : 'h-[60px] py-1 px-4'}
+    ${playerOpen ? 'md:h-[320px] lg:h-[180px] pt-12 ' : 'h-[60px] py-1 px-4  right-32  '}
     flex items-center justify-between
     rotate-[-2deg] hover:rotate-0 hover:scale-105 
   `}
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
       >
 
         {/* Wrapper principale flex row */}
         <div className="flex flex-row items-start  md:items-center gap-4 w-full ">
 
           {/* Info artista + player + lista tracce */}
-          <div
-            className="flex flex-col md:flex-row gap-1 md:gap-4 flex-grow transition-all ">
-
+          <div className="flex flex-col md:flex-row gap-1 md:gap-4 flex-grow transition-all ">
             {/* Informazioni artista */}
             {playerOpen ? (
               <div className="relative flex flex-col items-start gap-4 ">
                 <CardStaticWrapper>
-
                   <BottomPlayerDetails
                     activeArtist={activeArtist}
                     selectedPlatform={
@@ -125,61 +128,17 @@ export default function BottomPlayer() {
                     setSelectedPlatform={setSelectedPlatform}
                   />
                 </CardStaticWrapper>
-
-
-
               </div>
 
             ) : (
-
-
-              <div className="absolute w-full inset-0 bg-black bg-opacity-50 transition  cursor-pointer duration-300 group-hover:bg-opacity-60"
-                onClick={toggleOpen}
-                style={{
-                  backgroundImage: `url(${bgImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                }}
-              >
-                {/* Overlay scuro trasparente */}
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
-                {/* Contenuto testo */}
-                <div
-                  className="relative z-40  p-1 h-full text-white flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-fit"
-                >
-
-                  <CardWrapper>
-                    <div className='h-12 w-fit'>
-                      <h2 className=" text-sm font-bold text-monza font-arvo uppercase mb-2 border-b-2 border-black">
-                        {activeArtist.name}
-                      </h2>
-                      <div className="flex items-center space-x-2 truncate">
-
-                        {/* Separatore - */}
-                        <span className="text-blacktext-sm opacity-50 select-none">-</span>
-                        <span
-                          className="font-arvo text-black text-xs italic lowercase truncate opacity-90"
-                          title={activeArtist.singles?.[0]?.title}
-                        >
-                          {activeArtist.singles?.[0]?.title}
-                        </span>
-                      </div>
-
-                      <span
-                        className="text-sm tracking-wide truncate opacity-70 hidden md:block"
-                        title={activePlatform}
-                      >
-                        {activePlatform ? activePlatform.charAt(0).toUpperCase() + activePlatform.slice(1) : ''}
-                      </span>
-                    </div>
-                  </CardWrapper>
-
-                </div>
-
-              </div>
-
+              <ArtistOverlayCard
+                bgImage={bgImage}
+                activeArtist={activeArtist}
+                activePlatform={activePlatform}
+                selectedPlatform={selectedPlatform}
+                setSelectedPlatform={setSelectedPlatform}
+                toggleOpen={toggleOpen}
+              />
             )}
 
 
@@ -187,26 +146,24 @@ export default function BottomPlayer() {
             {/* Contenitore del player musicale */}
             <div
               key={playerKey}
-              className={`relative rounded-md p-2 md:p-8 overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0
-           ${playerOpen ? 'w-full sm:w-[400px] md:h-72 h-64' : 'hidden w-full h-[50px] scale-[0.85]'}`}
+              className={`relative  p-2 md:p-8 sm:mr-8 pt-12 sm:m-0 transition-all duration-300 ease-in-out flex-shrink-0
+              ${playerOpen
+                  ? 'opacity-100 scale-100 h-64 md:h-72 w-80 sm:w-[400px]'
+                  : 'opacity-0 scale-95 h-0 pointer-events-none'}`}
             >
-              <CardStaticWrapper>
-                <PlayerRenderer
-                  platform={selectedPlatform}
-                  url={url}
-                  isPlaying={isPlaying}
-                  setIsPlaying={setIsPlaying}
-                />
-              </CardStaticWrapper>
-
+              <PlayerRenderer
+                platform={selectedPlatform}
+                url={url}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
+              />
             </div>
 
 
 
+
             {playerOpen ? (
-
-
-              <div //className="hidden 2xl:block"
+              <div className=" block sm:hidden md:hidden xl:block "
               >
                 <ArtistTrackListCard
                   title="recents"
@@ -222,7 +179,7 @@ export default function BottomPlayer() {
           {/** SocialLinks */}
           {playerOpen ?
 
-            <div className='hidden  lg:block'>
+            <div className='hidden mb-12 lg:block'>
               <SectionTitle>
                 <Link to="/">
                   <div className='font-arvo text-xl text-monza '>
@@ -243,7 +200,7 @@ export default function BottomPlayer() {
         </div>
 
         {/* Bottone per aprire/chiudere il player */}
-        <div className="absolute top-2 right-2 ">
+        <div className="absolute bottom-1 right-2 ">
           <TogglePlayerButton playerOpen={playerOpen} onClick={toggleOpen} />
         </div>
       </div>

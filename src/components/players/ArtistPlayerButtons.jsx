@@ -1,10 +1,9 @@
 import { useDispatch } from 'react-redux'
 import { setArtist, setPlatform, setAutoPlay, setPlayerOpen } from '../../store/playerSlice'
 import { FaSpotify, FaSoundcloud, FaYoutube } from 'react-icons/fa'
-import { SiSoundcloud, SiYoutube, SiBandcamp } from 'react-icons/si'
+import { SiBandcamp } from 'react-icons/si'
 import { useTranslation } from 'react-i18next';
-import ArtistTags from '../artists/ArtistTags';
-import FiltersWrapper from '../layout/filtersWrapper';
+import FiltersWrapper from '../layout/FiltersWrapper';
 
 export default function ArtistPlayerButtons({ artist }) {
   const dispatch = useDispatch()

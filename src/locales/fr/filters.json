@@ -126,5 +126,7 @@
   "text-based": "Basé sur le texte",
   "minimal": "Concept minimal",
   "social": "Art social",
-   "body_art":"Art Corporel"
+  "body_art": "Art Corporel",
+  "music": "Musique",
+  "visualarts": "Arts visuels"
 }

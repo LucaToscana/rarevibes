@@ -17,7 +17,7 @@ export default function FiltersConsole({ genres }) {
     dispatchMainFilter
   } = useFilterManagement(genres);
 
-  const { t } = useTranslation(['musicFilters', 'artFilters']);
+  const { t } = useTranslation('common');
   const [showFilters, setShowFilters] = useState(false);
 
   return (
@@ -27,18 +27,18 @@ export default function FiltersConsole({ genres }) {
       <div className="mb-6  ">
         <div className="flex items-center gap-4 px-4 min-w-max">
           <FilterButton
-            key={"musician"}
-            label={"musician"}
-            value="musician"
-            currentFilter={mainFilter.includes('musician') ? 'musician' : ''}
-            onClick={() => dispatchMainFilter(['musician'])}
+            key={"music"}
+            label={t("music")}
+            value="music"
+            currentFilter={mainFilter.includes('music') ? 'music' : ''}
+            onClick={() => dispatchMainFilter(['music'])}
           />
           <FilterButton
-            key={"artist"}
-            label={"artist"}
-            value="artist"
-            currentFilter={mainFilter.includes('artist') ? 'artist' : ''}
-            onClick={() => dispatchMainFilter(['artist'])}
+            key={"visualarts"}
+            label={t("visualarts")}
+            value="visualarts"
+            currentFilter={mainFilter.includes("visualarts") ?"visualarts" : ''}
+            onClick={() => dispatchMainFilter(["visualarts"])}
           />
           <FilterButton
             key={"all"}

@@ -17,6 +17,8 @@
   "placeholdersFilter": "Rechercher par nom, label, singles ou bio",
   "whatarea": "Quel est votre domaine artistique ?",
   "music": "Musique",
+    "visualarts": "Arts visuels",
+
   "both": "Les deux",
   "fullname": "Nom et prénom",
   "email": "E-mail",
@@ -26,7 +28,6 @@
   "whatsyouremail": "Quelle est ton adresse email pour que nous puissions te contacter ?",
   "aboutyou": "Parlez-nous un peu de vous",
   "allfieldsrequired": "Oups, tous les champs sont obligatoires dans cette section",
-  "visualarts": "Arts visuels",
   "artistname": "Nom d`artiste",
   "images": "Images",
   "imageurls": "Entrez au moins une URL d’image, séparée par des virgules si nécessaire",
@@ -62,7 +63,9 @@
   "year": "Année",
   "coverUrl": "Pochette (URL)",
   "featuringTags": "Featuring (tags multiples séparés par des virgules)",
-  "separateWithComma": "Séparer par des virgules"
+  "separateWithComma": "Séparer par des virgules",
+      "no_artists_found":"Aucun artiste trouvé."
+
 
 
 

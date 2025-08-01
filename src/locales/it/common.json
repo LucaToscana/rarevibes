@@ -16,11 +16,10 @@
   "onYourFavoritePlatform": " sulla tua piattaforma preferita",
   "placeholdersFilter": "Cerca per nome, label, singoli o bio",
 
-
-  
   "whatarea": "Qual è la tua area artistica?",
-  "visualart": "Arte Visiva",
+ "visualart": "Arte Visiva",
   "music": "Musica",
+    "visualarts": "Arti Visive",
   "both": "Entrambi",
   "fullname": "Nome e Cognome",
   "email": "Email",
@@ -30,7 +29,7 @@
   "whatsyouremail": "Qual è la tua email per poterti contattare?",
   "aboutyou": "Parlaci un po` di te",
   "allfieldsrequired": "Ops, qui in questa sezione tutti i campi sono obbligatori",
-  "visualarts": "Arti Visive",
+
   "artistname": "Nome d`arte",
   "images": "Immagini",
   "imageurls": "Inserisci almeno un URL di immagine, separati da virgole se necessario",
@@ -66,16 +65,6 @@
   "year": "Anno",
   "coverUrl": "Copertina (URL)",
   "featuringTags": "Featuring (tag multipli separati da virgola)",
-  "separateWithComma": "Separare con virgola"
-
-
-
-
-
-
-
-
-
-
-
+  "separateWithComma": "Separare con virgola",
+  "no_artists_found": "Nessun artista trovato"
 }

@@ -147,7 +147,6 @@ export default function Submit() {
       )
       .then(() => {
         setStatus("success");
-        showModal(t("emailsent"), "success");
         setFormBase(formBaseInitialState);
         setFormVisual(formVisualInitialState);
         setFormMusic(formMusicInitialState);

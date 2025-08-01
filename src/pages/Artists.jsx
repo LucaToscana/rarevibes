@@ -8,7 +8,7 @@ import SubFilterList from "../components/layout/SubFilterList";
 import FilterHeader from "../components/layout/FilterHeader";
 import { useFilteredArtists, useFilterManagement } from "../hook/useFilters";
 import { useEffect, useRef, useState } from "react";
-import { FaChevronUp, FaChevronDown} from "react-icons/fa";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { filterArtists } from "../utils/filterArtists";
 import SectionTitle from '../components/layout/SectionTitle'
 import CardWrapper from "../components/layout/CardWrapper";
@@ -29,11 +29,11 @@ export default function Artists() {
   const captchaAnswer = 7; // esempio 3 + 4
 
   const { t } = useTranslation("common");
-  
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
- 
+
   const mergeGenres = (genres1, genres2) => {
     const map = {};
     [...genres1, ...genres2].forEach((g) => {
@@ -57,7 +57,7 @@ export default function Artists() {
   const currentFilterData =
     mainFilter.includes("all")
       ? allGenres
-      : mainFilter.includes("artist")
+      : mainFilter.includes("visualarts")
         ? artFilters.genres
         : musicFilters.genres;
   const { filteredArtists: rawFilteredArtists } = useFilteredArtists();
@@ -133,28 +133,27 @@ export default function Artists() {
             onCaptchaInputChange={(e) => setCaptchaInput(e.target.value)}
             placeholder={t("placeholdersFilter")}
           />
-          <div  className="flex flex-row items-center justify-center  gap-6 w-fit h-full">
-            <CardWrapper>
-              <div className="flex flex-row items-center justify-center w-fit h-full">
-                <FilterHeader
-                  count={
-                    cleanedSubFilters.length +
-                    (mainFilter.includes("all") && mainFilter.length === 1
-                      ? 0
-                      : mainFilter.length)
-                  }
-                  onReset={handleReset}
-                />
-              </div>
-            </CardWrapper>
+          <div className="flex flex-row items-center justify-center  gap-6 w-fit h-full">
+            <div className="flex flex-row items-center justify-center w-fit h-full">
+              <FilterHeader
+                count={
+                  cleanedSubFilters.length +
+                  (mainFilter.includes("all") && mainFilter.length === 1
+                    ? 0
+                    : mainFilter.length)
+                }
+                onReset={handleReset}
+              />
+            </div>
 
 
 
-            <CardWrapper>
-              <div
-                onClick={toggleSubFilterListVisibility}
+            <div
+              onClick={toggleSubFilterListVisibility}
 
-                className="flex flex-row items-center justify-center gap-4 h-full">
+              className="flex flex-row items-center justify-center gap-4 h-full">
+              <CardWrapper>
+
                 <button
                   className="focus:outline-none "
                   aria-label={
@@ -167,50 +166,51 @@ export default function Artists() {
                     <FaChevronDown className="h-5 w-5  text-monza rounded-full" />
                   )}
                 </button>
-              </div>
+              </CardWrapper>
 
-            </CardWrapper>
+            </div>
+
           </div>
         </div>
 
 
         {isSubFilterListVisible && (
 
+          <div className="m-8">
+            <CardStaticWrapper>
 
-          <CardStaticWrapper>
-
-            {/* Subfiltri a scomparsa */}
-            <div
-              ref={contentRef}
-              style={{ maxHeight: isSubFilterListVisible ? contentHeight : "0px" }}
-              className={`
+              {/* Subfiltri a scomparsa */}
+              <div
+                ref={contentRef}
+                style={{ maxHeight: isSubFilterListVisible ? contentHeight : "0px" }}
+                className={`
             overflow-hidden h-96 transition-[max-height] duration-300 ease-in-out
             relative  ${isSubFilterListVisible ? "mt-4" : ""}
           `}
-            >
+              >
 
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${bgImage})` }}
-                aria-hidden="true"
-              />
-              <div
-                className="absolute inset-0 bg-black bg-opacity-60"
-                aria-hidden="true"
-              />
-              {isSubFilterListVisible && (
                 <div
-                  className="relative z-10 p-4 w-full h-48 text-white custom-red-scrollbar"
-                  style={{
-                    maxHeight: `${contentRef.current?.scrollHeight - 32}px`,
-                    overflowY: "auto",
-                  }}
-                >
-                  <SubFilterList genres={currentFilterData} />
-                </div>
-              )}
-            </div>
-          </CardStaticWrapper>
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${bgImage})` }}
+                  aria-hidden="true"
+                />
+                <div
+                  className="absolute inset-0 bg-black bg-opacity-60"
+                  aria-hidden="true"
+                />
+                {isSubFilterListVisible && (
+                  <div
+                    className="relative z-10 p-4 w-full h-48 text-white custom-red-scrollbar"
+                    style={{
+                      maxHeight: `${contentRef.current?.scrollHeight - 32}px`,
+                      overflowY: "auto",
+                    }}
+                  >
+                    <SubFilterList genres={currentFilterData} />
+                  </div>
+                )}
+              </div>
+            </CardStaticWrapper> </div>
         )}
       </div>
 
@@ -226,7 +226,7 @@ export default function Artists() {
         >
           {filteredArtists.length > 0 ? (
             filteredArtists.map((artist) => (
-              <div  key={artist.id} className="w-full">
+              <div key={artist.id} className="w-full">
                 <ArtistCard
                   key={artist.id}
                   artist={artist}
@@ -235,11 +235,14 @@ export default function Artists() {
                 /></div>
             ))
           ) : (
-            <div className="col-span-full flex flex-col items-center justify-center text-center text-gray-400 py-12">
-              <p className="text-xl">
-                {t("no_artists_found") || "No artists found."}
-              </p>
-            </div>
+            <div className="animate-fade-in">
+            <CardWrapper>
+              <div className="col-span-full flex flex-col items-center justify-center text-center py-12">
+                <p className="text-xl font-arvo text-monza">
+                  {t("no_artists_found") || "No artists found."}
+                </p>
+              </div>
+            </CardWrapper></div>
           )}
         </section>
 

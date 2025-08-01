@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
   const { t } = useTranslation('common');
   return (
-    <section className="relative h-[220vh] overflow-hidden group">
+    <section className="relative h-96 sm:h-[220vh] overflow-hidden group">
       <div ref={parallaxRef} className="absolute inset-0 w-full h-full z-0 will-change-transform">
         <div className="absolute inset-0 w-full h-full">
           {heroImages.map((img, index) => (

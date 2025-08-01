@@ -14,6 +14,9 @@ export default function Home() {
   const [featuredArtists, setArtists] = useState([]);
 
   const heroImages = data.heroImagesDefault;
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,12 +51,13 @@ export default function Home() {
   return (
     <main className="min-h-screen p-16">
       {/* Hero parallax */}
-      <CardWrapper>
-      <HeroSection
-        heroImages={heroImages}
-        currentIndex={currentIndex}
-        parallaxRef={parallaxRef}
-      /></CardWrapper>
+      <div className=' mt-24 '>
+        <CardWrapper>
+          <HeroSection
+            heroImages={heroImages}
+            currentIndex={currentIndex}
+            parallaxRef={parallaxRef}
+          /></CardWrapper></div>
       <section className="py-16 px-6 max-w-7xl mx-auto">
         <SectionDivider></SectionDivider>
 

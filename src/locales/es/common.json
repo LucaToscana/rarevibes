@@ -16,8 +16,9 @@
   "onYourFavoritePlatform": "en tu plataforma favorita",
   "placeholdersFilter": "Buscar por nombre, sello, singles o biografía",
   "whatarea": "¿Cuál es tu área de arte?",
-  "visualart": "Arte visual",
+ "visualart": "Arte visual",
   "music": "Música",
+    "visualarts": "Artes visuales",
   "both": "Ambos",
   "fullname": "Nombre y Apellido",
   "email": "Correo electrónico",
@@ -27,7 +28,7 @@
   "whatsyouremail": "¿Cuál es tu correo electrónico para poder contactarte?",
   "aboutyou": "Cuéntanos un poco sobre ti",
   "allfieldsrequired": "Ups, todos los campos son obligatorios en esta sección",
-  "visualarts": "Artes visuales",
+
   "artistname": "Nombre artístico",
   "images": "Imágenes",
   "imageurls": "Introduce al menos una URL de imagen, separadas por comas si es necesario",
@@ -63,7 +64,9 @@
   "year": "Año",
   "coverUrl": "Portada (URL)",
   "featuringTags": "Featuring (etiquetas múltiples separadas por comas)",
-  "separateWithComma": "Separar con comas"
+  "separateWithComma": "Separar con comas",
+    "no_artists_found":"No se encontraron artistas."
+
 
 
 

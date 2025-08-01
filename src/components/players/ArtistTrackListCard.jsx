@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import CardStaticWrapper from "../layout/CardStaticWrapper";
-import FiltersWrapper from "../layout/filtersWrapper";
+import FiltersWrapper from "../layout/FiltersWrapper";
 
 export default function ArtistTrackListCard({ title = 'new artists', items = [], onSelect }) {
   const { t } = useTranslation('common'); // 👈 specifica il namespace */
@@ -9,9 +9,11 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
 
 
   return (
-    <div className="w-full sm:w-[400px] h-24  md:h-full p-2   flex flex-col justify-between block relative">
 
-      <CardStaticWrapper>
+    <CardStaticWrapper>
+
+      <div className=" sm:w-fit h-48 md:h-full flex flex-col justify-between block relative overflow-x-hidden">
+
 
 
         <h2 className="text-xs  font-arvo md:mb-2 uppercase  z-10 pl-1 pt-1 lowercase">
@@ -31,7 +33,7 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
 
 
           {/* Lista con sfondo per ogni artista */}
-          <ul className="relative z-10 space-y-2 overflow-y-auto pr-1 max-h-[150px] p-1  ml-8 ">
+          <ul className="relative z-10 space-y-2 overflow-y-auto pr-1 max-h-[150px] p-1  ml-4 mr-4   overflow-x-hidden">
             {items.slice(0, 10).map((item, index) => {
               const backgroundImage = item.images?.[0] || '';
 
@@ -40,7 +42,7 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
                   <li
                     key={index}
                     onClick={() => onSelect(item)}
-                    className="cursor-pointer relative w-72 md:w-72 font-arvo overflow-hidden group z-50 "
+                    className="cursor-pointer relative w-fit md:w-72 font-arvo overflow-hidden group z-50 "
                     style={{
                       backgroundImage: `url(${backgroundImage})`,
                       backgroundSize: 'cover',
@@ -62,7 +64,8 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
             })}
           </ul>
         </div>
-      </CardStaticWrapper>
-    </div>
+      </div>
+    </CardStaticWrapper>
+
   );
 }

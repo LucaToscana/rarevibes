@@ -126,5 +126,7 @@
   "text-based": "Testuale",
   "minimal": "Concettualismo Minimo",
   "social": "Arte Sociale",
-  "body_art": "Art Corporea"
+  "body_art": "Art Corporea",
+    "music": "Musica",
+    "visualarts": "Arti Visive"
 }

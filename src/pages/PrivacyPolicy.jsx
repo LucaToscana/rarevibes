@@ -2,9 +2,13 @@ import { useTranslation } from 'react-i18next';
 import SectionTitle from '../components/layout/SectionTitle';
 import SectionDivider from '../components/layout/SectionDivider';
 import CardWrapper from '../components/layout/CardWrapper';
+import { useEffect } from 'react';
 
 const PrivacyPolicy = () => {
   const { t } = useTranslation('privacy');
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto font-arvo">
