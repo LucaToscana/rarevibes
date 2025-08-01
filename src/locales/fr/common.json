@@ -3,6 +3,8 @@
   "about": "À Propos",
   "privacy": "Politique de Confidentialité",
   "artists": "Artistes",
+    "aboutus":"À Propos",
+
   "biography": "Biographie",
   "recentArtists": "Artistes Récents",
   "submit": "Soumettre",
@@ -17,7 +19,7 @@
   "placeholdersFilter": "Rechercher par nom, label, singles ou bio",
   "whatarea": "Quel est votre domaine artistique ?",
   "music": "Musique",
-    "visualarts": "Arts visuels",
+  "visualarts": "Arts visuels",
 
   "both": "Les deux",
   "fullname": "Nom et prénom",
@@ -64,19 +66,6 @@
   "coverUrl": "Pochette (URL)",
   "featuringTags": "Featuring (tags multiples séparés par des virgules)",
   "separateWithComma": "Séparer par des virgules",
-      "no_artists_found":"Aucun artiste trouvé.",
-          "error_platform_not_found": "erreur : plateforme introuvable"
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "no_artists_found": "Aucun artiste trouvé.",
+  "error_platform_not_found": "erreur : plateforme introuvable"
 }

@@ -90,13 +90,13 @@ export default function ImageGallery({ images, slug }) {
               onClick={() => openZoom(img)}
               onKeyDown={(e) => e.key === 'Enter' && openZoom(img)}
               style={{
-                opacity: visible ? 1 : 0,
-                transform: visible ? 'translateY(0)' : 'translateY(20px)',
+               //  opacity: visible ? 1 : 0,
+                // transform: visible ? 'translateY(5)' : 'translateY(20px)',
                 transitionDelay: `${300 + idx * 200}ms`,
               }}
               className="h-1/2"
             >
-              <CardWrapper>
+              <CardWrapper className='animate-fade-in'>
                 <img
                   src={img}
                   alt={`Side ${idx + 1}`}

@@ -24,7 +24,7 @@ export default function ArtistPage() {
   const { slug } = useParams()
   const dispatch = useDispatch()
   const { t } = useTranslation('common');
-  const { platform} = useSelector((state) => state.player)
+  const { platform } = useSelector((state) => state.player)
 
   const [selectedPlatform, setSelectedPlatform] = useState(platform)
 
@@ -56,8 +56,8 @@ export default function ArtistPage() {
   }, [slug, artistsData, dispatch])
 
 
-    const handlePlay = (platform) => {
-     const artist = artistsData.find((a) => a.slug === slug)
+  const handlePlay = (platform) => {
+    const artist = artistsData.find((a) => a.slug === slug)
 
     dispatch(setArtist(artist))
     dispatch(setPlatform(platform))
@@ -78,14 +78,14 @@ export default function ArtistPage() {
     <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto">
 
       {/* Link di ritorno */}
-      <div className="mt-8 font-arvo w-72 mb-8 pt-12">
-        <FiltersWrapper>
+      <div className="mt-8 font-arvo w-fit mb-8 pt-12">
+        <CardWrapper className="animate-fade-in">
 
           <Link to="/artists">
             ← {t('backToArtists')}
           </Link>
 
-        </FiltersWrapper>
+        </CardWrapper>
 
 
       </div>
@@ -96,7 +96,7 @@ export default function ArtistPage() {
         {/* Info artista */}
 
         <section className="lg:w-1/3 flex flex-col gap-6 h-full min-h-[500px] p-2">
-          <CardWrapper>
+          <CardWrapper >
             <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black w-64">
               {selectedArtist.name}
             </h2>
@@ -106,11 +106,11 @@ export default function ArtistPage() {
                 selectedPlatform={platform}
                 setSelectedPlatform={handlePlay}
               />
-            </div> 
+            </div>
 
           </CardWrapper>
 
-          <CardWrapper>
+          <CardWrapper >
             <ArtistBio slug={selectedArtist.slug}
               field="short"
               className='bio-text-white  drop-shadow'
@@ -131,11 +131,11 @@ export default function ArtistPage() {
         </section>
         {/* Immagini artista */}
 
-        <div className="lg:w-2/3">
+        <div className="lg:w-2/3 animate-fade-in-lg ">
           <ArtistImages images={selectedArtist.images} key={slug} slug={slug} />
 
 
-          <CardWrapper>
+          <CardWrapper >
             <ArtistBio slug={selectedArtist.slug}
               field="extended"
               className='bio-text-white drop-shadow'
@@ -149,7 +149,7 @@ export default function ArtistPage() {
       {selectedArtist?.socials && (
         <div className="w-full flex justify-end mt-16">
 
-          <CardWrapper>
+          <CardWrapper className="animate-fade-in">
             <SocialLinks socials={selectedArtist.socials} />
           </CardWrapper>
         </div>

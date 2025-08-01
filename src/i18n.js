@@ -28,13 +28,18 @@ import filtersES from "./locales/es/filters.json";
 import filtersIT from "./locales/it/filters.json";
 import filtersFR from "./locales/fr/filters.json";
 
+import aboutEN from "./locales/en/about.json";
+import aboutES from "./locales/es/about.json";
+import aboutIT from "./locales/it/about.json";
+import aboutFR from "./locales/fr/about.json"
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     fallbackLng: "en",
     lng: "en",
-    ns: ["common", "privacy", "bios", "articles", "filters"],
+    ns: ["common", "privacy", "bios", "articles", "filters","about"],
     defaultNS: "common",
     resources: {
       en: {
@@ -43,13 +48,15 @@ i18n
         bios: biosEN,
         articles: articlesEN,
         filters: filtersEN,
+        about:aboutEN
       },
       it: {
         common: commonIT,
         privacy: privacyIT,
         bios: biosIT,
         articles: articlesIT,
-        filters: filtersIT
+        filters: filtersIT,
+        about:aboutIT
       },
       fr: {
         common: commonFR,
@@ -57,6 +64,7 @@ i18n
         bios: biosFR,
         articles: articlesFR,
         filters: filtersFR,
+        about:aboutFR
       },
       es: {
         common: commonES,
@@ -64,6 +72,7 @@ i18n
         bios: biosES,
         articles: articlesES,
         filters: filtersES,
+        about:aboutES
       },
     },
     interpolation: {

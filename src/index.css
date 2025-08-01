@@ -93,12 +93,6 @@ body {
 /* ================================
    Fade-in animation utility
    ================================ */
-.fade-in {
-  @apply opacity-0 transition-opacity duration-1000;
-}
-.fade-in.show {
-  @apply opacity-100;
-}
 
 /* ================================
    Tipografia personalizzata

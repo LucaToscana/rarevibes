@@ -8,7 +8,7 @@ export default {
         rubik: ["Rubik", "sans-serif"],
         monoton: ["'Monoton'", "cursive"],
         arvo: ["'Arvo'", "serif"],
-        roboto: ["Roboto", "sans-serif"]
+        roboto: ["Roboto", "sans-serif"],
       },
       colors: {
         iron: "#D0D8D7",
@@ -17,8 +17,10 @@ export default {
       },
 
       animation: {
-        "fade-in": "fadeIn 1.5s ease-in forwards",
-        "shake": "shake 0.5s ease-in-out",
+        "fade-in": "fadeIn 0.5s ease-in forwards",
+        "fade-in-lg": "fadeIn 1.5s ease-in forwards",
+
+        shake: "shake 0.5s ease-in-out",
       },
 
       keyframes: {

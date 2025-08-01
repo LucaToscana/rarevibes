@@ -18,7 +18,7 @@ export default function ArtistCard({ artist, showBio = false }) {
   const handleImageError = () => setImgError(true);
 
   return (
-    <CardWrapper>
+    <CardWrapper className="animate-fade-in">
 
       <div className="marquee-wrapper flex flex-row w-full justify-center items-center">
         <ArtistTags artist={artist} />

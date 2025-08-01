@@ -10,6 +10,7 @@ import ArtistPage from './pages/ArtistPage'
 import Submit from './pages/Submit'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import ParallaxLayout from './components/layout/ParallaxLayout'
+import AboutUs from './pages/AboutUs'
 
 
 export default function App() {
@@ -24,6 +25,8 @@ export default function App() {
           <Route path="/artists/:slug" element={<ArtistPage />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+
         </Route>
       </Routes>
       <BottomPlayer />
