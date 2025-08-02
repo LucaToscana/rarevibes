@@ -4,11 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        rubik: ["Rubik", "sans-serif"],
-        monoton: ["'Monoton'", "cursive"],
-        arvo: ["'Arvo'", "serif"],
-        roboto: ["Roboto", "sans-serif"],
+        arvo: ["'Arvo'", "serif"]
       },
       colors: {
         iron: "#D0D8D7",
@@ -19,8 +15,6 @@ export default {
       animation: {
         "fade-in": "fadeIn 0.5s ease-in forwards",
         "fade-in-lg": "fadeIn 1.5s ease-in forwards",
-
-        shake: "shake 0.5s ease-in-out",
       },
 
       keyframes: {
@@ -28,18 +22,10 @@ export default {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
-        shake: {
-          "0%": { transform: "translateX(0)" },
-          "25%": { transform: "translateX(-5px)" },
-          "50%": { transform: "translateX(5px)" },
-          "75%": { transform: "translateX(-5px)" },
-          "100%": { transform: "translateX(0)" },
-        },
       },
     },
-    // 👇 AGGIUNGI QUI SOTTO
     screens: {
-      xxs: "400px", // 👈 breakpoint personalizzato (per iPhone SE e simili)
+      xxs: "400px", 
       sm: "640px",
       md: "768px",
       lg: "1024px",

@@ -19,6 +19,7 @@ const MerchList = ({ merch = [] }) => {
                             className="w-full max-w-md flex items-center border-b border-gray-200 py-2"
                         >
                             <img
+                                loading="lazy" 
                                 src={item.image}
                                 alt={item.name}
                                 className="w-20 h-20 object-cover mr-3 flex-shrink-0"

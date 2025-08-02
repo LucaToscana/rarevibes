@@ -31,27 +31,6 @@ body {
   background: #777;
 }
 
-/* ================================
-   Animazioni
-   ================================ */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-5px); }
-  40% { transform: translateX(5px); }
-  60% { transform: translateX(-5px); }
-  80% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
-}
-
-.animate-shake {
-  animation: shake 0.6s ease;
-}
-
 
 
 /* ================================
@@ -70,22 +49,6 @@ body {
 }
 
 /* ================================
-   Loader wrapper
-   ================================ */
-
-/* ================================
-   Fade-in animation utility
-   ================================ */
-
-/* ================================
-   Tipografia personalizzata
-   ================================ */
-.heading-monoton {
-  @apply font-arvo text-3xl tracking-tight select-none;
-}
-
-
-/* ================================
    arvo
    ================================ */
 .arvo-monza {
@@ -98,48 +61,9 @@ body {
 .arvo-black {
   @apply font-arvo  text-black;
 }
-/* ================================
-   roboto
-   ================================ */
-.roboto-monza {
-  @apply font-roboto  text-monza;
-}
-
-.roboto-white {
-  @apply font-roboto  text-white;
-}
-.roboto-black {
-  @apply font-roboto  text-black;
-}
-/* ================================
-   rubik
-   ================================ */
-
-.rubik-monza {
-  @apply font-rubik  text-monza;
-}
-
-.rubik-white {
-  @apply font-roboto  text-white;
-}
-.rubik-black {
-  @apply font-rubik  text-black;
-}
 
 
-/* ================================
-monoton
-   ================================ */
-.monoton-monza {
-  @apply font-monoton  text-monza;
-}
 
-.monoton-white {
-  @apply font-monoton  text-white;
-}
-.monoton-black {
-  @apply font-monoton  text-black;
-}
 .bio-text-white {
   @apply font-arvo text-sm text-black;
 
@@ -165,22 +89,7 @@ monoton
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
-.bio-highlight-white-xs {
-  @apply bg-white arvo-monza text-xs    inline-block;
-  transform: skew(-10deg);
-  padding: 0 0.1rem; /* aggiusta il padding per non tagliare il testo */
-}
-.bio-highlight-monza-xs {
-  @apply bg-monza arvo-white text-xs   inline-block;
-  transform: skew(-10deg);
-  padding: 0 0.1rem; /* aggiusta il padding per non tagliare il testo */
-}
-.custom-mark {
-  background-color: #ff007a;
-  color: white;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-}
+
 
 
 

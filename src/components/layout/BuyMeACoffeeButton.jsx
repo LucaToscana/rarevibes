@@ -20,7 +20,8 @@ function BuyMeACoffeeSimpleButton() {
       aria-label="Supporta Rare Vibes su Buy Me a Coffee"
     >
       <CardWrapper>
-        <img src={bmcButton} alt="Buy Me a Coffee" style={imgStyle} />
+        <img loading="lazy"
+          src={bmcButton} alt="Buy Me a Coffee" style={imgStyle} />
       </CardWrapper>
     </div>
   );

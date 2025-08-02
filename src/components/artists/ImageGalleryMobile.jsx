@@ -29,6 +29,7 @@ export default function ImageGalleryMobile({ images = [], openZoom }) {
             className="w-full h-full flex items-center justify-center cursor-pointer overflow-hidden"
         >
                 <img
+                    loading="lazy"
                     src={safeImages[currentIndex]}
                     alt={`Gallery image ${currentIndex + 1}`}
                     className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"

@@ -10,6 +10,7 @@ export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
         <div className="absolute inset-0 w-full h-full">
           {heroImages.map((img, index) => (
             <img
+              loading="lazy" 
               key={index}
               src={img}
               style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
@@ -28,7 +29,7 @@ export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
 
       <div className=" hidden relative z-10 flex items-center justify-center w-full h-full px-4">
         <div className="bg-white/70 dark:bg-zinc-900/70 backdrop-blur-2xl	 border border-zinc-200 dark:border-zinc-700 shadow-xl rounded-3xl p-8 md:p-10 text-center max-w-4xl w-full transition-all duration-300">
-          <h1 className="font-monoton text-5xl md:text-6xl lg:text-7xl mb-4 tracking-tight">RARE VIBES</h1>
+          <h1 className="font-arvo text-5xl md:text-6xl lg:text-7xl mb-4 tracking-tight">RARE VIBES</h1>
           <p className="font-arvo text-base md:text-lg text-zinc-700 dark:text-zinc-300 mb-6 leading-relaxed">
             {t('tagline')}
           </p>

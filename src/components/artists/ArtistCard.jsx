@@ -44,6 +44,7 @@ export default function ArtistCard({ artist, showBio = false }) {
 
           {/* Immagine artista */}
           <img
+          loading="lazy" 
             src={imageSrc}
             alt={artist?.name || "Artist image"}
             onLoad={() => setImgLoaded(true)}

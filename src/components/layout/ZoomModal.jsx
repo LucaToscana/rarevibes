@@ -21,6 +21,7 @@ export default function ZoomModal({ zoomOpen, zoomImg, handleCloseZoom }) {
     >
       <div className="flex items-center justify-center min-h-screen p-10">
         <img
+          loading="lazy" 
           src={zoomImg}
           alt="Zoomed"
           style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
