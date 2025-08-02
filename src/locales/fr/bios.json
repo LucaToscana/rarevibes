@@ -23,5 +23,25 @@
     "short": "Amira est une vocaliste neo-jazz londonienne qui mêle tradition, poésie et expérimentation sonore.",
     "review": "Amira réinvente le jazz classique avec des accents soul et une sensibilité contemporaine. Sa voix est décrite comme 'hypnotique et intemporelle'.",
     "extended": "Issue de la scène jazz de Londres, Amira associe jazz, soul et spoken word dans une approche sensible et engagée. Formée au chant classique, elle explore l’improvisation et l’expression émotionnelle. Ses textes évoquent l'identité, la diaspora et la quête intérieure, en s'inspirant de Billie Holiday et d’Erykah Badu. Son EP 'Midnight Verses' est salué pour sa subtilité et son intensité émotionnelle. Amira participe également à des collectifs artistiques qui lient musique, activisme et patrimoine afro-caribéen."
+  },
+ "sid": {
+    "short": "S.I.D. est un trio de sludge/doom metal originaire d’Italie, actif depuis 2019 et reconnu pour son son oppressant et hypnotique, capable de mêler des atmosphères doom denses à la lourdeur corrosive du sludge. Le groupe se compose de Fra (chant, guitares, paroles), Ikea (guitares, basse, samples) et Pikkio (batterie), une formation qui se distingue par une approche musicale à la fois puissante et conceptuelle.",
+    "review": "Leur premier album, Architects Of Armageddon (2019), a reçu un large accueil dans la scène underground, soulignant leur capacité à construire un son dévastateur mais réfléchi, où les thèmes apocalyptiques, guerriers et environnementaux se mêlent à une trame musicale étouffante et hypnotique.\n\nEn 2022, avec l’EP City Of Chemistry, S.I.D. a approfondi son imaginaire sombre et politique, inspiré du livre Veleni di Stato (« Poisons d’État ») de Gianluca Di Feo. Ce disque représente la deuxième partie d’une trilogie consacrée aux atrocités de la guerre, centrée sur les armes chimiques et leur impact mortel. L’EP, produit par le groupe et enregistré au studio V.A.N.G.A., combine des riffs lents et massifs, des growls profonds et des rythmes serrés, enrichis de passages de violes ajoutant une atmosphère mélancolique et théâtrale.\n\nEn 2023, S.I.D. a élargi son horizon collaboratif avec la sortie de la cassette split Over The Pain, réalisée avec le groupe mexicain hardcore punk/sludge Deshuesadero de Mexico. Cette collaboration internationale, publiée par Terror Casets, Wrong Disk Records et Nido de Ratas, met en lumière le dialogue entre deux scènes underground éloignées mais unies par la même intensité émotionnelle et le besoin urgent de dépasser la douleur à travers la musique.\n\nOver The Pain est une œuvre qui explore la souffrance comme une condition à la fois universelle et personnelle, une « membrane à franchir » pour retrouver une force intérieure et se relever. Les morceaux de S.I.D., “Downhill” et “Void”, s’entrelacent avec les chansons agressives et tendues de Deshuesadero, créant un projet parlant de résilience et de lutte dans un monde hostile.",
+    "extended": "Musicalement, S.I.D. est devenu un point de référence dans la scène doom/sludge européenne, avec un son allant du tempo funéraire du funeral doom aux touches abrasives du crust punk, tout en conservant un caractère évocateur fort et une dimension profondément conceptuelle. Leurs concerts sont des expériences immersives, mêlant lourdeur sonore et atmosphères sombres, capables d’emmener l’auditeur à travers des catastrophes humaines et des paysages sonores post-apocalyptiques.",
+    "lineup": [
+      { "name": "Fra", "roles": ["chant", "guitares", "paroles"] },
+      { "name": "Ikea", "roles": ["guitares", "basse", "samples"] },
+      { "name": "Pikkio", "roles": ["batterie"] }
+    ],
+    "collaborations": [
+      { "name": "Beatrice Marata", "instrument": "alto", "note": "sur City Of Chemistry" },
+      { "name": "Deshuesadero", "instrument": "groupe hardcore punk/sludge de Mexico", "note": "sur Over The Pain (2023)" }
+    ],
+    "discography": [
+      { "title": "Architects Of Armageddon", "year": 2019, "type": "album" },
+      { "title": "City Of Chemistry", "year": 2022, "type": "EP" },
+      { "title": "Over The Pain", "year": 2023, "type": "split", "with": "Deshuesadero" }
+    ],
+    "trivia": "S.I.D. n’est pas seulement un groupe, mais un projet qui réfléchit profondément aux contradictions de notre époque : guerre, pollution, douleur collective et personnelle. Leur musique est un cri de protestation, mais aussi une invitation à la réflexion et à la résistance."
   }
 }

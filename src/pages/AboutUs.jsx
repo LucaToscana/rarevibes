@@ -21,40 +21,22 @@ const AboutUs = () => {
 
             <SectionDivider />
 
-            <div className="m-4 p-8">
+            <div className="m-4 ">
                 <CardWrapper>
                     <p className="arvo-black drop-shadow">{t('intro')}</p>
                 </CardWrapper>
             </div>
 
-            {/*
-            <div className="m-4">
+            <div className='px-16'>
                 <CardWrapper>
-                    <h2 className="font-semibold">{t('ourMissionTitle')}</h2>
-                    <p className="arvo-black drop-shadow">{t('ourMission')}</p>
-                </CardWrapper>
-            </div>
-                        <div className="m-4">
-                <CardWrapper>
-                    <h2 className="font-semibold">{t('ourStoryTitle')}</h2>
-                    <p className="arvo-black drop-shadow">{t('ourStory')}</p>
-                </CardWrapper>
-            </div>
-            
-            <div className="m-4">
-        <CardWrapper>
-          <h2 className="font-semibold">{t('teamTitle')}</h2>
-          <p className="arvo-black drop-shadow">{t('team')}</p>
-        </CardWrapper>
-      </div>*/ }
-            <div className='px-16'> <CardWrapper>
-                <div className="flex items-center justify-between w-full ">
-                    <p className="arvo-black drop-shadow mr-4">{t('bmc')}</p>
-                    <div className="shrink-0">
-                        <BuyMeACoffeeSimpleButton />
+                    <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-2 w-full">
+                        <p className="arvo-black drop-shadow mr-4">{t('bmc')}</p>
+                        <div className="shrink-0">
+                            <BuyMeACoffeeSimpleButton />
+                        </div>
                     </div>
-                </div>
-            </CardWrapper></div>
+                </CardWrapper>
+            </div>
 
 
         </main>

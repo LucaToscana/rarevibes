@@ -51,8 +51,8 @@ export default function Home() {
   return (
     <main className="min-h-screen p-4 ">
       {/* Hero parallax */}
-      <div className=' mt-24 '>
-        <CardWrapper className="animate-fade-in">
+      <div className=' mt-24 lg:px-24 '>
+        <CardWrapper className="animate-fade-in ">
           <HeroSection
             heroImages={heroImages}
             currentIndex={currentIndex}

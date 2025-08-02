@@ -64,8 +64,12 @@
                     "label": "Death Metal"
                 },
                 {
-                    "key": "doom-metal",
+                    "key": "doom-metal", 
                     "label": "Doom Metal"
+                },
+                  {
+                    "key": "sludge", 
+                    "label": "Sludge"
                 },
                 {
                     "key": "thrash-metal",

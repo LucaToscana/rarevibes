@@ -16,9 +16,10 @@ import SocialLinks from '../components/artists/SocialLinks'
 import CardWrapper from '../components/layout/CardWrapper'
 import SectionDivider from '../components/layout/SectionDivider'
 import SectionTitle from '../components/layout/SectionTitle'
-import FiltersWrapper from '../components/layout/FiltersWrapper'
 import PlayerPlatformButtons from '../components/players/PlayerPlatformButtons'
 import { setArtist, setAutoPlay, setPlatform, setPlayerOpen } from '../store/playerSlice'
+import ArtistProfile from '../components/artists/ArtistProfile'
+import MerchList from '../components/artists/MerchList'
 
 export default function ArtistPage() {
   const { slug } = useParams()
@@ -79,15 +80,11 @@ export default function ArtistPage() {
 
       {/* Link di ritorno */}
       <div className="mt-8 font-arvo w-fit mb-8 pt-12">
-        <CardWrapper className="animate-fade-in">
-
+        <CardWrapper className="animate-fade-in lowercase">
           <Link to="/artists">
             ← {t('backToArtists')}
           </Link>
-
         </CardWrapper>
-
-
       </div>
 
 
@@ -111,49 +108,54 @@ export default function ArtistPage() {
           </CardWrapper>
 
           <CardWrapper >
-            <ArtistBio slug={selectedArtist.slug}
+            <ArtistBio slug={selectedArtist.slug} name={selectedArtist.name}
               field="short"
-              className='bio-text-white  drop-shadow'
+              className='bio-text-white  drop-shadow '
               highlightClass='bio-highlight-white' />
 
 
-            <ArtistBio slug={selectedArtist.slug}
+            <ArtistBio slug={selectedArtist.slug} name={selectedArtist.name}
               field="review"
-              className='bio-text-white  drop-shadow'
-              highlightClass='bio-highlight-white mt-8' />
+              className='bio-text-white  drop-shadow mt-8'
+              highlightClass='bio-highlight-white ' />
 
-            <ArtistBio slug={selectedArtist.slug}
-              field="extended"
-              className='bio-text-white drop-shadow'
-              highlightClass='bio-highlight-white mt-8' />
           </CardWrapper>
-
+          <MerchList merch={selectedArtist.merch}></MerchList>
         </section>
         {/* Immagini artista */}
 
         <div className="lg:w-2/3 animate-fade-in-lg ">
           <ArtistImages images={selectedArtist.images} key={slug} slug={slug} />
 
+          <div className=''>
 
-          <CardWrapper >
-            <ArtistBio slug={selectedArtist.slug}
-              field="extended"
-              className='bio-text-white drop-shadow'
-              highlightClass='bio-highlight-white' />
-          </CardWrapper>
+            <CardWrapper >
+              {<ArtistBio slug={selectedArtist.slug} name={selectedArtist.name}
+                field="extended"
+                className='bio-text-white drop-shadow'
+                highlightClass='bio-highlight-white ' />}
+            </CardWrapper>
+          </div>
+          <div className='mt-8'>
+            <CardWrapper >
+              <ArtistProfile slug={selectedArtist.slug} />
+            </CardWrapper>
+
+          </div>
+
+          {selectedArtist?.socials && (
+            <div className="w-full flex justify-end mt-16">
+
+              <CardWrapper className="animate-fade-in">
+                <SocialLinks socials={selectedArtist.socials} />
+              </CardWrapper>
+            </div>
+          )}
         </div>
 
       </div>
 
 
-      {selectedArtist?.socials && (
-        <div className="w-full flex justify-end mt-16">
-
-          <CardWrapper className="animate-fade-in">
-            <SocialLinks socials={selectedArtist.socials} />
-          </CardWrapper>
-        </div>
-      )}
       {/* Artisti correlati */}
       <section className="mt-16">
 
@@ -162,7 +164,7 @@ export default function ArtistPage() {
 
         <div className="flex justify-end text-xs">
 
-          <SectionTitle><p className='text-xs'>{t('youMightBeInterestedIn')}</p></SectionTitle>
+          <SectionTitle><p className='text-xs lowercase'>{t('youMightBeInterestedIn')}</p></SectionTitle>
 
         </div>
         <RelatedArtistsSection artists={relatedArtists} slug={slug} />
