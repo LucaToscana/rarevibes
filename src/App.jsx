@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import Footer from './components/layout/Footer'
 import BottomPlayer from './components/layout/BottomPlayer'
 import Navbar from './components/layout/Navbar'
 

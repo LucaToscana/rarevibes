@@ -10,17 +10,17 @@ export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
         <div className="absolute inset-0 w-full h-full">
           {heroImages.map((img, index) => (
             <img
-              fetchpriority="high"
-              decoding="async"
-              loading="eager"
               key={index}
               src={img}
+              alt={`Hero ${index}`}
+              decoding="async"
               style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
               onContextMenu={(e) => e.preventDefault()}
-              alt={`Hero ${index}`}
               className={`absolute top-0 left-0 w-full h-full object-cover object-top transition-opacity duration-1000 ease-in-out animate-fade-in-lg
-          ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
-          grayscale group-hover:grayscale-0`}
+      ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
+      grayscale group-hover:grayscale-0`}
+              loading={index === currentIndex ? 'eager' : 'lazy'}
+              fetchpriority={index === currentIndex ? 'high' : undefined}
             />
           ))}
         </div>
