@@ -10,7 +10,9 @@ export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
         <div className="absolute inset-0 w-full h-full">
           {heroImages.map((img, index) => (
             <img
-              loading="lazy" 
+              fetchpriority="high"
+              decoding="async"
+              loading="eager"
               key={index}
               src={img}
               style={{ userSelect: 'none', WebkitUserDrag: 'none' }}

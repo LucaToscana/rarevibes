@@ -168,7 +168,7 @@ export default function BottomPlayer() {
 
         {/* Social Links and Logo (now part of the main flex) */}
         {playerOpen && (
-          <div className="absolute bottom-2 right-2 hidden lg:flex lg:flex-col lg:items-end ">
+          <div className="absolute bottom-2 right-2 hidden lg:flex lg:flex-col lg:items-end hidden lg:block">
             <SectionTitle>
               <Link to="/">
                 <div className="font-arvo text-xl text-monza">RARE VIBES</div>
