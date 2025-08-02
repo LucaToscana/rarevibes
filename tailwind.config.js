@@ -37,6 +37,15 @@ export default {
         },
       },
     },
+    // 👇 AGGIUNGI QUI SOTTO
+    screens: {
+      xxs: "400px", // 👈 breakpoint personalizzato (per iPhone SE e simili)
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
   },
   plugins: [],
 };
