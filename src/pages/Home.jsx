@@ -6,14 +6,15 @@ import data from '../data/defaultData'
 import SectionDivider from '../components/layout/SectionDivider';
 import SectionTitle from '../components/layout/SectionTitle';
 import CardWrapper from '../components/layout/CardWrapper';
+import useIsMobile from '../components/layout/useIsMobile';
 
 export default function Home() {
   const parallaxRef = useRef(null);
   const { t } = useTranslation('common');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [featuredArtists, setArtists] = useState([]);
-
-  const heroImages = data.heroImagesDefault;
+  const isMobile = useIsMobile(); // o usa una media query migliore
+  const heroImages = isMobile ? data.heroImagesDefaultSmall : data.heroImagesDefault;
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
