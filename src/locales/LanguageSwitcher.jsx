@@ -22,6 +22,8 @@ const LanguageSwitcher = () => {
       <FiltersWrapper>
 
         <button
+          aria-label={current.label}
+
           onClick={() => setOpen(prev => !prev)}
           className="inline-flex items-center px-1  text-monza text-sm font-medium shadow-sm  focus:outline-none "
         >
@@ -30,26 +32,28 @@ const LanguageSwitcher = () => {
         </button>
       </FiltersWrapper>
       {open && (
-        
-        <div className="absolute z-50 mt-2 w-12 rounded-md shadow-lg bg-iron ring-1 ring-black ring-opacity-5">
-               <FiltersWrapper>
 
-          <div className="py-1 z-50 ">
-            {languages.map(({ code, label }) => (
-              <button
-                key={code}
-                onClick={() => {
-                  i18n.changeLanguage(code);
-                  setOpen(false);
-                }}
-                className={`w-full  text-center text-sm hover:bg-gray-100 ${currentLang === code ? 'font-semibold text-monza' : 'text-gray-700'
-                  }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-                </FiltersWrapper>
+        <div className="absolute z-50 mt-2 w-12 rounded-md shadow-lg bg-iron ring-1 ring-black ring-opacity-5">
+          <FiltersWrapper>
+
+            <div className="py-1 z-50 ">
+              {languages.map(({ code, label }) => (
+                <button
+                  key={code}
+                  aria-label={code}
+
+                  onClick={() => {
+                    i18n.changeLanguage(code);
+                    setOpen(false);
+                  }}
+                  className={`w-full  text-center text-sm hover:bg-gray-100 ${currentLang === code ? 'font-semibold text-monza' : 'text-gray-700'
+                    }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </FiltersWrapper>
 
         </div>
       )}

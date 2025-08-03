@@ -34,6 +34,7 @@ export default function Navbar() {
           <CardWrapper >
             <button
               className="focus:outline-none"
+              aria-label={"open menu"}
               onClick={() => setMenuOpen(!menuOpen)}
             >
               {menuOpen ? <X size={23} /> : <Menu size={23} />}

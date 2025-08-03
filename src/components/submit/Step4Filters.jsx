@@ -39,6 +39,7 @@ function Step4Filters({
 
                     <button
                       type="button"
+                       aria-label={genre.key}
                       onClick={() => toggleExpandGenre(genre.key)}
                       className="text-sm text-black underline"
                     >
@@ -64,7 +65,7 @@ function Step4Filters({
 
                           item={sub}
                           isSelected={selectedSubgenres.includes(sub.key)}
-                          onToggle={()=>toggleSubgenre(sub.key)}
+                          onToggle={() => toggleSubgenre(sub.key)}
                         />
                       ))}
                     </div>
@@ -96,8 +97,11 @@ function Step4Filters({
 
                     <button
                       type="button"
+                      aria-label={genre.key}
+
                       onClick={() => toggleExpandGenre(genre.key)}
                       className="text-sm text-black underline"
+
                     >
                       {expandedGenre === genre.key ?
                         <FiltersWrapper>
@@ -125,7 +129,7 @@ function Step4Filters({
 
                           item={sub}
                           isSelected={selectedSubgenres.includes(sub.key)}
-                          onToggle={()=>toggleSubgenre(sub.key)}
+                          onToggle={() => toggleSubgenre(sub.key)}
                         />
 
                       ))}

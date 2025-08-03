@@ -8,6 +8,7 @@ const FilterHeader = ({ count, onReset }) => {
 
       <div className="flex items-center w-fit gap-4">
         <button
+        aria-label={"reset"}
           onClick={onReset}
           className="flex items-center gap-1 text-monza underline hover:text-black transition focus:outline-none focus:ring-2 focus:ring-monza focus:ring-offset-2"
         >

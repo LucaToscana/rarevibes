@@ -261,6 +261,7 @@ export default function Submit() {
             <FiltersWrapper>
               <button
                 type="button"
+                  aria-label={"prev"}
                 onClick={goPrevStep}
                 className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
               >
@@ -274,6 +275,8 @@ export default function Submit() {
             <FiltersWrapper>
               <button
                 type="button"
+                aria-label={"next"}
+
                 onClick={() => {
                   if (currentStep === 1) {
                     validateStep1(formBase, artistType, showModal, goNextStep, t);
@@ -295,6 +298,7 @@ export default function Submit() {
           ) : (
             <FiltersWrapper>
               <button
+                aria-label={"submit"}
                 type="submit"
                 disabled={status === "sending"}
                 className="px-4 py-2 bg-green-600 text-white hover:bg-green-700"

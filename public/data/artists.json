@@ -4,11 +4,7 @@
     "name": "Odelia",
     "slug": "odelia",
     "type": ["music"],
-    "images": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg"
-    ],
+    "images":["/assets/filicio3.webp","/assets/sdolz1.webp","/assets/sdolz2.webp"],
     "bio": {
       "short": "Odelia is an emerging artist blending Alternative and Indie sounds.",
       "review": "Odelia is gaining recognition for her unique mix of Alternative and Indie styles. Originating from Paris, she has built a growing fanbase.",
@@ -383,3 +379,26 @@
     ]
   }
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

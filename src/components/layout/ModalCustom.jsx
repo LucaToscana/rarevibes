@@ -26,6 +26,7 @@ export default function ModalCustom({ isOpen, message, type = "info", onClose })
           <div className="flex justify-end">
             <FiltersWrapper> <button
               onClick={onClose}
+              aria-label={"close"}
               className="px-4 py-2 bg-monzadark text-white hover:bg-monza  "
             >
               X

@@ -5,8 +5,8 @@ import { useTranslation } from "react-i18next";
 
 export default function CompactMerchFields({ fields, form, onChange }) {
   // Tutti i numeri prodotti trovati in fields (es: ["1", "2", "3"])
-    const { t } = useTranslation("common");
-  
+  const { t } = useTranslation("common");
+
   const allProductNums = Array.from(
     new Set(
       fields
@@ -89,6 +89,7 @@ export default function CompactMerchFields({ fields, form, onChange }) {
         <FiltersWrapper>
           <button
             type="button"
+            aria-label={"+ article"}
             onClick={handleAddProduct}
             disabled={visibleProducts.length >= 3}
             className={`px-4 py-2 rounded ${visibleProducts.length >= 3
@@ -105,13 +106,15 @@ export default function CompactMerchFields({ fields, form, onChange }) {
           <button
             type="button"
             onClick={handleRemoveProduct}
+            aria-label={"- article"}
+
             disabled={visibleProducts.length <= 1}
             className={`px-4 py-2 rounded ${visibleProducts.length <= 1
               ? "bg-gray-300 cursor-not-allowed"
               : "bg-red-600 text-white hover:bg-red-700"
               }`}
           >
-           -
+            -
           </button>
         </FiltersWrapper>
 

@@ -44,6 +44,7 @@ export default function SearchWithCaptcha({
             />
             <button
               type="submit"
+              aria-label={"verify"}
               className="bg-monza text-white px-3 py-1 rounded"
             >
               Verify

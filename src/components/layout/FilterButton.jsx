@@ -21,7 +21,7 @@ function FilterButton({  label, value, currentFilter, onClick, custom }) {
 
   return (
     <FiltersWrapper>
-    <button onClick={() => onClick(value)} className={className}>
+    <button onClick={() => onClick(value)} className={className} aria-label={value}>
       {t(value, { defaultValue: label })}
     </button>
     </FiltersWrapper>

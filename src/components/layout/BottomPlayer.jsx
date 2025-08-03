@@ -14,7 +14,7 @@ import FiltersWrapper from './FiltersWrapper'
 import SectionTitle from './SectionTitle'
 import { Link } from 'react-router-dom'
 import ArtistOverlayCard from '../players/ArtistOverlayCard'
-
+import data from '../../data/defaultData'
 
 export default function BottomPlayer() {
   const dispatch = useDispatch()
@@ -73,7 +73,7 @@ export default function BottomPlayer() {
   const toggleOpen = () => {
     dispatch(setPlayerOpen(!playerOpen))
   }
-  const bgImage = activeArtist.images?.[0] || 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg'
+  const bgImage = activeArtist.images?.[0] || data.heroImagesDefault[0];
 
   // Handler per selezione di un artista
   const handleSelect = (item) => {

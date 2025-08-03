@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
 import CardStaticWrapper from "../layout/CardStaticWrapper";
 import FiltersWrapper from "../layout/FiltersWrapper";
+import data from '../../data/defaultData';
 
 export default function ArtistTrackListCard({ title = 'new artists', items = [], onSelect }) {
   const { t } = useTranslation('common'); // 👈 specifica il namespace */
 
-  const bgImage = 'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg'
+  const bgImage = data.heroImagesDefault[0];
 
 
   return (

@@ -6,6 +6,7 @@ export default function TogglePlayerButton({ playerOpen, onClick }) {
     <button
       onClick={onClick}
       className="p-2 "
+      aria-label={"player"}
     >
       <FiltersWrapper>
         {!playerOpen ? (
