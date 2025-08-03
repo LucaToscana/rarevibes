@@ -16,9 +16,9 @@ export default function HeroSection({ heroImages, currentIndex, parallaxRef }) {
               decoding="async"
               style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
               onContextMenu={(e) => e.preventDefault()}
-              className={`absolute top-0 left-0 w-full h-full object-cover object-top
-    ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 transition-opacity duration-1000 ease-in-out'}
-    grayscale group-hover:grayscale-0`}
+              className={`absolute top-0 left-0 w-full h-full object-cover object-top transition-opacity duration-1000 ease-in-out 
+                ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
+                grayscale group-hover:grayscale-0`}
               loading={index === currentIndex ? 'eager' : 'lazy'}
               fetchpriority={index === currentIndex ? 'high' : undefined}
             />

@@ -14,8 +14,8 @@ import SectionTitle from '../components/layout/SectionTitle'
 import CardWrapper from "../components/layout/CardWrapper";
 import SearchWithCaptcha from "../components/layout/SearchWithCaptcha";
 import CardStaticWrapper from "../components/layout/CardStaticWrapper";
-const bgImage =
-  "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/197cd9216759479.6785936ec6e94.jpg";
+import FiltersWrapper from "../components/layout/FiltersWrapper";
+
 
 export default function Artists() {
   const [isSubFilterListVisible, setIsSubFilterListVisible] = useState(false);
@@ -119,10 +119,10 @@ export default function Artists() {
   return (
     <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto  pt-24">
       <div>
-
+        <SectionTitle> {t('artists')}</SectionTitle>
         {/* Header con barra ricerca + reset filtri */}
-        <div className="flex flex-col md:flex-row w-full gap-8 mt-8 mb-8">
-          <SectionTitle> {t('artists')}</SectionTitle>
+        <div className="flex flex-row w-full gap-2 mt-8 mb-8">
+
 
           <SearchWithCaptcha
             searchTerm={searchTerm}
@@ -133,7 +133,7 @@ export default function Artists() {
             onCaptchaInputChange={(e) => setCaptchaInput(e.target.value)}
             placeholder={t("placeholdersFilter")}
           />
-          <div className="flex flex-row items-center justify-center  gap-6 w-fit h-full">
+          <div className="flex flex-row items-center justify-center  gap-2 w-fit h-full">
             <div className="flex flex-row items-center justify-center w-fit h-full">
               <FilterHeader
                 count={
@@ -151,8 +151,8 @@ export default function Artists() {
             <div
               onClick={toggleSubFilterListVisibility}
 
-              className="flex flex-row items-center justify-center gap-4 h-full">
-              <CardWrapper>
+              className="flex flex-row items-center justify-center gap-2 h-full">
+              <FiltersWrapper>
 
                 <button
                   className="focus:outline-none "
@@ -166,7 +166,7 @@ export default function Artists() {
                     <FaChevronDown className="h-5 w-5  text-monza rounded-full" />
                   )}
                 </button>
-              </CardWrapper>
+              </FiltersWrapper>
 
             </div>
 
@@ -191,7 +191,6 @@ export default function Artists() {
 
                 <div
                   className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${bgImage})` }}
                   aria-hidden="true"
                 />
                 <div
@@ -201,10 +200,7 @@ export default function Artists() {
                 {isSubFilterListVisible && (
                   <div
                     className="relative z-10 p-4 w-full h-48 text-white custom-red-scrollbar"
-                    style={{
-                      maxHeight: `${contentRef.current?.scrollHeight - 32}px`,
-                      overflowY: "auto",
-                    }}
+
                   >
                     <SubFilterList genres={currentFilterData} />
                   </div>
@@ -247,6 +243,7 @@ export default function Artists() {
         </section>
 
       </div>
+      <div className=" mb-48"></div>
     </main>
   );
 }

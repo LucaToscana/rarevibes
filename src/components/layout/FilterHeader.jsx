@@ -1,12 +1,12 @@
 import React from 'react';
 import { FaRedo } from 'react-icons/fa'; // Import the icon you want to use
-import CardWrapper from './CardWrapper';
+import FiltersWrapper from './FiltersWrapper';
 
 const FilterHeader = ({ count, onReset }) => {
   return (
-    <CardWrapper>
+    <FiltersWrapper>
 
-      <div className="flex items-center w-fit gap-4">
+      <div className="flex items-center w-fit gap-1">
         <button
         aria-label={"reset"}
           onClick={onReset}
@@ -15,11 +15,11 @@ const FilterHeader = ({ count, onReset }) => {
           <FaRedo className="h-3 w-3" /> {/* icona reset */}
         </button>
 
-        <span className="font-semibold bio-highlight-white mr-5 md:mr-1">
+        <span className="font-semibold text-monza font-arvo">
           {count} {/* numero filtri attivi */}
         </span>
       </div>
-    </CardWrapper>
+    </FiltersWrapper>
 
   );
 };

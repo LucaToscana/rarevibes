@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { FaSearch } from "react-icons/fa"
 import CardWrapper from "./CardWrapper"
+import FiltersWrapper from "./FiltersWrapper"
 
 export default function SearchWithCaptcha({
   searchTerm,
@@ -13,9 +14,9 @@ export default function SearchWithCaptcha({
   captchaQuestion = "3 + 4?",
 }) {
   return (
-    <CardWrapper>
+    <FiltersWrapper>
       <div className="relative flex-[3] w-96">
-        <FaSearch className="absolute top-3 left-3 text-gray-500" />
+        <FaSearch className="absolute top-3 left-0 lg:left-2 text-gray-500" />
 
         {!showCaptcha ? (
           <input
@@ -23,7 +24,7 @@ export default function SearchWithCaptcha({
             placeholder={placeholder || "Search..."}
             value={searchTerm}
             onChange={onSearchChange}
-            className={`pl-10 font-arvo pr-4 py-2 w-full  rounded-md text-black h-10 focus:outline-none ${searchTerm ? "text-base" : "text-xs"
+            className={`pl-5 lg:pl-10 font-arvo pr-4 py-2 w-full  rounded-md text-black h-10 focus:outline-none ${searchTerm ? "text-base" : "text-xs truncate"
               }`}
           />
 
@@ -52,6 +53,6 @@ export default function SearchWithCaptcha({
           </form>
         )}
       </div>
-    </CardWrapper>
+    </FiltersWrapper>
   )
 }

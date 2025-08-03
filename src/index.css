@@ -5,7 +5,9 @@
 /* ================================
    Reset base e setup globale [#D0D8D7]
    ================================ */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -14,7 +16,17 @@ html, body, #root {
 body {
   @apply antialiased font-sans bg-iron text-[#dd1a1c];
 }
-
+@font-face {
+  font-family: "Arvo";
+  src: url("/fonts/Arvo-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-arvo {
+  font-family: "Arvo", serif;
+  font-display: swap;
+}
 /* ================================
    Scrollbar personalizzata
    ================================ */
@@ -30,8 +42,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #777;
 }
-
-
 
 /* ================================
    YouTube embed responsive
@@ -62,11 +72,8 @@ body {
   @apply font-arvo  text-black;
 }
 
-
-
 .bio-text-white {
   @apply font-arvo text-sm text-black;
-
 }
 
 .bio-highlight {
@@ -75,7 +82,7 @@ body {
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white {
-  @apply bg-white arvo-monza   inline-block;
+  @apply bg-white arvo-monza   inline-block drop-shadow;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
@@ -89,12 +96,6 @@ body {
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
-
-
-
-
-
-
 
 @keyframes marquee {
   0% {

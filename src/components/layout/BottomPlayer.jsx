@@ -21,12 +21,15 @@ export default function BottomPlayer() {
   // Prende lo stato globale del player da Redux
   const { artist, platform, playerOpen, autoPlay } = useSelector((state) => state.player)
   const [playerKey, setPlayerKey] = useState(0)
-
+  useEffect(() => {
+    setPlayerKey(prev => prev + 1)
+  }, [artist, platform])
   // Stati locali per controllare riproduzione e piattaforma selezionata
   const [isPlaying, setIsPlaying] = useState(false)
   const [selectedPlatform, setSelectedPlatform] = useState(platform)
 
   const [trackList, setTrackList] = useState([])
+
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/artists.json')
@@ -77,8 +80,10 @@ export default function BottomPlayer() {
 
   // Handler per selezione di un artista
   const handleSelect = (item) => {
+    const platform = item.defaultPlatform || 'youtube'
+
     dispatch(setArtist(item))
-    dispatch(setPlatform(item.defaultPlatform))
+    dispatch(setPlatform(platform))
     dispatch(setAutoPlay(true))
   }
 
@@ -88,8 +93,9 @@ export default function BottomPlayer() {
   const url = firstSingle?.platforms?.[selectedPlatform] || ''
 
   return (
-    <div
-      className={`fixed bottom-8 right-6 w-[calc(100vw-3rem)] max-w-sm sm:max-w-fit md:max-w-fit lg:max-w-xl xl:max-w-5xl min-w-[300px] 
+    <>
+      <div
+        className={`fixed bottom-8 right-6 w-[calc(100vw-3rem)] max-w-sm sm:max-w-fit md:max-w-fit lg:max-w-xl xl:max-w-5xl min-w-[250px] 
     px-4 py-2 md:bottom-10 md:right-8 lg:right-16
     bg-monza text-black shadow-[8px_8px_0px_#000]
     border-[3px] border-black z-40
@@ -98,100 +104,103 @@ export default function BottomPlayer() {
     flex items-center justify-between
     rotate-[-2deg] hover:rotate-0
   `}
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
-      {/* Main content wrapper */}
-      <div className="flex w-full items-start gap-4 md:items-center">
-        {/* Info, Player, and Track List wrapper */}
-        <div className="flex flex-grow flex-col gap-4 transition-all xl:flex-row">
-          {/* Artist Information */}
-          {playerOpen ? (
-            <div className="flex flex-col items-start gap-1">
-              <CardStaticWrapper>
-                <BottomPlayerDetails
-                  activeArtist={activeArtist}
-                  selectedPlatform={
-                    selectedPlatform
-                      ? selectedPlatform.charAt(0).toUpperCase() +
-                      selectedPlatform.slice(1)
-                      : ''
-                  }
-                  setSelectedPlatform={setSelectedPlatform}
-                />
-              </CardStaticWrapper>
-
-              {/* Track List - Only visible on specific breakpoints */}
-              {playerOpen && (
-                <div className="block   sm:hidden   md:hidden lg:block pt-4">
-                  <ArtistTrackListCard
-                    title="recents"
-                    items={trackList}
-                    onSelect={handleSelect}
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Main content wrapper */}
+        <div className="flex w-full items-start gap-4 md:items-center">
+          {/* Info, Player, and Track List wrapper */}
+          <div className="flex flex-grow flex-col gap-4 transition-all xl:flex-row">
+            {/* Artist Information */}
+            {playerOpen ? (
+              <div className="flex flex-col items-start gap-1">
+                <CardStaticWrapper>
+                  <BottomPlayerDetails
+                    activeArtist={activeArtist}
+                    selectedPlatform={
+                      selectedPlatform
+                        ? selectedPlatform.charAt(0).toUpperCase() +
+                        selectedPlatform.slice(1)
+                        : ''
+                    }
+                    setSelectedPlatform={setSelectedPlatform}
                   />
-                </div>
-              )}
-            </div>
-          ) : (
-            <ArtistOverlayCard
-              bgImage={bgImage}
-              activeArtist={activeArtist}
-              activePlatform={activePlatform}
-              selectedPlatform={selectedPlatform}
-              setSelectedPlatform={setSelectedPlatform}
-              toggleOpen={toggleOpen}
-            />
-          )}
+                </CardStaticWrapper>
 
-          {/* Music Player Container */}
-          <div
-            key={playerKey}
-            className={`relative flex-shrink-0 transition-all duration-300 ease-in-out
+                {/* Track List - Only visible on specific breakpoints */}
+                {playerOpen && (
+                  <div className="block   sm:hidden   md:hidden lg:block pt-4">
+                    <ArtistTrackListCard
+                      title="recents"
+                      items={trackList}
+                      onSelect={handleSelect}
+                    />
+                  </div>
+                )}
+              </div>
+            ) : (
+              <ArtistOverlayCard
+                bgImage={bgImage}
+                activeArtist={activeArtist}
+                activePlatform={activePlatform}
+                selectedPlatform={selectedPlatform}
+                setSelectedPlatform={setSelectedPlatform}
+                toggleOpen={toggleOpen}
+              />
+            )}
+
+            {/* Music Player Container */}
+            <div
+              key={playerKey}
+              className={`relative flex-shrink-0 transition-all duration-300 ease-in-out
           ${playerOpen
-                ? ' w-80 lg:pt-8 lg:px-4 scale-100 opacity-100 sm:w-[300px] lg:w-[400px]'
-                : 'h-0 scale-95 opacity-0'
-              }`}
-          >
-            <PlayerRenderer
-              platform={selectedPlatform}
-              url={url}
-              isPlaying={isPlaying}
-              setIsPlaying={setIsPlaying}
-            />
+                  ? ' w-80 lg:pt-8 lg:px-4 scale-100 opacity-100 sm:w-[300px] lg:w-[400px]'
+                  : 'h-0 scale-95 opacity-0'
+                }`}
+            >
+              <PlayerRenderer
+                key={playerKey}
+
+                platform={selectedPlatform}
+                url={url}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
+              />
+            </div>
+
           </div>
 
+          {/* Social Links and Logo (now part of the main flex) */}
+          {playerOpen && (
+            <div className="absolute bottom-2 right-2 hidden lg:flex lg:flex-col lg:items-end hidden lg:block">
+              <SectionTitle>
+                <Link to="/">
+                  <div className="font-arvo text-xl text-monza">RARE VIBES</div>
+                </Link>
+              </SectionTitle>
+              <div className="mt-auto">
+                <FiltersWrapper>
+                  <SocialLinks
+                    socials={{
+                      instagram: 'https://instagram.com/smallenginetechnician',
+                      twitter: 'https://twitter.com/smallenginetechnician',
+                    }}
+                  />
+                </FiltersWrapper>
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Social Links and Logo (now part of the main flex) */}
-        {playerOpen && (
-          <div className="absolute bottom-2 right-2 hidden lg:flex lg:flex-col lg:items-end hidden lg:block">
-            <SectionTitle>
-              <Link to="/">
-                <div className="font-arvo text-xl text-monza">RARE VIBES</div>
-              </Link>
-            </SectionTitle>
-            <div className="mt-auto">
-              <FiltersWrapper>
-                <SocialLinks
-                  socials={{
-                    instagram: 'https://instagram.com/smallenginetechnician',
-                    twitter: 'https://twitter.com/smallenginetechnician',
-                  }}
-                />
-              </FiltersWrapper>
-            </div>
-          </div>
-        )}
+        {/* Toggle Button */}
+        <div className="absolute right-0 top-1">
+          <TogglePlayerButton playerOpen={playerOpen} onClick={toggleOpen} />
+        </div>
       </div>
-
-      {/* Toggle Button */}
-      <div className="absolute right-2 top-1">
-        <TogglePlayerButton playerOpen={playerOpen} onClick={toggleOpen} />
-      </div>
-    </div>
+    </>
   )
 }

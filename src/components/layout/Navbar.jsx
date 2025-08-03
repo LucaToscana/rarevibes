@@ -18,7 +18,7 @@ export default function Navbar() {
 
         <SectionTitle>
           <Link to="/">
-            <div className='font-arvo text-sm lg:text-xl pointer-events-auto whitespace-nowrap'>
+            <div className='font-arvo text-xs lg:text-xl pointer-events-auto whitespace-nowrap'>
               RARE VIBES
             </div>
           </Link>

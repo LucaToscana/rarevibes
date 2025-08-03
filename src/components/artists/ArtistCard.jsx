@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ArtistBio from "./ArtistBio";
 import ArtistTags from "./ArtistTags";
 import CardWrapper from "../layout/CardWrapper";
 
@@ -12,8 +11,8 @@ export default function ArtistCard({ artist, showBio = false }) {
     artist?.slug || artist?.name?.toLowerCase().replace(/\s/g, "-") || "unknown-artist";
 
   const imageSrc = imgError
-    ? "/herobis.png"
-    : artist?.image1 || artist?.images?.[0] || "/herobis.png";
+    ? "../assets/sdolz1.webp"
+    : artist?.image1 || artist?.images?.[0] || "../assets/sdolz1.webp";
 
   const handleImageError = () => setImgError(true);
 
@@ -26,7 +25,7 @@ export default function ArtistCard({ artist, showBio = false }) {
 
  
       {/* Titolo */}
-      <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black w-1/2">
+      <h2 className="text-md font-bold font-arvo uppercase mb-2 border-b-2 border-black w-4/5">
         {artist?.name}
       </h2>
       {/* Link al profilo artista */}
@@ -44,7 +43,6 @@ export default function ArtistCard({ artist, showBio = false }) {
 
           {/* Immagine artista */}
           <img
-          loading="lazy" 
             src={imageSrc}
             alt={artist?.name || "Artist image"}
             onLoad={() => setImgLoaded(true)}

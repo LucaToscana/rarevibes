@@ -1,29 +1,4 @@
 {
-  "odelia": {
-    "short": "Odelia è un'artista emergente che fonde sonorità alternative e indie con narrazione emotiva.",
-    "review": "Odelia si sta facendo notare per la sua voce eterea e le sue composizioni audaci che uniscono i generi alternative e indie. Nata e cresciuta a Parigi, la sua musica riflette introspezione profonda e malinconia urbana.",
-    "extended": "Odelia ha iniziato il suo percorso artistico tra le strade vibranti di Parigi, dove ha coltivato la passione per la musica alternativa e la scrittura introspettiva. Ispirata da artisti come Daughter e Bon Iver, il suo stile mescola chitarre delicate, texture ambientali e testi emotivamente intensi. Il suo EP di debutto, registrato in modo indipendente, esplora temi come isolamento, rinascita e desiderio. Il suo lavoro è apprezzato per la qualità cinematografica e la connessione emotiva che crea con il pubblico, in particolare tra i giovani in cerca di autenticità e profondità."
-  },
-  "kael": {
-    "short": "Kael è un producer di Berlino che unisce ritmi elettronici con profondità ambient e paesaggi sonori emotivi.",
-    "review": "Kael crea musica elettronica futuristica caratterizzata da minimalismo, texture e spazialità. Il suo suono affascina gli appassionati di ambient techno e IDM sperimentale.",
-    "extended": "L’universo musicale di Kael è profondamente radicato nella scena underground berlinese. Le sue composizioni si basano su arrangiamenti sintetici complessi, linee di basso pulsanti e strati atmosferici che evocano isolamento e trascendenza. Influenzato da artisti come Aphex Twin, Nils Frahm e Boards of Canada, i suoi live sono noti per la qualità immersiva e l'uso ipnotico dei visual. Spesso collabora con artisti visivi per creare performance multisensoriali che sfidano i confini tra suono e percezione."
-  },
-  "leona": {
-    "short": "Leona fonde soul retrò, R&B e elementi cinematografici per creare un suono senza tempo e carico di emozione.",
-    "review": "Nata a Montréal, Leona richiama l’anima old-school con un tocco moderno. La sua voce espressiva e gli arrangiamenti ricchi hanno conquistato il pubblico a livello globale.",
-    "extended": "Lo stile musicale di Leona è un omaggio ai grandi del soul come Aretha Franklin e Nina Simone, arricchito da una produzione R&B moderna e una vena cinematografica. I suoi brani esplorano temi come amore, forza interiore e vulnerabilità, trasmessi con una voce vellutata e orchestrazioni raffinate. Dopo anni di esibizioni nei jazz club del Canada, ha raggiunto il successo virale con il brano 'Velvet Walls'. L’arte di Leona si distingue per la profondità emotiva e l’eleganza visiva, spesso accompagnata da storytelling video e cortometraggi."
-  },
-  "santo": {
-    "short": "Santo fonde radici latine e pop globale per creare musica potente e ritmata con impatto sociale.",
-    "review": "Da Città del Messico, Santo mescola reggaeton, cumbia e suoni urbani, coniugando tradizione e innovazione.",
-    "extended": "Santo è una voce innovativa della musica latina contemporanea. Nato nel cuore di Città del Messico, nei suoi brani porta il ritmo delle sue radici: percussioni intense, melodie tradizionali e testi che parlano di identità, migrazione e resistenza. Alternando spagnolo e inglese, i suoi testi sono ispirati a Calle 13 e Bad Bunny. Con l’album d’esordio 'Fronteras', si è imposto come voce della nuova generazione latina: consapevole, sperimentale e profondamente legata alla comunità."
-  },
-  "amira": {
-    "short": "Amira è una vocalist neo-jazz di Londra che unisce tradizione e sperimentazione con grazia poetica.",
-    "review": "Amira rinnova il jazz classico con un tocco soul e sensibilità moderna. La sua voce è definita 'ipnotica e senza tempo'.",
-    "extended": "Proveniente dalla scena jazz londinese, Amira fonde jazz, soul e spoken word in uno stile tanto audace quanto intimo. Formata nel canto classico ma attratta dall'improvvisazione, le sue esibizioni sono dialoghi personali con il pubblico. I testi affrontano identità, diaspora e ricerca interiore, ispirandosi a Billie Holiday e Erykah Badu. L’EP d’esordio 'Midnight Verses' è stato acclamato per la sua vulnerabilità emotiva e sonorità raffinata. Amira è attiva anche in collettivi artistici, unendo musica, attivismo e patrimonio culturale."
-  },
 
   "sid": {
     "short": "S.I.D. è un trio sludge/doom metal italiano, attivo dal 2019 e noto per il suo sound opprimente e ipnotico, capace di fondere atmosfere doom dense con la pesantezza corrosiva dello sludge. La band è composta da Fra (voce, chitarre, testi), Ikea (chitarre, basso, campionamenti) e Pikkio (batteria), una formazione che si distingue per un approccio musicale potente e concettuale.",
@@ -57,5 +32,99 @@
       }
     ],
     "trivia": "I S.I.D. non sono solo una band, ma un progetto che riflette profondamente sulle contraddizioni del nostro tempo, dalla guerra all’inquinamento, passando per il dolore collettivo e personale. La loro musica è una potente forma di protesta, ma anche un invito alla riflessione e alla resistenza."
+  },
+
+  "morsura": {
+    "short": "Morsura è un trio noise/post-hardcore marchigiano-veneto, attivo dal 2018. Nato dall'incontro tra Jacopo Pannocchia, Mattia Antonelli (Tagliabuio) e Federico Aggio (Lucertulas, Cattivi Maestri), il gruppo si distingue per un suono tellurico e lancinante, profondamente legato all’estetica delle arti grafiche e incisorie.",
+    "review": "Il debutto discografico di Morsura arriva nel 2018 con Selvatica, un lavoro che unisce intensità sonora e ricerca visiva. La grafica, curata da Jacopo Pannocchia, riflette perfettamente l’identità sonora della band: brutale, vibrante, solcata da tonalità sulfuree e spettrali. Il titolo stesso dell’album richiama una dimensione primitiva e incontrollata, evocativa tanto quanto i brani che lo compongono.\n\nIl nome Morsura deriva dalla terminologia dell'incisione artistica, dove rappresenta l’azione del mordente sulla lastra: un'immagine che incarna l’approccio sonoro del gruppo, aggressivo e incisivo, tra noise, post-hardcore e tensioni sperimentali. Le esibizioni dal vivo sono esperienze dirette e viscerali, dove il suono si fa gesto, materia e lotta.",
+    "extended": "Attivo dal 2018, Morsura è un progetto che si muove tra le Marche e il Veneto e che fonde esperienze musicali diverse nel contesto del noise-rock e del post-hardcore. La formazione è composta da Jacopo Pannocchia, artista visivo e chitarrista, Mattia Antonelli, batterista e chitarrista nei Tagliabuio, e Federico Aggio, cantante e bassista dei Lucertulas e collaboratore nei Cattivi Maestri di Pierpaolo Capovilla.\n\nL’estetica di Morsura è fortemente influenzata dal mondo dell’incisione e delle arti visive: non a caso, la band assume come proprio nome il termine tecnico che indica l’azione chimica del mordente su una lastra da stampa. Questa metafora si riflette nella loro musica, che corrode e plasma, scavando nella materia del suono per raggiungere un'espressività brutale ma articolata.\n\nNel 2024 il gruppo apre il palco a nuove collaborazioni, tra cui quella con Loris Cericola (Spirale), chitarrista e cantante marchigiano che debutta dal vivo con Morsura il 5 luglio al Rock al Grot, presso il Parco delle Grotte di Labante (BO).",
+    "lineup": [
+      {
+        "name": "Jacopo Pannocchia",
+        "roles": ["batteria", "graphics"]
+      },
+      {
+        "name": "Mattia Antonelli",
+        "roles": ["chiatarra", "chiatarra (Tagliabuio)"]
+      },
+      {
+        "name": "Federico Aggio",
+        "roles": ["basso", "vocals (Lucertulas, Cattivi Maestri)"]
+      },
+            {
+        "name": "Loris Cericola",
+        "roles":[ "guitar, vocals"]      
+      }
+    ],
+    "collaborations": [
+
+    ],
+    "discography": [
+      {
+        "title": "Selvatica",
+        "year": 2018,
+        "type": "album"
+      }
+    ],
+    "trivia": "Il nome 'Morsura' proviene dal linguaggio della stampa artistica, dove indica l’effetto corrosivo del mordente su una lastra. Questo concetto visivo e fisico diventa simbolo della poetica sonora del gruppo: ruvida, incisiva, e profondamente materica. Le loro performance live sono intense, liberatorie, e connotate da un'estetica coerente con l’arte visiva prodotta dal chitarrista Jacopo Pannocchia."
+  },
+    "risorse_umane": {
+    "short": "Le Risorse Umane sono un trio post punk / new wave attivo tra Milano e Ancona. La loro musica fonde atmosfere cupe, ritmi elettronici e testi spoken word, ispirandosi alle sonorità degli anni '80, '90 e 2000. Nato nei primi anni Venti, il gruppo affianca all'immaginario industriale e alienato della metropoli una forte componente narrativa e poetica.",
+    "review": "Con *Con Effetto Immediato* (2024) e il nuovo EP del 2025, Le Risorse Umane consolidano una proposta sonora cupa e incisiva, sospesa tra malinconia urbana e ironia disillusa. Le tracce alternano spoken word e cantato, chitarre post-punk e arrangiamenti elettronici in una sintesi di cinema esistenziale e tensione metropolitana. I riferimenti a Massimo Volume, Diaframma e Offlaga Disco Pax appaiono evidenti ma rielaborati con personalità. L’identità delle Risorse Umane si nutre di un’ironia tagliente e di una poetica profondamente urbana. Il loro motto fittizio — 'attive nel panorama finanziario milanese dal lunedì al venerdì, dalle 08:00 alle 18:00. Nella restante parte del tempo invece fanno i soldi veri' — è un commento ironico sul mondo del lavoro contemporaneo e sull’alienazione di chi ci vive dentro. Musicalmente il gruppo sperimenta tra chitarre nervose, beat sintetici e arrangiamenti cinematografici, offrendo un’estetica postmoderna che attraversa generi e decadi. Le loro storie si muovono tra periferie, palestre anni '80 e riunioni autogestite, sempre sospese tra disillusione e desiderio di riscatto.",
+    "extended": "",
+    "lineup": [
+      {
+        "name": "Valerio Alessandrini",
+        "roles": ["voce", "testi"]
+      },
+      {
+        "name": "Jacopo Mazzoni",
+        "roles": ["musica", "produzione", "mix"]
+      },
+      {
+        "name": "Alessandro Rivi",
+        "roles": ["musica", "produzione"]
+      }
+    ],
+    "collaborations": [
+      {
+        "name": "Stefano Sestani",
+        "instrument": "produzione e mix",
+        "note": "su più brani dell’EP, tra cui 'Il Dormitorio' e 'La grande scena Trap degli anni ‘10'"
+      },
+      {
+        "name": "Lorenzo Paoletti",
+        "instrument": "produzione e mastering",
+        "note": "master e produzione di 'GRUPPI D’ASCOLTO per persone silenziose'"
+      },
+      {
+        "name": "Marco Bergamini",
+        "instrument": "mix",
+        "note": "su 'Guardare le Gru'"
+      },
+      {
+        "name": "Leonardo Celsi",
+        "instrument": "voce",
+        "note": "su 'Il Dormitorio'"
+      },
+      {
+        "name": "Valeria Galandrini",
+        "instrument": "voce",
+        "note": "su 'La grande scena Trap degli anni ‘10'"
+      }
+    ],
+    "discography": [
+      {
+        "title": "Con Effetto Immediato",
+        "year": 2024,
+        "type": "EP"
+      },
+      {
+        "title": "Titolo EP 2025",
+        "year": 2025,
+        "type": "EP"
+      }
+    ],
+    "trivia": "Le Risorse Umane dichiarano ironicamente di essere nate dall’autogestione di un dipartimento aziendale fittizio, dopo la scomparsa del responsabile F4. La loro estetica e comunicazione gioca con il linguaggio burocratico e corporate per mettere in scena una critica sottile e pungente del mondo del lavoro e delle dinamiche di potere contemporanee."
   }
 }

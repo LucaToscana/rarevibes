@@ -62,10 +62,10 @@ export default function ImageGallery({ images, slug }) {
 
   return (
     <>
-      <div className="hidden md:grid grid-cols-3 gap-4 items-start pb-8  pr-8">
+      <div className="hidden md:grid grid-cols-3 gap-4 items-end   pr-8">
         {/* Immagine principale (2/3 colonne) */}
         <div
-          className="col-span-2 rounded-lg overflow-hidden cursor-pointer lg:p-16 h-[600px] "
+          className="col-span-2 overflow-hidden cursor-pointer sm:p-6 lg:p-16 "
           role="button"
           tabIndex={0}
           onClick={() => openZoom(safeImages[0])}
@@ -81,7 +81,7 @@ export default function ImageGallery({ images, slug }) {
         </div>
 
         {/* Colonna destra (1/3 colonna) */}
-        <div className="flex flex-col gap-4 h-[600px] justify-between p-4">
+        <div className="flex flex-col gap-4 sm:gap-8 lg:gap-16 justify-between p-4 ">
           {[safeImages[1], safeImages[2]].map((img, idx) => (
             <div
               key={idx}
@@ -94,9 +94,9 @@ export default function ImageGallery({ images, slug }) {
                 // transform: visible ? 'translateY(5)' : 'translateY(20px)',
                 transitionDelay: `${300 + idx * 200}ms`,
               }}
-              className="h-1/2"
+              className="h-1/2  lg:mb-5"
             >
-              <CardWrapper className='animate-fade-in'>
+              <CardWrapper className='animate-fade-in '>
                 <img
                   loading="lazy"
 
@@ -104,7 +104,7 @@ export default function ImageGallery({ images, slug }) {
                   alt={`Side ${idx + 1}`}
                   style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
                   onContextMenu={(e) => e.preventDefault()}
-                  className="w-full h-full object-contain object-center transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-contain object-center transition-transform duration-300 hover:scale-105  "
                   draggable={false}
                 />
               </CardWrapper>

@@ -50,23 +50,29 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-screen p-4 ">
+    <main className="min-h-screen  ">
       {/* Hero parallax */}
-      <div className=' mt-24 lg:px-24 '>
-        <CardWrapper className="animate-fade-in ">
+      <div className=' mt-24 px-12 lg:px-24 '>
+
+
+        <CardWrapper >
           <HeroSection
             heroImages={heroImages}
             currentIndex={currentIndex}
             parallaxRef={parallaxRef}
-          /></CardWrapper></div>
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-        <SectionDivider></SectionDivider>
+          /></CardWrapper>
+          
+          
+          </div>
 
+
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+{/** */}
         <div className='mb-8 mt-10 '>
           <SectionTitle> {t('recentArtists')}</SectionTitle>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center   ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center  mb-48 ">
           {featuredArtists.map((artist) => (
             <ArtistCard key={artist.name} artist={artist} showBio={true} />
           ))}

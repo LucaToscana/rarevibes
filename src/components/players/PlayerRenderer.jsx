@@ -14,7 +14,7 @@ const PlayerRenderer = ({ platform, url, isPlaying, setIsPlaying }) => {
       youtube: 'youTube',
       bandcamp: 'bandcamp',
     }[platform] || 'selezionata'
-  const { t } = useTranslation('common');
+    const { t } = useTranslation('common');
 
     return <CardStaticWrapper> <div className="p-2 text-center font-arvo  text-sm "> {platformName} {t("error_platform_not_found")} </div> </CardStaticWrapper>
   }

@@ -3,11 +3,10 @@ import SectionTitle from '../components/layout/SectionTitle';
 import SectionDivider from '../components/layout/SectionDivider';
 import CardWrapper from '../components/layout/CardWrapper';
 import { useEffect } from 'react';
-import BuyMeACoffeeButton from '../components/layout/BuyMeACoffeeButton';
 import BuyMeACoffeeSimpleButton from '../components/layout/BuyMeACoffeeButton';
 
 const AboutUs = () => {
-    const { t } = useTranslation('about'); // usa il namespace 'about'
+    const { t } = useTranslation('about'); 
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -27,7 +26,7 @@ const AboutUs = () => {
                 </CardWrapper>
             </div>
 
-            <div className='px-16 mb-48'>
+            <div className=' m-4 mb-48'>
                 <CardWrapper>
                     <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-2 w-full">
                         <p className="arvo-black drop-shadow mr-4">{t('bmc')}</p>

@@ -1,35 +1,4 @@
 {
-  "odelia": {
-    "short": "Odelia is an emerging artist blending Alternative and Indie sounds with emotional storytelling.",
-    "review": "Odelia is gaining recognition for her ethereal voice and bold compositions that blend alternative and indie genres. Born and raised in Paris, her music reflects deep introspection and urban melancholy.",
-    "extended": "Odelia began her artistic journey in the vibrant streets of Paris, where she developed a passion for alternative music and introspective songwriting. Influenced by artists like Daughter and Bon Iver, her music fuses delicate guitar layers, ambient textures, and emotionally charged lyrics. Her debut EP, recorded independently, explores themes of isolation, rebirth, and longing. Odelia’s work is praised for its cinematic quality and the emotional resonance it creates with her listeners, especially among younger audiences seeking authenticity and depth."
-  },
-  "kael": {
-    "short": "Kael is a Berlin-based producer who merges electronic rhythms with ambient depth and emotional soundscapes.",
-    "review": "Kael crafts futuristic electronic music characterized by minimalism, texture, and space. His sound resonates with fans of ambient techno and experimental IDM.",
-    "extended": "Kael’s musical universe is deeply rooted in the Berlin underground scene. His compositions are driven by intricate synth arrangements, pulsing basslines, and atmospheric layers that evoke isolation and transcendence. Drawing influence from artists like Aphex Twin, Nils Frahm, and Boards of Canada, Kael’s performances are known for their immersive quality and hypnotic visuals. He often collaborates with visual artists to create multisensory live sets that push the boundaries between sound and perception."
-  },
-  "leona": {
-    "short": "Leona blends retro soul, R&B, and cinematic elements to create a timeless sound with emotional gravity.",
-    "review": "Born in Montreal, Leona channels old-school soul with a modern edge. Her expressive voice and rich arrangements have captured the attention of audiences globally.",
-    "extended": "Leona’s musical style is a tribute to classic soul legends like Aretha Franklin and Nina Simone, infused with modern R&B production and cinematic flair. Her music explores themes of love, empowerment, and vulnerability, delivered through smoky vocals and lush orchestration. After performing in jazz bars throughout Canada, she gained viral success on streaming platforms with her track 'Velvet Walls'. Leona’s artistry stands out for its emotional range and visual elegance, often pairing music with storytelling videos and short films."
-  },
-  "santo": {
-    "short": "Santo fuses Latin roots with global pop to deliver powerful, rhythm-driven music with social impact.",
-    "review": "From Mexico City, Santo mixes reggaeton, cumbia, and urban sounds, blending tradition and innovation.",
-    "extended": "Santo is a trailblazing voice in contemporary Latin music. Born in the heart of Mexico City, he infuses his tracks with the heartbeat of his heritage—percussion-heavy beats, traditional rhythms, and streetwise lyrics. His songs address topics like identity, migration, and resistance, often switching between Spanish and English. Inspired by Calle 13 and Bad Bunny, Santo has performed on stages across Latin America and Europe. With his debut album 'Fronteras', he established himself as a voice of the new Latin generation: politically conscious, musically fearless, and deeply rooted in community."
-  },
-  "amira": {
-    "short": "Amira is a London-based neo-jazz vocalist who bridges tradition and experimentation with poetic grace.",
-    "review": "Amira revitalizes classic jazz with a soulful twist and modern sensibilities. Her voice has been called 'haunting and timeless'.",
-    "extended": "Emerging from London’s thriving jazz scene, Amira blends jazz, soul, and spoken word in a style that is as bold as it is intimate. Trained in classical voice but drawn to improvisation, her performances feel like personal dialogues. Amira’s lyrics often reflect on themes of identity, diaspora, and self-discovery, and her influences span Billie Holiday to Erykah Badu. Her debut EP 'Midnight Verses' received acclaim for its emotional vulnerability and refined sound. Amira is also active in local art collectives, merging music with activism and cultural heritage."
-  },
-  "leonapainting": {
-    "short": "Amira is a London-based neo-jazz vocalist who bridges tradition and experimentation with poetic grace.",
-    "review": "Amira revitalizes classic jazz with a soulful twist and modern sensibilities. Her voice has been called 'haunting and timeless'.",
-    "extended": "Emerging from London’s thriving jazz scene, Amira blends jazz, soul, and spoken word in a style that is as bold as it is intimate. Trained in classical voice but drawn to improvisation, her performances feel like personal dialogues. Amira’s lyrics often reflect on themes of identity, diaspora, and self-discovery, and her influences span Billie Holiday to Erykah Badu. Her debut EP 'Midnight Verses' received acclaim for its emotional vulnerability and refined sound. Amira is also active in local art collectives, merging music with activism and cultural heritage."
-  },
-
   "sid": {
     "short": "S.I.D. is a sludge/doom metal trio from Italy, active since 2019 and known for their oppressive and hypnotic sound, capable of blending dense doom atmospheres with the corrosive heaviness of sludge. The band consists of Fra (vocals, guitars, lyrics), Ikea (guitars, bass, samples), and Pikkio (drums), a lineup distinguished by a musical approach that is both powerful and conceptual.",
     "review": "Their first album, Architects Of Armageddon (2019), received widespread acclaim in the underground scene, highlighting their ability to build a devastating yet reflective sound, where apocalyptic, war-related, and environmental themes intertwine with a suffocating and hypnotic musical fabric.\n\nIn 2022, with the EP City Of Chemistry, S.I.D. further deepened their dark and political imagery, inspired by Gianluca Di Feo’s book Veleni di Stato (“State Poisons”). The record represents the second part of a trilogy dedicated to the atrocities of war, focusing on chemical weapons and their deadly impact. The EP, produced by the band and recorded at V.A.N.G.A. studio, combines slow, massive riffs, deep growls, and tight rhythms, enriched by viola passages that add a melancholic and theatrical atmosphere.\n\nIn 2023, S.I.D. expanded their collaborative horizon with the release of the split tape Over The Pain, made together with the Mexican hardcore punk/sludge band Deshuesaderofrom Mexico City. This international collaboration, released by Terror Casets, Wrong Disk Records, and Nido de Ratas, highlights the dialogue between two distant underground scenes united by the same emotional intensity and urgency to overcome pain through music.\n\nOver The Pain is a work that explores suffering as both a universal and personal condition, a \"membrane to cross\" to find new inner strength and rise again. S.I.D.’s tracks, “Downhill” and “Void,” intertwine with the aggressive and tension-filled songs of Deshuesadero, creating a project that speaks of resilience and struggle in a hostile world.\n\n",
@@ -79,5 +48,82 @@
       }
     ],
     "trivia": "S.I.D. are not just a band, but a project that deeply reflects on the contradictions of our time, from war to pollution, touching on collective and personal pain. Their music is a powerful protest but also an invitation to reflection and resistance."
+  },
+  "morsura": {
+    "short": "Morsura is a noise/post-hardcore trio from the Marche and Veneto regions of Italy, active since 2018. Formed by Jacopo Pannocchia, Mattia Antonelli (Tagliabuio), and Federico Aggio (Lucertulas, Cattivi Maestri), the group is known for its seismic and piercing sound, deeply connected to the aesthetics of graphic and engraving arts.",
+    "review": "Morsura’s debut album *Selvatica* was released in 2018, blending sonic intensity with visual artistry. The artwork, created by Jacopo Pannocchia, perfectly mirrors the band's brutal, vibrant identity, marked by sulphurous and spectral undertones. The album’s title evokes a raw, primal dimension reflected in the music.\n\nThe name 'Morsura' comes from engraving terminology, referring to the corrosive action of acid on a metal plate — a metaphor that embodies the band's aggressive and tactile sound approach. Their live performances are visceral and direct, where sound becomes gesture, matter, and struggle.",
+    "extended": "Formed in 2018, Morsura is a project rooted between Marche and Veneto that merges diverse musical backgrounds into noise-rock and post-hardcore. The lineup features Jacopo Pannocchia, a visual artist and guitarist; Mattia Antonelli, drummer and guitarist from Tagliabuio; and Federico Aggio, bassist and vocalist from Lucertulas and collaborator in Pierpaolo Capovilla’s Cattivi Maestri.\n\nMorsura’s artistic direction draws heavily from engraving and visual art, hence their name — a technical term describing the corrosive bite of mordant on metal. This concept is reflected in their music, which grinds and shapes sound with brutal and expressive force.\n\nIn 2024, Morsura welcomed new live collaborations, including Loris Cericola (Spirale), a young guitarist and vocalist from Marche, who debuted live with the band on July 5 at Rock al Grot, held at Parco delle Grotte di Labante (BO).",
+    "lineup": [
+      {
+        "name": "Jacopo Pannocchia",
+        "roles": ["drums ", "graphics"]
+      },
+      {
+        "name": "Mattia Antonelli",
+        "roles": ["guitar", "guitar (Tagliabuio)"]
+      },
+      {
+        "name": "Federico Aggio",
+        "roles": ["bass", "vocals (Lucertulas, Cattivi Maestri)"]
+      },
+      {
+        "name": "Loris Cericola",
+        "roles": ["guitar, vocals"]
+      }
+    ],
+    "collaborations": [],
+    "discography": [
+      {
+        "title": "Selvatica",
+        "year": 2018,
+        "type": "album"
+      }
+    ],
+    "trivia": "'Morsura' comes from printmaking terminology, describing the acid’s corrosive action on a plate. This physical and visual concept symbolizes the band's sonic poetics: raw, biting, and deeply material. Their live shows are intense and liberating, visually aligned with the art of guitarist Jacopo Pannocchia."
+  },
+  
+  "risorse_umane": {
+    "short": "Le Risorse Umane is a post-punk / new wave trio active between Milan and Ancona. Their music blends dark atmospheres, electronic rhythms, and spoken word lyrics, drawing heavily from the sounds of the '80s, '90s, and 2000s. Formed in the early 2020s, the band combines a bleak urban aesthetic with narrative depth and poetic voice.",
+    "review": "With *Con Effetto Immediato* (2024) and their 2025 EP, Le Risorse Umane deepen their dark and incisive sound, balancing urban melancholy with sardonic wit. Their tracks combine spoken word with vocals, post-punk guitar work, and cinematic electronic arrangements. References to Massimo Volume, Diaframma, and Offlaga Disco Pax are present, but reinterpreted with strong artistic personality. The band’s identity is rooted in sharp irony and a deeply urban poetic. Their fictional tagline — 'active in Milan’s financial landscape Monday to Friday, 08:00 to 18:00, and making real money in their free time' — mocks the corporate world and modern labor alienation. Musically, they explore jagged guitars, synthetic rhythms, and narrative-driven arrangements that cross decades. Their songs evoke suburban margins, vintage gyms, and office absurdities — always tinged with cinematic melancholy and existential humor.",
+    "extended": "",
+    "lineup": [
+      { "name": "Valerio Alessandrini", "roles": ["vocals", "lyrics"] },
+      { "name": "Jacopo Mazzoni", "roles": ["music", "production", "mixing"] },
+      { "name": "Alessandro Rivi", "roles": ["music", "production"] }
+    ],
+    "collaborations": [
+      {
+        "name": "Stefano Sestani",
+        "instrument": "production and mixing",
+        "note": "on tracks including 'Il Dormitorio' and 'La grande scena Trap degli anni ‘10'"
+      },
+      {
+        "name": "Lorenzo Paoletti",
+        "instrument": "production and mastering",
+        "note": "mastering and co-production on 'GRUPPI D’ASCOLTO per persone silenziose'"
+      },
+      {
+        "name": "Marco Bergamini",
+        "instrument": "mixing",
+        "note": "on 'Guardare le Gru'"
+      },
+      {
+        "name": "Leonardo Celsi",
+        "instrument": "vocals",
+        "note": "on 'Il Dormitorio'"
+      },
+      {
+        "name": "Valeria Galandrini",
+        "instrument": "vocals",
+        "note": "on 'La grande scena Trap degli anni ‘10'"
+      }
+    ],
+    "discography": [
+      { "title": "Con Effetto Immediato", "year": 2024, "type": "EP" },
+      { "title": "Title EP 2025", "year": 2025, "type": "EP" }
+    ],
+    "trivia": "Le Risorse Umane ironically claim to have formed during the self-management of a fictional corporate department after the disappearance of 'Head of F4'. Their use of bureaucratic and business language is a conceptual critique of power structures and the dehumanizing logic of office life."
   }
+
+
 }

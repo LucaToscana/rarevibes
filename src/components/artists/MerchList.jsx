@@ -1,53 +1,54 @@
 import CardWrapper from '../layout/CardWrapper';
 import FiltersWrapper from '../layout/FiltersWrapper';
-import SectionTitle from '../layout/SectionTitle';
 
 const MerchList = ({ merch = [] }) => {
-    if (!merch.length) return null;
+  if (!merch.length) return null;
 
-    return (
-        <CardWrapper>
+  return (
+    <CardWrapper>
+      <h3 className="text-sm font-semibold font-arvo mb-2 leading-snug">Merch</h3>
 
-            <h3 className="text-sm  font-semibold  font-arvo mb-0.5 leading-snug">Merch</h3>
-            <div className="flex flex-wrap justify-center gap-2 font-arvo w-fit">
+      <div className="flex flex-col gap-2 font-arvo w-full">
+        {merch
+          .filter(item => item.image)
+          .slice(0, 3)
+          .map((item, index) => (
+            <CardWrapper key={index}>
+              <div className="flex items-center gap-3">
+                <img
+                  loading="lazy"
+                  src={item.image}
+                  alt={item.name}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/assets/filicio2-small.webp";
+                  }}
+                  className="w-16 h-16 object-cover bg-gray-100 rounded flex-shrink-0"
+                />
 
+                <div className="flex flex-col justify-between flex-grow min-w-0">
+                  <h3 className="text-sm font-medium text-black ">{item.name}</h3>
+                  <p className="text-xs text-gray-600">{item.price}</p>
 
-                {merch.slice(0, 3).map((item, index) => (
-                    <CardWrapper>
-                        <div
-                            key={index}
-                            className="w-full max-w-md flex items-center border-b border-gray-200 py-2"
-                        >
-                            <img
-                                loading="lazy" 
-                                src={item.image}
-                                alt={item.name}
-                                className="w-20 h-20 object-cover mr-3 flex-shrink-0"
-                            />
-
-                            <div className="flex flex-col justify-center flex-grow">
-                                <h3 className="text-sm font-medium text-arvo mb-0.5 leading-tight">{item.name}</h3>
-                                <p className="text-xs text-gray-600 mb-1 text-arvo">{item.price}</p>
-
-                                <div className="self-end">
-                                    <FiltersWrapper> <a
-                                        href={item.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-xs text-arvo underline hover:text-black"
-                                    >
-                                        Buy
-                                    </a>
-                                    </FiltersWrapper>
-                                </div>
-                            </div>
-                        </div>
-                    </CardWrapper>
-
-                ))}
-            </div>
-        </CardWrapper>
-    );
+                  <div className="mt-1 absolute right-2 bottom-2">
+                    <FiltersWrapper>
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs underline hover:text-black"
+                      >
+                        Buy
+                      </a>
+                    </FiltersWrapper>
+                  </div>
+                </div>
+              </div>
+            </CardWrapper>
+          ))}
+      </div>
+    </CardWrapper>
+  );
 };
 
 export default MerchList;

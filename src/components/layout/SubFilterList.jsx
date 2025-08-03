@@ -43,7 +43,7 @@ export default function SubFilterList() {
     }
   };
   return (
-    <div className="h-24">
+   <div className="h-full w-full overflow-x-auto">
       <div className="flex flex-wrap gap-1 w-full  ">
 
         {/* Bottoni Main Filter */}
