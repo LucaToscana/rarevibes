@@ -1,300 +1,6 @@
 [
   {
     "id": 1,
-    "name": "Odelia",
-    "slug": "odelia",
-    "type": ["music"],
-    "images":["/assets/filicio3.webp","/assets/sdolz1.webp","/assets/sdolz2.webp"],
-    "bio": {
-      "short": "Odelia is an emerging artist blending Alternative and Indie sounds.",
-      "review": "Odelia is gaining recognition for her unique mix of Alternative and Indie styles. Originating from Paris, she has built a growing fanbase.",
-      "extended": "Odelia began her musical journey in Paris under the Independent label. Her sonic identity fuses Alternative and Indie music, with a passion for storytelling and sound exploration that captivates audiences worldwide."
-    },
-    "genres": ["punk", "garage-rock", "lofi"],
-    "years_active": "2019–present",
-    "origin": "Paris, France",
-    "label": "Independent",
-    "singles": [
-      {
-        "title": "Sunset Drive",
-        "year": 2023,
-        "cover": "/singles/sunset-drive.jpg",
-        "featuring": [],
-        "platforms": {
-          "spotify": "https://open.spotify.com/track/3n3Ppam7vgaVa1iaRUc9Lp",
-          "youtube": "HamLxGxeDqI",
-          "bandcamp": "2380770719",
-          "soundcloud": "https%3A//api.soundcloud.com/tracks/2113037745",
-          "appleMusic": "https://music.apple.com/us/album/sunset-drive/1440831170?i=1440831172",
-          "deezer": "https://www.deezer.com/track/87654321",
-          "tidal": "https://tidal.com/browse/track/12345678"
-        }
-      }
-    ],
-    "defaultPlatform": "youtube",
-    "platforms": {
-      "spotify": "https://open.spotify.com/artist/5ht7ItJgpBH7W6vJ5BqpPr",
-      "soundcloud": "https://soundcloud.com/odeliaofficial",
-      "youtube": "https://www.youtube.com/channel/UCr7U5BQejf4Nk0LYtqGU0Tg",
-      "bandcamp": "https://odelia.bandcamp.com/",
-      "appleMusic": "https://music.apple.com/us/artist/odelia/123456789",
-      "deezer": "https://www.deezer.com/artist/1234567",
-      "tidal": "https://tidal.com/browse/artist/1234567",
-      "amazonMusic": "https://music.amazon.com/artists/B001234567",
-      "audiomack": "https://audiomack.com/odelia",
-      "napster": "https://us.napster.com/artist/odelia",
-      "beatport": "https://www.beatport.com/artist/odelia/123456",
-      "boomplay": "https://www.boomplay.com/artist/1234567",
-      "shazam": "https://www.shazam.com/artist/odelia/1234567",
-      "pandora": "https://www.pandora.com/artist/odelia/AR1234567"
-    },
-    "socials": {
-      "instagram": "https://instagram.com/odeliaofficial",
-      "twitter": "https://twitter.com/odeliaofficial",
-      "tiktok": "https://www.tiktok.com/@odeliaofficial",
-      "facebook": "",
-      "youtube": "https://www.youtube.com/odeliaofficial",
-      "threads": "",
-      "linkedin": "https://www.linkedin.com/in/odeliaofficial",
-      "snapchat": "https://www.snapchat.com/add/odeliaofficial",
-      "telegram": "",
-      "discord": "https://discord.gg/odelia",
-      "website": ""
-    },
-    "press_kit": {
-      "pdf": "/presskits/odelia-epk.pdf",
-      "contact_email": "contact@odeliamusic.com"
-    },
-    "merch": [
-      {
-        "name": "Odelia Logo T-Shirt",
-        "price": "€25",
-        "image": "/merch/odelia-tshirt.jpg",
-        "link": "https://shop.odeliamusic.com/tshirt"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Kael",
-    "slug": "kael",
-    "type": ["music", "visualarts"],
-    "images": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/864dbe22634873.563161cc37e95.jpg"
-    ],
-    "bio": {
-      "short": "Echo Shade is a rising star in Electronic and Synthwave genres.",
-      "review": "Echo Shade creates immersive Electronic and Synthwave music. Originating from Berlin, Echo Shade has been making waves in the underground scene.",
-      "extended": "Emerging from Berlin’s vibrant music scene, Echo Shade produces deep and atmospheric Electronic tracks fused with Synthwave influences. Their music explores nostalgic synth textures combined with modern beats, captivating listeners worldwide."
-    },
-    "genres": ["punk", "house", "edm", "pencil", "woodcut", "comic"],
-    "years_active": "2017–present",
-    "origin": "Berlin, Germany",
-    "label": "Neon Tapes",
-    "singles": [
-      {
-        "title": "Midnight Drive",
-        "year": 2024,
-        "cover": "/singles/midnight-drive.jpg",
-        "featuring": ["Luna Rae"],
-        "platforms": {
-          "spotify": "https://open.spotify.com/track/6rqhFgbbKwnb9MLmUQDhG6",
-          "youtube": "bvttDWdl0OQ",
-          "soundcloud": "https://soundcloud.com/echoshade/midnight-drive",
-          "appleMusic": "https://music.apple.com/us/album/midnight-drive-feat-luna-rae/1440831170?i=1440831172",
-          "deezer": "https://www.deezer.com/track/12345678",
-          "tidal": "https://tidal.com/browse/track/87654321"
-        }
-      }
-    ],
-    "defaultPlatform": "youtube",
-    "platforms": {
-      "spotify": "https://open.spotify.com/artist/2h93pZq0e7k5yf4dywlkpM",
-      "soundcloud": "https://soundcloud.com/echoshade",
-      "youtube": "https://www.youtube.com/channel/UCMidnightDrive",
-      "appleMusic": "https://music.apple.com/us/artist/echo-shade/123456789",
-      "deezer": "https://www.deezer.com/artist/7654321",
-      "tidal": "https://tidal.com/browse/artist/7654321",
-      "amazonMusic": "https://music.amazon.com/artists/B007654321",
-      "audiomack": "https://audiomack.com/echoshade",
-      "napster": "https://us.napster.com/artist/echoshade",
-      "beatport": "https://www.beatport.com/artist/echoshade/765432",
-      "boomplay": "https://www.boomplay.com/artist/7654321",
-      "shazam": "https://www.shazam.com/artist/echoshade/7654321",
-      "pandora": "https://www.pandora.com/artist/echoshade/AR7654321"
-    },
-    "socials": {
-      "instagram": "https://instagram.com/echoshade",
-      "twitter": "https://twitter.com/echoshade",
-      "tiktok": "https://www.tiktok.com/@echoshade",
-      "facebook": "https://www.facebook.com/echoshade",
-      "youtube": "https://www.youtube.com/echoshade",
-      "threads": "https://www.threads.net/@echoshade",
-      "linkedin": "https://www.linkedin.com/in/echoshade",
-      "snapchat": "https://www.snapchat.com/add/echoshade",
-      "telegram": "https://t.me/echoshade",
-      "discord": "https://discord.gg/echoshade",
-      "website": "https://www.echoshademusic.com"
-    },
-    "press_kit": {
-      "pdf": "/presskits/echoshade-epk.pdf",
-      "contact_email": "contact@echoshademusic.com"
-    },
-    "merch": [
-      {
-        "name": "Echo Shade Hoodie",
-        "price": "€40",
-        "image": "/merch/echo-shade-hoodie.jpg",
-        "link": "https://shop.echoshademusic.com/hoodie"
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Leona painting",
-    "slug": "leonapainting",
-    "type": ["visualarts"],
-    "images": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg"
-    ],
-    "bio": {
-      "short": "Luna Rae blends Jazz and Soul with a modern twist.",
-      "review": "Luna Rae’s soulful voice and jazz influences create a warm and emotional sound. Hailing from New Orleans, her music touches hearts worldwide.",
-      "extended": "Born and raised in New Orleans, Luna Rae combines classic Jazz and Soul elements with contemporary production. With a rich, expressive voice, she delivers heartfelt performances and has released multiple acclaimed albums."
-    },
-    "genres": ["pencil", "woodcut", "comic"],
-    "years_active": "2015–present",
-    "origin": "New Orleans, USA",
-    "label": "Moonlight Records",
-    "singles": [],
-    "defaultPlatform": "youtube",
-    "platforms": {
-      "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ",
-      "soundcloud": "https://soundcloud.com/lunarae",
-      "youtube": "https://www.youtube.com/lunarae",
-      "bandcamp": "https://lunarae.bandcamp.com/",
-      "appleMusic": "https://music.apple.com/us/artist/luna-rae/123456789",
-      "deezer": "https://www.deezer.com/artist/4567890",
-      "tidal": "https://tidal.com/browse/artist/4567890",
-      "amazonMusic": "https://music.amazon.com/artists/B009876543",
-      "audiomack": "https://audiomack.com/lunarae",
-      "napster": "https://us.napster.com/artist/lunarae",
-      "beatport": "https://www.beatport.com/artist/lunarae/456789",
-      "boomplay": "https://www.boomplay.com/artist/4567890",
-      "shazam": "https://www.shazam.com/artist/lunarae/4567890",
-      "pandora": "https://www.pandora.com/artist/lunarae/AR4567890"
-    },
-    "socials": {
-      "instagram": "https://instagram.com/luna.rae",
-      "twitter": "https://twitter.com/lunarae",
-      "tiktok": "https://www.tiktok.com/@lunarae",
-      "facebook": "https://www.facebook.com/lunarae",
-      "youtube": "https://www.youtube.com/lunarae",
-      "threads": "https://www.threads.net/@lunarae",
-      "linkedin": "https://www.linkedin.com/in/lunarae",
-      "snapchat": "https://www.snapchat.com/add/lunarae",
-      "telegram": "https://t.me/lunarae",
-      "discord": "https://discord.gg/lunarae",
-      "website": "https://www.lunaraemusic.com"
-    },
-    "press_kit": {
-      "pdf": "/presskits/lunarae-epk.pdf",
-      "contact_email": "contact@lunaraemusic.com"
-    },
-    "merch": [
-      {
-        "name": "S.I.D. / Deshuesadero - Over the Pain (Split tape)",
-        "price": "€10",
-        "image": "https://f4.bcbits.com/img/0035410059_10.jpg",
-        "link": "https://sidoom.bandcamp.com/album/over-the-pain"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Leona",
-    "slug": "leona",
-    "type": ["music"],
-    "images": [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/53f6c717180319.5634931be500f.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/006a6182007313.5d10e7695551e.jpg",
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/c9c29824752085.56339764e19d6.jpg"
-    ],
-    "bio": {
-      "short": "Luna Rae blends Jazz and Soul with a modern twist.",
-      "review": "Luna Rae’s soulful voice and jazz influences create a warm and emotional sound. Hailing from New Orleans, her music touches hearts worldwide.",
-      "extended": "Born and raised in New Orleans, Luna Rae combines classic Jazz and Soul elements with contemporary production. With a rich, expressive voice, she delivers heartfelt performances and has released multiple acclaimed albums."
-    },
-    "genres": ["punk", "house", "idm"],
-    "years_active": "2015–present",
-    "origin": "New Orleans, USA",
-    "label": "Moonlight Records",
-    "singles": [
-      {
-        "title": "Midnight Whisper",
-        "year": 2022,
-        "cover": "/singles/midnight-whisper.jpg",
-        "featuring": [],
-        "platforms": {
-          "spotify": "https://open.spotify.com/track/1a2b3c4d5e6f7g8h9i0j",
-          "youtube": "PRHCP-Czj0Y",
-          "bandcamp": "2380770719",
-          "soundcloud": "https://soundcloud.com/lunarae/midnight-whisper",
-          "appleMusic": "https://music.apple.com/us/album/midnight-whisper/1234567890?i=1234567890",
-          "deezer": "https://www.deezer.com/track/23456789",
-          "tidal": "https://tidal.com/browse/track/98765432"
-        }
-      }
-    ],
-    "defaultPlatform": "youtube",
-    "platforms": {
-      "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ",
-      "soundcloud": "https://soundcloud.com/lunarae",
-      "youtube": "https://www.youtube.com/lunarae",
-      "bandcamp": "https://lunarae.bandcamp.com/",
-      "appleMusic": "https://music.apple.com/us/artist/luna-rae/123456789",
-      "deezer": "https://www.deezer.com/artist/4567890",
-      "tidal": "https://tidal.com/browse/artist/4567890",
-      "amazonMusic": "https://music.amazon.com/artists/B009876543",
-      "audiomack": "https://audiomack.com/lunarae",
-      "napster": "https://us.napster.com/artist/lunarae",
-      "beatport": "https://www.beatport.com/artist/lunarae/456789",
-      "boomplay": "https://www.boomplay.com/artist/4567890",
-      "shazam": "https://www.shazam.com/artist/lunarae/4567890",
-      "pandora": "https://www.pandora.com/artist/lunarae/AR4567890"
-    },
-    "socials": {
-      "instagram": "https://instagram.com/luna.rae",
-      "twitter": "https://twitter.com/lunarae",
-      "tiktok": "https://www.tiktok.com/@lunarae",
-      "facebook": "https://www.facebook.com/lunarae",
-      "youtube": "https://www.youtube.com/lunarae",
-      "threads": "https://www.threads.net/@lunarae",
-      "linkedin": "https://www.linkedin.com/in/lunarae",
-      "snapchat": "https://www.snapchat.com/add/lunarae",
-      "telegram": "https://t.me/lunarae",
-      "discord": "https://discord.gg/lunarae",
-      "website": "https://www.lunaraemusic.com"
-    },
-    "press_kit": {
-      "pdf": "/presskits/lunarae-epk.pdf",
-      "contact_email": "contact@lunaraemusic.com"
-    },
-    "merch": [
-      {
-        "name": "Luna Rae Vinyl",
-        "price": "€30",
-        "image": "/merch/lunarae-vinyl.jpg",
-        "link": "https://shop.lunaraemusic.com/vinyl"
-      }
-    ]
-  },
-  {
-    "id": 5,
     "name": "s.i.d.",
     "slug": "sid",
     "type": ["music"],
@@ -319,7 +25,7 @@
         "cover": "https://f4.bcbits.com/img/a3396485373_10.jpg",
         "featuring": [],
         "platforms": {
-          "spotify": "",
+          "spotify": "https://open.spotify.com/intl-it/track/2MoMR8NhIFl6LiKjaypGcD?si=656410297e5a448a",
           "youtube": "ocMxBP_UFMw",
           "bandcamp": "1606741374",
           "soundcloud": "",
@@ -331,37 +37,37 @@
     ],
     "defaultPlatform": "youtube",
     "platforms": {
-      "spotify": "https://open.spotify.com/artist/5ht7ItJgpBH7W6vJ5BqpPr",
-      "soundcloud": "https://soundcloud.com/odeliaofficial",
-      "youtube": "https://www.youtube.com/channel/UCr7U5BQejf4Nk0LYtqGU0Tg",
-      "bandcamp": "https://odelia.bandcamp.com/",
-      "appleMusic": "https://music.apple.com/us/artist/odelia/123456789",
-      "deezer": "https://www.deezer.com/artist/1234567",
-      "tidal": "https://tidal.com/browse/artist/1234567",
-      "amazonMusic": "https://music.amazon.com/artists/B001234567",
-      "audiomack": "https://audiomack.com/odelia",
-      "napster": "https://us.napster.com/artist/odelia",
-      "beatport": "https://www.beatport.com/artist/odelia/123456",
-      "boomplay": "https://www.boomplay.com/artist/1234567",
-      "shazam": "https://www.shazam.com/artist/odelia/1234567",
-      "pandora": "https://www.pandora.com/artist/odelia/AR1234567"
+      "spotify": "https://open.spotify.com/intl-it/artist/2pxTfxsSaWgGLnPAhcz8VU?si=tCbfkHY_S0mRlq__4_EJHw",
+      "soundcloud": "",
+      "youtube": "https://www.youtube.com/channel/UCP6WsP4hX3_qQ2Iu4dvXqKg",
+      "bandcamp": "https://sidoom.bandcamp.com/album/over-the-pain",
+      "appleMusic": "",
+      "deezer": "",
+      "tidal": "",
+      "amazonMusic": "",
+      "audiomack": "",
+      "napster": "",
+      "beatport": "",
+      "boomplay": "",
+      "shazam": "",
+      "pandora": ""
     },
     "socials": {
-      "instagram": "https://instagram.com/odeliaofficial",
-      "twitter": "https://twitter.com/odeliaofficial",
-      "tiktok": "https://www.tiktok.com/@odeliaofficial",
-      "facebook": "",
-      "youtube": "https://www.youtube.com/odeliaofficial",
+      "instagram": "https://www.instagram.com/sid.doom/",
+      "twitter": "",
+      "tiktok": "",
+      "facebook": "https://www.facebook.com/SIDdoom",
+      "youtube": "https://www.youtube.com/channel/UCP6WsP4hX3_qQ2Iu4dvXqKg",
       "threads": "",
-      "linkedin": "https://www.linkedin.com/in/odeliaofficial",
-      "snapchat": "https://www.snapchat.com/add/odeliaofficial",
+      "linkedin": "",
+      "snapchat": "",
       "telegram": "",
-      "discord": "https://discord.gg/odelia",
+      "discord": "",
       "website": ""
     },
     "press_kit": {
-      "pdf": "/presskits/odelia-epk.pdf",
-      "contact_email": "contact@odeliamusic.com"
+      "pdf": "",
+      "contact_email": ""
     },
     "merch": [
       {
@@ -377,28 +83,168 @@
         "link": "https://sidoom.bandcamp.com/album/city-of-chemistry"
       }
     ]
+  },
+  {
+    "id": 2,
+    "name": "Morsura",
+    "slug": "morsura",
+    "type": ["music"],
+    "images": [
+      "https://f4.bcbits.com/img/a3463226684_10.jpg",
+      "https://scontent.flil1-1.fna.fbcdn.net/v/t39.30808-6/474561535_1358013175590455_2316792625473273647_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=cRyMccWENW4Q7kNvwFlFZ18&_nc_oc=Adn3s5dlyXGL62vcuNG2tpQsdom_IE3K2Y-Uqbt_iLaVNMiIW7KsbH77qzEpQmseDFASvaXHUZwYdSrnkRgfpLSL&_nc_zt=23&_nc_ht=scontent.flil1-1.fna&_nc_gid=5y6PABq43Rqe1dG4yGnuwA&oh=00_AfX-J_P2luB3kV776QegW9b2cYAzq-fAGcFMT2UV8nDccw&oe=6895AA31",
+      "https://scontent.flil1-1.fna.fbcdn.net/v/t1.6435-9/35987249_1423264457773614_7378287935130435584_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=M61FtJ7xyGgQ7kNvwGWPM-f&_nc_oc=Adl5Y8vz5iu_dHAcn3MrfMNWxlxoY47aG5rFBF9AZPrEydGQ5q_vAJSaDjtOEkRKu_vxHFJBf5QTgDWMKYMqx3TH&_nc_zt=23&_nc_ht=scontent.flil1-1.fna&_nc_gid=CI1LwJa6LOLbfcqVfXGjzQ&oh=00_AfVSmsl18i9Dvc-teF3KpTOe4dFe7RsPu66s5AyQM8_m0w&oe=68B758AB"
+    ],
+    "bio": {
+      "short": "Morsura è un trio noise/post-hardcore marchigiano-veneto nato dall'incontro tra Jacopo Pannocchia, Mattia Antonelli (Tagliabuio) e Federico Aggio (Lucertulas, Cattivi Maestri), attivo dal 2018 con sonorità telluriche e viscerali.",
+      "review": "Line-up\nJacopo Pannocchia – chitarra, arti grafiche\nMattia Antonelli – batteria, chitarra (Tagliabuio)\nFederico Aggio – basso, voce (Lucertulas, Cattivi Maestri)\n\nLive guest (2024–):\nLoris Cericola – chitarra, voce (Spirale)\n\nDiscografia selezionata\nSelvatica (2018)\n\nCuriosità\nIl nome 'Morsura' richiama l'effetto del mordente nelle tecniche incisorie, metafora perfetta per un suono selvaggio, graffiante e profondamente espressivo. La grafica dell’album “Selvatica” è firmata dallo stesso Jacopo Pannocchia, artista visivo e membro della band.",
+      "extended": "Morsura è un progetto noise/post-hardcore nato dall’unione di tre musicisti provenienti da Marche e Veneto: Jacopo Pannocchia, artista visivo e chitarrista; Mattia Antonelli, batterista e chitarrista attivo anche nei Tagliabuio; Federico Aggio, cantante/bassista dei Lucertulas e collaboratore nei Cattivi Maestri di Pierpaolo Capovilla.\n\nIl gruppo esordisce nel 2018 con l’album *Selvatica*, un lavoro che fonde brutalità sonora e tensione emotiva, caratterizzato da un’estetica grafica potente curata da Pannocchia stesso. Il nome 'Morsura', che in incisione indica l'azione chimica sulla lastra, simboleggia perfettamente la loro attitudine sonora: diretta, mordente e profondamente materica.\n\nNel 2024 la band annuncia l’ingresso nei live di Loris Cericola (Spirale), giovane chitarrista marchigiano, che ha debuttato dal vivo il 5 luglio al Rock al Grot, Parco delle Grotte di Labante (BO)."
+    },
+    "genres": ["noise-rock", "post-hardcore"],
+    "years_active": "2018–present",
+    "origin": "Marche/Veneto, Italy",
+    "label": "",
+    "singles": [
+      {
+        "title": "Selvatica",
+        "year": 2018,
+        "cover": "https://f4.bcbits.com/img/a3463226684_10.jpg",
+        "featuring": [],
+        "platforms": {
+          "spotify": "",
+          "youtube": "OksMeUUMT78",
+          "bandcamp": "2357057138",
+          "soundcloud": "https%3A//api.soundcloud.com/tracks/1043859766",
+          "appleMusic": "",
+          "deezer": "",
+          "tidal": ""
+        }
+      }
+    ],
+    "defaultPlatform": "youtube",
+    "platforms": {
+      "spotify": "",
+      "soundcloud": "https://soundcloud.com/morsura",
+      "youtube": "",
+      "bandcamp": "",
+      "appleMusic": "",
+      "deezer": "",
+      "tidal": "",
+      "amazonMusic": "",
+      "audiomack": "",
+      "napster": "",
+      "beatport": "",
+      "boomplay": "",
+      "shazam": "",
+      "pandora": ""
+    },
+    "socials": {
+      "instagram": "https://www.instagram.com/morsura_/",
+      "twitter": "",
+      "tiktok": "",
+      "facebook": "",
+      "youtube": "https://www.youtube.com/@morsura.official",
+      "threads": "",
+      "linkedin": "",
+      "snapchat": "",
+      "telegram": "",
+      "discord": "",
+      "website": ""
+    },
+    "press_kit": {
+      "pdf": "",
+      "contact_email": ""
+    },
+    "merch": [
+      {
+        "name": "Limited Edition wooden box CD",
+        "price": "€10",
+        "image": "https://f4.bcbits.com/img/0012171429_10.jpg",
+        "link": "https://onlyfuckingnoise.bandcamp.com/album/morsura"
+      },
+      {
+        "name": "Selvatica CD Black Artwork",
+        "price": "€10",
+        "image": "https://f4.bcbits.com/img/a0095760360_10.jpg",
+        "link": "https://onlyfuckingnoise.bandcamp.com/album/morsura"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Risorse Umane",
+    "slug": "risorse_umane",
+    "type": ["music"],
+    "images": [
+      "https://f4.bcbits.com/img/a1961708650_10.jpg",
+      "https://www.rockon.it/wp-content/uploads/2025/03/risorse-umane.jpg",
+
+      "https://www.indieforbunnies.com/wp-content/uploads/2024/11/Risorse-Umane-gruppi-dascolto-jpg.webp"
+    ],
+    "bio": {
+      "short": "Le Risorse Umane sono una band post-punk / new wave nata sulla direttrice che divide Milano e Ancona, con sonorità ispirate agli anni '80, '90 e 2000, filtrate da una poetica urbana e disillusa.",
+      "review": "Il trio composto da Valerio Alessandrini (voce, testi), Jacopo Mazzoni e Alessandro Rivi (musica), presenta l’EP *Con Effetto Immediato* (2025, Notturno Dischi), un lavoro che amplia l’estetica new wave del gruppo con urgenza lirica e precisione cinematografica. Tra malinconia e disincanto urbano, la band esplora un post-punk contemporaneo, alternando chitarre fredde e sintetizzatori puliti. Tra le influenze: Offlaga Disco Pax, Massimo Volume, Diaframma.",
+      "extended": ""
+    },
+    "genres": ["post-punk", "new wave"],
+    "years_active": "2020–present",
+    "origin": "Milano/Ancona, Italy",
+    "label": "Notturno Dischi",
+    "singles": [
+      {
+        "title": "GRUPPI D'ASCOLTO per persone silenziose",
+        "year": 2024,
+        "cover": "https://www.indieforbunnies.com/wp-content/uploads/2024/11/Risorse-Umane-gruppi-dascolto-jpg.webp",
+        "featuring": [],
+        "platforms": {
+          "spotify": "https://open.spotify.com/intl-it/track/6VmJQWC8N8enhGlAiZJnMc?si=5cb36fab598b45b8",
+          "youtube": "urTdxLdquOA",
+          "bandcamp": "3591267972",
+          "soundcloud": "",
+          "appleMusic": "",
+          "deezer": "",
+          "tidal": ""
+        }
+      }
+    ],
+    "defaultPlatform": "youtube",
+    "platforms": {
+      "spotify": "https://open.spotify.com/intl-it/artist/1JhJalt0DWUC0wmhjAjEP9?si=OumHrHrRQnCOVP95iAXoCQ",
+      "soundcloud": "",
+      "youtube": "",
+      "bandcamp": "https://risorseumane.bandcamp.com/album/primo-richiamo-2",
+      "appleMusic": "",
+      "deezer": "",
+      "tidal": "",
+      "amazonMusic": "",
+      "audiomack": "",
+      "napster": "",
+      "beatport": "",
+      "boomplay": "",
+      "shazam": "",
+      "pandora": ""
+    },
+    "socials": {
+      "instagram": "https://www.instagram.com/le_risorse_umane/",
+      "twitter": "",
+      "tiktok": "",
+      "facebook": "",
+      "youtube": "https://www.youtube.com/channel/UC7AjGloPJPlClr-SfaI3BUA",
+      "threads": "",
+      "linkedin": "",
+      "snapchat": "",
+      "telegram": "",
+      "discord": "",
+      "website": ""
+    },
+    "press_kit": {
+      "pdf": "",
+      "contact_email": ""
+    },
+    "merch": [ {
+        "name": "Primo Richiamo Digital Album  ",
+        "price": "name your price",
+        "image": "https://f4.bcbits.com/img/a1961708650_10.jpg",
+        "link": "https://risorseumane.bandcamp.com/album/primo-richiamo-2"
+      }]
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
