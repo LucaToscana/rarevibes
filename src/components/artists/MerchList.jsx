@@ -27,7 +27,7 @@ const MerchList = ({ merch = [] }) => {
                 />
 
                 <div className="flex flex-col justify-between flex-grow min-w-0">
-                  <h3 className="text-sm font-medium text-black ">{item.name}</h3>
+                  <h3 className="text-sm font-uèymedium text-black ">{item.name}</h3>
                   <p className="text-xs text-gray-600">{item.price}</p>
 
                   <div className="mt-1 absolute right-2 bottom-2">

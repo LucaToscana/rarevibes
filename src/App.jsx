@@ -12,6 +12,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import ParallaxLayout from './components/layout/ParallaxLayout'
 import AboutUs from './pages/AboutUs'
 import { useEffect } from 'react'
+import MerchArtists from './pages/MerchArtists';
 
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
         <Route element={<ParallaxLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/artists" element={<Artists />} />
+          <Route path="/merchartists" element={<MerchArtists />} />
           <Route path="/artists/:slug" element={<ArtistPage />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />

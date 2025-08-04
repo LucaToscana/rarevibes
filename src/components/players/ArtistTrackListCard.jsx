@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import CardStaticWrapper from "../layout/CardStaticWrapper";
 import FiltersWrapper from "../layout/FiltersWrapper";
 
-export default function ArtistTrackListCard({ title = 'new artists', items = [], onSelect,selectArtist }) {
+export default function ArtistTrackListCard({ title = 'new artists', items = [], onSelect, selectArtist }) {
   const { t } = useTranslation('common');
   return (
     <div className="w-72 sm:w-fit mb-5">
@@ -14,7 +14,9 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
           <div
             className="max-w-md shadow-md overflow-hidden   relative text-white max-h-48"
             style={{
-              backgroundImage: `url(${selectArtist.images[0]})`,
+              backgroundImage: selectArtist?.images?.[0]
+                ? `url(${selectArtist.images[0]})`
+                : 'none',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               minHeight: '60px',
@@ -27,7 +29,7 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
                 const backgroundImage = item.images?.[0] || '';
 
                 return (
-                  <FiltersWrapper  key={index}>
+                  <FiltersWrapper key={index}>
                     <li
                       key={index}
                       onClick={() => onSelect(item)}
