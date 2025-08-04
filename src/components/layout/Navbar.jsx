@@ -43,8 +43,8 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex space-x-6 items-center pointer-events-auto ">
-          <NavLinkCustom to="/artists"> {t('artists')}</NavLinkCustom>   
-          <NavLinkCustom to="/merchartists"> Merch</NavLinkCustom>   
+          <NavLinkCustom to="/artists"> {t('artists')}</NavLinkCustom>
+          <NavLinkCustom to="/merchartists"> Merch</NavLinkCustom>
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>
           <NavLinkCustom to="/aboutus" >{t('aboutus')}</NavLinkCustom>
           <NavLinkCustom to="/submit" extraClass="button"> {t("submit")}</NavLinkCustom>
@@ -58,7 +58,7 @@ export default function Navbar() {
       {/* Mobile links dropdown */}
       {menuOpen && (<>
 
-<div className="md:hidden absolute right-8 px-2 py-2 flex flex-row space-x-3 justify-end z-50 pointer-events-auto">
+        <div className="md:hidden absolute right-8 px-2 py-2 flex flex-col sm:flex-row space-y-3 items-end z-50 pointer-events-auto">
           <NavLinkCustom to="/artists" onClick={() => setMenuOpen(false)}>
             {t('artists')}
           </NavLinkCustom>

@@ -16,19 +16,29 @@ import SearchWithCaptcha from "../components/layout/SearchWithCaptcha";
 import CardStaticWrapper from "../components/layout/CardStaticWrapper";
 import FiltersWrapper from "../components/layout/FiltersWrapper";
 import ArtistMerch from "../components/artists/ArtistMerch";
+import MerchCategoryFilter from "../components/layout/MerchCategoryFilter.jsx";
 
 
 export default function MerchArtists() {
   const [isSubFilterListVisible, setIsSubFilterListVisible] = useState(false);
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState("0px");
+  const [activeMerchCategories, setActiveMerchCategories] = useState([]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchTimestamps, setSearchTimestamps] = useState([]);
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [captchaInput, setCaptchaInput] = useState("");
   const captchaAnswer = 7; // esempio 3 + 4
-
+  const merchCategories = [
+    { key: "digital_music", label: "Musica Digitale" },
+    { key: "physical_music", label: "CD/Vinile" },
+    { key: "apparel", label: "Abbigliamento" },
+    { key: "print_poster", label: "Stampa / Poster" },
+    { key: "books_zines", label: "Fanzine / Libri" },
+    { key: "handcrafted", label: "Oggetti Artigianali" },
+    { key: "experience_event", label: "Esperienza / Evento" },
+  ];
   const { t } = useTranslation("common");
 
   useEffect(() => {
@@ -210,14 +220,21 @@ export default function MerchArtists() {
             </CardStaticWrapper> </div>
         )}
       </div>
+      <MerchCategoryFilter
+        categories={merchCategories}
+        selectedCategories={activeMerchCategories}
+        onChange={setActiveMerchCategories}
+      />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <aside className="md:col-span-1">
           <FiltersConsole genres={currentFilterData} />
         </aside>
 
         <section className="md:col-span-3">
+          {JSON.stringify({activeMerchCategories})}
           {filteredArtists.length > 0 ? (
-            <ArtistMerch filteredArtists={filteredArtists} />
+            <ArtistMerch filteredArtists={filteredArtists}
+              activeCategory={activeMerchCategories} />
           ) : (
             <div className="animate-fade-in">
               <CardWrapper>

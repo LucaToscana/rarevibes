@@ -1,16 +1,23 @@
 import CardWrapper from "../layout/CardWrapper";
 import FiltersWrapper from "../layout/FiltersWrapper";
+      
 
-const ArtistMerch = ({ filteredArtists }) => {
+const ArtistMerch = ({ filteredArtists, activeCategory }) => {
     if (!filteredArtists || filteredArtists.length === 0) {
-        return null;
+        return null
     }
 
     const allMerchItems = filteredArtists.flatMap((artist) =>
-        (artist.merch || []).map((item) => ({
-            ...item,
-            artistName: artist.name,
-        }))
+        (artist.merch || [])
+            .map((item) => ({
+                ...item,
+                artistName: artist.name,
+            }))
+            .filter((item) =>
+                activeCategory.length === 0
+                    ? true // se nessuna categoria selezionata, mostra tutto
+                    : activeCategory.includes(item.type)
+            )
     );
 
     if (allMerchItems.length === 0) {
