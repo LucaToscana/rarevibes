@@ -76,25 +76,22 @@ export default function ArtistPage() {
     .slice(0, 3)
 
   return (
-    <main className="min-h-screen px-6 py-12 max-w-7xl mx-auto">
-
-      {/* Link di ritorno */}
-      <div className="mt-8 font-arvo w-fit mb-8 pt-12">
-        <CardWrapper className="text-xs animate-fade-in lowercase">
-          <Link to="/artists">
-            ← {t('backToArtists')}
-          </Link>
+    <main className="min-h-screen max-w-7xl mx-auto px-6 py-12">
+      {/* Back link */}
+      <div className="mt-8 mb-8 pt-12">
+        <CardWrapper className="text-xs animate-fade-in lowercase font-arvo w-fit">
+          <Link to="/artists">← {t('backToArtists')}</Link>
         </CardWrapper>
       </div>
 
-
-      {/* Contenuto principale: immagini e info */}
+      {/* Main artist section */}
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
-        {/* Info artista */}
-
-        <section className="lg:w-1/3 flex flex-col gap-6 h-full min-h-[500px] p-2">
-          <CardWrapper className='w-fit min-w-64'>
-            <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black ">
+        {/* Left column: artist info */}
+        <section className="flex flex-col gap-6 lg:w-1/3 min-h-[500px] p-2">
+          {/* Artist name + player */}
+          <CardWrapper className="w-fit min-w-64">
+            <p className="font-arvo text-black text-xs">{t('play')}</p>
+            <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black">
               {selectedArtist.name}
             </h2>
             <div className="flex justify-center mt-2">
@@ -104,71 +101,72 @@ export default function ArtistPage() {
                 setSelectedPlatform={handlePlay}
               />
             </div>
-
           </CardWrapper>
 
-          <CardWrapper >
-            <ArtistBio slug={selectedArtist.slug} name={selectedArtist.name}
+          {/* Artist bios */}
+          <CardWrapper>
+            <ArtistBio
+              slug={selectedArtist.slug}
+              name={selectedArtist.name}
               field="short"
-              className='bio-text-white   '
-              highlightClass='bio-highlight-white' />
-
-
-            <ArtistBio slug={selectedArtist.slug} name={selectedArtist.name}
+              className="bio-text-white"
+              highlightClass="bio-highlight-white"
+            />
+            <ArtistBio
+              slug={selectedArtist.slug}
+              name={selectedArtist.name}
               field="review"
-              className='bio-text-white  mt-8'
-              highlightClass='bio-highlight-white ' />
-
+              className="bio-text-white mt-8"
+              highlightClass="bio-highlight-white"
+            />
           </CardWrapper>
 
+          {/* Merch */}
           <MerchList merch={selectedArtist.merch} />
-          {selectedArtist?.socials && (
-            <div className="w-full flex justify-end ">
 
+          {/* Social links */}
+          {selectedArtist?.socials && (
+            <div className="flex justify-end w-full">
               <CardWrapper className="animate-fade-in">
                 <SocialLinks socials={selectedArtist.socials} />
               </CardWrapper>
             </div>
-          )}        </section>
-        {/* Immagini artista */}
+          )}
+        </section>
 
-        <div className="lg:w-2/3 animate-fade-in-lg ">
+        {/* Right column: images and extended bio */}
+        <section className="lg:w-2/3 flex flex-col gap-6 animate-fade-in-lg">
           <ArtistImages images={selectedArtist.images} key={slug} slug={slug} />
 
-          {selectedArtist.bio.extended && "" !== selectedArtist.bio.extended &&
-            < CardWrapper >
-              <ArtistBio slug={selectedArtist.slug} name={selectedArtist.name}
+          {/* Extended bio */}
+          {selectedArtist.bio.extended && selectedArtist.bio.extended !== "" && (
+            <CardWrapper>
+              <ArtistBio
+                slug={selectedArtist.slug}
+                name={selectedArtist.name}
                 field="extended"
-                className='bio-text-white '
-                highlightClass='bio-highlight-white ' />
-            </CardWrapper>}
+                className="bio-text-white"
+                highlightClass="bio-highlight-white"
+              />
+            </CardWrapper>
+          )}
 
-
-
-          {selectedArtist &&
-            <div className=''>
-              <ArtistProfile slug={selectedArtist.slug} />
-            </div>
-          }
-
-        </div>
-
+          {/* Profile */}
+          <ArtistProfile slug={selectedArtist.slug} />
+        </section>
       </div>
 
-
-      {/* Artisti correlati */}
+      {/* Related artists */}
       <section className="mt-16">
-
-
-        <SectionDivider></SectionDivider>
-
-        <div className="flex justify-end text-xs">
-
-          <SectionTitle><p className='text-xs lowercase'>{t('youMightBeInterestedIn')}</p></SectionTitle>
-
+        <SectionDivider />
+        <div className="flex justify-end text-xs mb-2">
+          <SectionTitle>
+            <p className="text-xs lowercase">{t('youMightBeInterestedIn')}</p>
+          </SectionTitle>
         </div>
         <RelatedArtistsSection artists={relatedArtists} slug={slug} />
       </section>
-    </main >
+    </main>
+
   )
 }

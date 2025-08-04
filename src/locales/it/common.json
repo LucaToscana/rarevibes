@@ -3,7 +3,7 @@
   "about": "Chi Siamo",
   "privacy": "Privacy",
   "artists": "Artisti",
-  "aboutus":"Chi Siamo",
+  "aboutus": "Chi Siamo",
 
   "biography": "Biografia",
   "recentArtists": "Artisti Recenti",
@@ -19,9 +19,9 @@
   "placeholdersFilter": "Cerca per nome, label, singoli o bio",
 
   "whatarea": "Qual è la tua area artistica?",
- "visualart": "Arte Visiva",
+  "visualart": "Arte Visiva",
   "music": "Musica",
-    "visualarts": "Arti Visive",
+  "visualarts": "Arti Visive",
   "both": "Entrambi",
   "fullname": "Nome e Cognome",
   "email": "Email",
@@ -69,6 +69,6 @@
   "featuringTags": "Featuring (tag multipli separati da virgola)",
   "separateWithComma": "Separare con virgola",
   "no_artists_found": "Nessun artista trovato",
-      "error_platform_not_found": "errore: piattaforma non trovata"
-
+  "error_platform_not_found": "errore: piattaforma non trovata",
+  "play": "Ascolta nel lettore" 
 }

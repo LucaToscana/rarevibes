@@ -3,8 +3,7 @@
   "about": "About",
   "privacy": "Privacy Policy",
   "artists": "Artists",
-    "aboutus":"About Us",
-
+  "aboutus": "About Us",
 
   "biography": "Biography",
   "recentArtists": "Recent Artists",
@@ -69,5 +68,6 @@
   "featuringTags": "Featuring (multiple tags separated by commas)",
   "separateWithComma": "Separate with commas",
   "no_artists_found": "No artists found. ",
-  "error_platform_not_found": "error: platform not found"
+  "error_platform_not_found": "error: platform not found",
+  "play": "Play in player"
 }

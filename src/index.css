@@ -82,7 +82,7 @@ body {
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white {
-  @apply bg-white arvo-monza   inline-block drop-shadow;
+  @apply arvo-monza   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }

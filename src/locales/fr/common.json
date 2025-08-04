@@ -67,5 +67,7 @@
   "featuringTags": "Featuring (tags multiples séparés par des virgules)",
   "separateWithComma": "Séparer par des virgules",
   "no_artists_found": "Aucun artiste trouvé.",
-  "error_platform_not_found": "erreur : plateforme introuvable"
+  "error_platform_not_found": "erreur : plateforme introuvable",
+  "play": "Écoute dans le lecteur"
+
 }

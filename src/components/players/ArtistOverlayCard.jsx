@@ -45,7 +45,7 @@ export default function ArtistOverlayCard({
               </h2>
 
               <span
-                className="font-arvo text-black text-xs italic lowercase block truncate"
+                className="font-arvo text-black text-xs italic lowercase block truncate w-36"
                 title={activeArtist.singles?.[0]?.title}
               >
                 {activeArtist.singles?.[0]?.title}

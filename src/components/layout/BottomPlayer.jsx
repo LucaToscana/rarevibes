@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { setPlayerOpen, setAutoPlay } from '../../store/playerSlice' // Controlla che il path sia corretto
+import { setPlayerOpen, setAutoPlay } from '../../store/playerSlice'
 import { useState, useEffect } from 'react'
 import TogglePlayerButton from '../players/TogglePlayerButton'
 import BottomPlayerDetails from '../players/BottomPlayerDetails'
 import ArtistTrackListCard from '../players/ArtistTrackListCard'
 import { setArtist, setPlatform } from '../../store/playerSlice'
 import SocialLinks from '../artists/SocialLinks'
-import defaultArtistRV from '../../../public/data/defaultArtist' // adatta il path alla posizione reale
+import defaultArtistRV from '../../../public/data/defaultArtist'
 import PlayerRenderer from '../players/PlayerRenderer'
 import { addVisitedArtist } from '../../store/visitedArtistsSlice';
 import CardStaticWrapper from './CardStaticWrapper'
@@ -19,11 +19,9 @@ import data from '../../data/defaultData'
 export default function BottomPlayer() {
   const dispatch = useDispatch()
   // Prende lo stato globale del player da Redux
-  const { artist, platform, playerOpen, autoPlay } = useSelector((state) => state.player)
+  const { artist, platform, playerOpen } = useSelector((state) => state.player)
   const [playerKey, setPlayerKey] = useState(0)
-  useEffect(() => {
-    setPlayerKey(prev => prev + 1)
-  }, [artist, platform])
+
   // Stati locali per controllare riproduzione e piattaforma selezionata
   const [isPlaying, setIsPlaying] = useState(false)
   const [selectedPlatform, setSelectedPlatform] = useState(platform)
@@ -54,6 +52,9 @@ export default function BottomPlayer() {
   const activeArtist = artist || defaultArtist
   const activePlatform = platform || 'youtube'
 
+  useEffect(() => {
+    setPlayerKey(prev => prev + 1)
+  }, [artist, platform])
   // Effetto per sincronizzare gli stati locali con quelli globali
   useEffect(() => {
     if (artist && platform) {
@@ -95,7 +96,7 @@ export default function BottomPlayer() {
   return (
     <>
       <div
-        className={`fixed bottom-8 right-6 w-[calc(100vw-3rem)] max-w-sm sm:max-w-fit md:max-w-fit lg:max-w-xl xl:max-w-5xl min-w-[250px] 
+        className={`fixed bottom-8 right-6 w-[calc(100vw-3rem)] max-w-sm sm:max-w-fit md:max-w-fit lg:max-w-xl xl:max-w-5xl min-w-[300px] 
     px-4 py-2 md:bottom-10 md:right-8 lg:right-16
     bg-monza text-black shadow-[8px_8px_0px_#000]
     border-[3px] border-black z-40
@@ -130,17 +131,25 @@ export default function BottomPlayer() {
                     setSelectedPlatform={setSelectedPlatform}
                   />
                 </CardStaticWrapper>
-
+                {/* Music Player Container */}
+                <div
+                  key={playerKey}
+                  className={`relative flex-shrink-0 transition-all duration-300 ease-in-out
+          ${playerOpen
+                      ? ' w-80 lg:pt-8 lg:px-4 scale-100 opacity-100 sm:w-[300px] lg:w-[400px]'
+                      : 'h-0 scale-95 opacity-0'
+                    }`}
+                >
+                  <PlayerRenderer
+                    key={playerKey}
+                    platform={selectedPlatform}
+                    url={url}
+                    isPlaying={isPlaying}
+                    setIsPlaying={setIsPlaying}
+                  />
+                </div>
                 {/* Track List - Only visible on specific breakpoints */}
-                {playerOpen && (
-                  <div className="block   sm:hidden   md:hidden lg:block pt-4">
-                    <ArtistTrackListCard
-                      title="recents"
-                      items={trackList}
-                      onSelect={handleSelect}
-                    />
-                  </div>
-                )}
+
               </div>
             ) : (
               <ArtistOverlayCard
@@ -152,25 +161,17 @@ export default function BottomPlayer() {
                 toggleOpen={toggleOpen}
               />
             )}
+            {playerOpen && (
+              <div className="block   sm:hidden   md:hidden lg:block pt-4">
+                <ArtistTrackListCard
+                  title="recents"
+                  items={trackList}
+                  onSelect={handleSelect}
+                  selectArtist={artist}
+                />
+              </div>
+            )}
 
-            {/* Music Player Container */}
-            <div
-              key={playerKey}
-              className={`relative flex-shrink-0 transition-all duration-300 ease-in-out
-          ${playerOpen
-                  ? ' w-80 lg:pt-8 lg:px-4 scale-100 opacity-100 sm:w-[300px] lg:w-[400px]'
-                  : 'h-0 scale-95 opacity-0'
-                }`}
-            >
-              <PlayerRenderer
-                key={playerKey}
-
-                platform={selectedPlatform}
-                url={url}
-                isPlaying={isPlaying}
-                setIsPlaying={setIsPlaying}
-              />
-            </div>
 
           </div>
 
