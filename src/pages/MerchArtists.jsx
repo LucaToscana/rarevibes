@@ -220,18 +220,18 @@ export default function MerchArtists() {
             </CardStaticWrapper> </div>
         )}
       </div>
-      <MerchCategoryFilter
-        categories={merchCategories}
-        selectedCategories={activeMerchCategories}
-        onChange={setActiveMerchCategories}
-      />
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <aside className="md:col-span-1">
           <FiltersConsole genres={currentFilterData} />
         </aside>
 
         <section className="md:col-span-3">
-          {JSON.stringify({activeMerchCategories})}
+          <MerchCategoryFilter
+            categories={merchCategories}
+            selectedCategories={activeMerchCategories}
+            onChange={setActiveMerchCategories}
+          />
           {filteredArtists.length > 0 ? (
             <ArtistMerch filteredArtists={filteredArtists}
               activeCategory={activeMerchCategories} />

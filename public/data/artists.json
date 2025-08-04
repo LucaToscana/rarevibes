@@ -173,7 +173,7 @@
     "id": 3,
     "name": "Risorse Umane",
     "slug": "risorse_umane",
-    "type": ["music"],
+    "type": ["music", "visualarts"],
     "images": [
       "https://f4.bcbits.com/img/a1961708650_10.jpg",
       "https://www.rockon.it/wp-content/uploads/2025/03/risorse-umane.jpg",
@@ -185,7 +185,7 @@
       "review": "Il trio composto da Valerio Alessandrini (voce, testi), Jacopo Mazzoni e Alessandro Rivi (musica), presenta l’EP *Con Effetto Immediato* (2025, Notturno Dischi), un lavoro che amplia l’estetica new wave del gruppo con urgenza lirica e precisione cinematografica. Tra malinconia e disincanto urbano, la band esplora un post-punk contemporaneo, alternando chitarre fredde e sintetizzatori puliti. Tra le influenze: Offlaga Disco Pax, Massimo Volume, Diaframma.",
       "extended": ""
     },
-    "genres": ["post-punk", "new wave"],
+    "genres": ["post-punk", "new wave","comic"],
     "years_active": "2020–present",
     "origin": "Milano/Ancona, Italy",
     "label": "Notturno Dischi",

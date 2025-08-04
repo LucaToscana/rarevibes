@@ -1,3 +1,5 @@
+import FiltersWrapper from "./FiltersWrapper";
+
 // components/filters/MerchCategoryFilter.jsx
 export default function MerchCategoryFilter({
   categories,
@@ -13,20 +15,24 @@ export default function MerchCategoryFilter({
   };
 
   return (
-    <div className="flex gap-2 flex-wrap mb-8">
+    <div className="flex gap-2 flex-wrap mb-8 ">
       {categories.map((cat) => (
+        <FiltersWrapper>
         <button
           key={cat.key}
-          className={`text-sm px-3 py-1 rounded-full border transition ${
+          className={`text-xs px-3 py-1 transition min-w-12 ${
             selectedCategories.includes(cat.key)
-              ? "bg-monza text-white border-monza"
-              : "bg-white text-gray-700 border-gray-300"
+              ? "text-xs bio-highlight-white-small line-through  decoration-2 p-1"
+              : "text-xs px-4 py-2 "
           }`}
           onClick={() => handleToggle(cat.key)}
         >
           {cat.label}
         </button>
+        </FiltersWrapper>
       ))}
     </div>
   );
-}
+}/*************    const baseButton = "text-xs px-4 py-2 ";
+    const active =
+      "text-xs bio-highlight-white-small line-through  decoration-2 p-1"; */

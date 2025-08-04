@@ -31,10 +31,10 @@ export function getClasses({ isActive, type, extraClass = "" }) {
     } ${extraClass}`;
   }
   if (type === "filter-button") {
-    const baseButton = "text-base sm:text-base px-4 py-2 rounded-xs";
+    const baseButton = "text-xs px-4 py-2 ";
     const active =
-      "text-base bio-highlight-white-small line-through  decoration-2 p-1";
-    const inactive = "text-base  bio-highlight-small ";
+      "text-xs bio-highlight-white-small line-through  decoration-2 p-1";
+    const inactive = "text-xs  bio-highlight-small ";
     return `${base} ${baseButton} ${
       isActive ? active : inactive
     } ${extraClass}`;
