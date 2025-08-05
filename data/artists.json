@@ -74,13 +74,15 @@
         "name": "S.I.D. / Deshuesadero - Over the Pain (Split tape)",
         "price": "€10",
         "image": "https://f4.bcbits.com/img/0035410059_10.jpg",
-        "link": "https://sidoom.bandcamp.com/album/over-the-pain"
+        "link": "https://sidoom.bandcamp.com/album/over-the-pain",
+        "type": "physical_music"
       },
       {
         "name": "City of Chemistry - Limited Edition 12''  Vinyl",
         "price": "€20",
         "image": "https://f4.bcbits.com/img/0035590753_10.jpg",
-        "link": "https://sidoom.bandcamp.com/album/city-of-chemistry"
+        "link": "https://sidoom.bandcamp.com/album/city-of-chemistry",
+        "type": "physical_music"
       }
     ]
   },
@@ -159,13 +161,15 @@
         "name": "Limited Edition wooden box CD",
         "price": "€10",
         "image": "https://f4.bcbits.com/img/0012171429_10.jpg",
-        "link": "https://onlyfuckingnoise.bandcamp.com/album/morsura"
+        "link": "https://onlyfuckingnoise.bandcamp.com/album/morsura",
+        "type": "physical_music"
       },
       {
         "name": "Selvatica CD Black Artwork",
         "price": "€10",
         "image": "https://f4.bcbits.com/img/a0095760360_10.jpg",
-        "link": "https://onlyfuckingnoise.bandcamp.com/album/morsura"
+        "link": "https://onlyfuckingnoise.bandcamp.com/album/morsura",
+        "type": "physical_music"
       }
     ]
   },
@@ -185,7 +189,7 @@
       "review": "Il trio composto da Valerio Alessandrini (voce, testi), Jacopo Mazzoni e Alessandro Rivi (musica), presenta l’EP *Con Effetto Immediato* (2025, Notturno Dischi), un lavoro che amplia l’estetica new wave del gruppo con urgenza lirica e precisione cinematografica. Tra malinconia e disincanto urbano, la band esplora un post-punk contemporaneo, alternando chitarre fredde e sintetizzatori puliti. Tra le influenze: Offlaga Disco Pax, Massimo Volume, Diaframma.",
       "extended": ""
     },
-    "genres": ["post-punk", "new wave","comic"],
+    "genres": ["post-punk", "new wave", "comic"],
     "years_active": "2020–present",
     "origin": "Milano/Ancona, Italy",
     "label": "Notturno Dischi",
@@ -240,11 +244,14 @@
       "pdf": "",
       "contact_email": ""
     },
-    "merch": [ {
+    "merch": [
+      {
         "name": "Primo Richiamo Digital Album  ",
         "price": "name your price",
         "image": "https://f4.bcbits.com/img/a1961708650_10.jpg",
-        "link": "https://risorseumane.bandcamp.com/album/primo-richiamo-2"
-      }]
+        "link": "https://risorseumane.bandcamp.com/album/primo-richiamo-2",
+        "type": "digital_music"
+      }
+    ]
   }
 ]
