@@ -3,7 +3,6 @@ import artFilters from "../data/artFilters.json";
 
 import { useTranslation } from "react-i18next";
 import FiltersConsole from "../components/layout/FiltersConsole";
-import ArtistCard from "../components/artists/ArtistCard";
 import SubFilterList from "../components/layout/SubFilterList";
 import FilterHeader from "../components/layout/FilterHeader";
 import { useFilteredArtists, useFilterManagement } from "../hook/useFilters";
