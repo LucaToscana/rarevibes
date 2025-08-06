@@ -13,6 +13,8 @@ import ParallaxLayout from './components/layout/ParallaxLayout'
 import AboutUs from './pages/AboutUs'
 import { useEffect } from 'react'
 import MerchArtists from './pages/MerchArtists';
+import Read from './pages/Read';
+import ArticleDetail from './pages/ArticleDetail';
 
 
 export default function App() {
@@ -43,6 +45,10 @@ export default function App() {
           <Route path="/submit" element={<Submit />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/read" element={<Read />} />
+          <Route path="/read/:slug" element={<ArticleDetail />} />
+
+
 
         </Route>
       </Routes>

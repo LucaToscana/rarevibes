@@ -28,6 +28,16 @@ export default function MerchArtists() {
   const [searchTimestamps, setSearchTimestamps] = useState([]);
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [captchaInput, setCaptchaInput] = useState("");
+  const [priceRange, setPriceRange] = useState(null); // es. { min: 10, max: 30 }
+
+  const priceRanges = [
+
+    { label: "Max 10€", value: { min: 0, max: 10 } },
+    { label: "11€ - 30€", value: { min: 11, max: 30 } },
+    { label: "Più di 30€", value: { min: 31, max: Infinity } },
+  ];
+
+
   const captchaAnswer = 7; // esempio 3 + 4
   const merchCategories = [
     { key: "digital_music", label: "Musica Digitale" },
@@ -231,9 +241,31 @@ export default function MerchArtists() {
             selectedCategories={activeMerchCategories}
             onChange={setActiveMerchCategories}
           />
+          <div className="flex flex-wrap gap-2 mb-6">
+            {priceRanges.map((range, i) => {
+              const isActive = JSON.stringify(priceRange) === JSON.stringify(range.value);
+              return (
+                <FiltersWrapper><button
+                  key={i}
+                  onClick={() =>
+                    isActive ? setPriceRange(null) : setPriceRange(range.value)
+                  } className={`text-xs px-3 py-1 transition min-w-12
+                  ${isActive
+                      ? "text-xs bio-highlight-small line-through decoration-2 p-1"
+                      : "text-xs px-4 py-2 bio-highlight-white-small"}`}
+                >
+                  {range.label}
+                </button></FiltersWrapper>
+              );
+            })}
+          </div>
+
+
           {filteredArtists.length > 0 ? (
             <ArtistMerch filteredArtists={filteredArtists}
-              activeCategory={activeMerchCategories} />
+              activeCategory={activeMerchCategories}
+              priceRange={priceRange}
+            />
           ) : (
             <div className="animate-fade-in">
               <CardWrapper>

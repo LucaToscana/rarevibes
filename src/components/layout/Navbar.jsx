@@ -47,6 +47,7 @@ export default function Navbar() {
           <NavLinkCustom to="/merchartists"> Merch</NavLinkCustom>
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>
           <NavLinkCustom to="/aboutus" >{t('aboutus')}</NavLinkCustom>
+          <NavLinkCustom to="/read" >{t('read')}</NavLinkCustom>
           <NavLinkCustom to="/submit" extraClass="button"> {t("submit")}</NavLinkCustom>
           <LanguageSwitcher />
         </div>
@@ -70,6 +71,9 @@ export default function Navbar() {
           </NavLinkCustom>
           <NavLinkCustom to="/aboutus" onClick={() => setMenuOpen(false)}>
             {t('aboutus')}
+          </NavLinkCustom>
+          <NavLinkCustom to="/read" onClick={() => setMenuOpen(false)}>
+            {t('read')}
           </NavLinkCustom>
           <NavLinkCustom to="/submit" extraClass="button" onClick={() => setMenuOpen(false)}>
             {t("submit")}

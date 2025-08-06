@@ -82,7 +82,7 @@
         "price": "€20",
         "image": "https://f4.bcbits.com/img/0035590753_10.jpg",
         "link": "https://sidoom.bandcamp.com/album/city-of-chemistry",
-        "type": "physical_music"
+        "type":  ["physical_music"]
       }
     ]
   },
@@ -162,14 +162,14 @@
         "price": "€10",
         "image": "https://f4.bcbits.com/img/0012171429_10.jpg",
         "link": "https://onlyfuckingnoise.bandcamp.com/album/morsura",
-        "type": "physical_music"
+        "type": ["handcrafted","physical_music"]
       },
       {
         "name": "Selvatica CD Black Artwork",
         "price": "€10",
         "image": "https://f4.bcbits.com/img/a0095760360_10.jpg",
         "link": "https://onlyfuckingnoise.bandcamp.com/album/morsura",
-        "type": "physical_music"
+        "type": ["physical_music"]
       }
     ]
   },
@@ -177,7 +177,7 @@
     "id": 3,
     "name": "Risorse Umane",
     "slug": "risorse_umane",
-    "type": ["music", "visualarts"],
+    "type": ["music"],
     "images": [
       "https://f4.bcbits.com/img/a1961708650_10.jpg",
       "https://www.rockon.it/wp-content/uploads/2025/03/risorse-umane.jpg",
@@ -250,7 +250,7 @@
         "price": "name your price",
         "image": "https://f4.bcbits.com/img/a1961708650_10.jpg",
         "link": "https://risorseumane.bandcamp.com/album/primo-richiamo-2",
-        "type": "digital_music"
+        "type": ["digital_music"]
       }
     ]
   }
