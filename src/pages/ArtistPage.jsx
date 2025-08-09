@@ -67,9 +67,9 @@ export default function ArtistPage() {
     setSelectedPlatform
   }
 
-  if (loading) return <main className="font-arvo text-monza min-h-screen flex items-center justify-center font-arvo"><CardWrapper>RARE VIBES</CardWrapper></main>
-  if (error) return <main className="font-arvo text-monza min-h-screen flex items-center justify-center"><CardWrapper>Error: {error}</CardWrapper></main>
-  if (!selectedArtist) return <main className="font-arvo text-monza min-h-screen  flex items-center justify-center"><CardWrapper> {t("no_artists_found")}</CardWrapper></main>
+  if (loading) return <main className="font-heming text-monza min-h-screen flex items-center justify-center font-heming"><CardWrapper>RARE VIBES</CardWrapper></main>
+  if (error) return <main className="font-heming text-monza min-h-screen flex items-center justify-center"><CardWrapper>Error: {error}</CardWrapper></main>
+  if (!selectedArtist) return <main className="font-heming text-monza min-h-screen  flex items-center justify-center"><CardWrapper> {t("no_artists_found")}</CardWrapper></main>
 
   const relatedArtists = artistsData
     .filter((a) => a.slug !== slug)
@@ -79,7 +79,7 @@ export default function ArtistPage() {
     <main className="min-h-screen max-w-7xl mx-auto px-6 py-12">
       {/* Back link */}
       <div className="mt-8 mb-8 pt-12">
-        <CardWrapper className="text-xs animate-fade-in lowercase font-arvo w-fit">
+        <CardWrapper className="text-xs animate-fade-in lowercase font-heming w-fit">
           <Link to="/artists">← {t('backToArtists')}</Link>
         </CardWrapper>
       </div>
@@ -90,8 +90,11 @@ export default function ArtistPage() {
         <section className="flex flex-col gap-6 lg:w-1/3 min-h-[500px] p-2">
           {/* Artist name + player */}
           <CardWrapper className="w-fit min-w-64">
-            <p className="font-arvo text-black text-xs">{t('play')}</p>
-            <h2 className="text-2xl font-bold font-arvo uppercase mb-2 border-b-2 border-black">
+            {
+              //*<p className="font-heming text-black text-xs">{t('play')}</p>
+
+            }
+            <h2 className="text-2xl font-bold font-heming uppercase mb-2 border-b-2 border-black">
               {selectedArtist.name}
             </h2>
             <div className="flex justify-center mt-2">
@@ -109,8 +112,8 @@ export default function ArtistPage() {
               slug={selectedArtist.slug}
               name={selectedArtist.name}
               field="short"
-              className="bio-text-white"
-              highlightClass="bio-highlight-white"
+
+              highlightClass=""
             />
             <ArtistBio
               slug={selectedArtist.slug}

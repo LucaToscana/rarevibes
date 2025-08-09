@@ -16,14 +16,28 @@ export default function ArtistTags({ artist = {} }) {
         {/* Duplicazione interna per animazione fluida */}
         <div className="flex gap-4">
           {tags.map((tag, i) => (
-            <span key={`tag1-${i}`} className="mx-2 font-arvo text-black  lowercase text-xs">
+            <span key={`tag1-${i}`} className="mx-2 font-heming text-black  lowercase text-xs">
               {t(tag, { defaultValue: tag })}
             </span>
           ))}
         </div>
         <div className="flex gap-4">
           {tags.map((tag, i) => (
-            <span key={`tag2-${i}`} className="mx-2 font-arvo text-black lowercase text-xs">
+            <span key={`tag1-${i}`} className="mx-2 font-heming text-black  lowercase text-xs">
+              {t(tag, { defaultValue: tag })}
+            </span>
+          ))}
+        </div>
+        <div className="flex gap-4">
+          {tags.map((tag, i) => (
+            <span key={`tag1-${i}`} className="mx-2 font-heming text-black  lowercase text-xs">
+              {t(tag, { defaultValue: tag })}
+            </span>
+          ))}
+        </div>
+        <div className="flex gap-4">
+          {tags.map((tag, i) => (
+            <span key={`tag2-${i}`} className="mx-2 font-heming text-black lowercase text-xs">
               {t(tag, { defaultValue: tag })}
             </span>
           ))}

@@ -270,7 +270,7 @@ export default function MerchArtists() {
             <div className="animate-fade-in">
               <CardWrapper>
                 <div className="col-span-full flex flex-col items-center justify-center text-center py-12">
-                  <p className="text-xl font-arvo text-monza">
+                  <p className="text-xl font-heming text-monza">
                     {t("no_articles_found") || "No articles found."}
                   </p>
                 </div>

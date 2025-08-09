@@ -157,7 +157,7 @@ export default function BottomPlayer() {
           <div className="absolute bottom-2 right-2 hidden lg:flex lg:flex-col lg:items-end">
             <SectionTitle>
               <Link to="/">
-                <div className="font-arvo text-xl text-monza">RARE VIBES</div>
+                <div className="font-heming text-xl text-monza">RARE VIBES</div>
               </Link>
             </SectionTitle>
             <div className="mt-auto">

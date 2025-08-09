@@ -15,7 +15,7 @@ const FilterHeader = ({ count, onReset }) => {
           <FaRedo className="h-3 w-3" /> {/* icona reset */}
         </button>
 
-        <span className="font-semibold text-monza font-arvo">
+        <span className="font-semibold text-monza font-heming">
           {count} {/* numero filtri attivi */}
         </span>
       </div>

@@ -6,9 +6,9 @@ const MerchList = ({ merch = [] }) => {
 
   return (
     <CardWrapper>
-      <h3 className="text-sm font-semibold font-arvo mb-2 leading-snug">Merch</h3>
+      <h3 className="text-sm font-semibold font-heming mb-2 leading-snug">Merch</h3>
 
-      <div className="flex flex-col gap-2 font-arvo w-full">
+      <div className="flex flex-col gap-2 font-heming w-full">
         {merch
           .filter(item => item.image)
           .slice(0, 3)

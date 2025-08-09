@@ -9,7 +9,7 @@ export default function ItalicQuotes({ text }) {
           // Qui manteniamo le virgolette, tutto in italic
           return <em key={i}>{part}</em>;
         }
-        return <span key={i}>{part}</span>;
+        return <span       style={{ whiteSpace: 'pre-line',fontFamily: 'Heming', fontWeight: 300 , lineHeight: '1.6', fontSize: '1.125rem' }} key={i}>{part}</span>;
       })}
     </>
   );

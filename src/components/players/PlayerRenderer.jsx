@@ -16,7 +16,7 @@ const PlayerRenderer = ({ platform, url, isPlaying, setIsPlaying }) => {
     }[platform] || 'selezionata'
     const { t } = useTranslation('common');
 
-    return <CardStaticWrapper> <div className="p-2 text-center font-arvo  text-sm "> {platformName} {t("error_platform_not_found")} </div> </CardStaticWrapper>
+    return <CardStaticWrapper> <div className="p-2 text-center font-heming  text-sm "> {platformName} {t("error_platform_not_found")} </div> </CardStaticWrapper>
   }
 
   switch (platform) {

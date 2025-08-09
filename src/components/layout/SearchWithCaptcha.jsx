@@ -24,14 +24,14 @@ export default function SearchWithCaptcha({
             placeholder={placeholder || "Search..."}
             value={searchTerm}
             onChange={onSearchChange}
-            className={`pl-5 lg:pl-10 font-arvo pr-4 py-2 w-full  rounded-md text-black h-10 focus:outline-none ${searchTerm ? "text-base" : "text-xs truncate"
+            className={`pl-5 lg:pl-10 font-heming pr-4 py-2 w-full  rounded-md text-black h-10 focus:outline-none ${searchTerm ? "text-base" : "text-xs truncate"
               }`}
           />
 
         ) : (
           <form
             onSubmit={onCaptchaSubmit}
-            className="pl-10 pr-4 font-arvo w-full border border-red-500 rounded-md text-black flex items-center gap-2"
+            className="pl-10 pr-4 font-heming w-full border border-red-500 rounded-md text-black flex items-center gap-2"
           >
             <label className="text-red-600 font-semibold whitespace-nowrap">
               Are you human? {captchaQuestion}

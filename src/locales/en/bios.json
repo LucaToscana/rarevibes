@@ -81,7 +81,7 @@
     ],
     "trivia": "'Morsura' comes from printmaking terminology, describing the acid’s corrosive action on a plate. This physical and visual concept symbolizes the band's sonic poetics: raw, biting, and deeply material. Their live shows are intense and liberating, visually aligned with the art of guitarist Jacopo Pannocchia."
   },
-  
+
   "risorse_umane": {
     "short": "Le Risorse Umane is a post-punk / new wave trio active between Milan and Ancona. Their music blends dark atmospheres, electronic rhythms, and spoken word lyrics, drawing heavily from the sounds of the '80s, '90s, and 2000s. Formed in the early 2020s, the band combines a bleak urban aesthetic with narrative depth and poetic voice.",
     "review": "With *Con Effetto Immediato* (2024) and their 2025 EP, Le Risorse Umane deepen their dark and incisive sound, balancing urban melancholy with sardonic wit. Their tracks combine spoken word with vocals, post-punk guitar work, and cinematic electronic arrangements. References to Massimo Volume, Diaframma, and Offlaga Disco Pax are present, but reinterpreted with strong artistic personality. The band’s identity is rooted in sharp irony and a deeply urban poetic. Their fictional tagline — 'active in Milan’s financial landscape Monday to Friday, 08:00 to 18:00, and making real money in their free time' — mocks the corporate world and modern labor alienation. Musically, they explore jagged guitars, synthetic rhythms, and narrative-driven arrangements that cross decades. Their songs evoke suburban margins, vintage gyms, and office absurdities — always tinged with cinematic melancholy and existential humor.",
@@ -123,7 +123,59 @@
       { "title": "Title EP 2025", "year": 2025, "type": "EP" }
     ],
     "trivia": "Le Risorse Umane ironically claim to have formed during the self-management of a fictional corporate department after the disappearance of 'Head of F4'. Their use of bureaucratic and business language is a conceptual critique of power structures and the dehumanizing logic of office life."
+  },
+  "filicio": {
+    "short": "Filicio è un illustratore e autore visivo bolognese, attivo dal 2018, specializzato in illustrazione editoriale e libri per l’infanzia con un tratto matitale minimale e forte attenzione alla narrazione visiva.",
+    "review": "La pratica di Filicio si sviluppa attorno al disegno a matita e all’illustrazione editoriale: i suoi lavori uniscono segno sottilissimo, composizioni dense e una sensibilità narrativa che rende ogni immagine un piccolo racconto.\n\nNel progetto Pagine Sospese (2022) ha realizzato una serie di libri-oggetto e illustrazioni per riviste indipendenti, ottenendo riscontri nella scena dell’editoria illustrata italiana. I suoi pezzi per pubblicazioni e fanzine sono caratterizzati da una mescolanza di humor malinconico e attenzione verso i dettagli quotidiani.",
+    "extended": "Filicio lavora prevalentemente su carta con matite di diversa durezza, passando poi a scansione e lieve ritocco digitale per l’impaginazione editoriale. Negli ultimi anni ha ampliato il proprio lavoro includendo piccole animazioni stop-motion per corti illustrati e workshop di illustrazione per bambini e adolescenti. Le tematiche ricorrenti sono la memoria quotidiana, l’infanzia e il paesaggio urbano filtrato dallo sguardo del quotidiano.\n\nIl suo approccio è didattico oltre che artistico: cura laboratori nelle scuole elementari e collabora con biblioteche per progetti di promozione alla lettura illustrata. Nei lavori esposti si nota una sensibilità rivolta al segno, alla leggibilità e al ritmo della pagina illustrata.",
+    "collaborations": [
+      {
+        "name": "Editrice Piccola Linea",
+        "instrument": "editoriale",
+        "note": "libro illustrato Pagine Sospese (2022)"
+      },
+      {
+        "name": "Biblioteca Comunale di Bologna",
+        "instrument": "curatela / educazione",
+        "note": "laboratori per bambini (2023–2024)"
+      },
+      {
+        "name": "Collettivo Carta",
+        "instrument": "zine / stampa",
+        "note": "pubblicazioni e fiere indipendenti"
+      }
+    ],
+
+    "trivia": "Filicio preferisce le matite 2B-6B e colleziona vecchi libri per l'infanzia dagli anni '50 e '60, che usa come riferimento per ritmi compositivi e palette tonali."
+  },
+  "sdolz": {
+    "short": "Sdolz è un artista visivo romano nato nel 1994, attivo dal 2021, che muove il suo lavoro tra illustrazione a cera e matita, murale e body art sperimentale.",
+    "review": "Lo stile di Sdolz è immediatamente riconoscibile: segno pastoso, colori saturi da cera e una sensibilità pop-surreal che rimescola immaginario infantile e citazioni grafiche adulte.\n\nIl progetto Colori Molli (2022–2023) ha portato Sdolz dalle pagine delle zine indipendenti ai muri della città, con murales che integrano elementi tatuaggio e pattern ripetuti. Parallelamente ha sviluppato il concept Pelle Illustrata, un ciclo di piccoli flash tattoo e serigrafie pensate per dialogare con il corpo.",
+    "extended": "La produzione di Sdolz si estende dalla carta alla parete e alla pelle: usa pastelli a cera e matite morbide per le tavole su carta e traduce gli stessi motivi in opere murali e in sessioni di tatuaggio temporaneo. Ha un approccio partecipativo al lavoro pubblico, coinvolgendo comunità locali nella scelta dei soggetti e nella realizzazione di interventi site-specific.\n\nNegli ultimi due anni ha sperimentato anche con la stampa serigrafica per piccole edizioni e collaborazioni con brand di abbigliamento indie per capsule grafiche.",
+    "collaborations": [
+      {
+        "name": "Studio PelleNera",
+        "instrument": "tattoo studio",
+        "note": "serie di mini-tattoo e workshop body-art (2023)"
+      },
+      {
+        "name": "Mag. Lunga",
+        "instrument": "editoriale",
+        "note": "illustrazioni per fanzine e cover (2022)"
+      },
+      {
+        "name": "Neon Street Collective",
+        "instrument": "murale",
+        "note": "murale comunitario 'Via dei Colori' (2024)"
+      }
+    ],
+    "trivia": "Prima di firmarsi Sdolz lavorava come assistente in uno studio di tatuaggi ed è abituato a provare i suoi soggetti su pelle sintetica prima di portarli alla committenza. Usa spesso le cialde di cera come pennello per ottenere texture imprevedibili."
+  },
+  "lenasanver": {
+    "short": "Lena Sanver è una fotografa torinese, attiva dal 2017, che lavora al confine tra paesaggio, documentario ed esplorazione sperimentale della pellicola.",
+    "review": "Il lavoro di Lena combina lunghe esposizioni, sovrapposizioni multiple e tecniche di camera oscura per ottenere immagini che oscillano tra registrazione documentaria e visione poetica. La serie Orizzonti Paralleli (2021) ha messo a confronto paesaggi industriali e aree naturali, giocando sul contrasto di materia e luce.\n\nNel 2024 ha presentato Materia d’Aria, un progetto fotografico e d'installazione che unisce stampe d’archivio in grande formato e materiali traslucidi per ricreare una sensazione di profondità sospesa.",
+    "extended": "Lena utilizza prevalentemente macchine medio formato e pellicola a colori e bianco e nero, lavorando personalmente alla stampa fine-art. Spesso integra nel suo flusso creativo registrazioni ambientali e piccole installazioni site-specific che accompagnano la visione fotografica.\n\nIl suo interesse è rivolto alla trasformazione dei luoghi e al tempo percepito: le immagini nascono da sopralluoghi prolungati, camminate e rilevazioni visive che poi vengono tradotte in sequenze narrative fotografiche. Partecipa regolarmente a festival fotografici e residencies in Italia e in Europa.",
+
+    "trivia": "Lena preferisce lavorare all’alba o al crepuscolo: dice che la luce ‘racconta’ di più. È appassionata di attrezzatura storica e possiede diverse fotocamere medio formato degli anni '70, tutte funzionanti."
   }
-
-
 }

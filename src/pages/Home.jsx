@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import ArtistCard from '../components/artists/ArtistCard'
 import HeroSection from '../components/layout/HeroSection'
 import { useTranslation } from 'react-i18next';
 import data from '../data/defaultData'
-import SectionDivider from '../components/layout/SectionDivider';
-import SectionTitle from '../components/layout/SectionTitle';
-import CardWrapper from '../components/layout/CardWrapper';
+
 import useIsMobile from '../components/layout/useIsMobile';
 
 export default function Home() {
@@ -14,7 +11,7 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [featuredArtists, setArtists] = useState([]);
   const isMobile = useIsMobile(); // o usa una media query migliore
-  const heroImages = isMobile ? data.heroImagesDefaultSmall : data.heroImagesDefault;
+  const heroImages = isMobile ? data.heroImagesDefault : data.heroImagesDefault;
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -52,32 +49,15 @@ export default function Home() {
   return (
     <main className="min-h-screen  ">
       {/* Hero parallax */}
-      <div className=' mt-24 px-12 lg:px-24 '>
 
 
-        <CardWrapper >
-          <HeroSection
-            heroImages={heroImages}
-            currentIndex={currentIndex}
-            parallaxRef={parallaxRef}
-          /></CardWrapper>
-          
-          
-          </div>
+      <HeroSection
+        heroImages={heroImages}
+        currentIndex={currentIndex}
+        parallaxRef={parallaxRef}
+        featuredArtists={featuredArtists}
+      />
 
-
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-{/** */}
-        <div className='mb-8 mt-10 '>
-          <SectionTitle> {t('recentArtists')}</SectionTitle>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center  mb-48 ">
-          {featuredArtists.map((artist) => (
-            <ArtistCard key={artist.name} artist={artist} showBio={true} />
-          ))}
-        </div>
-      </section>
     </main>
   )
 }

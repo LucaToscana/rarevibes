@@ -111,7 +111,7 @@ function RenderField({ field, form, onChange, parentName = "" }) {
 
     if (type === "tags") {
         return (
-            <div className="mb-4 font-arvo">
+            <div className="mb-4 font-heming">
                 <label htmlFor={fieldName} className="block font-medium mb-1"> {t(label)}</label>
                 <input
                     type="text"

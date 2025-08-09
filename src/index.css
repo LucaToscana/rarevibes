@@ -14,17 +14,20 @@ body,
 }
 
 body {
-  @apply antialiased font-sans bg-iron text-[#dd1a1c];
+  @apply antialiased font-heming bg-[#F8F9FA] ;
 }
+
+
 @font-face {
-  font-family: "Arvo";
-  src: url("/fonts/Arvo-Regular.woff2") format("woff2");
-  font-weight: 400;
+  font-family: 'Heming';
+  src: url('/fonts/Heming-Variable.ttf') format('truetype');
+  font-weight: 100 900; /* range tipico per variabili */
   font-style: normal;
-  font-display: swap;
 }
-.font-arvo {
-  font-family: "Arvo", serif;
+
+
+.font-heming {
+  font-family: "heming", serif;
   font-display: swap;
 }
 /* ================================
@@ -42,7 +45,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #777;
 }
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 /* ================================
    YouTube embed responsive
    ================================ */
@@ -59,40 +69,40 @@ body {
 }
 
 /* ================================
-   arvo
+   heming
    ================================ */
-.arvo-monza {
-  @apply font-arvo  text-monza;
+.heming-monza {
+  @apply font-heming  text-monza;
 }
 
-.arvo-white {
-  @apply font-arvo  text-white;
+.heming-white {
+  @apply font-heming  text-white;
 }
-.arvo-black {
-  @apply font-arvo  text-black;
+.heming-black {
+  @apply font-heming  text-black;
 }
 
 .bio-text-white {
-  @apply font-arvo text-sm text-black;
+  @apply font-heming text-sm text-black;
 }
 
 .bio-highlight {
-  @apply bg-monza arvo-white   inline-block;
+  @apply bg-monza heming-white   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white {
-  @apply arvo-monza   inline-block;
+  @apply heming-monza   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-small {
-  @apply bg-monza arvo-white text-sm   inline-block;
+  @apply bg-monza heming-white text-sm   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white-small {
-  @apply bg-white arvo-monza text-sm   inline-block;
+  @apply bg-white heming-monza text-sm   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
@@ -115,4 +125,11 @@ body {
 .marquee-content {
   display: inline-flex;
   animation: marquee 20s linear infinite;
+}
+.clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

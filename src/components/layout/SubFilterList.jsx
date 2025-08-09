@@ -47,7 +47,7 @@ export default function SubFilterList() {
       <div className="flex flex-wrap gap-1 w-full  ">
 
         {/* Bottoni Main Filter */}
-        <div className="">
+        <div >
           {mainFilter.filter(key => !mainGenres.includes(key)).map((key) => (
             <FilterButton
               key={key}

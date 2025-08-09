@@ -37,7 +37,8 @@ export default function App() {
     <BrowserRouter >
       <Navbar />
       <Routes>
-        <Route element={<ParallaxLayout />}>
+                  <Route element={<ParallaxLayout />}>
+
           <Route path="/" element={<Home />} />
           <Route path="/artists" element={<Artists />} />
           <Route path="/merchartists" element={<MerchArtists />} />
@@ -47,10 +48,7 @@ export default function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/read" element={<Read />} />
           <Route path="/read/:slug" element={<ArticleDetail />} />
-
-
-
-        </Route>
+          </Route>
       </Routes>
       <BottomPlayer />
     </BrowserRouter>

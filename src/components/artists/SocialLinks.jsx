@@ -43,7 +43,7 @@ export default function SocialLinks({ socials = {} }) {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="arvo-monza flex items-center gap-1"
+                  className="heming-monza flex items-center gap-1"
                   aria-label={platform}
                 >
                   {IconComponent ? <IconComponent size={24} /> : platform}

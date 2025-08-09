@@ -67,7 +67,7 @@ const ArtistMerch = ({ filteredArtists, activeCategory, priceRange }) => {
                         />
 
                         <div className="flex flex-col justify-between flex-grow min-w-0 relative">
-                            <div className="">
+                            <div >
                                 <h3 className="text-xs text-gray-900 ">{item.name}</h3>
                                 <p className="text-xs text-gray-600">{item.price}</p>
                             </div>

@@ -32,7 +32,7 @@ export default function ModalCustom({ isOpen, message, type = "info", onClose })
               X
             </button></FiltersWrapper>
           </div>
-          <p className="mt-4 text-xl font-arvo text-center">{message}</p>
+          <p className="mt-4 text-xl font-heming text-center">{message}</p>
         </div></CardWrapper>
     </div>,
     document.body

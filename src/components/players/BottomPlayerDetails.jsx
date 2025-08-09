@@ -27,7 +27,7 @@ export default function BottomPlayerDetails({ activeArtist, selectedPlatform, se
           className="flex-shrink-0"
         >
           <FiltersWrapper>
-            <h2 className="text-sm  text-monza font-arvo uppercase border-b-2 border-black">
+            <h2 className="text-sm  text-monza font-heming uppercase border-b-2 border-black">
               {activeArtist.name}
             </h2>
                     </FiltersWrapper>

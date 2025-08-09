@@ -199,9 +199,9 @@ export default function Submit() {
 
 
   return (
-    <main className="max-w-3xl mx-auto p-6 pb-48 pt-24 font-arvo">
+    <main className="max-w-3xl mx-auto p-6 pb-48 pt-24 font-heming">
       <FiltersWrapper>
-        <h1 className="font-arvo font-bold text-center">{t("submitam")}</h1>
+        <h1 className="font-heming font-bold text-center">{t("submitam")}</h1>
       </FiltersWrapper>
 
 

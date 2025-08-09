@@ -20,7 +20,7 @@ function Step4Filters({
       {(artistType === "visual" || artistType === "both") && (
         <CardStaticWrapper>
           <section className="mb-6">
-            <SectionTitle><h2 className="">Generi Arti Visuali</h2></SectionTitle>
+            <SectionTitle><h2 >Generi Arti Visuali</h2></SectionTitle>
             {artFilters.genres.map((genre) => {
               const allSelected = genre.subgenres.every((s) => selectedSubgenres.includes(s.key));
               return (

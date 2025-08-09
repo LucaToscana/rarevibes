@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        arvo: ["'Arvo'", "serif"]
+        heming: ["Heming", "serif"],
       },
       colors: {
         iron: "#D0D8D7",
@@ -15,22 +15,24 @@ export default {
       animation: {
         "fade-in": "fadeIn 0.5s ease-in forwards",
         "fade-in-lg": "fadeIn 1.5s ease-in forwards",
-        'slide': 'slide 20s linear infinite',
+        slide: "slide 20s linear infinite",
+            glitch: 'glitch 0.3s linear infinite',
+
       },
 
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
-        },  
+        },
         slide: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' }, // metà larghezza perché abbiamo duplicato le slide
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }, // metà larghezza perché abbiamo duplicato le slide
         },
       },
     },
     screens: {
-      xxs: "400px", 
+      xxs: "400px",
       sm: "640px",
       md: "768px",
       lg: "1024px",

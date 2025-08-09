@@ -14,7 +14,7 @@ const Step6Success = ({ reset, t }) => (
       <p className="mb-8">{t("thankyou")}</p>
       <SectionTitle>
         <Link to="/">
-          <div className='font-arvo text-xl pointer-events-auto text-arvo'>
+          <div className='font-heming text-xl pointer-events-auto text-heming'>
             RARE VIBES
           </div>
         </Link>

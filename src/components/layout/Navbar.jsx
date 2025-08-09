@@ -18,7 +18,7 @@ export default function Navbar() {
 
         <SectionTitle>
           <Link to="/">
-            <div className='font-arvo text-xs lg:text-xl pointer-events-auto whitespace-nowrap'>
+            <div   style={{fontFamily: 'Heming' }}  className=' text-xs lg:text-xl pointer-events-auto whitespace-nowrap text-monza'>
               RARE VIBES
             </div>
           </Link>

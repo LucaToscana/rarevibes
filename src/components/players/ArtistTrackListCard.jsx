@@ -8,7 +8,7 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
     <div className="w-72 sm:w-fit mb-5">
       <CardStaticWrapper>
         <div className=" sm:w-fit md:h-full flex flex-col justify-between block relative overflow-x-hidden">
-          <h2 className="text-xs  font-arvo md:mb-2  font-bold z-10 pl-1 pt-1 lowercase">
+          <h2 className="text-xs  font-heming md:mb-2  font-bold z-10 pl-1 pt-1 lowercase">
             {t('recentArtists')}
           </h2>
           <div
@@ -33,7 +33,7 @@ export default function ArtistTrackListCard({ title = 'new artists', items = [],
                     <li
                       key={index}
                       onClick={() => onSelect(item)}
-                      className="cursor-pointer relative w-56 md:w-72 font-arvo overflow-hidden  group z-50 "
+                      className="cursor-pointer relative w-56 md:w-72 font-heming overflow-hidden  group z-50 "
                       style={{
                         backgroundImage: `url(${backgroundImage})`,
                         backgroundSize: 'cover',

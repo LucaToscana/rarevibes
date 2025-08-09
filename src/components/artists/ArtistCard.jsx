@@ -25,7 +25,7 @@ export default function ArtistCard({ artist, showBio = false }) {
 
  
       {/* Titolo */}
-      <h2 className="text-md font-bold font-arvo uppercase mb-2 border-b-2 border-black w-4/5">
+      <h2 className="text-md font-bold font-heming uppercase mb-2 border-b-2 border-black w-4/5">
         {artist?.name}
       </h2>
       {/* Link al profilo artista */}

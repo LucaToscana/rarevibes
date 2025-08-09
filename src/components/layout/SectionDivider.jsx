@@ -2,7 +2,7 @@ import CardWrapper from "./CardWrapper";
 
 export default function SectionDivider() {
   return (
-    <div className="">
+    <div >
       <CardWrapper>
         <div className="h-1 bg-monza" />
       </CardWrapper>
