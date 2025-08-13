@@ -126,8 +126,6 @@ export default function ImageGallery({ images, slug }) {
       </div>
 
 
-
-
       {zoomOpen && zoomImg && (
         <ZoomModal
           zoomOpen={zoomOpen}

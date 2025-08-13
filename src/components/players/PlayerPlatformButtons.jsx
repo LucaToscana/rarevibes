@@ -22,7 +22,6 @@ export default function PlayerPlatformButtons({ activeArtist, selectedPlatform, 
 
   return (
     <div className="flex space-x-3  gap-1">
-      
       {['spotify', 'soundcloud', 'youtube', 'bandcamp'].map(platform => {
         if (!platformList[platform]) return null  // controllo sulle piattaforme della traccia
         const Icon = iconsMap[platform]
@@ -37,6 +36,7 @@ export default function PlayerPlatformButtons({ activeArtist, selectedPlatform, 
 
         return (
           <FiltersWrapper key={platform} >
+
             <button
               key={platform}
               onClick={() => setSelectedPlatform(platform)}

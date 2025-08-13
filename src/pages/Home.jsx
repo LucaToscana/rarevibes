@@ -4,6 +4,9 @@ import { useTranslation } from 'react-i18next';
 import data from '../data/defaultData'
 
 import useIsMobile from '../components/layout/useIsMobile';
+import Read from './Read';
+import SocialLinks from '../components/artists/SocialLinks';
+import ProductsShopify from '../components/layout/ProductsShopify';
 
 export default function Home() {
   const parallaxRef = useRef(null);
@@ -57,7 +60,20 @@ export default function Home() {
         parallaxRef={parallaxRef}
         featuredArtists={featuredArtists}
       />
+      <div
+        style={{
+          backgroundColor: 'rgba(8, 0, 0, 0.5)',
+          height: '50px',
+          width: '100%',
+        }}
+      >   
+    </div>
 
+      <Read></Read>
+
+
+      {/* <ProductsShopify></ProductsShopify> */}
+      <div className='mb-64 h-64'></div>
     </main>
   )
 }

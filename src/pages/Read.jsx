@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import articlesData from '../locales/en/articles.json'
 import ArticleCard from '../components/layout/ArticleCard';
 const featuredArticles = Object.values(articlesData);
-
-
-
 export default function Read() {
     const [current, setCurrent] = useState(0);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent((prev) => (prev + 1) % featuredArticles.length);
@@ -59,4 +59,4 @@ export default function Read() {
             </div>
         </div>
     );
-}
+} 

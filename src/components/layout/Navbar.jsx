@@ -12,7 +12,7 @@ export default function Navbar() {
   const { t } = useTranslation('common'); //  specifica il namespace
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 p-3 sm:pr-8 sm:pl-8 md:pr-16 md:pl-16 pt-3  pointer-events-none">
+    <nav className="fixed top-0 left-0 right-0 z-40 p-3 sm:pr-8 sm:pl-8 md:pr-16 md:pl-16 pt-3   pointer-events-none">
 
       <div className="  p-0 sm:p-2 w-full  flex justify-between items-center gap-2  md:gap-4 overflow-visible ">
 

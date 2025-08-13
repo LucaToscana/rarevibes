@@ -274,9 +274,7 @@
     "years_active": "2018–present",
     "origin": "Bologna, Italy",
     "label": "",
-    "singles": [
-     
-    ],
+    "singles": [],
     "defaultPlatform": "",
     "platforms": {
       "spotify": "",
@@ -319,6 +317,52 @@
         "link": "https://lineastatica.bandcamp.com/album/riflessi-elettrici",
         "type": ["physical_music"]
       }
+    ],
+     "portfolio": [
+      {
+        "id": 1,
+        "title": "Paesaggio Urbano al Tramonto",
+        "technique": "Fotografia digitale",
+        "materials": "Fotocamera mirrorless, lente 35mm",
+        "description": "Serie di scatti urbani con luci calde del tramonto, enfatizzando le texture degli edifici.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/disp/197cd9216759479.6785936ec6e94.jpg",
+                "https://mir-s3-cdn-cf.behance.net/project_modules/disp/fe5b40206233279.66c8ae59ea88b.jpg",
+         "https://mir-s3-cdn-cf.behance.net/project_modules/disp/197cd9216759479.6785936ec6e94.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Visione Astratta #1",
+        "technique": "Mixed Media su carta",
+        "materials": "Acrilico, inchiostro, carta 300g",
+        "description": "Composizione astratta che unisce texture materiche a segni gestuali.",
+        "images": [
+           "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/271b5495036891.5e8dc6f267fa1.jpg",
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/fdbe2e231262257.688637569546f.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Paesaggio Urbano al Tramonto",
+        "technique": "Fotografia digitale",
+        "materials": "Fotocamera mirrorless, lente 35mm",
+        "description": "Serie di scatti urbani con luci calde del tramonto, enfatizzando le texture degli edifici.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/aca1ec226572847.6830860dc5d79.jpg",
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/7ae929231262257.6886375694f93.jpg"
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Visione Astratta #1",
+        "technique": "Mixed Media su carta",
+        "materials": "Acrilico, inchiostro, carta 300g",
+        "description": "Composizione astratta che unisce texture materiche a segni gestuali.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/fdbe2e231262257.688637569546f.jpg"
+        ]
+      }
     ]
   },
   {
@@ -336,13 +380,11 @@
       "review": "Nel loro EP di debutto *Ombre Artificiali* (2023, Notte Scura), Neon Fossile gioca con strutture pop destrutturate e synth caldi, creando un contrasto con voci distaccate e testi enigmatici. Tra le influenze: Chromatics, Franco Battiato, John Maus.",
       "extended": ""
     },
-    "genres": ["crayon", "pencil","tattoos"],
+    "genres": ["crayon", "pencil", "tattoos"],
     "years_active": "2021–present",
     "origin": "Roma, Italy",
     "label": "",
-    "singles": [
-     
-    ],
+    "singles": [],
     "defaultPlatform": "",
     "platforms": {
       "spotify": "",
@@ -385,6 +427,51 @@
         "link": "https://neonfossile.bandcamp.com/album/ombre-artificiali",
         "type": ["physical_music"]
       }
+    ] ,
+    "portfolio": [
+      {
+        "id": 1,
+        "title": "Paesaggio Urbano al Tramonto",
+        "technique": "Fotografia digitale",
+        "materials": "Fotocamera mirrorless, lente 35mm",
+        "description": "Serie di scatti urbani con luci calde del tramonto, enfatizzando le texture degli edifici.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/aca1ec226572847.6830860dc5d79.jpg",
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/7ae929231262257.6886375694f93.jpg",
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Visione Astratta #1",
+        "technique": "Mixed Media su carta",
+        "materials": "Acrilico, inchiostro, carta 300g",
+        "description": "Composizione astratta che unisce texture materiche a segni gestuali.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/fdbe2e231262257.688637569546f.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Paesaggio Urbano al Tramonto",
+        "technique": "Fotografia digitale",
+        "materials": "Fotocamera mirrorless, lente 35mm",
+        "description": "Serie di scatti urbani con luci calde del tramonto, enfatizzando le texture degli edifici.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/aca1ec226572847.6830860dc5d79.jpg",
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/7ae929231262257.6886375694f93.jpg"
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Visione Astratta #1",
+        "technique": "Mixed Media su carta",
+        "materials": "Acrilico, inchiostro, carta 300g",
+        "description": "Composizione astratta che unisce texture materiche a segni gestuali.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/fdbe2e231262257.688637569546f.jpg"
+        ]
+      }
     ]
   },
   {
@@ -396,7 +483,6 @@
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/aca1ec226572847.6830860dc5d79.jpg",
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/7ae929231262257.6886375694f93.jpg",
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/fdbe2e231262257.688637569546f.jpg"
-      
     ],
     "bio": {
       "short": "Vetropalco è una formazione alternative rock / shoegaze nata a Torino, caratterizzata da muri di chitarre riverberate e testi intimisti.",
@@ -407,9 +493,7 @@
     "years_active": "2017–present",
     "origin": "Torino, Italy",
     "label": "",
-    "singles": [
-     
-    ],
+    "singles": [],
     "defaultPlatform": "",
     "platforms": {
       "spotify": "",
@@ -451,6 +535,51 @@
         "image": "https://example.com/images/vetropalco_album.jpg",
         "link": "https://vetropalco.bandcamp.com/album/luce-frammentata",
         "type": ["digital_music"]
+      }
+    ],
+    "portfolio": [
+      {
+        "id": 1,
+        "title": "Paesaggio Urbano al Tramonto",
+        "technique": "Fotografia digitale",
+        "materials": "Fotocamera mirrorless, lente 35mm",
+        "description": "Serie di scatti urbani con luci calde del tramonto, enfatizzando le texture degli edifici.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/aca1ec226572847.6830860dc5d79.jpg",
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/7ae929231262257.6886375694f93.jpg",
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/df00d922634873.56357e9e40721.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Visione Astratta #1",
+        "technique": "Mixed Media su carta",
+        "materials": "Acrilico, inchiostro, carta 300g",
+        "description": "Composizione astratta che unisce texture materiche a segni gestuali.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/fdbe2e231262257.688637569546f.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Paesaggio Urbano al Tramonto",
+        "technique": "Fotografia digitale",
+        "materials": "Fotocamera mirrorless, lente 35mm",
+        "description": "Serie di scatti urbani con luci calde del tramonto, enfatizzando le texture degli edifici.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/aca1ec226572847.6830860dc5d79.jpg",
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/7ae929231262257.6886375694f93.jpg"
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Visione Astratta #1",
+        "technique": "Mixed Media su carta",
+        "materials": "Acrilico, inchiostro, carta 300g",
+        "description": "Composizione astratta che unisce texture materiche a segni gestuali.",
+        "images": [
+          "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840_webp/fdbe2e231262257.688637569546f.jpg"
+        ]
       }
     ]
   }

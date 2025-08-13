@@ -51,23 +51,7 @@ export default function HeroSection({ parallaxRef, featuredArtists }) {
             ))}
         </div>
 
-        {/* Titolo */}
-        <div className="mb-10 mt-10">
-          <SectionTitle>recent music</SectionTitle>
-        </div>
 
-        {/* Griglia Artisti */}
-        {/* Griglia Artisti */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-9xl w-full px-2 sm:px-6 pointer-events-none">
-          {featuredArtists.map((artist) => (
-            <div
-              key={artist.name}
-              className="flex justify-center pointer-events-auto"
-            >
-              <ArtistCard artist={artist} showBio={true} />
-            </div>
-          ))}
-        </div>
       </div>
 
     </section>

@@ -23,7 +23,6 @@ export default function BottomPlayer() {
 
   const [playerKey, setPlayerKey] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [selectedPlatform, setSelectedPlatform] = useState(platform)
   const [trackList, setTrackList] = useState([])
 
   const defaultArtist = defaultArtistRV
@@ -32,7 +31,7 @@ export default function BottomPlayer() {
 
   const singles = activeArtist?.singles || []
   const firstSingle = singles.length > 0 ? singles[0] : null
-  const url = firstSingle?.platforms?.[selectedPlatform] || ''
+  const url = firstSingle?.platforms?.[activePlatform] || ''
   const bgImage = activeArtist.images?.[0] || data.heroImagesDefault[0]
 
   useEffect(() => {
@@ -52,7 +51,6 @@ export default function BottomPlayer() {
   useEffect(() => {
     if (artist && platform) {
       setIsPlaying(true)
-      setSelectedPlatform(platform)
     } else {
       setIsPlaying(false)
     }
@@ -66,6 +64,11 @@ export default function BottomPlayer() {
 
   const toggleOpen = () => dispatch(setPlayerOpen(!playerOpen))
 
+  // Questa è la funzione che cambia la piattaforma nel Redux store
+  const handleSetPlatform = (newPlatform) => {
+    dispatch(setPlatform(newPlatform))
+  }
+
   const handleSelect = (item) => {
     const platform = item.defaultPlatform || 'youtube'
     dispatch(setArtist(item))
@@ -77,7 +80,7 @@ export default function BottomPlayer() {
 
   return (
     <div
-      className={`fixed bottom-8 right-6 w-[calc(100vw-3rem)] max-w-sm sm:max-w-fit md:max-w-fit lg:max-w-xl xl:max-w-5xl min-w-[300px] 
+      className={`fixed bottom-8 right-6 w-[calc(100vw-3rem)] max-w-sm sm:max-w-fit md:max-w-fit lg:max-w-xl xl:max-w-3xl min-w-[300px] 
       px-4 py-2 md:bottom-10 md:right-8 lg:right-16
       bg-monza text-black shadow-[8px_8px_0px_#000]
       border-[3px] border-black z-40
@@ -100,18 +103,14 @@ export default function BottomPlayer() {
               <CardStaticWrapper>
                 <BottomPlayerDetails
                   activeArtist={activeArtist}
-                  selectedPlatform={
-                    selectedPlatform
-                      ? selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1)
-                      : ''
-                  }
-                  setSelectedPlatform={setSelectedPlatform}
+                  selectedPlatform={activePlatform}
+                  setSelectedPlatform={handleSetPlatform}  // <-- qui passo la dispatch
                 />
               </CardStaticWrapper>
 
               {/* Track List */}
               {playerOpen && (
-                <div className="hidden lg:block pt-4">
+                <div className=" sm:hidden md:block  pt-4">
                   <ArtistTrackListCard
                     title="recents"
                     items={trackList}
@@ -127,8 +126,8 @@ export default function BottomPlayer() {
               bgImage={bgImage}
               activeArtist={activeArtist}
               activePlatform={activePlatform}
-              selectedPlatform={selectedPlatform}
-              setSelectedPlatform={setSelectedPlatform}
+              selectedPlatform={activePlatform}
+              setSelectedPlatform={handleSetPlatform}  // <-- anche qui
               toggleOpen={toggleOpen}
             />
           )}
@@ -137,13 +136,13 @@ export default function BottomPlayer() {
           <div
             className={`relative flex-shrink-0 transition-all duration-300 ease-in-out
                 ${playerOpen
-                ? 'w-80 lg:pt-8 lg:px-4 scale-100 opacity-100 sm:w-[300px] lg:w-[400px]'
+                ? 'w-72  sm:w-80 lg:pt-8 lg:px-4 scale-100 opacity-100 sm:w-[300px] lg:w-[400px]'
                 : 'h-0 overflow-hidden scale-95 opacity-0 pointer-events-none'
               }`}
           >
             <PlayerRenderer
               key={playerKey}
-              platform={selectedPlatform}
+              platform={activePlatform}
               url={url}
               isPlaying={isPlaying}
               setIsPlaying={setIsPlaying}
@@ -151,7 +150,16 @@ export default function BottomPlayer() {
           </div>
 
         </div>
-
+        {playerOpen && (
+          <div className="hidden sm:block md:hidden  pt-14">
+            <ArtistTrackListCard
+              title="recents"
+              items={trackList}
+              onSelect={handleSelect}
+              selectArtist={artist}
+            />
+          </div>
+        )}
         {/* Logo + Socials */}
         {playerOpen && (
           <div className="absolute bottom-2 right-2 hidden lg:flex lg:flex-col lg:items-end">
