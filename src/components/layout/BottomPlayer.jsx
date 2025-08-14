@@ -110,7 +110,7 @@ export default function BottomPlayer() {
 
               {/* Track List */}
               {playerOpen && (
-                <div className=" sm:hidden md:block  pt-4">
+                <div className=" sm:hidden lg:block  pt-4">
                   <ArtistTrackListCard
                     title="recents"
                     items={trackList}
@@ -134,7 +134,7 @@ export default function BottomPlayer() {
 
           {/* Always Mounted Player */}
           <div
-            className={`relative flex-shrink-0 transition-all duration-300 ease-in-out
+            className={`relative flex-shrink-0 transition-all duration-300 ease-in-out 
                 ${playerOpen
                 ? 'w-72  sm:w-80 lg:pt-8 lg:px-4 scale-100 opacity-100 sm:w-[300px] lg:w-[400px]'
                 : 'h-0 overflow-hidden scale-95 opacity-0 pointer-events-none'
@@ -151,7 +151,7 @@ export default function BottomPlayer() {
 
         </div>
         {playerOpen && (
-          <div className="hidden sm:block md:hidden  pt-14">
+          <div className="hidden sm:block lg:hidden  pt-14">
             <ArtistTrackListCard
               title="recents"
               items={trackList}
@@ -163,11 +163,7 @@ export default function BottomPlayer() {
         {/* Logo + Socials */}
         {playerOpen && (
           <div className="absolute bottom-2 right-2 hidden lg:flex lg:flex-col lg:items-end">
-            <SectionTitle>
-              <Link to="/">
-                <div className="font-heming text-xl text-monza">RARE VIBES</div>
-              </Link>
-            </SectionTitle>
+
             <div className="mt-auto">
               <FiltersWrapper>
                 <SocialLinks

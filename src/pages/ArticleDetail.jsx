@@ -19,7 +19,7 @@ export default function ArticleDetail() {
   }
 
   return (
-    <div className="w-full font-arvo bg-iron">
+    <div className="w-full bg-iron">
 
       {/* Immagine come sfondo con overlay e titolo */}
       <div
