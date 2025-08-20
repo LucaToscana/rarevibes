@@ -9,11 +9,9 @@ import ArtistTrackListCard from '../players/ArtistTrackListCard'
 import SocialLinks from '../artists/SocialLinks'
 import CardStaticWrapper from './CardStaticWrapper'
 import FiltersWrapper from './FiltersWrapper'
-import SectionTitle from './SectionTitle'
 import ArtistOverlayCard from '../players/ArtistOverlayCard'
 import PlayerRenderer from '../players/PlayerRenderer'
 
-import { Link } from 'react-router-dom'
 import defaultArtistRV from '../../../public/data/defaultArtist'
 import data from '../../data/defaultData'
 
@@ -23,7 +21,6 @@ export default function BottomPlayer() {
 
   const [playerKey, setPlayerKey] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [trackList, setTrackList] = useState([])
 
   const defaultArtist = defaultArtistRV
   const activeArtist = artist || defaultArtist
@@ -34,15 +31,6 @@ export default function BottomPlayer() {
   const url = firstSingle?.platforms?.[activePlatform] || ''
   const bgImage = activeArtist.images?.[0] || data.heroImagesDefault[0]
 
-  useEffect(() => {
-    fetch(import.meta.env.BASE_URL + 'data/artists.json')
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
-        return res.json()
-      })
-      .then(data => setTrackList(data.slice(0, 5)))
-      .catch(err => console.error('Errore nel caricamento artisti:', err))
-  }, [])
 
   useEffect(() => {
     setPlayerKey(prev => prev + 1)
@@ -56,11 +44,6 @@ export default function BottomPlayer() {
     }
   }, [artist, platform])
 
-  useEffect(() => {
-    if (activeArtist?.id) {
-      dispatch(addVisitedArtist(activeArtist))
-    }
-  }, [activeArtist, dispatch])
 
   const toggleOpen = () => dispatch(setPlayerOpen(!playerOpen))
 
@@ -70,6 +53,7 @@ export default function BottomPlayer() {
   }
 
   const handleSelect = (item) => {
+    console.log(item)
     const platform = item.defaultPlatform || 'youtube'
     dispatch(setArtist(item))
     dispatch(setPlatform(platform))
@@ -112,8 +96,6 @@ export default function BottomPlayer() {
               {playerOpen && (
                 <div className=" sm:hidden lg:block  pt-4">
                   <ArtistTrackListCard
-                    title="recents"
-                    items={trackList}
                     onSelect={handleSelect}
                     selectArtist={artist}
                   />
@@ -153,8 +135,6 @@ export default function BottomPlayer() {
         {playerOpen && (
           <div className="hidden sm:block lg:hidden  pt-14">
             <ArtistTrackListCard
-              title="recents"
-              items={trackList}
               onSelect={handleSelect}
               selectArtist={artist}
             />

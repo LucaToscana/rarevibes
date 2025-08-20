@@ -48,8 +48,9 @@ export default function ArtistPage() {
       const artist = artistsData.find((a) => a.slug === slug)
       if (artist) {
         dispatch(setSelectedArtist(artist))
-        dispatch(addVisitedArtist(artist)) // 👈 alimenta lo slice
-
+        if(Array.isArray(artist.type) && artist.type.includes("music")){
+        dispatch(addVisitedArtist(artist))
+        }
       } else {
         dispatch(clearSelectedArtist())
       }

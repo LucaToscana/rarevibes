@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ================================
-   Reset base e setup globale [#D0D8D7]
+   Reset base e setup globale [#D0D8D7]bg-[#F8F9FA]
    ================================ */
 html,
 body,
@@ -14,7 +14,8 @@ body,
 }
 
 body {
-  @apply antialiased font-heming bg-[#F8F9FA] ;
+  @apply antialiased font-heming bg-[#1C1C1C]
+;
 }
 
 
@@ -83,7 +84,7 @@ body {
 }
 
 .bio-text-white {
-  @apply font-heming text-sm text-black;
+  @apply font-heming text-xs text-black;
 }
 
 .bio-highlight {
@@ -97,12 +98,12 @@ body {
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-small {
-  @apply bg-monza heming-white text-sm   inline-block;
+  @apply bg-monza heming-white text-xs   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }
 .bio-highlight-white-small {
-  @apply bg-white heming-monza text-sm   inline-block;
+  @apply bg-white heming-monza text-xs   inline-block;
   transform: skew(-10deg);
   padding: 0 0.2rem; /* aggiusta il padding per non tagliare il testo */
 }

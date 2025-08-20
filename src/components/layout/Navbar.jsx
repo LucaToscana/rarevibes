@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 p-3 sm:pr-8 sm:pl-8 md:pr-16 md:pl-16 pt-3   pointer-events-none">
 
-      <div className="  p-0 sm:p-2 w-full  flex justify-between items-center gap-2  md:gap-4 overflow-visible ">
+      <div className="  p-0 sm:p-2 w-full  flex justify-between items-center gap-2  overflow-visible ">
 
         <SectionTitle>
           <Link to="/">
@@ -42,7 +42,7 @@ export default function Navbar() {
           </CardWrapper>
         </div>
 
-        <div className="hidden md:flex space-x-6 items-center pointer-events-auto ">
+        <div className="hidden md:flex space-x-3 items-center pointer-events-auto ">
           <NavLinkCustom to="/artists"> {t('artists')}</NavLinkCustom>
           <NavLinkCustom to="/merchartists"> Merch</NavLinkCustom>
           <NavLinkCustom to="/privacy">Privacy</NavLinkCustom>

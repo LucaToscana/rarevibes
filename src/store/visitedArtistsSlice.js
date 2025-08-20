@@ -1,10 +1,10 @@
 // src/store/visitedArtistsSlice.js
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const MAX_VISITED = 10;
 
 const visitedArtistsSlice = createSlice({
-  name: 'visitedArtists',
+  name: "visitedArtists",
   initialState: {
     visited: [],
   },
@@ -15,13 +15,14 @@ const visitedArtistsSlice = createSlice({
 
       // Rimuove duplicati
       state.visited = state.visited.filter((a) => a.id !== artist.id);
-
+      console.log("artist" + JSON.stringify(artist));
       // Inserisce in cima
       state.visited.unshift({
         id: artist.id,
         name: artist.name,
         slug: artist.slug,
-        image: artist.images?.[0],
+        images: [artist.images?.[0]],
+        singles: artist.singles || [],
       });
 
       // Limita a MAX_VISITED
@@ -35,5 +36,6 @@ const visitedArtistsSlice = createSlice({
   },
 });
 
-export const { addVisitedArtist, clearVisitedArtists } = visitedArtistsSlice.actions;
+export const { addVisitedArtist, clearVisitedArtists } =
+  visitedArtistsSlice.actions;
 export default visitedArtistsSlice.reducer;

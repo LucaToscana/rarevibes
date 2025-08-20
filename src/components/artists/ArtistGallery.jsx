@@ -27,7 +27,7 @@ export default function ArtistGallery({ works }) {
 
   return (
     <section className="mt-8">
-      <h2 className="text-xl font-bold mb-4">Gallery</h2>
+      <h2 className="text-xl text-monza font-bold mb-4">Gallery</h2>
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         {works.map((work) => (
           <CardStaticWrapper key={work.id}>

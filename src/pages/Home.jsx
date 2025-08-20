@@ -1,16 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import HeroSection from '../components/layout/HeroSection'
-import { useTranslation } from 'react-i18next';
 import data from '../data/defaultData'
 
 import useIsMobile from '../components/layout/useIsMobile';
 import Read from './Read';
-import SocialLinks from '../components/artists/SocialLinks';
-import ProductsShopify from '../components/layout/ProductsShopify';
+import AboutUs from './AboutUs';
+
 
 export default function Home() {
   const parallaxRef = useRef(null);
-  const { t } = useTranslation('common');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [featuredArtists, setArtists] = useState([]);
   const isMobile = useIsMobile(); // o usa una media query migliore
@@ -66,12 +64,12 @@ export default function Home() {
           height: '50px',
           width: '100%',
         }}
-      >   
-    </div>
+      >
+      </div>
 
       <Read></Read>
 
-
+      <AboutUs></AboutUs>
       {/* <ProductsShopify></ProductsShopify> */}
       <div className='mb-64 h-64'></div>
     </main>

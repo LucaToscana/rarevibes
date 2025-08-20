@@ -1,9 +1,9 @@
 export function getClasses({ isActive, type, extraClass = "" }) {
   const base = " transition duration-200 lowercase";
   if (type === "link-nav") {
-    const baseButton = "text-base sm:text-base px-4 py-2 rounded-xs";
+    const baseButton = "text-xs px-4 py-2 rounded-xs";
     const active =
-      "text-base bio-highlight-white-small line-through  decoration-2 p-1";
+      "text-xs bio-highlight-white-small line-through  decoration-2 p-1";
     const inactive = "text-xs  bio-highlight-white";
 
     return `${base} ${baseButton} ${
@@ -12,9 +12,9 @@ export function getClasses({ isActive, type, extraClass = "" }) {
   }
 
   if (type === "button-nav") {
-    const baseButton = "text-base sm:text-base px-4 py-2 rounded-xs";
+    const baseButton = "text-xs  px-4 py-2 rounded-xs";
     const active =
-      "text-base bio-highlight-small line-through  decoration-2 p-1";
+      "text-xs bio-highlight-small line-through  decoration-2 p-1";
     const inactive = "text-xs  bio-highlight";
     return `${base} ${baseButton} ${
       isActive ? active : inactive
@@ -22,7 +22,7 @@ export function getClasses({ isActive, type, extraClass = "" }) {
   }
 
   if (type === "button") {
-    const baseButton = "text-xs sm:text-base px-4 py-2 rounded-xs";
+    const baseButton = "text-xs  px-4 py-2 rounded-xs";
     const active = "text-xs bio-highlight line-through  decoration-2 p-1";
     const inactive = "text-xs  bio-highlight-white";
 
@@ -40,9 +40,9 @@ export function getClasses({ isActive, type, extraClass = "" }) {
     } ${extraClass}`;
   }
   if (type === "link") {
-    const baseLink = "text-lg";
+    const baseLink = "text-xs";
     const hoverClass = extraClass.includes("btn-monza")
-      ? "text-xs text-sm sm:text-base px-4 py-2 rounded-full"
+      ? "text-xs   px-4 py-2 rounded-full"
       : "";
     const activeClass = isActive ? "text-xs line-through  decoration-2" : "";
     return `${base} ${baseLink} ${hoverClass} ${extraClass} ${activeClass}`;

@@ -1,6 +1,5 @@
 import musicFilters from "../data/musicFilters.json";
 import artFilters from "../data/artFilters.json";
-
 import { useTranslation } from "react-i18next";
 import FiltersConsole from "../components/layout/FiltersConsole";
 import SubFilterList from "../components/layout/SubFilterList";
@@ -100,9 +99,20 @@ export default function MerchArtists() {
     }
   }, [isSubFilterListVisible]);
 
+  const filterCount =
+    cleanedSubFilters.length +
+    (mainFilter.includes("all") && mainFilter.length === 1
+      ? 0
+      : mainFilter.length);
+
+  const isToggleDisabled = filterCount === 0;
+
   const toggleSubFilterListVisibility = () => {
-    setIsSubFilterListVisible((prev) => !prev);
+    if (!isToggleDisabled) {
+      setIsSubFilterListVisible((prev) => !prev);
+    }
   };
+
 
   // Gestione input ricerca con rate limiting
   const handleSearchChange = (e) => {
@@ -142,8 +152,6 @@ export default function MerchArtists() {
         <SectionTitle> Merch</SectionTitle>
         {/* Header con barra ricerca + reset filtri */}
         <div className="flex flex-row w-full gap-2 mt-8 mb-8">
-
-
           <SearchWithCaptcha
             searchTerm={searchTerm}
             onSearchChange={handleSearchChange}
@@ -156,24 +164,15 @@ export default function MerchArtists() {
           <div className="flex flex-row items-center justify-center  gap-2 w-fit h-full">
             <div className="flex flex-row items-center justify-center w-fit h-full">
               <FilterHeader
-                count={
-                  cleanedSubFilters.length +
-                  (mainFilter.includes("all") && mainFilter.length === 1
-                    ? 0
-                    : mainFilter.length)
-                }
+                count={filterCount}
                 onReset={handleReset}
               />
             </div>
-
-
-
             <div
               onClick={toggleSubFilterListVisibility}
 
               className="flex flex-row items-center justify-center gap-2 h-full">
               <FiltersWrapper>
-
                 <button
                   className="focus:outline-none "
                   aria-label={
@@ -241,10 +240,13 @@ export default function MerchArtists() {
             selectedCategories={activeMerchCategories}
             onChange={setActiveMerchCategories}
           />
+          {<h2 className="text-xs text-monza mb-6">Prezzo</h2>}
+
           <div className="flex flex-wrap gap-2 mb-6">
             {priceRanges.map((range, i) => {
               const isActive = JSON.stringify(priceRange) === JSON.stringify(range.value);
               return (
+
                 <FiltersWrapper><button
                   key={i}
                   onClick={() =>
